@@ -1,0 +1,30 @@
+{
+  "cards": {
+    "one": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--left'>",
+      "card_sub": "FRI, MAR 7 5:00 - 6:30 PM",
+      "card_title": "Baccalaureate Admissions Information Session",
+      "card_link": "/",
+      "card_caption": "Admissions Info"
+    },
+    "two": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--left'>",
+      "card_sub": "FRI, MAR 7 5:00 - 6:30 PM",
+      "card_title": "Baccalaureate Admissions Information Session",
+      "card_link": "/"
+    },
+    "three": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--left'>",
+      "card_sub": "FRI, MAR 7 5:00 - 6:30 PM",
+      "card_title": "Baccalaureate Admissions Information Session",
+      "card_link": "/"
+    },
+    "four": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--left'>",
+      "card_sub": "FRI, MAR 7 5:00 - 6:30 PM",
+      "card_title": "Baccalaureate Admissions Information Session",
+      "card_link": "/"
+    }
+  },
+  "variation": "left-to-full"
+}

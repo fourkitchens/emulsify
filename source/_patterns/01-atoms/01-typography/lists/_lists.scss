@@ -1,0 +1,32 @@
+ol {
+  counter-reset: i 0;
+}
+
+.list-item {
+  list-style-type: none;
+  margin-bottom: $spacing-vs;
+
+  &::before {
+    color: $red;
+    content: "\2022";
+    @include font-size(.8);
+    margin-right: .5em;
+  }
+}
+
+ol {
+  .list-item::before {
+    content: counter(i) ".";
+    counter-increment: i;
+  }
+}
+
+// TODO: BEM selectors should be applied to wysiwyg-created content
+
+.text-long {
+  ol, ul {
+    li {
+      @extend .list-item
+    }
+  }
+}

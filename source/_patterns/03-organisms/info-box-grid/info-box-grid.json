@@ -1,0 +1,22 @@
+{
+  "grid_title": "This is a Grid Title",
+  "boxes": {
+    "one": {
+      "infobox_title": "Test Title that is fairly long for a reason",
+      "infobox_text": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "infobox_link": "/"
+    },
+    "two": {
+      "infobox_title": "Short for a reason",
+      "infobox_text": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
+    },
+    "three": {
+      "infobox_title": "Test Title that is whatever",
+      "infobox_text": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+    },
+    "four": {
+      "infobox_title": "Test Title 4",
+      "infobox_text": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+    }
+  }
+}

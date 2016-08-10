@@ -1,0 +1,25 @@
+{
+  "cards": {
+    "one": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--info'>",
+      "card_sub": "<p>April 18, 2016 3pm-5pm</p>",
+      "card_title": "Spring Career Fair"
+    },
+    "two": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--info'>",
+      "card_sub": "<p>April 18, 2016 3pm-5pm</p>",
+      "card_title": "Spring Career Fair"
+    },
+    "three": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--info'>",
+      "card_sub": "<p>April 18, 2016 3pm-5pm</p>",
+      "card_title": "Spring Career Fair"
+    },
+    "four": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--info'>",
+      "card_sub": "<p>April 18, 2016 3pm-5pm</p>",
+      "card_title": "Spring Career Fair"
+    }
+  },
+  "variation": "info"
+}

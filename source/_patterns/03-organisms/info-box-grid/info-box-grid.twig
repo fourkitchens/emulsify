@@ -1,0 +1,19 @@
+<div class="info-box-grid">
+  {% if grid_title %}<h2 class="heading-2 info-box-grid__title">{{ grid_title }}</h2>{% endif %}
+  {# Drupal content #}
+  {% if grid_content %}
+    {{ grid_content }}
+  {# PL content in JSON #}
+  {% else %}
+    {% for box in boxes %}
+      {% set class = "info-box" %}
+      {% include "@molecules/info-box/info-box.twig"
+        with {
+          "infobox_title": box.infobox_title,
+          "infobox_text": box.infobox_text,
+          "infobox_link": box.infobox_link,
+        }
+      %}
+    {% endfor %}
+  {% endif %}
+</div>

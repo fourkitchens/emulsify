@@ -1,0 +1,187 @@
+// Mobile JS specific
+#sidebar-menu {
+  // Hide on mobile unless menu is active (has active children)
+  display: none;
+
+  @include large {
+    display: block;
+  }
+
+  &.is-active  {
+    display: block;
+  }
+}
+
+// "Sections" Link only used on mobile
+#sidebar-menu__link {
+  display: block;
+
+  @include large {
+    display: none;
+  }
+}
+// End mobile JS specific
+
+.sidebar-menu {
+  background-color: $gray-dark;
+  @include list-reset;
+
+  @include large {
+    background-color: transparent;
+    margin: 0;
+  }
+}
+
+// Desktop "block" title (parent menu item)
+.sidebar-menu__title {
+  color: $black;
+  display: none;
+  @include font-size(2);
+  font-weight: 800;
+  line-height: 1em;
+  margin: 0 0 .4em;
+
+  @include large {
+    display: block;
+  }
+}
+
+// All menu links
+.sidebar-menu__link,
+.sidebar-menu__link:link,
+.sidebar-menu__link:visited {
+  color: $white;
+  cursor: pointer;
+  display: block;
+  @include font-size(1.2);
+  font-weight: 600;
+  line-height: 1em;
+  margin-left: .7em;
+  padding: .5em 0;
+  text-decoration: none;
+
+  @include large {
+    border-top: 1px solid $gray-lightest;
+    color: $black;
+    @include font-size(1);
+    padding: .6em 0 .5em;
+    margin-left: 0;
+  }
+
+  // Down arrow (mobile)
+  &::before {
+    @include sprite-chevron-right-white;
+    @include with-icon;
+    height: 1px;
+    padding: 0.5em;
+    top: 0;
+
+    @include large {
+      display: none;
+    }
+  }
+
+  &:hover {
+    color: $gray-light;
+
+    @include large {
+      color: $red;
+    }
+  }
+
+  &.is-active {
+    @include large {
+      color: $red;
+      font-weight: 800;
+    }
+  }
+}
+
+// All sub-menus
+.sidebar-menu__sub {
+
+  // Indent all sub-links
+  .sidebar-menu__link {
+    color: $white;
+    margin-left: 1em;
+
+    @include large {
+      color: $black;
+    }
+
+    // Red child links of active on desktop
+    &.is-active {
+      & + .sidebar-menu__sub .sidebar-menu__link {
+        @include large {
+          color: $red;
+          margin-left: 2em;
+
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar-menu__sub {
+    .sidebar-menu__link {
+      @include large {
+        margin-left: 2em;
+      }
+    }
+  }
+}
+
+// @TODO - what follows should be removed when Menu Block in D8 allows to only show children of active trail
+// Currently done in less than ideal styling
+.sidebar-menu__item {
+  display: none;
+
+  // Only show active menu tree (this is what menu_block should filter)
+  &--active {
+    border-bottom: 1px solid $gray-lightest;
+    display: block;
+
+    // Border only needs to happen on top-level active item
+    .sidebar-menu__item--active {
+      border-bottom: none;
+    }
+
+    // Mobile - hide first child (original menu item) in lieu of "Sections" link (added in js)
+    .sidebar-menu__link {
+      display: none;
+
+      @include large {
+        display: block;
+      }
+    }
+  }
+}
+
+// JS "Sections" hide/show
+.sidebar-menu > .sidebar-menu__item--active > .sidebar-menu__sub {
+
+  &.is-visible {
+    padding: 0 0 1em;
+    margin-left: 1em;
+    margin-bottom: 0;
+
+    .sidebar-menu__item,
+    .sidebar-menu__link {
+      display: block;
+
+      // Hide children (on mobile only immediate children shown)
+      .sidebar-menu__item {
+        display: none;
+      }
+    }
+  }
+
+  // Show all children on desktop
+  .sidebar-menu__item {
+    @include large {
+      display: block;
+    }
+  }
+}

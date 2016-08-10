@@ -1,0 +1,14 @@
+.card-grid--bg {
+
+  @include medium {
+    display: flex;
+  }
+}
+
+.card--bg {
+  flex: 1 1 22%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,19 @@
+// Variations on numbers
+.card-grid--3 {
+  flex-wrap: wrap;
+
+  @include medium {
+    display: flex;
+  }
+}
+
+.card--3 {
+  @include medium {
+    flex: 1 0 30.333333332%;
+  }
+
+  &:nth-child(3n),
+  &:last-child {
+    margin-right: 0;
+  }
+}

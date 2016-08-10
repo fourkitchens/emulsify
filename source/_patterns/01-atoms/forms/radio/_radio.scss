@@ -1,0 +1,6 @@
+.form-item--radio {
+  // Non-BEM, but this style will always only apply to radio children
+  ul {
+    @include list-reset;
+  }
+}

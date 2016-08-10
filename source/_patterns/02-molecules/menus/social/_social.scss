@@ -1,0 +1,65 @@
+.social-menu {
+  @include list-reset;
+}
+
+.social-menu__item {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.social-menu__link {
+  background-color: $gray-light;
+  display: block;
+  height: 0;
+  font-size: 200%;
+  overflow: hidden;
+  padding-top: 1.7em;
+  position: relative;
+  width: 1.7em;
+
+  &:hover {
+    background-color: $gray;
+  }
+
+  &::before {
+    @include sprite-facebook;
+    background-size: 15em 12em;
+    content: "";
+    display: block;
+    height: 2em;
+    left:.1em;
+    position: absolute;
+    top:-.1em;
+    width: 2em;
+  }
+}
+
+.social-menu__item {
+  // Twitter
+  &:nth-child(2) {
+    .social-menu__link:before {
+      @include sprite-twitter;
+      background-size: 17em 15.5em;
+      left: -.1em;
+      top: 0.25em;
+    }
+  }
+  // Instagram
+  &:nth-child(3) {
+    .social-menu__link:before {
+      @include sprite-instagram;
+      background-size: 16em 15em;
+      left: -.1em;
+      top: -.65em;
+    }
+  }
+  // YouTube
+  &:nth-child(4) {
+    .social-menu__link:before {
+      @include sprite-youtube;
+      background-size: 20em 16.5em;
+      left: .24em;
+      top: .2em;
+    }
+  }
+}

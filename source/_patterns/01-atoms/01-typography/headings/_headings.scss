@@ -1,0 +1,53 @@
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6 {
+  color: $gray-darker;
+  font-family: $heading;
+  font-weight: 600;
+  line-height: 1.8rem;
+  margin: 0 0 .5em;
+  width: 100%; // For non header (inline) elements with these styles, e.g. legend
+}
+
+.heading-3,
+.heading-4 {
+  @include font-size(.95);
+}
+
+.heading-5,
+.heading-6 {
+  color: $gray;
+  @include font-size(.85);
+  text-transform: uppercase;
+}
+
+// TODO: BEM selectors should be applied to wysiwyg-created content
+
+.text-long {
+  h1 {
+    @extend .heading-1;
+  }
+
+  h2 {
+    @extend .heading-2;
+  }
+
+  h3 {
+    @extend .heading-3;
+  }
+
+  h4 {
+    @extend .heading-4;
+  }
+
+  h5 {
+    @extend .heading-5;
+  }
+
+  h6 {
+    @extend .heading-6;
+  }
+}

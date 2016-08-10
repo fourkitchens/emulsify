@@ -1,0 +1,88 @@
+.card--icon {
+  overflow: hidden;
+  padding: 0 4%;
+
+  @include large {
+    text-align: center;
+  }
+}
+
+.card__text--icon {
+  @include large {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.card__title--icon,
+.card__sub--icon {
+  color: $black;
+}
+
+h2.card__title--icon {
+  float: left;
+  font-size: 1.2rem;
+  line-height: 1.2em;
+  margin-top: 12px;
+  order:1;
+  width: 64%;
+
+  @include small {
+    margin-top: 30px;
+    width: 58%;
+  }
+
+  @include large {
+    float: none;
+    margin: 0 auto;
+    max-width: 128px;
+    width: auto;
+  }
+}
+
+.card__icon {
+  float: left;
+  font-size: 700%;
+  height: .95em;
+  order: 2;
+  position: relative;
+  width: 34%;
+
+  @include small {
+    font-size: 900%;
+    width: 42%;
+  }
+
+  @include large {
+    float: none;
+    width: auto;
+  }
+
+  .sprite-icon {
+    background-size: 11.2em 9.7em;
+    height: 1.17em;
+    left: -60px;
+    position: absolute;
+    top: 0;
+    width: 1.5em;
+  }
+
+  .sprite-nih {
+    height: .8em;
+    left: -22px;
+  }
+
+  .sprite-people {
+    height: 1.15em;
+    left: -47px;
+  }
+
+  .sprite-global {
+    height: 1em;
+    left: -53px;
+  }
+}
+
+.card__sub--icon {
+  order:3;
+}

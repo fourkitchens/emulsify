@@ -1,0 +1,72 @@
+{%
+  set classes = [
+    'card',
+    variation ? 'card--' ~ variation,
+    limit ? 'card--' ~ limit
+  ]
+%}
+<div {% if attributes %}{{ attributes.addClass(classes) }}{% endif %} class="card{% if variation %} card--{{ variation }}{% endif %}{% if limit %} card--{{ limit }}{% endif %}">
+  {% if card_img %}
+    <div class="card__img-wrap card__img-wrap--{{ variation }}">
+      {{ card_img }}
+      {% if card_caption %}<span class="card__caption--{{ variation }}">{{ card_caption }}</span>{% endif %}
+    </div>
+  {% endif %}
+  <div class="card__text{% if variation %} card__text--{{ variation }}{% endif %}">
+    {% if title_first %}
+      {% if card_icon %}<div class="card__icon"><span class="sprite-icon {{ card_icon }}"></span></div>{% endif %}
+      {{ title_prefix }}
+      <h2 class="card__title{% if variation %} card__title--{{ variation }}{% endif %}">
+        {% if card_link %}<a class="card__title-link{% if variation %} card__title-link--{{ variation }}{% endif %}" href="{{ card_link }}">{% endif %}
+          {{ card_title }}
+        {% if card_link %}</a>{% endif %}
+      </h2>
+      {{ title_suffix }}
+      {% if card_sub %}<div class="card__sub{% if variation %} card__sub--{{ variation }}{% endif %}">
+        {{ card_sub }}
+      </div>{% endif %}
+      <div class="card__body{% if variation %} card__body--{{ variation }}{% endif %}">
+        {{ card_body }}
+      </div>
+    {% else %}
+      {% if sub_first %}
+        <div class="card__sub{% if variation %} card__sub--{{ variation }}{% endif %}">
+          {{ card_sub }}
+        </div>
+        {{ title_prefix }}
+        <h2 class="card__title{% if variation %} card__title--{{ variation }}{% endif %}">
+          {% if card_link %}<a class="card__title-link{% if variation %} card__title-link--{{ variation }}{% endif %}" href="{{ card_link }}">{% endif %}
+            {{ card_title }}
+          {% if card_link %}</a>{% endif %}
+        </h2>
+        {{ title_suffix }}
+        {% if card_tags %}
+          <span class="card__tags--{{ variation }}">{{ card_tags }}</span>
+        {% endif %}
+      {% else %}
+        {{ title_prefix }}
+        <h2 class="card__title{% if variation %} card__title--{{ variation }}{% endif %}">
+          {% if card_link %}<a class="card__title-link{% if variation %} card__title-link--{{ variation }}{% endif %}" href="{{ card_link }}">{% endif %}
+            {{ card_title }}
+          {% if card_link %}</a>{% endif %}
+        </h2>
+        {{ title_suffix }}
+        {% if card_sub %}<div class="card__sub{% if variation %} card__sub--{{ variation }}{% endif %}">
+          {{ card_sub }}
+        </div>{% endif %}
+        {% if card_sub_sub %}<div class="card__sub-sub{% if variation %} card__sub-sub--{{ variation }}{% endif %}">
+          {{ card_sub_sub }}
+        </div>{% endif %}
+      {% endif %}
+    {% endif %}
+  </div>
+  {% if card_body %}<div class="card__body{% if variation %} card__body--{{ variation }}{% endif %}">
+    {{ card_body }}
+  </div>{% endif %}
+  {% if card_link_1 %}
+    <a class="card__button--info button {% if card_link_1_class %} {{ card_link_1_class }}{% endif %}" href="{{ card_link_1 }}">{{ card_link_1_text }}</a>
+  {% endif %}
+  {% if card_link_2 %}
+    <a class="card__button--info button {% if card_link_2_class %} {{ card_link_2_class }}{% endif %}" href="{{ card_link_2 }}">{{ card_link_2_text }}</a>
+  {% endif %}
+</div>

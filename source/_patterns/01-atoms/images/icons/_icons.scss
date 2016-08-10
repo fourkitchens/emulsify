@@ -1,0 +1,47 @@
+// Icon Styling
+.sprite-icon {
+  display: block;
+}
+
+.large-icon {
+  font-size: 400%;
+
+  .sprite-icon {
+    background-size: 13.5em 12em;
+  }
+
+  p {
+    font-size: 50%;
+  }
+}
+
+.email-icon {
+  &::before {
+    @extend .sprite-envelope;
+    @include with-icon;
+    background-size: 11em 10em;
+    left: -5px;
+    padding: 0.7em;
+    top: .25em;
+  }
+
+  &--red {
+    &::before {
+      @extend .sprite-envelope-red;
+      @include with-icon;
+      background-size: 11em 10em;
+    }
+  }
+}
+
+.phone-icon:link {
+  color: $gray-darker;
+
+  &::before {
+    @extend .sprite-phone;
+    @include with-icon;
+    background-size: 11.7em 8.7em;
+    padding: 0.7em 0.5em;
+    top: .25em;
+  }
+}

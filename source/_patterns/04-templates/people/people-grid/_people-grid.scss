@@ -1,0 +1,11 @@
+.people-grid {
+  position: relative;
+
+  .more-link {
+    @include medium {
+      position: absolute;
+      right: 0;
+      top: .4em;
+    }
+  }
+}

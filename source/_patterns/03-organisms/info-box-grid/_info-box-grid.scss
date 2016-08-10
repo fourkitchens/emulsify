@@ -1,0 +1,8 @@
+.info-box-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-box-grid__title {
+  @include font-size(1);
+}

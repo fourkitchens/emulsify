@@ -1,0 +1,60 @@
+/**
+ * Breakpoint Configuration
+ * @see https://github.com/Team-Sass/breakpoint/wiki
+ *
+ */
+
+/////////
+// Singularity variables
+//
+@include breakpoint-set('to ems', true);
+@include add-grid(12);
+@include add-gutter(1/4);
+
+// Breakpoints variables
+$small: 25em;
+$small-med: 26em;
+$small-large: 41em;
+$medium: 48em;
+$large: 61.25em;
+
+
+/// Mixin - Small Breakpoint
+/// Allows easier @include small {} syntax
+@mixin small {
+  @include breakpoint($small) {
+    @content;
+  }
+}
+
+/// Mixin - Small-Medium Breakpoint
+/// Allows easier @include small-med {} syntax
+@mixin small-med {
+  @include breakpoint($small-med) {
+    @content;
+  }
+}
+
+/// Mixin - Small-Large Breakpoint
+/// Allows easier @include small-large {} syntax
+@mixin small-large {
+  @include breakpoint($small-large) {
+    @content;
+  }
+}
+
+/// Mixin - Medium Breakpoint
+/// Allows easier @include medium {} syntax
+@mixin medium {
+  @include breakpoint($medium) {
+    @content;
+  }
+}
+
+/// Mixin - Large Breakpoint
+/// Allows easier @include large {} syntax
+@mixin large {
+  @include breakpoint($large) {
+    @content;
+  }
+}

@@ -1,0 +1,13 @@
+// Not BEM, but more link in views not easy to override
+.events-grid {
+  margin-bottom: 2em;
+  position: relative;
+
+  .more-link {
+    @include medium {
+      position: absolute;
+      right: 0;
+      top: -2.5em;
+    }
+  }
+}

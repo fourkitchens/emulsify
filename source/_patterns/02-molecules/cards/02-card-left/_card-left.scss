@@ -1,0 +1,42 @@
+// Variation - Image Left
+.card--left {
+  @include medium {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 33%;
+  }
+}
+
+.card__img-wrap--left,
+.card__text--left {
+  flex: 1 1 45%;
+}
+
+.card__img-wrap--left {
+  @include medium {
+    margin-right: 1em;
+  }
+}
+
+.card__text--left {
+  margin-top: 0;
+}
+
+.card__title--left {
+  @include medium {
+    flex-grow: 1;
+  }
+
+  &-to-full {
+    flex-grow: 1;
+
+    @include medium {
+      margin-top: .5em;
+    }
+  }
+}
+
+.card__body--left {
+  margin-top: .4em;
+}

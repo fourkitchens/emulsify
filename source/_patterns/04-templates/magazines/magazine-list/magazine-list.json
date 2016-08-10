@@ -1,0 +1,25 @@
+{
+  "cards": {
+    "one": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--info'>",
+      "card_sub": "<div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div><div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div><div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div>",
+      "card_title": "Spring Career Fair"
+    },
+    "two": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--info'>",
+      "card_sub": "<div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div><div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div><div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div><div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div>",
+      "card_title": "Spring Career Fair"
+    },
+    "three": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--info'>",
+      "card_sub": "<div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div><div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div><div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div>",
+      "card_title": "Spring Career Fair"
+    },
+    "four": {
+      "card_img": "<img src='http://placeimg.com/1200/900/tech' class='card__img card__img--info'>",
+      "card_sub": "<div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div><div class='card__sub--info__list'><strong>Top Story: </strong><span>This is a Top Story</span></div>",
+      "card_title": "Spring Career Fair"
+    }
+  },
+  "variation": "info"
+}

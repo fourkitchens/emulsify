@@ -1,0 +1,13 @@
+.card-grid--left-to-full {
+  @include medium {
+    display: flex;
+  }
+}
+
+.card--left-to-full {
+  flex-grow: 1;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

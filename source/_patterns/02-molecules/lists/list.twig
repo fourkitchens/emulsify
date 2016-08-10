@@ -1,0 +1,26 @@
+<div class="list_grid__item">
+  {% if list_title %}<h3 class="list_grid__item__title">{{ list_title }}</h3>{% endif %}
+  <div class="list--unordered">
+    <ul class="list_grid__list">
+      {# Drupal content (views) #}
+      {% if rows %}
+        {% for row in rows %}
+          {{ row.content }}
+        {% endfor %}
+      {# Drupal content (paragraphs) #}
+      {% elseif paragraphs %}
+        {{ paragraphs }}
+      {# PL content in JSON #}
+      {% else %}
+        {% for item in list %}
+          {% include "@atoms/list/list.twig"
+            with {
+              "list_label": item.list_label,
+              "list_item": item.list_item
+            }
+          %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+</div>

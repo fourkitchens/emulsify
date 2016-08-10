@@ -1,0 +1,45 @@
+#block-whynyucollegeofnursing {
+  margin-bottom: 3em;
+  position: relative;
+
+  .more-link {
+    @include medium {
+      position: absolute;
+      right: 0;
+      top: .5em;
+    }
+  }
+}
+
+.card-grid--icon {
+  background-color: $near-white;
+  overflow: hidden;
+  padding: 2%;
+
+  @include medium {
+    display: block;
+  }
+
+  @include large {
+    display: flex;
+  }
+
+  .card--icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 350px;
+
+    @include medium {
+      float: left;
+      margin-right: 0;
+      width: 42%;
+    }
+
+    @include large {
+      float: none;
+      margin-right: 2em;
+      max-width: none;
+      width: 139px;
+    }
+  }
+}

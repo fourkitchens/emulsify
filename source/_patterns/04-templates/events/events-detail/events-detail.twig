@@ -1,0 +1,22 @@
+<a class="events-detail__back" href="/news/events">Back</a>
+
+{% include "@molecules/cards/01-card/card.twig"
+  with {
+    "card_img": card_img,
+    "card_title": card_title,
+    "card_sub": card_sub,
+    "card_body": card_body,
+    "card_tags": card_tags,
+    "card_link_2": card_link_2,
+    "card_link_2_class": "button--alt button--download",
+    "card_link_2_text": "Register",
+    "variation": "info",
+    "sub_first": true
+  }
+%}
+
+{{ event_description }}
+
+<div class="events-detail__video">
+{{ event_video }}
+</div>

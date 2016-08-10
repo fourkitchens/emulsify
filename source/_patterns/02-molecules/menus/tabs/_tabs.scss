@@ -1,0 +1,84 @@
+$tab: #fafafa;
+
+// Tab Navigation
+.tabs__nav {
+  @include list-reset;
+  border-bottom: 1px solid $gray-lightest;
+
+  @include medium {
+    border-left: 1px solid $gray-lightest;
+    display: flex;
+  }
+}
+
+.tabs__link {
+  background-color: $tab;
+  border: 1px solid $gray-lightest;
+  border-bottom: none;
+  color: $red;
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1em 2.4em;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  @include medium {
+    border-bottom: 1px solid $gray-lightest;
+    border-left: none;
+    display: inline-block;
+    font-size: 1rem;
+    padding: .6em 1.7em;
+    position: relative;
+    top: 1px;
+    width: auto;
+  }
+
+  &:hover {
+    color: $gray-darker;
+  }
+
+  &.is-active {
+    background-color: $red;
+    border: 1px solid $red;
+    color: $white;
+
+    @include medium {
+      background-color: $white;
+      border: 1px solid $gray-lightest;
+      border-bottom: 1px solid $red;
+      border-left: none;
+      color: $red;
+    }
+  }
+}
+
+// Tab Content
+.tabs__tab {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.tabs__content {
+  padding: 1.5rem;
+}
+
+// No-js fallback
+.tabs.no-js {
+  .tabs__tab.is-active {
+    display: block;
+  }
+}
+
+// Drupal Local Tasks variant
+.tabs__nav--local-tasks {
+  margin: 1em 0 .5em;
+}
+
+.tabs__link--local-tasks {
+  padding: .3em 1.5em;
+}

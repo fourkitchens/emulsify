@@ -1,0 +1,63 @@
+name: FourK
+type: theme
+description: Theme that uses Pattern Lab v2
+base theme: stable
+core: 8.x
+
+# Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
+libraries:
+  - 'nyunursing/global'
+  # - 'nyunursing/typekit'
+
+# Libraries override allows you to remove libraries added by other projects.
+# libraries-override:
+#   chosen/drupal.chosen:
+#     js:
+#       js/chosen.js: false
+#     css:
+#       component:
+#         css/chosen-drupal.css: false
+
+# CKEditor stylesheet loads in wysiwyg to give content editors a better experience
+ckeditor_stylesheets:
+  - dist/style.css
+
+regions:
+  header: Header
+  content: Content  # the content region is required
+  sidebar: 'Sidebar'
+  footer: Footer
+
+# Remove unwanted system stylesheets
+# stylesheets-remove:
+#   - '@stable/css/system/components/align.module.css'
+#   - '@stable/css/system/components/fieldgroup.module.css'
+#   - '@stable/css/system/components/container-inline.module.css'
+#   - '@stable/css/system/components/nowrap.module.css'
+#   - '@stable/css/system/components/position-container.module.css'
+#   - '@stable/css/system/components/reset-appearance.module.css'
+
+# MUST install `components` module: `drush dl components && drush en components -y`
+# For compatibility with Pattern Lab templates; this list must
+# always be the folders immediately under the `$sourceDir` patterns folder
+# `$sourceDir` = defined in `pattern-lab/config/config.yml` under `sourceDir
+# patterns folder = `$sourceDir` + `_patterns/`
+component-libraries:
+  base:
+    paths:
+      - source/_patterns/00-base
+  atoms:
+    paths:
+      - source/_patterns/01-atoms
+  molecules:
+    paths:
+      - source/_patterns/02-molecules
+  organisms:
+    paths:
+      - source/_patterns/03-organisms
+  templates:
+    paths:
+      - source/_patterns/04-templates
+  pages:
+    paths:
+      - source/_patterns/05-pages

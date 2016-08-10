@@ -1,0 +1,16 @@
+# Breakpoints - change based on site need
+fourk.large:
+  label: large
+  mediaQuery: 'all and (min-width: 61.25em)'
+fourk.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 48em)'
+fourk.small-large:
+  label: small-large
+  mediaQuery: 'all and (min-width: 41em)'
+fourk.small-med:
+  label: small-med
+  mediaQuery: 'all and (min-width: 26em)'
+fourk.small:
+  label: small
+  mediaQuery: 'all and (min-width: 25em)'

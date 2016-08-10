@@ -1,0 +1,6 @@
+.form-item--checkbox {
+  // Non-BEM, but this style will always only apply to checkbox children
+  ul {
+    @include list-reset;
+  }
+}

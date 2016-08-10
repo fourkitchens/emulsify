@@ -1,0 +1,37 @@
+{
+  "list_grid_label": "Program Levels",
+  "lists": {
+    "one": {
+      "list_title": "Baccalaureate",
+      "list": {
+        "one": {
+          "list_label": "This is a label",
+          "list_item": "and this is the list item itself"
+        },
+        "two": {
+          "list_label": "This is a label",
+          "list_item": "and this is the list item itself"
+        },
+        "three": {
+          "list_item": "This is a list item without a label"
+        }
+      }
+    },
+    "two": {
+      "list_title": "Masters",
+      "list": {
+        "one": {
+          "list_label": "This is a label",
+          "list_item": "and this is the list item itself"
+        },
+        "two": {
+          "list_label": "This is a label",
+          "list_item": "and this is the list item itself"
+        },
+        "three": {
+          "list_item": "This is a list item without a label"
+        }
+      }
+    }
+  }
+}

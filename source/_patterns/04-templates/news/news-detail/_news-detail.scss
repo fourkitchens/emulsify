@@ -1,0 +1,7 @@
+.news-detail__image {
+  @include medium {
+    float: right;
+    margin: 0 0 4em 1em;
+    width: 30%;
+  }
+}

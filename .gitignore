@@ -1,0 +1,9 @@
+# Ignore compiled files.
+dist
+
+# Pattern Lab.
+pattern-lab/export/*
+pattern-lab/packages/*
+pattern-lab/vendor/*
+source/styleguide/*
+pattern-lab/public/*
