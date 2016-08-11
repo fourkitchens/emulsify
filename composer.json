@@ -1,0 +1,18 @@
+{
+    "name": "fourkitchens/fourk",
+    "description": "Project template for Drupal 8 themes",
+    "type": "project",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
+    ],
+    "repositories": [],
+    "require": {},
+    "require-dev": {},
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {}
+}
