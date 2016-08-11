@@ -1,4 +1,4 @@
-This theme uses a reusable component approach with an automated styleguide using [Pattern Lab](http://patternlab.io/). Instructions for installing and building inside of the theme can be found below:
+This starterkit includes a theme that uses a reusable component approach, an automated styleguide using [Pattern Lab v2](http://patternlab.io/) as well as a gulp installation to automate SCSS compilation, Pattern Lab, etc. Instructions for installing and building inside of the theme can be found below:
 
 ## Requirements
 
