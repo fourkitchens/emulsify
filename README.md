@@ -6,7 +6,7 @@ This theme uses a reusable component approach with an automated styleguide using
   2. Download [PatternLab Twig edition](https://github.com/pattern-lab/edition-php-twig-standard/releases) to root of Drupal installation
   3. In the pattern lab directory, go to `config/config.yml` and change `sourceDir` to be `../themes/fourk/source`
   4. Download [fourk-gulp](https://github.com/evanmwillhite/fourk-gulp) to root of Drupal installation
-  5. Download and install [Components](https://www.drupal.org/project/components) module
+  5. Download and enable [Components](https://www.drupal.org/project/components) module
 
 ## Orientation
 
