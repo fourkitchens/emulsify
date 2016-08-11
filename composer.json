@@ -1,7 +1,7 @@
 {
     "name": "fourkitchens/fourk",
     "description": "Project template for Drupal 8 themes",
-    "type": "project",
+    "type": "drupal-theme",
     "license": "GPL-2.0+",
     "authors": [
         {
