@@ -30,7 +30,11 @@
   {%- if items -%}
     <{{ list_type }}{{ attributes }}>
       {%- for item in items -%}
-        <li{{ item.attributes.addClass('list-item') }}>{{ item.value }}</li>
+        {% include "01-atoms/03-lists/_list.twig"
+          with {
+            list_item: item.value
+          }
+        %}
       {%- endfor -%}
     </{{ list_type }}>
   {%- else -%}
