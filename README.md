@@ -7,9 +7,9 @@ This starterkit includes a theme that uses a reusable component approach, an aut
 
 ## Installation
 
-  1. Download [fourk starterkit theme](https://github.com/evanmwillhite/fourk) to themes directory and rename `fourk`
+  1. Download [fourk starterkit theme](https://github.com/evanmwillhite/fourk) to `themes/contrib` directory and rename `fourk`
   2. Download [PatternLab Twig edition](https://github.com/pattern-lab/edition-php-twig-standard/releases/download/v2.2.1/twig-standard.zip) to root of Drupal installation and rename to `pattern-lab`
-  3. In the pattern lab directory, go to `config/config.yml` and change `sourceDir` to be `../themes/fourk/source`
+  3. In the pattern lab directory, go to `config/config.yml` and change `sourceDir` to be `../themes/contrib/fourk/source`
   4. Download the contents of [fourk-gulp](https://github.com/evanmwillhite/fourk-gulp) to root of Drupal installation (e.g., ROOT/gulpfile.js)
   5. Run `npm install`
   6. Download and enable [Components](https://www.drupal.org/project/components) module in your Drupal installation
