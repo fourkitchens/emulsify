@@ -3,7 +3,7 @@ This theme uses a reusable component approach with an automated styleguide using
 ## Installation
 
   1. Download [fourk starterkit theme](https://github.com/evanmwillhite/fourk) to themes directory
-  2. Download [PatternLab Twig edition](https://github.com/pattern-lab/edition-php-twig-standard) to root
+  2. Download [PatternLab Twig edition](https://github.com/pattern-lab/edition-php-twig-standard/releases) to root
   3. Edit PL > config > config.yml and change sourceDir to `../themes/fourk/source`
   4. Download [fourk-gulp](https://github.com/evanmwillhite/fourk-gulp) to root
   5. Download and install [Components](https://www.drupal.org/project/components) module
