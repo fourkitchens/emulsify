@@ -40,3 +40,9 @@ See `/gulp-config.js`. Also, gulp tasks have been broken out into a `/gulp-tasks
 ### Linting Config
 
 - Scss: edit `.sass-lint.yml` - [rule docs](https://github.com/sasstools/sass-lint/tree/master/docs/rules)
+
+## TODO
+
+1. Move remaining Drupal tpl markup to patterns
+2. Automate icon twig
+3. Better organization of high-level scss/js files
