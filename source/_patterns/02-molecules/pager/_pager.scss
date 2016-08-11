@@ -25,7 +25,7 @@
 
   &.is-active,
   &:hover {
-    color: $red;
+    color: $gray;
   }
 }
 
@@ -50,7 +50,7 @@
 
   &:hover {
     &::before {
-      border-left-color: $red;
+      border-left-color: $gray;
     }
   }
 }
@@ -64,7 +64,7 @@
   &:hover {
     &::before {
       border-left-color: transparent;
-      border-right-color: $red;
+      border-right-color: $gray;
     }
   }
 }

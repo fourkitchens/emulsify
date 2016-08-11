@@ -1,0 +1,7 @@
+breadcrumb:
+  item:
+    url: '/'
+    text: "Item 1"
+  item:
+    url: '/'
+    text: "Item 2"

@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html class="{{ htmlClass }}">
-	<head>
-		<title>{{ title }}</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width" />
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
 
-		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-		{{ patternLabHead | raw }}
-		<!-- End Pattern Lab -->
+    <link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../../../../themes/fourk/dist/style.css?{{ cacheBuster }}" media="all" />
 
-    <link rel="stylesheet" href="/themes/custom/nyunursing/dist/style.css">
-    <link rel="stylesheet" href="/themes/custom/nyunursing/source/styleguide/custom-styleguide-specific.css">
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    {{ patternLabHead | raw }}
+    <!-- End Pattern Lab -->
 
-		<script src="//use.typekit.net/bnb8kvv.js"></script>
-	</head>
-	<body class="{{ bodyClass }}">
-	<button type="button" id="main-menu-toggle" class="main-menu-toggle"></button>
-	<!-- for js not found errors (only in styleguide)-->
-	<div class="hide">
-		<nav id="main-menu" class="main-menu">
-		  <ul class="main-menu__list" id="main-menu__list">
-		    <li class="main-menu__item"></li>
-		  </ul>
-		  <button type="button" id="main-menu__close" class="main-menu__close"></button>
-		</nav>
-		<div id="tabs" class="tabs no-js">
-		  <ul class="tabs__nav">
-		    <li>
-		      <a href="#overview" class="tabs__link is-active">Overview</a>
-		    </li>
-		  </ul>
-		</div>
-		<h2 id="sidebar-section" class="sidebar-menu__small_title">Sections</h2>
-	</div>
+  </head>
+  <body class="{{ bodyClass }}">
+    <!-- for js not found errors (only in styleguide)-->
+  	<div class="hide">
+  		<div id="tabs" class="tabs no-js">
+  		  <ul class="tabs__nav">
+  		    <li>
+  		      <a href="#overview" class="tabs__link is-active">Overview</a>
+  		    </li>
+  		  </ul>
+  		</div>
+  	</div>

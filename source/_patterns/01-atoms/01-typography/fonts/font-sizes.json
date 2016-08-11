@@ -1,6 +1,0 @@
-{
-  "items": [],
-  "meta": {
-    "description": "To add to these items, use Sass variables that start with <code>$fs--</code> in <code>themes/custom/nyunursing/source/_patterns/01-atoms/01-typography/fonts/_fonts.scss</code>"
-  }
-}

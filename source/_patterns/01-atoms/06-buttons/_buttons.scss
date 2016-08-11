@@ -1,0 +1,66 @@
+@mixin button($alt: false) {
+  background-color: $black;
+  border:none;
+  color: $white;
+  cursor: pointer;
+  font-family: $body;
+  line-height: 1em;
+  padding: .5em 1em;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:link,
+  &:visited {
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $gray;
+  }
+
+  @if $alt {
+    @include font-size(.7);
+    background-color: $gray;
+    padding: .4em .6em .3em;
+
+    &:hover {
+      background-color: black;
+    }
+  }
+}
+
+.button,
+a.button {
+  @include button();
+
+  &--alt {
+    @include button($alt: true);
+    font-weight: 600;
+  }
+
+  &--alt-2 {
+    background-color: $gray-lightest;
+    color: $black;
+    @include font-size(.8);
+    font-weight: 600;
+    line-height: 1.4em;
+    text-transform: none;
+
+    &:link,
+    &:visited {
+      color: $black;
+    }
+
+    &:hover {
+      background-color: $gray-lighter;
+    }
+  }
+}
+
+a.button {
+  // needed to override base theme CSS
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}

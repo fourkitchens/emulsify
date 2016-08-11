@@ -1,63 +1,94 @@
 {
-  "key": "value",
-  "key2": "use this for variables you want to load globally",
-  "title": "Title Here",
-  "text": "Text",
-  "site_title": "Site Title",
-  "site_slogan": "Site Slogan",
+  "title" : "Pattern Lab",
+  "htmlClass": "pl",
+  "bodyClass": "body",
   "img": {
-    "avatar": "http://placeimg.com/600/600/people",
-    "square": "http://placeimg.com/600/600/nature",
-    "rectangle": "http://placeimg.com/1200/900/tech",
-    "landscape": "http://placeimg.com/1200/900/tech",
-    "landscapeWide": "http://placeimg.com/1280/640/tech"
+    "landscape_4x3": {
+      "src": "../../images/fpo_4x3.png",
+      "alt": "4x3 Image"
+    },
+    "landscape_16x9": {
+      "src": "../../images/fpo_16x9.png",
+      "alt": "16x9 Image"
+    },
+    "square": {
+      "src": "../../images/fpo_square.png",
+      "alt": "Square Thumbnail"
+    },
+    "avatar" : {
+      "src" : "../../images/fpo_avatar.png",
+      "alt" : "Person Name"
+    },
+    "rectangle": {
+      "src": "http://placeimg.com/400/300/tech",
+      "alt": "Rectangle"
+    }
   },
-  "headline": {
-    "short": "Lorem ipsum dolor sit amet, consectetur",
-    "medium": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt"
+  "text": "Some text",
+  "headline" : {
+    "short" : "Lorem ipsum dolor sit (37 characters)",
+    "medium" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. (72 characters)"
   },
-  "excerpt": {
-    "short": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "medium": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "long": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  "excerpt" : {
+    "short" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    "medium" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "long" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  "url": "http://example.com",
-  "name": {
-    "first": "Junius",
-    "firsti": "J",
-    "middle": "Marius",
-    "middlei": "M",
-    "last": "Koolen",
-    "lasti": "K"
+  "description" : "So, setting about it as methodically as men might smoke out a wasps' nest, the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced.",
+  "url" : "#",
+  "name" : {
+    "first": "Lacy",
+    "firsti": "L",
+    "middle": "Tommie",
+    "middlei": "T",
+    "last": "Way",
+    "lasti": "W"
   },
-  "year": {
+  "year" : {
     "long": "2013",
     "short": "13"
   },
-  "month": {
-    "long": "January",
-    "short": "Jan",
-    "digit": "01"
+  "month" : {
+    "long": "February",
+    "short": "Feb",
+    "digit": "02"
   },
-  "dayofweek": {
-    "long": "Sunday",
-    "short": "Sun"
+  "dayofweek" : {
+    "long": "Monday",
+    "short": "Mon"
   },
-  "day": {
+  "day" : {
+    "long": "10",
+    "short": "10",
+    "ordinal": "th"
+  },
+  "hour" : {
     "long": "01",
     "short": "1",
-    "ordinal": "st"
+    "military": "13",
+    "ampm": "pm"
   },
-  "hour": {
-    "long": "06",
-    "short": "6",
-    "military": "06",
-    "ampm": "am"
-  },
-  "minute": {
+  "minute" : {
     "long": "20",
     "short": "20"
   },
-  "seconds": "31"
+  "seconds" : "31",
+  "author" : {
+    "first_name": "Author",
+    "last_name": "Name"
+  },
+  "hero": true,
+  "emergency" : false,
+  "touts" : [
+    { },
+    { },
+    { }
+  ],
+  "latest_posts" : [
+    { },
+    { },
+    { },
+    { },
+    { }
+  ]
 }

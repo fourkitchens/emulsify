@@ -8,22 +8,19 @@
   padding:1em 0;
 
   &::before {
-    @include sprite-plus;
-    @include with-icon;
-    background-size: auto;
+    content:"+";
     padding: .8em;
     top: .35em;
   }
 
   &:hover {
-    color: $red;
+    color: $gray;
   }
 
   &.is-active {
-    color: $red;
+    color: $gray;
 
     &::before {
-      @include sprite-minus;
       top: .45em;
     }
 

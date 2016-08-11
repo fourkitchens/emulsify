@@ -13,7 +13,7 @@
       {# PL content in JSON #}
       {% else %}
         {% for item in list %}
-          {% include "@atoms/list/list.twig"
+          {% include "@atoms/03-lists/_list.twig"
             with {
               "list_label": item.list_label,
               "list_item": item.list_item

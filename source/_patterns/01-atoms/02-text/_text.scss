@@ -1,0 +1,31 @@
+body {
+  color:$gray;
+  @include body-copy;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  @include a-link;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: solid 3px $border;
+  margin-left: 1em;
+  padding-left: 1em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: currentColor;
+}
