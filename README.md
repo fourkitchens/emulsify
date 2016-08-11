@@ -2,14 +2,16 @@ This theme uses a reusable component approach with an automated styleguide using
 
 ## Installation
 
-    npm install
-    npm start
+  Download [fourk starterkit theme](https://github.com/evanmwillhite/fourk) to themes directory
+  Download [PatternLab Twig edition](https://github.com/pattern-lab/edition-php-twig-standard) to root
+  Edit PL > config > config.yml and change sourceDir to `../themes/fourk/source`
+  Download [fourk-gulp](https://github.com/evanmwillhite/fourk-gulp) to root
+  Download and install [Components](https://www.drupal.org/project/components) module
 
 ## Orientation
 
 - `source/_patterns/` - The majority of Frontend work will be done here. The directory contains all component twig templates, Sass files, documentation, etc.
-- `scss/` - Sass files that aren't tied to a component, so not in the above location. Avoid using if possible.
-- `js/` - all js files here are combined into a single `dest/script.js` file.
+- `js/` - all js files here are combined into a single `dist/script.js` file.
 - `images/icons/src/` - all SVGs here are combined into an SVG sprite. See `atoms/images/icons` in Pattern Lab.
 - `dest/sassdoc/index.html` - Open this in a browser to see documentation on all Sass thanks to [SassDoc](http://sassdoc.com).
 
@@ -19,12 +21,6 @@ Start up watches and local server after compiling:
 
 ```bash
 npm start
-```
-
-Run Tests:
-
-```bash
-npm test
 ```
 
 ---
