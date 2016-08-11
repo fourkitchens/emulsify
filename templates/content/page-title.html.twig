@@ -12,15 +12,8 @@
  *   displayed after the main title tag that appears in the template.
  */
 #}
-{%
-  set heading_classes = [
-    'heading-1',
-    'header-icon-bg',
-  ]
+{% include "@atoms/01-typography/headings/heading-1/heading-1.twig"
+  with {
+    "heading": title
+  }
 %}
-
-{{ title_prefix }}
-{% if title %}
-  <h1{{ title_attributes.addClass(heading_classes) }}>{{ title }}</h1>
-{% endif %}
-{{ title_suffix }}

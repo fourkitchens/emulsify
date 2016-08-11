@@ -10,4 +10,8 @@
  * @see template_preprocess_menu_local_action()
  */
 #}
-<li{{ attributes.addClass('list-item') }}>{{ link }}</li>
+{% include "@atoms/list/list.twig"
+  with {
+  "list_item": link
+  }
+%}
