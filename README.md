@@ -16,10 +16,10 @@ This theme uses a reusable component approach with an automated styleguide using
 
 ## Orientation
 
-- `source/_patterns/` - The majority of Frontend work will be done here. The directory contains all component twig templates, Sass files, documentation, etc.
+- `source/_patterns/` - All components go here according to their size. The directory contains all component twig templates, Sass files, documentation, etc.
 - `js/` - all js files here are combined into a single `dist/script.js` file.
 - `images/icons/src/` - all SVGs here are combined into an SVG sprite. See `atoms/images/icons` in Pattern Lab.
-- `dest/sassdoc/index.html` - Open this in a browser to see documentation on all Sass thanks to [SassDoc](http://sassdoc.com).
+- `themes/fourk/dist/sassdoc/index.html` - Open this in a browser to see documentation on all Sass thanks to [SassDoc](http://sassdoc.com).
 
 ## Commands
 
