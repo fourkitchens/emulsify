@@ -12,7 +12,7 @@ This theme uses a reusable component approach with an automated styleguide using
   3. In the pattern lab directory, go to `config/config.yml` and change `sourceDir` to be `../themes/fourk/source`
   4. Download the contents of [fourk-gulp](https://github.com/evanmwillhite/fourk-gulp) to root of Drupal installation (e.g., ROOT/gulpfile.js)
   5. Run `npm install`
-  6. Download and enable [Components](https://www.drupal.org/project/components) module
+  6. Download and enable [Components](https://www.drupal.org/project/components) module in your Drupal installation
 
 ## Orientation
 
