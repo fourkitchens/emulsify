@@ -1,24 +1,19 @@
+ul,
 ol {
-  counter-reset: i 0;
+  padding-left: 1em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
 }
 
 .list-item {
-  list-style-type: none;
   margin-bottom: .2em;
-
-  &::before {
-    color: $black;
-    content: "\2022";
-    @include font-size(.8);
-    margin-right: .5em;
-  }
-}
-
-ol {
-  .list-item::before {
-    content: counter(i) ".";
-    counter-increment: i;
-  }
+  padding-left: 1em;
 }
 
 // TODO: BEM selectors should be applied to wysiwyg-created content

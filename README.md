@@ -13,6 +13,7 @@ This starterkit includes a theme that uses a reusable component approach, an aut
   4. Download the contents of [fourk-gulp](https://github.com/evanmwillhite/fourk-gulp) to root of Drupal installation (e.g., ROOT/gulpfile.js)
   5. Run `npm install`
   6. Download and enable [Components](https://www.drupal.org/project/components) module in your Drupal installation
+  7. Enable FourK theme
 
 ## Orientation
 
@@ -56,3 +57,4 @@ See `/gulp-config.js`. Also, gulp tasks have been broken out into a `/gulp-tasks
 2. Automate icon twig
 3. Better organization of high-level scss/js files
 4. Get Drupal styles into styleguide
+5. Get Drupal CKEditor markup to output text classes
