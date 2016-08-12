@@ -49,6 +49,10 @@ See `/gulp-config.js`. Also, gulp tasks have been broken out into a `/gulp-tasks
 
 ## TODO
 
+1. Issues with adding new components
+1. Issue with VM not working without index.html
+1. Add documentation to fourk-gulp directory (look for local file)
 1. Move remaining Drupal tpl markup to patterns
 2. Automate icon twig
 3. Better organization of high-level scss/js files
+4. Get Drupal styles into styleguide
