@@ -1,8 +1,12 @@
+{% if not attributes %}
 <div class="form-item form-item--checkbox">
   <legend class="heading-3">Options as Checkboxes</legend>
-  <ul>
-      <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
-      <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
-      <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
+  <ul class="form-item--checkboxes">
+{% endif %}
+      {% for key, listItem in listItems.four %}
+      <li class="form-item--checkbox__item"><label for="checkbox{{ key }}"><input id="checkbox{{ key }}" name="checkbox" type="checkbox" checked="checked"> {{ listItem.title }}</label></li>
+      {% endfor %}
+{% if not attributes %}
   </ul>
 </div>
+{% endif %}

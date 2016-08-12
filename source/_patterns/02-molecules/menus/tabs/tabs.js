@@ -44,6 +44,7 @@
     var handleClick = function (link, index) {
       link.addEventListener('click', function (e) {
         e.preventDefault();
+        console.log(this);
         goToTab(index);
       });
     };
