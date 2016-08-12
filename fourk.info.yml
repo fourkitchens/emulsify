@@ -6,8 +6,8 @@ core: 8.x
 
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
 libraries:
-  - 'nyunursing/global'
-  # - 'nyunursing/typekit'
+  - 'fourk/global'
+  # - 'fourk/typekit'
 
 # Libraries override allows you to remove libraries added by other projects.
 # libraries-override:
