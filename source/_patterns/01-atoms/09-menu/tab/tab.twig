@@ -15,4 +15,11 @@
  */
 #}
 
-{% include "@atoms/09-menu/tab/tab.twig" %}
+<li{% if attributes %}{{ attributes.addClass('tabs__tab') }}{% else %} class="tabs__tab"{% endif %}>
+  {# Detect if Drupal #}
+  {% if attributes %}
+    {{ link(link['#title'], link['#url'], { 'class' : ['tabs__link tabs__link--local-tasks']}) }}
+  {% else %}
+    <a href="{{ tab_link }}" class="tabs__link tabs__link--local-tasks">{{ tab_text }}</a>
+  {% endif %}
+</li>

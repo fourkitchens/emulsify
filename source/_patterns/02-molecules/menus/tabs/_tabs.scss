@@ -1,8 +1,5 @@
-$tab: #fafafa;
-
 // Tab Navigation
 .tabs__nav {
-  @include list-reset;
   border-bottom: 1px solid $gray-lightest;
 
   @include medium {
@@ -11,51 +8,8 @@ $tab: #fafafa;
   }
 }
 
-.tabs__link {
-  background-color: $tab;
-  border: 1px solid $gray-lightest;
-  border-bottom: none;
-  color: $gray;
-  display: block;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 1em 2.4em;
-  text-align: center;
-  text-decoration: none;
-  transition: color 0.3s;
-
-  @include medium {
-    border-bottom: 1px solid $gray-lightest;
-    border-left: none;
-    display: inline-block;
-    font-size: 1rem;
-    padding: .6em 1.7em;
-    position: relative;
-    top: 1px;
-    width: auto;
-  }
-
-  &:hover {
-    color: $gray-darker;
-  }
-
-  &.is-active {
-    background-color: $gray;
-    border: 1px solid $gray;
-    color: $white;
-
-    @include medium {
-      background-color: $white;
-      border: 1px solid $gray-lightest;
-      border-bottom: 1px solid $gray;
-      border-left: none;
-      color: $gray;
-    }
-  }
-}
-
 // Tab Content
-.tabs__tab {
+.tabs__tab--js {
   display: none;
 
   &.is-active {
@@ -63,12 +17,12 @@ $tab: #fafafa;
   }
 }
 
-.tabs__content {
+.tabs__content--js {
   padding: 1.5rem;
 }
 
 // No-js fallback
-.tabs.no-js {
+.tabs--js.no-js {
   .tabs__tab.is-active {
     display: block;
   }

@@ -11,11 +11,4 @@
  * themed in menu-local-task.html.twig.
  */
 #}
-{% if primary %}
-  <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
-  <ul class="tabs__nav tabs__nav--local-tasks">{{ primary }}</ul>
-{% endif %}
-{% if secondary %}
-  <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
-  <ul>{{ secondary }}</ul>
-{% endif %}
+{% include "@molecules/menus/tabs/tabs.twig" %}
