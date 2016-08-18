@@ -15,7 +15,11 @@
  */
 #}
 
-<li{% if attributes %}{{ attributes.addClass('tabs__tab') }}{% else %} class="tabs__tab"{% endif %}>
+{# if Pattern Lab atoms example, add ul wrapper #}
+{% if example %}
+<ul class="tabs__nav">
+{% endif %}
+<li{{ attributes }}>
   {# Detect if Drupal #}
   {% if attributes %}
     {{ link(link['#title'], link['#url'], { 'class' : ['tabs__link tabs__link--local-tasks']}) }}
@@ -23,3 +27,6 @@
     <a href="{{ tab_link }}" class="tabs__link tabs__link--local-tasks">{{ tab_text }}</a>
   {% endif %}
 </li>
+{% if example %}
+</ul>
+{% endif %}
