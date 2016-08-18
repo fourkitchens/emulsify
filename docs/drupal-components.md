@@ -27,3 +27,7 @@ Below is a more complex example:
   }
 %}
 ```
+
+### Drupal-specific functions, filters and tags
+
+Drupal has specific Twig functions, filters, tags, etc. that it uses that Pattern Lab is not aware of. Pattern Lab has an easy way to add those though, which is in source/\_twig-components/. There are examples of filters and functions already in there (currently you can use the `t()` and `without()` filters and the `kint()` function). Documentation on how to add these can be found [here](https://github.com/pattern-lab/patternengine-php-twig#extending-twig-further).  

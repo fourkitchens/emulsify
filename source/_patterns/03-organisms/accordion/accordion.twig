@@ -1,0 +1,10 @@
+<dl class="accordion-item">
+  {% for listItem in listItems.four %}
+    {% include "@molecules/accordion-item/accordion-item.twig"
+      with {
+        "accordion_item": listItem.headline.short,
+        "accordion_def": listItem.excerpt.long
+      }
+    %}
+  {% endfor %}
+</dl>
