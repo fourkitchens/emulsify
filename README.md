@@ -15,12 +15,9 @@ This starterkit includes a theme that uses a reusable component approach, an aut
   6. Download and enable [Components](https://www.drupal.org/project/components) module in your Drupal installation
   7. Enable FourK theme
 
-## Orientation
+## Building Using Components
 
-- `source/_patterns/` - All components go here according to their size. The directory contains all component twig templates, Sass files, documentation, etc.
-- `js/` - all js files here are combined into a single `dist/script.js` file.
-- `images/icons/src/` - all SVGs here are combined into an SVG sprite. See `atoms/images/icons` in Pattern Lab.
-- `themes/fourk/dist/sassdoc/index.html` - Open this in a browser to see documentation on all Sass thanks to [SassDoc](http://sassdoc.com).
+See `/docs/components.md`
 
 ## Commands
 
@@ -36,13 +33,7 @@ npm start
 
 ## Drupal 8
 
-From your Drupal Twig templates in `templates/` you can `{% include %}`, `{% extends %}`, and `{% embed %}` your Pattern Lab Twig template files. Each of the top level folders has a Twig Namespace like `@organisms` and then you append the path down to the file like below.
-
-    {% include "@organisms/path/to/file.twig" %}
-
-## Configuration
-
-See `/gulp-config.js`. Also, gulp tasks have been broken out into a `/gulp-tasks` folder.
+See `/docs/drupal-components.md`
 
 ### Linting Config
 

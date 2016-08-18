@@ -1,3 +1,6 @@
+// Example Global javascript
+
+// If using Typekit
 // try {
 //   Typekit.load();
 // }
