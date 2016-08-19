@@ -7,9 +7,11 @@ body {
   min-width: 316px;
 }
 
+header,
 main,
 footer {
   @include outer-container;
+  margin-bottom: 4em;
 }
 
 .layout-content {

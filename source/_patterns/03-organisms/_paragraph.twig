@@ -36,4 +36,11 @@
  * @ingroup themeable
  */
 #}
-{% include "@organisms/_paragraph.twig" %}
+{%
+set classes = [
+paragraph.bundle|clean_class
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+    {{ content }}
+</div>

@@ -44,4 +44,4 @@ See `/docs/drupal-components.md`
 1. Gulp automation issue with adding new components (have to rerun `gulp pl:full`)
 1. Issue with VM not working without index.html
 1. Move remaining Drupal tpl markup to patterns
-5. Get Drupal CKEditor markup to output text classes
+5. Get Drupal CKEditor markup to output text classes and remove unnecessary files

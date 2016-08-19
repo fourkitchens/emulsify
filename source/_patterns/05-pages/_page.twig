@@ -43,4 +43,38 @@
  * @see html.html.twig
  */
 #}
-{% include "@pages/_page.twig" %}
+<div class="layout-container">
+
+  {{ page.header }}
+
+  {{ page.primary_menu }}
+  {{ page.secondary_menu }}
+
+  {{ page.breadcrumb }}
+
+  {{ page.highlighted }}
+
+  {{ page.help }}
+
+  {{ messages }}
+
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    {% if page.sidebar %}
+      <aside class="main-sidebar" role="complementary">
+        {{ page.sidebar }}
+      </aside>
+    {% endif %}
+
+    <div class="main-content{% if page.sidebar %}--with-sidebar{% endif %}">
+      {{ page.content }}
+    </div>{# /.layout-content #}
+
+  </main>
+
+  {% if page.footer %}
+    {{ page.footer }}
+  {% endif %}
+
+</div>{# /.layout-container #}

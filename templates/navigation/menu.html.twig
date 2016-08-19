@@ -18,40 +18,4 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-{% import _self as menus %}
-
-{#
-  We call a macro which calls itself to render the full tree.
-  @see http://twig.sensiolabs.org/doc/tags/macro.html
-#}
-{{ menus.menu_links(items, attributes, 0) }}
-
-{% macro menu_links(items, attributes, menu_level) %}
-  {% import _self as menus %}
-  {% if items %}
-    {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu') }}>
-    {% else %}
-      <ul>
-    {% endif %}
-    {% for item in items %}
-      {% if item.in_active_trail == TRUE %}
-        {% set classes = [
-            'menu__item',
-            'menu__item--active'
-          ]
-        %}
-      {% else %}
-        {% set classes = 'menu__item' %}
-      {% endif %}
-
-      <li{{ item.attributes.addClass(classes) }}>
-        {{ link(item.title, item.url, { 'class' : ['menu__link']}) }}
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endmacro %}
+{% include "@molecules/menus/_menu.twig" %}

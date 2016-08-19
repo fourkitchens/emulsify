@@ -23,19 +23,21 @@
 {% endif %}
 
 {# PL Specific (javascript version) #}
-<div id="tabs" class="tabs no-js">
-  <ul class="tabs__nav">
+{% if not primary %}
+  <div id="tabs" class="tabs no-js">
+    <ul class="tabs__nav">
+      {% for key, listItem in listItems.three %}
+      <li>
+        <a href="#tab-{{ key }}" class="tabs__link{% if key == 0 %} is-active{% endif %}">{{ listItem.month.long }}</a>
+      </li>
+      {% endfor %}
+    </ul>
     {% for key, listItem in listItems.three %}
-    <li>
-      <a href="#tab-{{ key }}" class="tabs__link{% if key == 0 %} is-active{% endif %}">{{ listItem.month.long }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-  {% for key, listItem in listItems.three %}
-  <div class="tabs__tab{% if key == 0 %} is-active{% endif %}">
-    <div id="tab-{{ key }}" class="tabs__content">
-      <p>{{ listItem.excerpt.medium }}</p>
+    <div class="tabs__tab{% if key == 0 %} is-active{% endif %}">
+      <div id="tab-{{ key }}" class="tabs__content">
+        <p>{{ listItem.excerpt.medium }}</p>
+      </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
+{% endif %}
