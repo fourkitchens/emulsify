@@ -14,6 +14,13 @@
  * @see template_preprocess_menu_local_task()
  */
 #}
+{%
+  set link_classes = [
+    is_active ? 'is-active',
+    'tabs__link',
+    'tabs__link--local-tasks'
+  ]
+%}
 
 {# if Pattern Lab atoms example, add ul wrapper #}
 {% if example %}
@@ -22,7 +29,7 @@
 <li{{ attributes }}>
   {# Detect if Drupal #}
   {% if attributes %}
-    {{ link(link['#title'], link['#url'], { 'class' : ['tabs__link tabs__link--local-tasks']}) }}
+    {{ link(link['#title'], link['#url'], { 'class' : link_classes }) }}
   {% else %}
     <a href="{{ tab_link }}" class="tabs__link tabs__link--local-tasks">{{ tab_text }}</a>
   {% endif %}

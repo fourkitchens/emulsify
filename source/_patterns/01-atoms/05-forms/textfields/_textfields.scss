@@ -19,11 +19,6 @@
 .form-item__textfield {
   border: 1px solid $gray-lightest;
   padding: .6em;
-  width: 100%;
-
-  @include small {
-    width: 62%;
-  }
 
   &:focus {
   	border-color:$black;
@@ -48,13 +43,6 @@
 
 .form-item__description {
   margin-top: .3em;
-
-  @include small {
-    float: right;
-    @include font-size(.7);
-    line-height: 1.1rem;
-    width: 67%;
-  }
 }
 
 .form-fieldset {
