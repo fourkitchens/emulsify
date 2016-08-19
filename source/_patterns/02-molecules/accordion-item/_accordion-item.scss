@@ -21,6 +21,7 @@
     color: $gray;
 
     &::before {
+      content:"-";
       top: .45em;
     }
 

@@ -35,4 +35,5 @@ Drupal has specific Twig functions, filters, tags, etc. that it uses that Patter
 ## JavaScript in Drupal
 
 - Component-specific javascript should be written inside each component alongside the HTML/Twig and CSS. From there, add it [as a library](https://www.drupal.org/theme-guide/8/assets) in the theme and use Drupal's `attach_library` function to add the JS inside Drupal's Twig files (e.g., `{{ attach_library('fourk/LIBRARY_NAME') }}`). That way, that javascript will only be loaded when needed.
-- Javascript needed on _every_ page can be added in `source/_patterns/00-base/global/global.js`. This library is referenced by default in the fourk.info.yml file, but should be used minimally. 
+- Javascript needed on _every_ page can be added in `source/_patterns/00-base/global/global.js`. This library is referenced by default in the fourk.info.yml file, but should be used minimally.
+- You can use [Drupal.behaviors](https://www.drupal.org/node/2269515) inside pattern lab, as the necessary javascript is being loaded in `source/_meta/_01-foot.twig`. See `source/_patterns/02-molecules/accordion-item/accordion-item.js` for an example usage.
