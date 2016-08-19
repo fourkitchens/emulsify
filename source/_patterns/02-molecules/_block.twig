@@ -25,4 +25,13 @@
  * @see template_preprocess_block()
  */
 #}
-{% include "@molecules/_block.twig" %}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes.addClass('heading-2') }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</div>

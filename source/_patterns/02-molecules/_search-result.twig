@@ -56,4 +56,14 @@
  * @see template_preprocess_search_result()
  */
 #}
-{% include "@molecules/_search-result.twig" %}
+{{ title_prefix }}
+<h3{{ title_attributes.addClass('heading-3') }}>
+  <a href="{{ url }}">{{ title }}</a>
+</h3>
+{{ title_suffix }}
+{% if snippet %}
+  <p{{ content_attributes }}>{{ snippet }}</p>
+{% endif %}
+{% if info %}
+  <p>{{ info }}</p>
+{% endif %}

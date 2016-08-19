@@ -10,4 +10,4 @@
  * @see template_preprocess_input()
  */
 #}
-{% include "@atoms/05-forms/_input.twig" %}
+<input{{ attributes.addClass('form-item__textfield') }} />{{ children }}

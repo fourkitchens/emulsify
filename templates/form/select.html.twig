@@ -10,20 +10,4 @@
  * @see template_preprocess_select()
  */
 #}
-{% spaceless %}
-  <div class="form-item__dropdown">
-    <select{{ attributes.addClass('form-item__select') }}>
-      {% for option in options %}
-        {% if option.type == 'optgroup' %}
-          <optgroup label="{{ option.label }}">
-            {% for sub_option in option.options %}
-              <option value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>{{ sub_option.label }}</option>
-            {% endfor %}
-          </optgroup>
-        {% elseif option.type == 'option' %}
-          <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
-        {% endif %}
-      {% endfor %}
-    </select>
-  </div>
-{% endspaceless %}
+{% include "@atoms/05-forms/_select.twig" %}

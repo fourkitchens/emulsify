@@ -19,4 +19,18 @@
  * @see template_preprocess_field_multiple_value_form()
  */
 #}
-{% include "@atoms/05-forms/_multi-value.twig" %}
+{% if multiple %}
+  <div class="js-form-item form-item">
+    {{ table }}
+    {% if description.content %}
+      <div{{ description.attributes.addClass('form-item__description') }} >{{ description.content }}</div>
+    {% endif %}
+    {% if button %}
+      {{ button }}
+    {% endif %}
+  </div>
+{% else %}
+  {% for element in elements %}
+    {{ element }}
+  {% endfor %}
+{% endif %}

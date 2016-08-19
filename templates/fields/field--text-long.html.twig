@@ -36,32 +36,7 @@
  * @see template_preprocess_field()
  */
 
- @TODO: THIS CAN BE REMOVED IF WYWSIWYG BEM CLASSES CAN BE APPLIED
+ @TODO: THIS CAN BE REMOVED IF BEM CLASSES CAN BE APPLIED IN WYSIWYG
 #}
 
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes.addClass('text-long') }}>
-      {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass('text-long') }}>{{ item.content }}</div>
-    {% endfor %}
-  {% endif %}
-{% else %}
-  <div{{ attributes.addClass('text-long') }}>
-    <div{{ title_attributes }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
-  </div>
-{% endif %}
+{% include "@atoms/field-wysiwyg.twig" %}

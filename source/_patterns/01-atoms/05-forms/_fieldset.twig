@@ -20,4 +20,29 @@
  * @see template_preprocess_fieldset()
  */
 #}
-{% include "@atoms/05-forms/_fieldset.twig" %}
+<fieldset{{ attributes.addClass('form-fieldset') }}>
+  {%
+    set legend_classes = [
+      'heading-2',
+      required ? 'js-form-required',
+      required ? 'form-required',
+    ]
+  %}
+  {#  Always wrap fieldset legends in a SPAN for CSS positioning. #}
+  <legend{{ legend.attributes.addClass(legend_classes) }}>{{ legend.title }}</legend>
+  {% if errors %}
+    <div>
+      {{ errors }}
+    </div>
+  {% endif %}
+  {% if prefix %}
+    <span class="field-prefix">{{ prefix }}</span>
+  {% endif %}
+  {{ children }}
+  {% if suffix %}
+    <span class="field-suffix">{{ suffix }}</span>
+  {% endif %}
+  {% if description.content %}
+    <div{{ description.attributes.addClass('description') }}>{{ description.content }}</div>
+  {% endif %}
+</fieldset>

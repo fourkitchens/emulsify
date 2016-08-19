@@ -13,4 +13,12 @@
  * @see template_preprocess_textarea()
  */
 #}
-{% include "@atoms/05-forms/_textarea.twig" %}
+{%
+  set classes = [
+    'form-item__textfield',
+    'form-item__textarea',
+  ]
+%}
+<div{{ wrapper_attributes }}>
+  <textarea{{ attributes.addClass(classes) }}>{{ value }}</textarea>
+</div>
