@@ -5,7 +5,23 @@
     "license": "GPL-2.0+",
     "authors": [
         {
-            "name": "",
+            "name": "Evan Willhite",
+            "role": ""
+        },
+        {
+            "name": "Brian Lewis",
+            "role": ""
+        },
+        {
+            "name": "Luke Herrington",
+            "role": ""
+        },
+        {
+            "name": "Ben Teegarden",
+            "role": ""
+        },
+        {
+            "name": "Randy Oest",
             "role": ""
         }
     ],
@@ -17,5 +33,15 @@
     "require-dev": {},
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "scripts": {
+        "pre-install-cmd": [],
+        "pre-update-cmd": [],
+        "post-install-cmd": [
+            "sh ./scripts/fourk.sh"
+        ],
+        "post-update-cmd": [
+            "sh ./scripts/fourk.sh"
+        ]
+    },
     "extra": {}
 }
