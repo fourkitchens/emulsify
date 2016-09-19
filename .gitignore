@@ -7,3 +7,9 @@ pattern-lab/packages/*
 pattern-lab/vendor/*
 source/styleguide/*
 pattern-lab/public/*
+
+# NPM
+node_modules
+
+# Composer
+vendor
