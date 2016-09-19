@@ -10,7 +10,10 @@
         }
     ],
     "repositories": [],
-    "require": {},
+    "require": {
+        "drupal/components": "^1.0",
+        "pattern-lab/edition-twig-standard": "^2.2.1"
+    },
     "require-dev": {},
     "minimum-stability": "dev",
     "prefer-stable": true,
