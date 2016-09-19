@@ -1,7 +1,9 @@
 #! /bin/sh
 
 # Prepare the Pattern Lab settings file for installation
-if [ ! -f vendor/pattern-lab/core/config/config.yml ]
+if [ ! -d vendor/pattern-lab/edition-twig-standard/vendor ]
   then
-    ln -s ../../../../pattern-lab-config.yml ./vendor/pattern-lab/core/config/config.yml
+    cd ./vendor/pattern-lab/edition-twig-standard; composer install
+    rm -rf ./config/config.yml
+    ln -s ../../../../pattern-lab-config.yml ./config/configtest.yml
 fi
