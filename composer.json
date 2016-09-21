@@ -26,9 +26,7 @@
         }
     ],
     "repositories": [],
-    "require": {
-        "pattern-lab/edition-twig-standard": "^2.2.1"
-    },
+    "require": {},
     "require-dev": {},
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -36,10 +34,12 @@
         "pre-install-cmd": [],
         "pre-update-cmd": [],
         "post-install-cmd": [
-            "sh ./.scripts/fourk.sh"
+            "sh ./.scripts/patternlab.sh",
+            "sh ./.scripts/npm.sh"
         ],
         "post-update-cmd": [
-            "sh ./.scripts/fourk.sh"
+            "sh ./.scripts/patternlab.sh",
+            "sh ./.scripts/npm.sh"
         ]
     },
     "extra": {}
