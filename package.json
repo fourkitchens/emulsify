@@ -1,0 +1,12 @@
+{
+  "name": "fourk",
+  "description": "Project template for Drupal 8 themes",
+  "version": "1.0.0",
+  "devDependencies": {
+    "fourk-gulp": "fourkitchens/fourk-gulp"
+  },
+  "scripts": {
+    "start": "gulp clean && gulp compile && gulp theme",
+    "postinstall": "composer create-project pattern-lab/edition-twig-standard pattern-lab && rm -rf pattern-lab/source && ln -s ../components pattern-lab/source"
+  }
+}
