@@ -7,9 +7,3 @@ if [ ! -d pattern-lab ]
     rm -rf pattern-lab/source
     ln -s ../components pattern-lab/source
 fi
-
-# Install Node dependencies
-if [ ! -d node_modules ]
-  then
-    npm install
-fi
