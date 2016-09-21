@@ -1,15 +1,9 @@
 #! /bin/sh
 
 # Prepare the Pattern Lab settings file for installation
-if [ ! -d vendor/pattern-lab/edition-twig-standard/vendor ]
+if [ ! -d pattern-lab ]
   then
-    cd ./vendor/pattern-lab/edition-twig-standard; composer install
-    rm -rf ./config/config.yml
-    ln -s ../../../../pattern-lab-config.yml ./config/config.yml
-fi
-
-# Install Node dependencies
-if [ ! -d node_modules ]
-  then
-    npm install
+    composer create-project pattern-lab/edition-twig-standard pattern-lab
+    rm -rf pattern-lab/source
+    ln -s ../components pattern-lab/source
 fi

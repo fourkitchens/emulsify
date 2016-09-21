@@ -12,10 +12,10 @@
 9 verbose lifecycle fourk@1.0.0~start: PATH: /Users/evan/.nvm/versions/node/v5.0.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/evan/Sites/drupal/d8/fourk/node_modules/.bin:/Users/evan/.rvm/gems/ruby-2.3.0/bin:/Users/evan/.rvm/gems/ruby-2.3.0@global/bin:/Users/evan/.rvm/rubies/ruby-2.3.0/bin:/Users/evan/.nvm/versions/node/v5.0.0/bin:/Users/evan/.composer/vendor/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/evan/.rvm/bin
 10 verbose lifecycle fourk@1.0.0~start: CWD: /Users/evan/Sites/drupal/d8/fourk
 11 silly lifecycle fourk@1.0.0~start: Args: [ '-c', 'gulp clean && gulp compile && gulp theme' ]
-12 silly lifecycle fourk@1.0.0~start: Returned: code: 1  signal: null
+12 silly lifecycle fourk@1.0.0~start: Returned: code: 255  signal: null
 13 info lifecycle fourk@1.0.0~start: Failed to exec start script
 14 verbose stack Error: fourk@1.0.0 start: `gulp clean && gulp compile && gulp theme`
-14 verbose stack Exit status 1
+14 verbose stack Exit status 255
 14 verbose stack     at EventEmitter.<anonymous> (/Users/evan/.nvm/versions/node/v5.0.0/lib/node_modules/npm/lib/utils/lifecycle.js:233:16)
 14 verbose stack     at emitTwo (events.js:87:13)
 14 verbose stack     at EventEmitter.emit (events.js:172:7)
@@ -32,7 +32,7 @@
 20 error npm  v3.3.6
 21 error code ELIFECYCLE
 22 error fourk@1.0.0 start: `gulp clean && gulp compile && gulp theme`
-22 error Exit status 1
+22 error Exit status 255
 23 error Failed at the fourk@1.0.0 start script 'gulp clean && gulp compile && gulp theme'.
 23 error This is most likely a problem with the fourk package,
 23 error not with npm itself.

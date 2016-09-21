@@ -10,6 +10,4 @@ pattern-lab/public/*
 
 # NPM
 node_modules
-
-# Composer
-vendor
+npm-debug.log
