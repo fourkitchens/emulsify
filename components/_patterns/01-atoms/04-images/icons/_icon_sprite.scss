@@ -1,0 +1,13 @@
+@mixin svg-common {
+    background: url("svg/sprite.css.svg") no-repeat;
+}
+
+@mixin sprite-arrow-down {
+    @include svg-common;
+    background-position: 0 0;
+}
+
+.sprite-arrow-down {
+  @include sprite-arrow-down;
+}
+
