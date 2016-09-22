@@ -14,19 +14,19 @@ This starterkit includes a theme that uses a reusable component approach, an aut
   1. Download and enable [Components](https://www.drupal.org/project/components) module in your Drupal installation
   2. Enable FourK theme
 
+## Starting Pattern Lab and watch task
+
+  Start up watches and local server after compiling (runs all gulp required tasks):
+
+  ```bash
+  npm start
+  ```
+
+  ---
+
 ## Building Using Components
 
 See `/docs/components.md`
-
-## Commands
-
-Start up watches and local server after compiling (runs all gulp required tasks):
-
-```bash
-npm start
-```
-
----
 
 # Details
 
