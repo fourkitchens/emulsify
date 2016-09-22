@@ -28,18 +28,6 @@ This starterkit includes a theme that uses a reusable component approach, an aut
 
 See `/docs/components.md`
 
-# Details
-
-## Drupal 8
+## Using Components in Drupal 8
 
 See `/docs/drupal-components.md`
-
-### Linting Config
-
-- Scss: edit `.sass-lint.yml` - [rule docs](https://github.com/sasstools/sass-lint/tree/master/docs/rules)
-
-## TODO
-
-1. Gulp automation issue with adding new components (have to rerun `gulp pl:full`)
-2. Issue with VM not working without index.html
-3. Get Drupal CKEditor markup to output text classes and remove unnecessary files
