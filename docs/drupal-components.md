@@ -30,10 +30,13 @@ Below is a more complex example:
 
 ### Drupal-specific functions, filters and tags
 
-Drupal has specific Twig functions, filters, tags, etc. that it uses that Pattern Lab is not aware of. Pattern Lab has an easy way to add those though, which is in source/\_twig-components/. There are examples of filters and functions already in there (currently you can use the `t()` and `without()` filters and the `kint()` function). Documentation on how to add these can be found [here](https://github.com/pattern-lab/patternengine-php-twig#extending-twig-further).  
+Drupal has specific Twig functions, filters, tags, etc. that it uses that Pattern Lab is not aware of. Pattern Lab has an easy way to add those though, which is in components/\_twig-components/. There are examples of filters and functions already in there (currently you can use the `t()` and `without()` filters and the `kint()` function). Documentation on how to add these can be found [here](https://github.com/pattern-lab/patternengine-php-twig#extending-twig-further).  
 
 ## JavaScript in Drupal
 
 - Component-specific javascript should be written inside each component alongside the HTML/Twig and CSS. From there, add it [as a library](https://www.drupal.org/theme-guide/8/assets) in the theme and use Drupal's `attach_library` function to add the JS inside Drupal's Twig files (e.g., `{{ attach_library('fourk/LIBRARY_NAME') }}`). That way, that javascript will only be loaded when needed.
-- Javascript needed on _every_ page can be added in `source/_patterns/00-base/global/global.js`. This library is referenced by default in the fourk.info.yml file, but should be used minimally.
-- You can use [Drupal.behaviors](https://www.drupal.org/node/2269515) inside pattern lab, as the necessary javascript is being loaded in `source/_meta/_01-foot.twig`. See `source/_patterns/02-molecules/accordion-item/accordion-item.js` for an example usage.
+- Javascript needed on _every_ page can be added in `components/_patterns/00-base/global/global.js`. This library is referenced by default in the fourk.info.yml file, but should be used minimally.
+- You can use [Drupal.behaviors](https://www.drupal.org/node/2269515) inside pattern lab, as the necessary javascript is being loaded in `components/_meta/_01-foot.twig`. See `components/_patterns/02-molecules/accordion-item/accordion-item.js` for an example usage.
+
+### Resources
+[Component-Driven Development in Drupal](https://www.fourkitchens.com/blog/article/component-based-theming-drupal-8-video-series)
