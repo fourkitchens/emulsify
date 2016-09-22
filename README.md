@@ -7,9 +7,9 @@ This starterkit includes a theme that uses a reusable component approach, an aut
 ## Installation
 
   1. `npm install`
-  2. If prompted about the Pattern Lab starterkit, select '1' for pattern-lab/starterkit-twig-base 
+  2. If prompted about the Pattern Lab starterkit, select '1' for pattern-lab/starterkit-twig-base
 
-### Drupal-specific installation
+#### (Drupal-specific installation)
 
   1. Download and enable [Components](https://www.drupal.org/project/components) module in your Drupal installation
   2. Enable FourK theme
