@@ -1,8 +1,9 @@
-This starterkit includes a theme that uses a reusable component approach, an automated styleguide using [Pattern Lab v2](http://patternlab.io/) as well as a gulp installation to automate SCSS compilation, Pattern Lab, etc. Instructions for installing and building inside of the theme can be found below:
+Component-driven styleguide using [Pattern Lab v2](http://patternlab.io/) automated via Gulp/NPM. Also serves as a starterkit Drupal 8 theme.
 
 ## Requirements
 
   1. [Node installed using NVM](https://github.com/creationix/nvm) (tested with v5.0)
+  2. [Gulp](http://gulpjs.com/)
 
 ## Installation
 
