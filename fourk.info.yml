@@ -45,19 +45,19 @@ regions:
 component-libraries:
   base:
     paths:
-      - source/_patterns/00-base
+      - components/_patterns/00-base
   atoms:
     paths:
-      - source/_patterns/01-atoms
+      - components/_patterns/01-atoms
   molecules:
     paths:
-      - source/_patterns/02-molecules
+      - components/_patterns/02-molecules
   organisms:
     paths:
-      - source/_patterns/03-organisms
+      - components/_patterns/03-organisms
   templates:
     paths:
-      - source/_patterns/04-templates
+      - components/_patterns/04-templates
   pages:
     paths:
-      - source/_patterns/05-pages
+      - components/_patterns/05-pages
