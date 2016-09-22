@@ -33,14 +33,8 @@
     "scripts": {
         "pre-install-cmd": [],
         "pre-update-cmd": [],
-        "post-install-cmd": [
-            "sh ./.scripts/patternlab.sh",
-            "sh ./.scripts/npm.sh"
-        ],
-        "post-update-cmd": [
-            "sh ./.scripts/patternlab.sh",
-            "sh ./.scripts/npm.sh"
-        ]
+        "post-install-cmd": [],
+        "post-update-cmd": []
     },
     "extra": {}
 }
