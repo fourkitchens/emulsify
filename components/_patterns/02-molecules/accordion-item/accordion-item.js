@@ -1,10 +1,15 @@
-Drupal.behaviors.accordion = {
-  attach: function (context, settings) {
+// UNCOMMENT IF DRUPAL
+// Drupal.behaviors.accordion = {
+//   attach: function (context, settings) {
+
+// REMOVE IF DRUPAL
+(function() {
 
     'use strict';
 
-    var accordionItem = context.querySelectorAll('.accordion-item__term');
-    var accordionDef = context.querySelectorAll('.accordion-item__def');
+    // Set 'document' to 'context' if Drupal
+    var accordionItem = document.querySelectorAll('.accordion-item__term');
+    var accordionDef = document.querySelectorAll('.accordion-item__def');
 
     // If javascript, hide accordion definition on load
     function jsCheck() {
@@ -47,5 +52,9 @@ Drupal.behaviors.accordion = {
       });
     }
 
-  }
-};
+// REMOVE IF DRUPAL
+})();
+
+// UNCOMMENT IF DRUPAL
+//   }
+// };
