@@ -10,3 +10,13 @@
 .sg-pattern {
   clear: left;
 }
+
+#icons {
+  display: flex;
+
+  & > div {
+    border: 1px solid #eee;
+    padding: 1em;
+    text-align: center;
+  }
+}
