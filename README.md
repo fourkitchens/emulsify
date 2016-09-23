@@ -6,6 +6,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
   1. [Node installed using NVM](https://github.com/creationix/nvm) (tested with v5.0)
   2. [Gulp](http://gulpjs.com/)
+  3. [Composer](https://getcomposer.org/)
 
 ## Installation
 
@@ -27,9 +28,9 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
   ---
 
-## Building Using Components
+## Orientation
 
-See `/docs/components.md`
+See `/docs/orientation.md`
 
 ## Using Components in Drupal 8
 
