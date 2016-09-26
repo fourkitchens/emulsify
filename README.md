@@ -4,18 +4,18 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
 ## Requirements
 
-  1. [Node installed using NVM](https://github.com/creationix/nvm) (tested with v5.0)
+  1. [Node (we recommend NVM)](https://github.com/creationix/nvm)
   2. [Gulp](http://gulpjs.com/)
   3. [Composer](https://getcomposer.org/)
 
 ## Installation
 
   1. `npm install`
-  2. If prompted about the Pattern Lab starterkit, select '1' for pattern-lab/starterkit-twig-base
+  2. At Pattern Lab starterkit prompt, select '1' for pattern-lab/starterkit-twig-base
 
 #### (Drupal-specific installation)
 
-  1. Download and enable [Components](https://www.drupal.org/project/components) module in your Drupal installation
+  1. Download and enable [Components](https://www.drupal.org/project/components) module
   2. Enable FourK theme
 
 ## Starting Pattern Lab and watch task
@@ -31,6 +31,10 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 ## Orientation
 
 See `/docs/orientation.md`
+
+## For Designers (prototyping)
+
+See `/docs/designers.md`
 
 ## Using Components in Drupal 8
 
