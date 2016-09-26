@@ -2,7 +2,7 @@
     "name": "fourkitchens/fourk",
     "description": "Project template for Drupal 8 themes",
     "type": "drupal-theme",
-    "license": "GPL-2.0+",
+    "license": "MIT",
     "authors": [
         {
             "name": "Evan Willhite",
