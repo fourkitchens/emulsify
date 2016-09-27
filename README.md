@@ -30,14 +30,14 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
 ## Documentation
 
-#### Orientation
+#### General Orientation
 
 See `/docs/orientation.md`
 
-#### For Designers (prototyping)
+#### For Designers (Prototyping)
 
 See `/docs/designers.md`
 
-#### Using Components in Drupal 8
+#### For Drupal 8 Developers
 
 See `/docs/drupal-components.md`
