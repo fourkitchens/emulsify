@@ -4,3 +4,22 @@
   display: block;
   padding: 3em;
 }
+
+.inline-arrow-down {
+  display: flex;
+
+  &:before {
+    @include sprite-arrow-down;
+    @include with-icon;
+  }
+}
+
+.inline-arrow-down--bg {
+  display: flex;
+  
+  &:before {
+    @include sprite-arrow-down;
+    @include with-icon;
+    @include icon-bg($gray-light);
+  }
+}

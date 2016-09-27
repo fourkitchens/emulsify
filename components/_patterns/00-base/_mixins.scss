@@ -125,12 +125,11 @@
 /// Mixin - With Icon
 /// Precede Text with SVG icon
 @mixin with-icon {
+  background-size: cover;
   content: "";
   display: inline-block;
   margin-right: .1em;
-  padding: .6em;
-  position: relative;
-  top: .25em;
+  padding: .8em;
 }
 
 /// Mixin - Icon with circular bg
