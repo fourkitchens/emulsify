@@ -1,4 +1,4 @@
-name: FourK
+name: Emulsify
 type: theme
 description: Theme that uses Pattern Lab v2
 base theme: stable
@@ -6,8 +6,8 @@ core: 8.x
 
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
 libraries:
-  - 'fourk/global'
-  # - 'fourk/typekit'
+  - 'emulsify/global'
+  # - 'emulsify/typekit'
 
 # Libraries override allows you to remove libraries added by other projects.
 # libraries-override:

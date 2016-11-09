@@ -1,16 +1,16 @@
 # Breakpoints - change based on site need
-fourk.large:
+emulsify.large:
   label: large
   mediaQuery: 'all and (min-width: 61.25em)'
-fourk.medium:
+emulsify.medium:
   label: medium
   mediaQuery: 'all and (min-width: 48em)'
-fourk.small-large:
+emulsify.small-large:
   label: small-large
   mediaQuery: 'all and (min-width: 41em)'
-fourk.small-med:
+emulsify.small-med:
   label: small-med
   mediaQuery: 'all and (min-width: 26em)'
-fourk.small:
+emulsify.small:
   label: small
   mediaQuery: 'all and (min-width: 25em)'

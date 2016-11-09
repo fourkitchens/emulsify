@@ -16,7 +16,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 #### (Drupal-specific installation)
 
   1. Download and enable [Components](https://www.drupal.org/project/components) module
-  2. Enable FourK theme
+  2. Enable Emulsify theme
 
 ## Starting Pattern Lab and watch task
 

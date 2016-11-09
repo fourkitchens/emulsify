@@ -1,6 +1,6 @@
 ## Including Components in Drupal
 
-From your Drupal Twig templates in `templates/` you can use Twig's `{% include %}`, `{% extends %}`, or `{% embed %}` statements to include your Pattern Lab Twig template files. Each of the top level folders has a Twig Namespace like `@organisms` (see fourk.info.yml for the namespace conventions) and then you append the path down to the file like below.
+From your Drupal Twig templates in `templates/` you can use Twig's `{% include %}`, `{% extends %}`, or `{% embed %}` statements to include your Pattern Lab Twig template files. Each of the top level folders has a Twig Namespace like `@organisms` (see emulsify.info.yml for the namespace conventions) and then you append the path down to the file like below.
 
 `{% include "@organisms/path/to/file.twig" %}`
 
@@ -34,8 +34,8 @@ Drupal has specific Twig functions, filters, tags, etc. that it uses that Patter
 
 ## JavaScript in Drupal
 
-- Component-specific javascript should be written inside each component alongside the HTML/Twig and CSS. From there, add it [as a library](https://www.drupal.org/theme-guide/8/assets) in the theme and use Drupal's `attach_library` function to add the JS inside Drupal's Twig files (e.g., `{{ attach_library('fourk/LIBRARY_NAME') }}`). That way, that javascript will only be loaded when needed.
-- Javascript needed on _every_ page can be added in `components/_patterns/00-base/global/global.js`. This library is referenced by default in the fourk.info.yml file, but should be used minimally.
+- Component-specific javascript should be written inside each component alongside the HTML/Twig and CSS. From there, add it [as a library](https://www.drupal.org/theme-guide/8/assets) in the theme and use Drupal's `attach_library` function to add the JS inside Drupal's Twig files (e.g., `{{ attach_library('emulsify/LIBRARY_NAME') }}`). That way, that javascript will only be loaded when needed.
+- Javascript needed on _every_ page can be added in `components/_patterns/00-base/global/global.js`. This library is referenced by default in the emulsify.info.yml file, but should be used minimally.
 - You can use [Drupal.behaviors](https://www.drupal.org/node/2269515) inside pattern lab, as the necessary javascript is being loaded in `components/_meta/_01-foot.twig`. See `components/_patterns/02-molecules/accordion-item/accordion-item.js` for an example usage.
 
 ### Resources

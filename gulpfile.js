@@ -10,6 +10,6 @@
     localConfig = require('./local.gulp-config');
   }
   catch (e) {}
-  require('fourk-gulp')(gulp, localConfig);
+  require('emulsify-gulp')(gulp, localConfig);
 
 })();

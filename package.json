@@ -1,9 +1,9 @@
 {
-  "name": "fourk",
+  "name": "emulsify",
   "description": "Project template for Drupal 8 themes",
   "version": "1.0.0",
   "devDependencies": {
-    "fourk-gulp": "fourkitchens/fourk-gulp"
+    "emulsify-gulp": "fourkitchens/emulsify-gulp"
   },
   "scripts": {
     "start": "gulp clean && gulp compile && gulp theme",

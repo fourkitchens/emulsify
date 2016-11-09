@@ -8,7 +8,7 @@
  /**
  * Implements theme_preprocess_page.
  */
-// function fourk_preprocess_page(&$vars) {
+// function emulsify_preprocess_page(&$vars) {
 //   if (!empty($vars['node'])) {
 //     if ($vars['node']->getType() == '[MACHINE_NAME]') {
 //       // Remove Title
