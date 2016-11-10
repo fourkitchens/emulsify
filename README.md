@@ -30,7 +30,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
 ## Emulsify versus Pattern Lab Starter
 
-[Pattern Lab Starter](https://github.com/phase2/pattern-lab-starter) and Emulsify share a lot in common. See below for a breakdown of the differences to help you decide what is best for your project.
+[Pattern Lab Starter](https://github.com/phase2/pattern-lab-starter) and Emulsify share a lot in common (see [`Acknowledgements`](https://github.com/fourkitchens/emulsify/blob/master/docs/acknowledgements.md)). Below is a breakdown of the two to aid in deciding which is best for your project.
 
 <table>
 <tr><td></td><td><strong>Emulsify</strong></td><td>Pattern Lab Starter</td><td></td></tr>
@@ -42,7 +42,6 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 <tr><td>Yeoman generator support</td><td></td><td>√</td><td>Allows the user to generate a new component using `yo component`</td></tr>
 <tr><td>Yarn support</td><td></td><td>√</td><td></td></tr>
 <tr><td>Babel support built-in</td><td></td><td>√</td><td></td></tr>
-<tr><td>Twig namespacing support</td><td></td><td>√</td><td>Changes @molecules/path/to/filename.twig to @molecules/filename.twig</td></tr>
 <tr><td>[Faker](https://github.com/fzaninotto/Faker) support built-in</td><td></td><td>√</td><td>PHP "dummy" content generator</td></tr>
 </table>
 
