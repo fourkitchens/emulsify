@@ -56,16 +56,11 @@ See [`/docs/orientation.md`](https://github.com/fourkitchens/emulsify/blob/maste
 
 #### For Designers (Prototyping)
 
-See [`/docs/designers.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/drupal-components.md)
+See [`/docs/designers.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/designers.md)
 
 #### For Drupal 8 Developers
 
-See [`/docs/drupal-components.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/designers.md)
-
-## What Sets it Apart
-
-Pattern Lab Starter is another popular option for combining prototyping and a Drupal 8 theme. Here's a breakdown on the differences between the two:
-
+See [`/docs/drupal-components.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/drupal-components.md)
 
 ## Acknowledgements
 
