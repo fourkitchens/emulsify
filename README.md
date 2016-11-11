@@ -43,7 +43,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 <tr><td>Stock Drupal templates (from Stark)</td><td><strong>√</strong></td><td></td><td></td></tr>
 <tr><td>Stock Components (see [below](#components)) </td><td><strong>√</strong></td><td></td><td></td></tr>
 <tr><td>Yeoman generator support</td><td></td><td>√</td><td>Allows the user to generate a new component using `yo component`</td></tr>
-<tr><td>Yarn support</td><td></td><td>√</td><td></td></tr>
+<tr><td>Yarn support</td><td>√</td><td>√</td><td></td></tr>
 <tr><td>Babel support built-in</td><td></td><td>√</td><td></td></tr>
 <tr><td>[Faker](https://github.com/fzaninotto/Faker) support built-in</td><td></td><td>√</td><td>PHP "dummy" content generator</td></tr>
 </table>
