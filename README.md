@@ -9,11 +9,12 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
   1. [Node (we recommend NVM)](https://github.com/creationix/nvm)
   2. [Gulp](http://gulpjs.com/)
   3. [Composer](https://getcomposer.org/)
+  4. [Yarn](https://github.com/yarnpkg/yarn) Optional
 
 ## Installation
 
-  1. `npm install`
-  2. At Pattern Lab starterkit prompt, select '1' for pattern-lab/starterkit-twig-base
+  1. `npm install` or `yarn install` for more speed.
+  2. At Pattern Lab starterkit prompt, select '1' for `pattern-lab/starterkit-twig-base`
 
 #### (Drupal-specific installation)
 
@@ -34,7 +35,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
 [Pattern Lab Starter](https://github.com/phase2/pattern-lab-starter) and Emulsify share a lot in common (see [`Acknowledgements`](https://github.com/fourkitchens/emulsify/blob/master/docs/acknowledgements.md)). Below is a breakdown of the two to aid in deciding which is best for your project.
 
-<table>
+<table><tbody>
 <tr><td></td><td><strong>Emulsify</strong></td><td>Pattern Lab Starter</td><td></td></tr>
 <tr><td>SVG sprite support built-in</td><td><strong>√</strong></td><td></td><td></td></tr>
 <tr><td>Icon font support built-in</td><td></td><td>√</td><td></td></tr>
@@ -42,9 +43,8 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 <tr><td>Stock Drupal templates (from Stark)</td><td><strong>√</strong></td><td></td><td></td></tr>
 <tr><td>Stock Components (see [below](#components)) </td><td><strong>√</strong></td><td></td><td></td></tr>
 <tr><td>Yeoman generator support</td><td></td><td>√</td><td>Allows the user to generate a new component using `yo component`</td></tr>
-<tr><td>Yarn support</td><td></td><td>√</td><td></td></tr>
-<tr><td>Babel support built-in</td><td></td><td>√</td><td></td></tr>
 <tr><td>[Faker](https://github.com/fzaninotto/Faker) support built-in</td><td></td><td>√</td><td>PHP "dummy" content generator</td></tr>
+</tbody>
 </table>
 
 <h3 id="components">Built in Components (all responsive)</h3>
