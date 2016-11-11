@@ -9,11 +9,12 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
   1. [Node (we recommend NVM)](https://github.com/creationix/nvm)
   2. [Gulp](http://gulpjs.com/)
   3. [Composer](https://getcomposer.org/)
+  4. [Yarn](https://github.com/yarnpkg/yarn) Optional
 
 ## Installation
 
-  1. `npm install`
-  2. At Pattern Lab starterkit prompt, select '1' for pattern-lab/starterkit-twig-base
+  1. `npm install` or `yarn install` for more speed.
+  2. At Pattern Lab starterkit prompt, select '1' for `pattern-lab/starterkit-twig-base`
 
 #### (Drupal-specific installation)
 
