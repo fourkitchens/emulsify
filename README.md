@@ -11,9 +11,9 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
   3. [Composer](https://getcomposer.org/)
   4. [Yarn](https://github.com/yarnpkg/yarn) Optional
 
-## Installation
+## Quickstart
 
-  1. `npm install` or `yarn install` for more speed.
+  1. `npm install` or `yarn install`
   2. At Pattern Lab starterkit prompt, select '1' for `pattern-lab/starterkit-twig-base`
 
 #### (Drupal-specific installation)
@@ -47,7 +47,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 </tbody>
 </table>
 
-<h3 id="components">Built in Components (all responsive)</h3>
+<h3 id="components">Emulsify's Built in Components (all responsive)</h3>
 Forms, tables, video, accordion, cards, breadcrumbs, tabs, pager, status messages, grid
 
 ## Documentation
