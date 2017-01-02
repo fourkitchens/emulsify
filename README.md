@@ -64,6 +64,10 @@ See [`/docs/designers.md`](https://github.com/fourkitchens/emulsify/blob/master/
 
 See [`/docs/drupal-components.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/drupal-components.md)
 
+#### Gulp Configuration
+
+See [`/docs/gulp-config.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/gulp-config.md)
+
 ## Acknowledgements
 
 See [`/docs/acknowledgements.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/acknowledgements.md)
