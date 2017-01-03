@@ -4,15 +4,3 @@
  * @file
  * Functions to support theming in the Pattern Lab theme.
  */
-
- /**
- * Implements theme_preprocess_page.
- */
-// function emulsify_preprocess_page(&$vars) {
-//   if (!empty($vars['node'])) {
-//     if ($vars['node']->getType() == '[MACHINE_NAME]') {
-//       // Remove Title
-//       unset($vars['page']['content']['nyunursing_page_title']);
-//     }
-//   }
-// }

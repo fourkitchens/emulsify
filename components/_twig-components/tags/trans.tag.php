@@ -1,13 +1,19 @@
 <?php
-
 /**
- * Code based on `Drupal\Core\Template\TwigNodeTrans` and `Drupal\Core\Template\TwigTransTokenParser` from Drupal 8 core.
+ * @file
+ * Add "Project_trans_Node" class.
+ *
+ * Code based on `Drupal\Core\Template\TwigNodeTrans` and
+ * `Drupal\Core\Template\TwigTransTokenParser` from Drupal 8 core.
  */
 
-// these files are loaded three times and we can't re-set a class
+// These files are loaded three times and we can't re-set a class.
 if (!class_exists("Project_trans_Node")) {
 
-  class Project_trans_Node extends Twig_Node {
+  /**
+   * Class Project_trans_Node.
+   */
+  class Project_trans_Node extends \Twig_Node {
 
     /**
      * {@inheritdoc}
@@ -25,17 +31,12 @@ if (!class_exists("Project_trans_Node")) {
      * {@inheritdoc}
      */
     public function compile(\Twig_Compiler $compiler) {
+      list($singular) = $this->compileString($this->getNode('body'));
+
       $compiler->addDebugInfo($this);
-
-      $options = $this->getNode('options');
-
-      list($singular, $tokens) = $this->compileString($this->getNode('body'));
-
       $compiler->write('echo ');
-
       // Write the singular text parameter.
       $compiler->subcompile($singular);
-
       // End writing.
       $compiler->raw(";\n");
     }
@@ -82,8 +83,8 @@ if (!class_exists("Project_trans_Node")) {
 
             // Detect if a token implements one of the filters reserved for
             // modifying the prefix of a token. The default prefix used for
-            // translations is "@". This escapes the printed token and makes them
-            // safe for templates.
+            // translations is "@". This escapes the printed token and makes
+            // them safe for templates.
             // @see TwigExtension::getFilters()
             $argPrefix = '@';
             while ($args instanceof \Twig_Node_Expression_Filter) {
@@ -98,7 +99,8 @@ if (!class_exists("Project_trans_Node")) {
               $argName = array();
               // Reuse the incoming expression.
               $expr = $args;
-              // Assemble a valid argument name by walking through the expression.
+              // Assemble a valid argument name by walking through the
+              // expression.
               $argName[] = $args->getNode('attribute')->getAttribute('value');
               while ($args->hasNode('node')) {
                 $args = $args->getNode('node');
@@ -133,22 +135,30 @@ if (!class_exists("Project_trans_Node")) {
         $text = $body->getAttribute('data');
       }
 
-      return array(new \Twig_Node(array(new \Twig_Node_Expression_Constant(trim($text), $body->getLine()))), $tokens);
+      return array(
+        new \Twig_Node(
+          array(new \Twig_Node_Expression_Constant(trim($text), $body->getLine()))
+        ),
+        $tokens,
+      );
     }
 
   }
 
 }
 
-// these files are loaded three times and we can't re-set a class
+// These files are loaded three times and we can't re-set a class.
 if (!class_exists("Project_trans_TokenParser")) {
 
-  class Project_trans_TokenParser extends Twig_TokenParser {
+  /**
+   * Class Project_trans_TokenParser.
+   */
+  class Project_trans_TokenParser extends \Twig_TokenParser {
 
     /**
      * {@inheritdoc}
      */
-    public function parse(Twig_Token $token) {
+    public function parse(\Twig_Token $token) {
       $lineno = $token->getLine();
       $stream = $this->parser->getStream();
       $body = NULL;
@@ -208,10 +218,11 @@ if (!class_exists("Project_trans_TokenParser")) {
      *
      * @param \Twig_Node $body
      *   The expression to check.
-     * @param integer $lineno
+     * @param int $lineno
      *   The source line.
      *
      * @throws \Twig_Error_Syntax
+     *   Twig error.
      */
     protected function checkTransString(\Twig_Node $body, $lineno) {
       foreach ($body as $node) {
@@ -226,6 +237,7 @@ if (!class_exists("Project_trans_TokenParser")) {
         ) {
           continue;
         }
+
         throw new \Twig_Error_Syntax(sprintf('The text to be translated with "trans" can only contain references to simple variables'), $lineno);
       }
     }
