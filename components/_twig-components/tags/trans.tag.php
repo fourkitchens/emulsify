@@ -1,21 +1,19 @@
 <?php
 /**
  * @file
- * Add "ProjectTransNode" class.
+ * Add "Project_trans_Node" class.
  *
  * Code based on `Drupal\Core\Template\TwigNodeTrans` and
  * `Drupal\Core\Template\TwigTransTokenParser` from Drupal 8 core.
  */
 
-namespace Drupal\emulsify\components;
-
 // These files are loaded three times and we can't re-set a class.
-if (!class_exists("ProjectTransNode")) {
+if (!class_exists("Project_trans_Node")) {
 
   /**
-   * Class ProjectTransNode.
+   * Class Project_trans_Node.
    */
-  class ProjectTransNode extends \Twig_Node {
+  class Project_trans_Node extends \Twig_Node {
 
     /**
      * {@inheritdoc}
@@ -150,12 +148,12 @@ if (!class_exists("ProjectTransNode")) {
 }
 
 // These files are loaded three times and we can't re-set a class.
-if (!class_exists("ProjectTransTokenParser")) {
+if (!class_exists("Project_trans_TokenParser")) {
 
   /**
-   * Class ProjectTransTokenParser.
+   * Class Project_trans_TokenParser.
    */
-  class ProjectTransTokenParser extends \Twig_TokenParser {
+  class Project_trans_TokenParser extends \Twig_TokenParser {
 
     /**
      * {@inheritdoc}
@@ -189,7 +187,7 @@ if (!class_exists("ProjectTransTokenParser")) {
 
       $this->checkTransString($body, $lineno);
 
-      $node = new ProjectTransNode($body, $plural, $count, $options, $lineno, $this->getTag());
+      $node = new Project_trans_Node($body, $plural, $count, $options, $lineno, $this->getTag());
 
       return $node;
     }
