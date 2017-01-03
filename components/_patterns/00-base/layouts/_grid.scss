@@ -1,0 +1,23 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--2 .grid__item {
+    min-width: 49%;
+  }
+
+  &--3 .grid__item {
+    min-width: 32%;
+  }
+}
+
+.grid__item {
+  flex-grow: 1;
+
+  // Pattern Lab only
+  .sg-pattern-example & {
+    background-color: rgba(0,0,0,.2);
+    margin: .5%;
+    min-height: 100px;
+  }
+}

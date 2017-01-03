@@ -1,0 +1,15 @@
+{% if grid_label %}
+{% include "@atoms/02-text/00-headings/heading-2/heading-2.twig"
+  with {
+    "heading": grid_label,
+  }
+%}
+{% endif %}
+<div class="grid{% if grid_variation %} grid--{{grid_variation}}{% endif %}">
+  {% if grid_title %}<h2 class="heading-2 grid__title">{{ grid_title }}</h2>{% endif %}
+  {% block grid_content %}
+    {% for listItem in listItems.five %}
+      <div class="grid__item"></div>
+    {% endfor %}
+  {% endblock %}
+</div>
