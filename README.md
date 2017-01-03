@@ -14,7 +14,6 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 ## Quickstart
 
   1. `npm install` or `yarn install`
-  2. At Pattern Lab starterkit prompt, select '1' for `pattern-lab/starterkit-twig-base`
 
 #### (Drupal-specific installation)
 
