@@ -1,0 +1,13 @@
+%m-logo__svg-wrapper,
+.m-logo__svg-wrapper {
+  // @include svg-wrapper(130 / 32); // Logo is 130x32px
+}
+
+.m-logo__svg {
+  // @extend %svg__core;
+}
+
+.m-logo__hidden-text {
+  // @extend %u-text-hide;
+  height: 0;
+}
