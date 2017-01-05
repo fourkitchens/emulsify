@@ -85,8 +85,8 @@
       watchedExtensions: (['twig', 'json', 'yaml', 'yml', 'md', 'jpg', 'jpeg', 'png']),
       scssToJson: [
         {
-          src: themeDir + '/components/_patterns/00-base/global/01-colors/_color-vars.scss',
-          dest: themeDir + '/components/_patterns/00-base/global/01-colors/colors.json',
+          src: themeDir + '/components/_patterns/00-base/03-colors/_color-vars.scss',
+          dest: themeDir + '/components/_patterns/00-base/03-colors/colors.json',
           lineStartsWith: '$',
           allowVarValues: false
         }

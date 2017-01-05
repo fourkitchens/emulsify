@@ -1,0 +1,37 @@
+// Responsive Word Breaks
+//
+// Based on http://danielmall.com/articles/responsive-line-breaks/
+// span does a line break on smaller screens,
+// On larger screens appears inline with a trailing pipe divider
+//
+// Markup:
+// <span class="u-word-break--pipe">
+//   University of Mainspring
+// </span>
+// <span class="u-word-break--pipe">
+//   123 Street
+// </span>
+//   <span class="u-word-break--pipe">
+//   Toronto Ontario, Canada
+// </span>
+//
+//
+// Styleguide 4.8
+
+
+
+.u-word-break--pipe {
+  display: block;
+
+  @include respond-to('full-nav') {
+    display: inline;
+
+    &:not(:last-of-type)::after {
+      padding-right: ru(0.25);
+      padding-left: ru(0.25);
+      content: '|';
+    }
+
+  }
+}
+

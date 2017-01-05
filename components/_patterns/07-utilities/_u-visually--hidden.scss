@@ -1,0 +1,61 @@
+// Visuall Hidden / Shown
+//
+// Accessible way to hide elements on the page (and show them again)
+//
+// Use as a mixin (discouraged), class, or @extend (preferred)
+//
+// <pre> .u-visually--hidden </pre>
+// <pre> @extend %u-visually--hidden; </pre>
+// <pre> @inlude visually-hidden; </pre>
+//
+//
+// <pre> .u-visually--shown </pre>
+// <pre> @extend %u-visually--hidden; </pre>
+// <pre> @inlclude visually-shown; </pre>
+//
+// Styleguide 4.6
+
+// Mixins
+@mixin visually-hidden {
+  position: absolute;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  .focusable {
+    &:active,
+    &:focus {
+      position: static;
+      margin: 0;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip: auto;
+    }
+  }
+}
+
+@mixin visually-shown {
+  position: static;
+  margin: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+
+  clip: auto;
+  clip: rect(auto auto auto auto); // sass-lint:disable-line no-duplicate-properties
+}
+
+%u-visually--hidden,
+.u-visually--hidden {
+  @include visually-hidden;
+}
+
+%u-visually--shown,
+.u-visually--shown {
+  @include visually-shown;
+}
