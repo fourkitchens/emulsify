@@ -1,0 +1,30 @@
+// HTML / Body
+//
+// Default @viewport for responsive.
+//
+// Default HTML / Body resets. Body has Flex display to allow footer (or main) to scale full hieght of viewport
+//
+// Styleguide 1.5
+
+@viewport {
+  width: device-width;
+}
+
+html {
+  line-height: ($base-line-height / $base-font-size) * 1em;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: ($base-font-size / 16px) * 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+  // Use Flex display to allow footer (or body) to scale full hieght of viewport
+  display: flex;
+  flex-direction: column;
+  // Remove UA default margin.
+  margin: 0;
+  height: 100%;
+  min-height: 100vh;
+}
