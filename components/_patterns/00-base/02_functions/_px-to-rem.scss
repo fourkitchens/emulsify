@@ -1,0 +1,27 @@
+// @function rem($px) / em($px)
+//
+// Converts units from pixels to REMs or EMs
+//
+// $px - Pixel Size
+//
+// <pre>
+// .component__wrapper {
+//   max-width: rem(30px);
+// }
+// .component__wrapper {
+//   max-width: em(30px);
+// }
+// </pre>
+//
+// Styleguide 1.1.1
+
+
+$base-font-size: 16px !default;
+
+@function em($px, $base: $base-font-size) {
+  @return ($px / $base) * 1em;
+}
+
+@function rem($px, $base: $base-font-size) {
+  @return ($px / $base) * 1rem;
+}

@@ -1,0 +1,39 @@
+// Animation Helpers
+//
+// Animation Extends for CSS transitions
+//
+// $transition-duration: 0.25s !default;
+//
+// <pre> @extend %u-animate-background-color </pre>
+// <pre> @extend %u-animate-color </pre>
+// <pre> @extend %u-animate-opacity </pre>
+// <pre> @extend %u-animate-all </pre>
+//
+// Styleguide 4.7
+
+$transition-duration: 0.25s !default;
+
+%u-animate-background-color {
+  transition-property: background-color;
+  transition-duration: $transition-duration;
+}
+
+%u-animate-text-shadow {
+  transition-property: text-shadow;
+  transition-duration: $transition-duration;
+}
+
+%u-animate-color {
+  transition-property: color;
+  transition-duration: $transition-duration;
+}
+
+%u-animate-opacity {
+  transition-property: opacity;
+  transition-duration: $transition-duration;
+}
+
+%u-animate-all {
+  transition-property: all;
+  transition-duration: $transition-duration;
+}

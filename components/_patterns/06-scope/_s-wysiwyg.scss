@@ -1,0 +1,30 @@
+// WYSIWYG / User Content
+//
+// These are the styles that appear in a WYSIWYG editor.
+// Project assumes all wysiwyg fields are wrapped with .s-wysiwyg
+//
+// See g-links
+// See g-lists
+//
+// Styleguide 5.1
+
+
+// CKEDITOR's Default iframe class for the editor.
+.s-wysiwyg,
+.cke_editable { // sass-lint:disable-line class-name-format
+
+  ul {
+    @extend %g-list--unordered;
+  }
+
+  ol {
+    @extend %g-list--ordered;
+  }
+
+  // Link Styles (unless custom btn styles added in WYSIWIYG)
+  a:not(.c-btn) {
+    @extend %g-link;
+  }
+
+}
+
