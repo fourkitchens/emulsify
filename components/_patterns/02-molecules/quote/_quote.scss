@@ -1,12 +1,12 @@
 .m-quote__wrapper {
-  margin: ru(1) 0 ru(3) 0;
+  // margin: ru(1) 0 ru(3) 0;
 }
 
 %m-quote,
 .m-quote {
   // @include font-size($h3-font-sizes);
   text-align: center;
-  color: palette(blue, dark);
+  // color: palette(blue, dark);
   font-weight: 700;
 
   p {
