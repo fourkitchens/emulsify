@@ -1,0 +1,65 @@
+// @mixin font-size($fs-map, $fs-breakpoints)
+//
+// Responsive Typography Based on http://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/
+// Modified to use REM & https://github.com/at-import/breakpoint
+//
+// Requires:
+// * $breakpoints to be defined as a map in /layouts/_l--breakpoints.scss
+// * Typography Maps to be defined in g-type--variables.scss
+//
+// $fs-map - Defined Range of Font sizes
+// $fs-breakpoints - Optional: Specify a specific breakpoint
+//
+// <pre>
+// .g-type--h3 {
+//   @include font-size($h3-font-sizes);
+// }
+// </pre>
+//
+// Styleguide 1.6.1
+
+
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    } @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+
+      @include breakpoint ($fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == 'list' {
+    $fontsize: nth($fs-font-size, 1);
+    // If a px unit convert to Rem
+    @if (unit($fontsize) == 'px') {
+      font-size: rem($fontsize);
+    } @else {
+      line-height: $fontsize;
+    }
+    @if (length($fs-font-size) > 1) {
+      $lineheight: nth($fs-font-size, 2);
+      @if (unit($lineheight) == 'px') {
+        line-height: strip-unit($lineheight / $fontsize);
+      } @else {
+        line-height: $lineheight;
+      }
+    }
+  } @else {
+    font-size: $fs-font-size;
+  }
+}
+

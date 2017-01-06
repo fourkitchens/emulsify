@@ -1,4 +1,15 @@
-%a-table,
+// Tables
+//
+// Markup: _g-table.html
+//
+// Styleguide 1.16
+
+// Note: This breaks the naming conventions a bit. This should probably be
+// a scoped class, but the assumptions is that no tables in the layout will
+// Exist other then this style. This is expected in a wysiwyg editor that
+// isn't easy to wrap all the elements in specific classes.
+
+%g-table,
 table {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -8,33 +19,33 @@ table {
   border-collapse: collapse;
 }
 
-%a-table__cell--core {
+%g-table__cell--core {
   border: 1px solid palette(grey, light);
-  // padding: ru(0.25) ru(0.5);
+  padding: ru(0.25) ru(0.5);
 }
 
 // Header Cell
-%a-table__th,
+%g-table__th,
 th {
-  // @extend %a-table__cell--core;
-  // @extend %a-type--large;
+  @extend %g-table__cell--core;
+  @extend %g-type--large;
   background-color: palette(grey);
-  // padding-top: ru(0.5);
-  // padding-bottom: ru(0.5);
+  padding-top: ru(0.5);
+  padding-bottom: ru(0.5);
   text-align: left;
   color: $white;
   font-weight: 400;
 }
 
 // Default Cells
-%a-table__td,
+%g-table__td,
 td {
-  @extend %a-table__cell--core;
+  @extend %g-table__cell--core;
   vertical-align: top;
 }
 
 // Rows and Cells Styles
-%a-table__tr,
+%g-table__tr,
 tr {
 
   &:nth-child(even) {
@@ -57,9 +68,9 @@ tr {
 }
 
 // Column Variations
-%a-table__col--narrow,
-.a-table__col--narrow {
-  // min-width: ru(1);
-  // max-width: ru(2);
+%g-table__col--narrow,
+.g-table__col--narrow {
+  min-width: ru(1);
+  max-width: ru(2);
   text-align: center;
 }

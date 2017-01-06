@@ -1,0 +1,55 @@
+@import 'svg--mixins';
+
+// SVG
+//
+// Styleguide 1.10
+
+svg {
+
+  // Overrides presentation attributes in SVG file to
+  // Allow these values to inherit from CSS file.
+
+  // path,
+  // line,
+  // circle {
+  //   fill: inherit;
+  //   stroke: inherit;
+  //   stroke-width: inherit;
+  // }
+
+  // Fix for Edge not bubbling up events on clicking the use in an svg.
+  // https://connect.microsoft.com/IE/feedback/details/796745/mouse-events-are-not-delivered-at-all-anymore-when-inside-an-svg-a-use-is-removed-from-the-dom
+  use {
+    pointer-events: none;
+  }
+}
+
+// Sets SVG to use "css color" as the fill in the SVG
+.svg--fill {
+  fill: currentColor;
+}
+
+// Sets SVG to use "css color" as the stroke in the SVG
+.svg--stroke {
+  stroke: currentColor;
+}
+
+// Scale in proportion, fluid width SVGs
+// Allowing fully fluid SVG's
+// Based on http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/
+
+%svg__wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+// Extend the Actual SVG with placeholder
+%svg__core,
+.svg__core {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

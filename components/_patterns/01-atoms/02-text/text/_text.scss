@@ -29,3 +29,8 @@ hr {
   border-width: 1px 0 0;
   color: currentColor;
 }
+
+%g-type--small,
+.g-type--small {
+  @include font-size($p--small-font-sizes);
+}

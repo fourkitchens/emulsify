@@ -1,0 +1,178 @@
+// @mixin svg-wrapper
+//
+// TODO: What does this do?
+//
+// Styleguide 1.10.1
+
+
+// // Apply this mixin to the svg's wrapper
+@mixin svg-wrapper($intristic-ratio) {
+  @extend %svg__wrapper;
+  @include ir($intristic-ratio);
+}
+
+// @mixin svg-centered
+//
+// Puts an fixed SVG inside a container of a specific size
+//
+// <pre>
+// svg-centered($svg-width, $svg-height, $wrapper-width, $wrapper-height, $svg-class: svg)
+// </pre>
+// <pre> </pre>
+// <pre>
+// $svg-width           - Width of the SVG Icon
+// $svg-height          - Height of the SVG Icon
+// $wrapper-width       - Width of the container
+// $wrapper-height      - Height of the container
+// $svg-class:'.g-svg'  - SVG class '.g-svg' by default
+// $x-offset:0          - % horizontal offset from center
+// $y-offset:0          - % vertical offset from center
+// $layout-mode:'margin'- 'margin' or 'transform' Center SVG with fixed margins or css transform
+//                        IE 11 / Safari 9 has a bug which trasform uses up space
+//
+// </pre>
+//
+// Styleguide 1.10.2
+
+
+// Default Base line for positioning SVGs next to text
+$baseline: 1.5rem !default;
+
+@mixin svg-centered(
+  $svg-width,
+  $svg-height,
+  $wrapper-width,
+  $wrapper-height,
+  $svg-class: 'g-svg',
+  $x-offset: 0,
+  $y-offset: 0,
+  $layout-mode: 'margin') {
+
+  @if ($wrapper-width < $svg-width or $wrapper-height < $svg-height) {
+    @error ('Wrapper can not be larger the the svg');
+  }
+
+  @if ($x-offset != 0 and unit($x-offset) != '%') {
+    @error ('$x-offset be a % unit');
+  }
+
+  // Define SVG Wrapper
+  position: relative;
+  width: $wrapper-width;
+  height: $wrapper-height;
+
+  // Define SVG
+  .#{$svg-class} {
+    position: absolute;
+    top: 50% + $y-offset;
+    left: 50% + $x-offset;
+    width: $svg-width;
+    height: $svg-height;
+
+    @if ($layout-mode == 'transform') {
+      transform: translateX(-50%) translateY(-50%);
+
+    } @elseif ($layout-mode == 'margin') {
+      margin-top: -1 * ($svg-height / 2);
+      margin-left: -1 * ($svg-width / 2);
+
+    } @else {
+      @error ('layout-mode must be transform or margin');
+    }
+  }
+}
+
+// @mixin svg-inline
+//
+// Puts an fixed SVG inside a container of a specific size
+//
+// <pre>
+// svg-inline($baseline, $svg-width, $svg-height, $svg-pad-right, $svg-pad-left, $container-vertical-padding, $container-padding-right: 0, $container-padding-left: 0, $svg-class: 'svg', $h-alignment: 'left', $v-alignment: 'middle')
+// </pre>
+// <pre> </pre>
+// <pre>
+// $baseline                        - Font baseline
+// $svg-width                       - Width of the SVG Icon
+// $svg-height                      - Height of the SVG Icon
+// $svg-pad-right                   - Padding on right side of SVG
+// $svg-pad-left                    - Padding on left side of SVG
+// $container-vertical-padding      - Top & bottom padding for container
+// $container-padding-right: 0      - Right padding for container
+// $container-padding-left: 0       - Left and right padding for container
+// $svg-class: 'g-svg'                - Class for the SVG inside the parent
+// $h-alignment: 'left'             - Align Icon on 'left' or 'right'
+// $v-alignment: 'middle'           - Align Icon 'middle' or 'top'
+// </pre>
+//
+// Styleguide 1.10.3
+
+// Prefix icon with a mult-line link with vertically centered (middle or top) svg to the left
+// Apply to parent container with an SVG of the specified class inside
+
+@mixin svg-inline(
+  $baseline,
+  $svg-width,
+  $svg-height,
+  $svg-pad-right,
+  $svg-pad-left,
+  $container-vertical-padding,
+  $container-padding-right: 0,
+  $container-padding-left: 0,
+  $svg-class: 'g-svg',
+  $h-alignment: 'left',
+  $v-alignment: 'middle') {
+
+  position: relative;
+  transform-style: preserve-3d;
+
+  // Top and Bottom Padding of Container
+  @if ($container-vertical-padding != 0) {
+    padding-top: $container-vertical-padding;
+    padding-bottom: $container-vertical-padding;
+  }
+
+  @if ($h-alignment == 'left') {
+    padding-left: $svg-pad-left + $svg-width + $svg-pad-right + $container-padding-left;
+
+    @if ($container-padding-right != '0') {
+      padding-right: $container-padding-right;
+    }
+
+  } @elseif ($h-alignment == 'right') {
+    padding-right: $svg-pad-left + $svg-width + $svg-pad-right + $container-padding-right;
+
+    @if ($container-padding-left != '0') {
+      padding-left: $container-padding-left;
+    }
+  } @else {
+    @error 'invalid h-alignment value';
+  }
+
+
+  // SVG positioning
+  .#{$svg-class} {
+    display: block;
+    position: absolute;
+    width: $svg-width;
+    height: $svg-height;
+    transform: translateX(-50%) translateY(-50%);
+    transform-style: preserve-3d;
+
+    @if ($h-alignment == 'left') {
+      left: 0 + $svg-pad-left + $container-padding-left;
+    } @else {
+      right: 0 + $svg-pad-right;
+    }
+
+    // SVG vertical positioning
+
+    // Vertical Align icon in middle of parent
+    @if ($v-alignment == 'middle') {
+      top: 50%;
+    }
+    @if ($v-alignment == 'top') {
+      top: ($baseline / 2) + $container-vertical-padding;
+    }
+
+  }
+}

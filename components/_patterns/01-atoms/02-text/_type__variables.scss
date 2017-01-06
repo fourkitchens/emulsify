@@ -1,0 +1,74 @@
+// $font-sizes (Maps)
+//
+// Arrays of Font Sizing which change at breakpoints
+// See /layouts/l--breakpoints.scss
+//
+// Styleguide 1.6.2
+
+
+$base-font-family: 'Roboto', 'Arial', sans-serif;
+
+$title-font-family: 'Roboto Slab', 'Arial', sans-serif;
+$title-font-weight: 700;
+
+$base-font-size: 16px;
+$base-line-height: 26px;
+
+
+// Default text elements
+$p--xsmall-font-sizes: (
+  null: (12px, $base-line-height * 0.75)
+);
+
+$p--small-font-sizes: (
+  null: (14px, $base-line-height * 0.75)
+);
+
+$p-font-sizes: (
+  null: (16px, $base-line-height)
+);
+
+$p--large-font-sizes: (
+  null: (18px, $base-line-height)
+);
+
+$p--xlarge-font-sizes: (
+  null: (20px, $base-line-height * 1.25)
+);
+
+$p--xxlarge-font-sizes: (
+  null: (24px, $base-line-height * 1.25)
+);
+
+
+// Heading text elements
+$h1-font-sizes: (
+  null: (32px, $base-line-height * 1.5),
+  type-large: (42px, $base-line-height * 2)
+);
+
+$h2-font-sizes: (
+  null: (28px, $base-line-height * 1.25),
+  type-large: (36px, $base-line-height * 1.75)
+);
+
+$h3-font-sizes: (
+  null: (24px, $base-line-height * 1.25),
+  type-large: (32px, $base-line-height * 1.5)
+);
+
+$h4-font-sizes: (
+  null: (21px, $base-line-height * 1),
+  type-large: (28px, $base-line-height * 1.25)
+);
+
+$h5-font-sizes: (
+  null: (18px, $base-line-height * 1),
+  type-large: (22px, $base-line-height * 1.25)
+);
+
+$h6-font-sizes: (
+  null: (16px, $base-line-height * 1),
+  type-large: (18px, $base-line-height * 1)
+);
+

@@ -1,0 +1,29 @@
+// Fonts
+//
+// Fonts these are all the default @fontface declarations
+//
+// Styleguide 1.6.3
+
+// NOTE: For IE9+ only woff is needed.
+// See https://webdevstudios.com/2016/05/26/css-font-face-2016-edition/
+
+// Roboto Regular
+@include font-face("Roboto", (
+  // 'ttf': '/fonts/roboto/RobotoSlab-Regular-webfont',
+  'woff': '/fonts/roboto/RobotoSlab-Regular-webfont'
+));
+
+@include font-face("Roboto", (
+  // 'ttf': '/fonts/roboto/Roboto-Italic-webfont',
+  'woff': '/fonts/roboto/Roboto-Italic-webfont'
+), italic);
+
+@include font-face("Roboto", (
+  // 'ttf': '/fonts/roboto/Roboto-Bold-webfont',
+  'woff': '/fonts/roboto/Roboto-Bold-webfont'
+), bold);
+
+@include font-face("Roboto Slab", (
+  // 'ttf': '/fonts/roboto_slab/RobotoSlab-Bold-webfont.woff',
+  'woff': '/fonts/roboto_slab/RobotoSlab-Bold-webfont.woff'
+), bold);
