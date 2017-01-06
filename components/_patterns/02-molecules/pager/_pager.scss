@@ -1,13 +1,13 @@
-.pager {
+.m-pager {
   margin: 2em 0;
 }
 
-.pager__items {
+.m-pager__items {
   @include list-reset;
   text-align: center;
 }
 
-.pager__item {
+.m-pager__item {
   display: inline-block;
   margin: 0 .7em;
 
@@ -16,9 +16,9 @@
   }
 }
 
-.pager__link,
-.pager__link:link,
-.pager__link:visited {
+.m-pager__link,
+.m-pager__link:link,
+.m-pager__link:visited {
   color: $gray-light;
   font-weight: 600;
   text-decoration: none;
@@ -29,8 +29,8 @@
   }
 }
 
-.pager__link--next,
-.pager__link--prev {
+.m-pager__link--next,
+.m-pager__link--prev {
   display: block;
 
   span {
@@ -55,7 +55,7 @@
   }
 }
 
-.pager__link--prev {
+.m-pager__link--prev {
   &::before {
     border-left-color:transparent;
     border-right-color:$gray-light;
