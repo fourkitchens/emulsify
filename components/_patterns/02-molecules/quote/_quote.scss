@@ -16,9 +16,8 @@
 
 
 %m-quote--icon-core {
-  // @include svg-centered(ru(3),  ru(3),  ru(3),  ru(3));
+  @include svg-centered(ru(3),  ru(3),  ru(3),  ru(3));
   fill: palette(blue, xlight);
-
 }
 
 .m-quote__open {
