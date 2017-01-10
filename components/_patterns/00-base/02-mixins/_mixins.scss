@@ -51,9 +51,9 @@
 }
 
 /// Mixin - Strip unit
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
-}
+// @function strip-unit($value) {
+//   @return $value / ($value * 0 + 1);
+// }
 
 /// Mixin - Center.
 /// Center an element vertically or horizontally in its container,

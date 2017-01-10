@@ -1,14 +1,11 @@
-// @function strip-unit($num)
-//
-// Strips units (From Foundation Zurb Base File)
-//
-// <pre>
-// $value : strip-unit(20rem); // $value is 20
-// </pre>
-//
-// Styleguide 1.1.2
+/////////////////////
+// Functions
 
-
-@function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+/// Strips unit
+/// @example
+///   $length : 42em;
+///   $int    : strip-unit($length); // 42
+/// @param {string} $value
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
 }

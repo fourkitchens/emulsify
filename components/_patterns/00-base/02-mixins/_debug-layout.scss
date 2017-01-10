@@ -1,14 +1,5 @@
-// @mixin dbl / "Debug Layout"
-//
-// "DBL" is short hand for "__D__e__B__ug __L__ayout"
-//
-// Mixin for development only. Create a highly visisble background fill, outline,
-// and on an element. Each call increments though the an array of colors.
-// Usefull for positioning layouts and components while doing front end work.
-//
-// Styleguide 1.2.1
-
-
+/////////////////////
+// Mixins
 
 // Variables
 $debug-colors: rgb(160, 0, 0), rgb(0, 160, 0), rgb(0, 0, 160) !default; // scss-lint:disable ColorVariable
@@ -16,14 +7,31 @@ $debug-colors: rgb(160, 0, 0), rgb(0, 160, 0), rgb(0, 0, 160) !default; // scss-
 // Global variable for counting runs
 $debug-count: 1 !default !global;
 
-@mixin dbl ($i: $debug-count) {
+/// Mixin for development only. Create a highly visisble background fill,
+/// outline and on an element. Each call increments though the an array of
+/// colors.
+///
+/// Useful for positioning layouts and components while doing front end work.
+///
+/// "DBL" is short hand for "__D__e__B__ug __L__ayout"
+/// @example
+///   .my-module {
+///     @include dbl();
+///   }
+///
+///   .my-module {
+///     outline: 2px dashed #a00000;
+///     background-color: rgba(160, 0, 0, 0.5);
+///   }
+/// @param {integer} $i [1] -
+@mixin dbl($i: $debug-count) {
   $color: nth($debug-colors, $i);
   outline: 2px dashed $color;
   background-color: rgba($color, 0.5);
 
   @if ($i < length($debug-colors)) {
     $debug-count: $i + 1 !global;
-  }@else {
+  } @else {
     $debug-count: 1 !global;
   }
 }
