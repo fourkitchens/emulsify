@@ -1,4 +1,9 @@
 .heading-1 {
+  font-family: "reklame-script";
   @include font-size(1.8);
   font-weight: 700;
+
+  span {
+    font-family: "gotham";
+  }
 }

@@ -1,0 +1,23 @@
+.em-logo {
+  font: 9em/1em "reklame-script";
+
+  a {
+    color: $white;
+  }
+
+  span {
+    color: $gray;
+    display: block;
+    font: .155em "gotham";
+    left: 3px;
+    letter-spacing: 2px;
+    position: relative;
+    text-transform: uppercase;
+    top:-8px;
+  }
+
+  .sg-pattern-example & {
+    background-color: $orange;
+    padding: .3em;
+  }
+}
