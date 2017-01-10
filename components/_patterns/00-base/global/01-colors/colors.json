@@ -35,6 +35,10 @@
     {
       "name": "$black",
       "value": "black"
+    },
+    {
+      "name": "$orange",
+      "value": "#F18D40"
     }
   ],
   "meta": {
