@@ -1,5 +1,6 @@
 .em-logo {
   font: 9em/1em "reklame-script";
+  margin: 0 auto;
 
   a {
     color: $white;
@@ -16,7 +17,7 @@
     top:-8px;
   }
 
-  .sg-pattern-example & {
+  #atoms-logo & {
     background-color: $orange;
     padding: .3em;
   }

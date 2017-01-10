@@ -10,9 +10,6 @@
     <a href="#main-content" class="visually-hidden focusable">
       {{ 'Skip to main content'|t }}
     </a>
-    {{ page_top }}
-    {{ page }}
-    {{ page_bottom }}
-    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+    {% include "components/_patterns/01-atoms/04-images/logo/logo.twig" %}
   </body>
 </html>
