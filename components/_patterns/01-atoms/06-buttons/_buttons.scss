@@ -1,66 +1,147 @@
-@mixin button($alt: false) {
-  background-color: $black;
-  border:none;
-  color: $white;
-  cursor: pointer;
-  font-family: $body;
-  line-height: 1em;
-  padding: .5em 1em;
+// Core Extendables
+%a-btn--core {
   display: inline-block;
-  text-decoration: none;
-  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: none;
+  border-radius: rem(4px);
   text-transform: uppercase;
+  text-decoration: none;
+}
 
-  &:link,
-  &:visited {
-    color: $white;
-  }
+////
+// Size Varations
+////
 
-  &:hover {
-    background-color: $gray;
-  }
+%a-btn--default-padding {
+  padding: ru(0.5) ru(1);
+}
 
-  @if $alt {
-    // @include font-size(.7);
-    background-color: $gray;
-    padding: .4em .6em .3em;
+%a-btn--narrow-padding {
+  padding: ru(0.25) ru(0.75);
+}
 
-    &:hover {
-      background-color: black;
-    }
+////
+// Color Variations
+////
+%a-btn--palette-grey {
+  border-color: palette(grey, light);
+  background-color: $white;
+  color: palette(grey);
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: palette(grey);
+    background-color: palette(grey, xlight);
   }
 }
 
-.button,
-a.button {
-  @include button();
+%a-btn--palette-blue {
+  border-color: palette(blue, dark);
+  background-color: palette(blue);
+  color: $white;
 
-  &--alt {
-    @include button($alt: true);
-    font-weight: 600;
-  }
-
-  &--alt-2 {
-    background-color: $gray-lightest;
-    color: $black;
-    // @include font-size(.8);
-    font-weight: 600;
-    line-height: 1.4em;
-    text-transform: none;
-
-    &:link,
-    &:visited {
-      color: $black;
-    }
-
-    &:hover {
-      background-color: $gray-lighter;
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: palette(blue, dark);
+    background-color: palette(blue, dark);
   }
 }
 
-a.button {
-  // needed to override base theme CSS
-  -moz-appearance: none;
-  -webkit-appearance: none;
+// Button Variations
+%a-btn,
+.a-btn {
+  @extend %a-btn--core;
+  @extend %a-btn--default-padding;
+  @extend %a-btn--palette-grey;
 }
+
+.a-btn--blue {
+  @extend %a-btn--core;
+  @extend %a-btn--default-padding;
+  @extend %a-btn--palette-blue;
+}
+
+.a-btn--thin {
+  @extend %a-btn--core;
+  @extend %a-btn--narrow-padding;
+  @extend %a-btn--palette-grey;
+}
+
+.a-btn--thin-blue {
+  @extend %a-btn--core;
+  @extend %a-btn--narrow-padding;
+  @extend %a-btn--palette-blue;
+}
+
+
+
+
+// @mixin button($alt: false) {
+//   background-color: $black;
+//   border:none;
+//   color: $white;
+//   cursor: pointer;
+//   font-family: $body;
+//   line-height: 1em;
+//   padding: .5em 1em;
+//   display: inline-block;
+//   text-decoration: none;
+//   text-align: center;
+//   text-transform: uppercase;
+
+//   &:link,
+//   &:visited {
+//     color: $white;
+//   }
+
+//   &:hover {
+//     background-color: $gray;
+//   }
+
+//   @if $alt {
+//     @include font-size(.7);
+//     background-color: $gray;
+//     padding: .4em .6em .3em;
+
+//     &:hover {
+//       background-color: black;
+//     }
+//   }
+// }
+
+// .button,
+// a.button {
+//   @include button();
+
+//   &--alt {
+//     @include button($alt: true);
+//     font-weight: 600;
+//   }
+
+//   &--alt-2 {
+//     background-color: $gray-lightest;
+//     color: $black;
+//     @include font-size(.8);
+//     font-weight: 600;
+//     line-height: 1.4em;
+//     text-transform: none;
+
+//     &:link,
+//     &:visited {
+//       color: $black;
+//     }
+
+//     &:hover {
+//       background-color: $gray-lighter;
+//     }
+//   }
+// }
+
+// a.button {
+//   // needed to override base theme CSS
+//   -moz-appearance: none;
+//   -webkit-appearance: none;
+// }

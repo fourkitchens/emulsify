@@ -1,70 +1,161 @@
+// Pager
+//
+// markup: _m-pager.html
+//
+// Styleguide 2.5
+
 .m-pager {
-  margin: 2em 0;
+  // @extend %u-clearfix;
+
+  display: flex;
+  align-items: center;
+  margin-top: ru(1);
+  margin-bottom: ru(1);
+
+  // We need to breakpoits
+  // @include respond-to('max-size') {
+  //   margin-right: 0;
+  //   margin-left: 0;
+  // }
+
 }
 
+// Each part of the pager is wrapped in a group that
+// is vertically centered for small screens
+
+%m-pager__group-core {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+
+  // Reserve space for buttons regardless of whether
+  // They render to maintain spacing / Centering of UI
+  flex-basis: ru(3.25);
+
+  // @include respond-to('expanded-wrapper') {
+  //   flex-basis: ru(4.25);
+  // }
+}
+
+.m-pager__group-backwards {
+  // @extend %m-pager__group-core;
+
+}
+
+.m-pager__group-forwards {
+  // @extend %m-pager__group-core;
+}
+
+.m-pager__btn-first {
+  // @extend %c-btn--palette-white;
+
+  @include svg-centered(ru(1),  ru(1),  ru(1.5),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
+  margin-right: ru(0.25);
+  border: 1px solid palette(blue, light);
+
+  // We need to breakpoits
+  // @include respond-to('expanded-wrapper') {
+  //   @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -5%, $layout-mode: 'margin');
+  // }
+}
+
+
+.m-pager__btn-prev {
+  // @extend %c-btn--palette-blue;
+
+  @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: -2%, $layout-mode: 'margin');
+
+  // We need to breakpoits
+  // @include respond-to('expanded-wrapper') {
+  //   @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
+  // }
+}
+
+.m-pager__btn-next {
+  // @extend %c-btn--palette-blue;
+
+  @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: 3%, $layout-mode: 'margin');
+
+  // We need to breakpoits
+  // @include respond-to('expanded-wrapper') {
+  //   @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
+  // }
+}
+
+// c-btn--icon-large c-btn--secondary
+.m-pager__btn-last {
+  // @extend %c-btn--palette-white;
+
+  @include svg-centered(ru(1),  ru(1),  ru(1.5),  ru(2), $x-offset: 2%, $layout-mode: 'margin');
+  margin-left: ru(0.25);
+  border: 1px solid palette(blue, light);
+
+  // We need to breakpoits
+  // @include respond-to('expanded-wrapper') {
+  //   @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
+  // }
+}
+
+// Pages List. Will Shrink, but not grow. On small screens
+//
 .m-pager__items {
-  // @include list-reset;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 1;
+  // margin-right: ru(0.25);
+  // margin-left: ru(0.25);
+
+  // We need to breakpoits
+  // @include respond-to('expanded-wrapper') {
+  //   margin-right: ru(0.5);
+  //   margin-left: ru(0.5);
+  // }
 }
 
-.m-pager__item {
-  display: inline-block;
-  margin: 0 .7em;
-
-  @include medium {
-    margin: 0 1em;
-  }
-}
-
-.m-pager__link,
-.m-pager__link:link,
-.m-pager__link:visited {
-  color: $gray-light;
-  font-weight: 600;
-  text-decoration: none;
-
-  &.is-active,
-  &:hover {
-    color: $gray;
-  }
-}
-
-.m-pager__link--next,
-.m-pager__link--prev {
+%m-pager__btn-core {
   display: block;
+  padding: ru(0.125) ru(0.5);
+  font-weight: 700;
 
-  span {
-    display: none;
+  // We need to breakpoits
+  // @include respond-to('expanded-wrapper') {
+  //   padding: ru(0.25) ru(0.5);
+  // }
+}
+
+%m-pager__btn,
+.m-pager__item a {
+  // @extend %m-pager__btn-core;
+
+  text-decoration: underline;
+  color: palette(blue, light);
+
+  &:visited {
+    color: palette(blue, light);
   }
 
-  &::before {
-    border: 8px solid $gray-light;
-    border-bottom: 6px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 6px solid transparent;
-    content: "";
-    display: block;
-    position: relative;
-    top: 1px;
+  &:hover,
+  &:focus {
+    background-color: palette(blue, xlight);
+    color: palette(blue);
   }
 
-  &:hover {
-    &::before {
-      border-left-color: $gray;
-    }
+  &:focus {
+    outline: 2px solid palette(grey);
   }
 }
 
-.m-pager__link--prev {
-  &::before {
-    border-left-color:transparent;
-    border-right-color:$gray-light;
-  }
+%m-pager__btn--is-active,
+.m-pager__item-is-active a {
+  @extend %m-pager__btn-core;
 
-  &:hover {
-    &::before {
-      border-left-color: transparent;
-      border-right-color: $gray;
-    }
-  }
+  cursor: default;
+  text-decoration: none;
+  color: $black;
 }
+
+
+// @import 'm-pager--image';
