@@ -6,18 +6,21 @@
 //
 // Styleguide 1.5
 
+// @todo documentation.
+// @url https://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+// @url https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7970618/
+
 @viewport {
   width: device-width;
 }
 
 html {
   line-height: ($base-line-height / $base-font-size) * 1em;
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: ($base-font-size / 16px) * 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-
 
 body {
   // Use Flex display to allow footer (or body) to scale full hieght of viewport
