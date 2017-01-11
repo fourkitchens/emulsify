@@ -3,10 +3,10 @@
   // @include list-reset;
   border-bottom: 1px solid $gray-lightest;
 
-  @include medium {
-    border-left: 1px solid $gray-lightest;
-    display: flex;
-  }
+  // @include medium {
+  //   border-left: 1px solid $gray-lightest;
+  //   display: flex;
+  // }
 }
 
 // Tab Content (hidden only in full #tabs js version)

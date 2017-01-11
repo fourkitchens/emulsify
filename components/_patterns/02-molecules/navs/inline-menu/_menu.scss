@@ -5,10 +5,10 @@
 .menu__item {
   margin: 0 1em .5em 0;
 
-  @include medium {
-    display: inline;
-    margin-bottom: 1em;
-  }
+  // @include medium {
+  //   display: inline;
+  //   margin-bottom: 1em;
+  // }
 
   &:last-child {
     margin-right: 0;
