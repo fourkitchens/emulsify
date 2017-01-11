@@ -510,3 +510,9 @@ td,
 th {
   padding: 0;
 }
+
+
+.foo {
+  @include ir (12/3);
+}
+
