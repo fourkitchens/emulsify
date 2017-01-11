@@ -2,3 +2,11 @@
   @include font-size(1.8);
   font-weight: 700;
 }
+
+h1,
+.a-type__h1,
+%a-type__h1 {
+  @extend %heading-font;
+
+  @include font-size($h1-font-sizes);
+}

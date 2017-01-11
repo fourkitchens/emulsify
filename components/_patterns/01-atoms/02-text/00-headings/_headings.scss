@@ -1,3 +1,11 @@
+%heading-font {
+  // @extend %g-type__core;
+
+  margin: 1rem 0 0.5rem;
+  font-family: $title-font-family;
+  font-weight: $title-font-weight;
+}
+
 .heading-1,
 .heading-2,
 .heading-3,

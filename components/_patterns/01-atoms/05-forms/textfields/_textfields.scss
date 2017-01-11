@@ -1,57 +1,237 @@
-.form-item {
-  color: $gray;
-  margin-bottom: 1em;
-  max-width: 32em;
-  @include clearfix;
-}
+// .form-item {
+//   color: $gray;
+//   margin-bottom: 1em;
+//   max-width: 32em;
+//   @include clearfix;
+// }
 
-.form-item__label {
-  display: block;
-  font-weight: 600;
+// .form-item__label {
+//   display: block;
+//   font-weight: 600;
 
-  @include small {
-    display: block;
-    margin-right: 2%;
-    padding: .6em 0;
-  }
-}
+//   @include small {
+//     display: block;
+//     margin-right: 2%;
+//     padding: .6em 0;
+//   }
+// }
 
-.form-item__textfield {
-  border: 1px solid $gray-lightest;
-  padding: .6em;
+// .form-item__textfield {
+//   border: 1px solid $gray-lightest;
+//   padding: .6em;
 
-  &:focus {
-  	border-color:$black;
-  }
+//   &:focus {
+//   	border-color:$black;
+//   }
 
+//   &::-webkit-input-placeholder {
+//     color:$gray-light;
+//   }
+
+//   &:-moz-placeholder {
+//     color:$gray-light;
+//   }
+
+//   &::-moz-placeholder {
+//     color:$gray-light;
+//   }
+
+//   &:-ms-input-placeholder {
+//     color:$gray-light;
+//   }
+// }
+
+// .form-item__description {
+//   margin-top: .3em;
+// }
+
+// .form-fieldset {
+//   border: none;
+//   margin-bottom: 2em;
+//   padding: 0;
+
+//   .form-item {
+//     margin-left: 1em;
+//     max-width: 31em;
+//   }
+// }
+
+
+
+// Mixin for setting html5 placeholder color
+$grey-light: #999999 !default;
+
+@mixin placeholder($color: $grey-light) {
   &::-webkit-input-placeholder {
-    color:$gray-light;
+    color: $color;
   }
 
-  &:-moz-placeholder {
-    color:$gray-light;
+  /* Firefox 18- */
+  &:-moz-placeholder {  // scss-lint:disable VendorPrefix
+    color: $color;
   }
 
-  &::-moz-placeholder {
-    color:$gray-light;
+  /* Firefox 19+ */
+  &::-moz-placeholder {   // scss-lint:disable VendorPrefix
+    color: $color;
   }
 
   &:-ms-input-placeholder {
-    color:$gray-light;
+    color: $color;
   }
 }
 
-.form-item__description {
-  margin-top: .3em;
+@mixin placeholder--core {
+  @include placeholder();
 }
 
-.form-fieldset {
-  border: none;
-  margin-bottom: 2em;
-  padding: 0;
+// Extendables ***
+// Overside Form Elements
+%g-input--large {
+  // @extend %g-type--xlarge;
+  margin-top: ru(1);
+  border-radius: 12px;
+  height: ru(3);
+}
 
-  .form-item {
-    margin-left: 1em;
-    max-width: 31em;
+%g-input--large--centered {
+  // @extend %g-input--large;
+  text-align: center;
+}
+
+%g-button--reset {
+  border: 0;
+  background-color: transparent;
+  width: auto;
+  border-spacing: 0;
+  text-align: left;
+  text-indent: 0;
+  text-decoration: none;
+
+  &::-moz-focus-inner,
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
   }
 }
+
+label:not(.option) {
+  // @extend %g-type--xlarge;
+  display: block;
+
+  &.has-error {
+    // Change to sites red variant
+    border-color: $debug-red;
+    background-color: rgba($debug-red, 0.1);
+    color: $debug-red;
+  }
+
+  .form-required {
+    color: $debug-red;
+    font-weight: normal;
+  }
+}
+
+// Text & Similar Inputs
+textarea,
+select,
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'] {
+  // @extend %g-input--core;
+  background-color: $white;
+
+  &.g-input--large {
+    // @extend %g-input--large;
+  }
+
+  &.g-input--large--centered {
+    // @extend %g-input--large--centered;
+  }
+
+  &.sg-search-field {
+    width: auto;
+  }
+}
+
+
+// Removes select drop-down arrow
+select {
+  // @extend %g-input--core;
+  background: url('/svg/sprite-ui/arrow-down.svg') no-repeat right ru(0.5)center;
+  padding: ru(0.375) ru(1.5) ru(0.375) ru(0.5);
+  -moz-appearance: none !important; // sass-lint:disable-line no-important
+}
+
+
+// Placeholder Note we're repeating it on purpose!
+// a group of selectors containing an invalid selector is invalid.
+// http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css
+
+//scss-lint:disable VendorPrefix
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {  // Separate rule for Firefox. Separate rule for IE, too. Cannot stack with WebKit's.
+  @include placeholder--core;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  @include placeholder--core;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  @include placeholder--core;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  @include placeholder--core;
+}
+//scss-lint:enable VendorPrefix
+
+textarea {
+  height: ru(6);
+  overflow: auto;
+  resize: vertical;
+}
+
+optgroup {
+
+  &::-moz-focus-inner {  // Kill phantom spacing and dotted border that appears in Firefox.
+    border: 0;
+    padding: 0;
+  }
+}
+
+
+//scss-lint:disable QualifyingElement
+button,
+input[type='reset'],
+input[type='submit'],
+input[type='button'] {
+  // @extend %g-button--reset;
+  // @extend %g-input--core;
+  // @extend %c-btn;
+}
+//scss-lint:enable QualifyingElement
+
+// Search Input
+///////////////
+// Remove decoration from input
+//scss-lint:disable QualifyingElement
+input[type='search']::-webkit-search-decoration {  // UI Consistency
+  display: none;
+}
+//scss-lint:enable QualifyingElement
+

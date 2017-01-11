@@ -1,10 +1,10 @@
 {#
 /**
  * @file
- * Theme override to display a m-pager.
+ * Default theme implementation to display a pager.
  *
  * Available variables:
- * - items: List of m-pager items.
+ * - items: List of pager items.
  *   The list is keyed by the following elements:
  *   - first: Item for the first page; not present on the first page of results.
  *   - previous: Item for the previous page; not present on the first page
@@ -27,115 +27,87 @@
  *   - next: Present if the visible list of pages ends before the last page.
  *
  * @see template_preprocess_pager()
+ *
+ * @ingroup themeable
  */
 #}
 {% if items %}
-  <nav class="m-pager" role="navigation" aria-labelledby="pagination-heading">
-    <h4 id="pagination-heading" class="visually-hidden">{{ 'Pagination'|t }}</h4>
-    <ul class="m-pager__items js-m-pager__items">
-      {# Print previous item if we are not on the first page. #}
-      {% if items.previous %}
-        <li class="m-pager__item m-pager__item--previous">
-          <a class="m-pager__link m-pager__link--prev"  href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
-            <span class="visually-hidden">{{ 'Previous page'|t }}</span>
-            <span aria-hidden="true">{{ items.previous.text|default('‹ Previous'|t) }}</span>
-          </a>
-        </li>
+  <div class="m-pager">
+    <h4 class="u-visually--hidden">{{ 'Pagination'|t }}</h4>
+
+    <div class="m-pager__group-backwards">
+    {% if items.first %}
+      <a class="m-pager__btn-first" href="{{ items.first.href }}" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title') }}>
+        <span class="visually-hidden" aria-hidden="true">{{ 'First page'|t }}</span>
+        <svg class="g-svg">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/alumni/svg/sprite-ui.svg#angle-double-left">
+          </use>
+        </svg>
+      </a>
       {% endif %}
+
+      {% if items.previous %}
+
+      <a class="m-pager__btn-prev" href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
+        <span class="visually-hidden" aria-hidden="true">{{ 'Previous page'|t }}</span>
+        <svg class="g-svg">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/alumni/svg/sprite-ui.svg#angle-left">
+          </use>
+        </svg>
+      </a>
+
+      {% endif %}
+    </div>
+
+    <div class="m-pager__items">
       {# Add an ellipsis if there are further previous pages. #}
       {% if ellipses.previous %}
-        <li class="m-pager__item m-pager__item--ellipsis" role="presentation">&hellip;</li>
+        <div class="m-pager__item-prev--ellipsis" role="presentation">&hellip;</div>
       {% endif %}
-      {# Now generate the actual pager piece. #}
+
       {% for key, item in items.pages %}
-        <li class="m-pager__item{{ current == key ? ' is-active' : '' }}">
+        <div class="m-pager__item{{ current == key ? '-is-active' : '' }}">
           {% if current == key %}
             {% set title = 'Current page'|t %}
           {% else %}
             {% set title = 'Go to page @key'|t({'@key': key}) %}
           {% endif %}
-          <a class="m-pager__link{{ current == key ? ' is-active' : '' }}" href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }}>
+          <a href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }}>
             <span class="visually-hidden">
               {{ current == key ? 'Current page'|t : 'Page'|t }}
             </span>
             {{- key -}}
           </a>
-        </li>
+        </div>
       {% endfor %}
+
       {# Add an ellipsis if there are further next pages. #}
       {% if ellipses.next %}
-        <li class="m-pager__item m-pager__item--ellipsis" role="presentation">&hellip;</li>
+        <div class="m-pager__item-next--ellipsis" role="presentation">&hellip;</div>
       {% endif %}
-      {# Print next item if we are not on the last page. #}
+    </div>
+
+    <div class="m-pager__group-forwards">
       {% if items.next %}
-        <li class="m-pager__item m-pager__item--next">
-          <a class="m-pager__link m-pager__link--next" href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
-            <span class="visually-hidden">{{ 'Next page'|t }}</span>
-            <span aria-hidden="true">{{ items.next.text|default('Next ›'|t) }}</span>
-          </a>
-        </li>
-      {% endif %}
-    </ul>
-  </nav>
-{% endif %}
-
-
-{# TODO: Mainspring simplified pager version, we should discuss this.#}
-
-{# .m-pager {
-  @extend %u-clearfix;
-  padding: ru(1) 0;
-  text-align: center;
-
-  @include respond-to('type-large') {
-    padding-right: ru(1);
-    padding-left: ru(1);
-  }
-
-  @include respond-to('full-nav') {
-    padding-right: ru(0.5);
-    padding-left: ru(0.5);
-  }
-
-  @include respond-to('max-size') {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
-%m-pager__item-btn {
-  display: inline-block;
-  padding: 0 ru(1);
-}
-
-.m-pager__item-current {
-  @extend %m-pager__item-btn;
-}
-
-.m-pager__item-prev {
-  @extend %m-pager__item-btn;
-}
-
-.m-pager__item-next {
-  @extend %m-pager__item-btn;
-}
-
-<div class="m-pager">
-  <div class="m-pager__item-prev">
-      <a class="c-btn" href="#" title="Prev" rel="prev">
-        <span class="u-visually--hidden">Previous page</span>
-        <span aria-hidden="true">Prev</span>
+      <a class="m-pager__btn-next" href="{{ items.next.href }}" title="Next" rel="next">
+        <span class="u-visually--hidden" aria-hidden="true">Next page</span>
+        <svg class="g-svg">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/alumni/svg/sprite-ui.svg#angle-right">
+        </use>
+      </svg>
       </a>
-  </div>
-  <div class="m-pager__item-current">
-    Page 2
-  </div>
+      {% endif %}
 
-  <div class="m-pager__item-next">
-    <a class="c-btn" href="#" title="Next" rel="next">
-      <span class="u-visually--hidden">Next page</span>
-      <span aria-hidden="true">Next</span>
-    </a>
+      {% if items.last %}
+      <a class="m-pager__btn-last" href="{{ items.last.href }}" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }}>
+        <span class="visually-hidden" aria-hidden="true">{{ 'Last page'|t }}</span>
+        <svg class="g-svg">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/alumni/svg/sprite-ui.svg#angle-double-right">
+          </use>
+        </svg>
+      </a>
+      {% endif %}
+    </div>
+
   </div>
-</div>
- #}
+{% endif %}

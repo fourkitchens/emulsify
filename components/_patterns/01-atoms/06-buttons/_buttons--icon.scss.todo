@@ -1,0 +1,83 @@
+// Icon Only Buttons
+//
+// .c-btn--icon - default (Icon only - Text Visuall Hidden)
+// .c-btn--icon-large - Unique Button for Mobile Menu
+//
+// markup: <a href="#" class="{$modifiers}"><span class="u-visually--hidden">{$modifiers}</span><svg class="g-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#arrow462"></use></svg></a>
+//
+//
+// Styleguide 2.1.2
+
+%c-btn--icon-core {
+  @extend %c-btn--core;
+  @extend %u-animate-background-color; // Animate background
+  position: relative;
+  border-color: palette(grey, light);
+  color: palette(grey, dark);
+  fill: palette(grey, dark);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: palette(grey, xlight);
+    color: palette(blue, dark);
+    fill: palette(blue);
+  }
+}
+
+%c-btn--icon,
+.c-btn--icon {
+  @extend %c-btn--icon-core;
+  @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(1.5));
+}
+
+
+%c-btn--icon-large,
+.c-btn--icon-large {
+  @extend %c-btn--icon-core;
+  @include svg-centered(ru(1.75),  ru(1.75),  ru(2),  ru(2));
+}
+
+
+// Icon and Text Buttons
+//
+// .c-btn--icon-left - Icon left & Vertically Centered
+// .c-btn--icon-right - Icon Right & Top Aligned
+//
+// markup: <a href="#" class="{$modifiers}">{$modifiers}<svg class="g-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#delete"></use></svg></a>
+// <a href="#" class="{$modifiers}">{$modifiers} Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna.<svg class="g-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#delete"></use></svg></a>
+//
+// Styleguide 2.1.3
+
+.c-btn--icon-left {
+  @extend %c-btn--icon-core;
+  // See config/mixins/svg-position.scss
+  @include svg-inline(
+    $baseline: rem($base-line-height), // font baseline
+    $svg-width: ru(0.75), // SVG width (units same as typography)
+    $svg-height: ru(0.75), // SVG height
+    $svg-pad-right: ru(0.25), // padding on right side of SVG
+    $svg-pad-left: 0, // padding on left side of SVG
+    $container-vertical-padding: ru(0.5), // Top & bottom padding for container
+    $container-padding-left: ru(1), // Left padding for container
+    $container-padding-right: ru(1), // Right padding for container    $svg-class: 'svg', // Class for the SVG inside the parent
+    $svg-class: 'g-svg', // Class for the SVG inside the parent
+    $h-alignment: 'left', // Align Icon on 'left' or 'right'
+    $v-alignment: 'middle'); // Align Icon 'middle' or 'top'
+}
+
+.c-btn--icon-right {
+  @extend %c-btn--icon-core;
+  @include svg-inline(
+    $baseline: rem($base-line-height), // font baseline
+    $svg-width: ru(0.75), // SVG width (units same as typography)
+    $svg-height: ru(0.75), // SVG height
+    $svg-pad-right: 0, // padding on left side of SVG
+    $svg-pad-left: ru(0.5), // padding on right side of SVG
+    $container-vertical-padding: ru(0.5), // Top & bottom padding for container
+    $container-padding-left: ru(1), // Left padding for container
+    $container-padding-right: ru(0.75), // Right padding for container
+    $svg-class: 'g-svg', // Class for the SVG inside the parent
+    $h-alignment: 'right', // Align Icon on 'left' or 'right'
+    $v-alignment: 'top'); // Align Icon 'middle' or 'top'
+}
