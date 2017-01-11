@@ -1,15 +1,15 @@
 body {
   color:$gray;
-  @include body-copy;
+  // @include body-copy;
 }
 
 p {
   margin: 0 0 1em;
 }
 
-a {
-  @include a-link;
-}
+// a {
+//   @include a-link;
+// }
 
 blockquote {
   font-style: italic;

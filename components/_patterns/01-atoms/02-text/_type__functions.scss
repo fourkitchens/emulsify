@@ -1,25 +1,20 @@
-// @mixin font-size($fs-map, $fs-breakpoints)
-//
-// Responsive Typography Based on http://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/
-// Modified to use REM & https://github.com/at-import/breakpoint
-//
-// Requires:
-// * $breakpoints to be defined as a map in /layouts/_l--breakpoints.scss
-// * Typography Maps to be defined in g-type--variables.scss
-//
-// $fs-map - Defined Range of Font sizes
-// $fs-breakpoints - Optional: Specify a specific breakpoint
-//
-// <pre>
-// .g-type--h3 {
-//   @include font-size($h3-font-sizes);
-// }
-// </pre>
-//
-// Styleguide 1.6.1
+/////////////////////
+// Mixin - Font Size
 
+/// Breakpoints
+/// @todo update when breakpoints included in emulsify mainspring
+$breakpoints: '';
 
-
+/// Responsive Typography Based on http://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/
+///
+/// Modified to use REM & https://github.com/at-import/breakpoint
+/// Requires:
+/// * $breakpoints to be defined as a map in /layouts/_l--breakpoints.scss
+/// * Typography Maps to be defined in g-type--variables.scss
+/// @todo Examples
+/// @group type
+/// @param $fs-map - Defined Range of Font sizes
+/// @param $fs-breakpoints [$breakpoints] -  Specify a specific breakpoint
 @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
   @each $fs-breakpoint, $fs-font-size in $fs-map {
     @if $fs-breakpoint == null {
@@ -38,7 +33,10 @@
   }
 }
 
-// Utility function for mixin font-size
+/// Utility mixin for font-size mixin
+/// @todo Example
+/// @group type
+/// @param $fs-font-size
 @mixin make-font-size($fs-font-size) {
   // If $fs-font-size is a list, include
   // both font-size and line-height
@@ -62,4 +60,3 @@
     font-size: $fs-font-size;
   }
 }
-

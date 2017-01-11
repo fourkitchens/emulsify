@@ -1,10 +1,7 @@
-/////////////////////
-// Mixins
-
-// Variables
+/// Debug color array
 $debug-colors: rgb(160, 0, 0), rgb(0, 160, 0), rgb(0, 0, 160) !default; // scss-lint:disable ColorVariable
 
-// Global variable for counting runs
+/// Global variable for counting runs
 $debug-count: 1 !default !global;
 
 /// Mixin for development only. Create a highly visisble background fill,
@@ -14,15 +11,18 @@ $debug-count: 1 !default !global;
 /// Useful for positioning layouts and components while doing front end work.
 ///
 /// "DBL" is short hand for "__D__e__B__ug __L__ayout"
-/// @example
+/// @example scss - Basic Usage Sass
 ///   .my-module {
 ///     @include dbl();
 ///   }
 ///
+/// @example scss - Basic Usage CSS Output
 ///   .my-module {
 ///     outline: 2px dashed #a00000;
 ///     background-color: rgba(160, 0, 0, 0.5);
 ///   }
+/// @require $debug-colors
+/// @require $debug-count
 /// @param {integer} $i [1] -
 @mixin dbl($i: $debug-count) {
   $color: nth($debug-colors, $i);

@@ -1,21 +1,13 @@
-// Visuall Hidden / Shown
-//
-// Accessible way to hide elements on the page (and show them again)
-//
-// Use as a mixin (discouraged), class, or @extend (preferred)
-//
-// <pre> .u-visually--hidden </pre>
-// <pre> @extend %u-visually--hidden; </pre>
-// <pre> @inlude visually-hidden; </pre>
-//
-//
-// <pre> .u-visually--shown </pre>
-// <pre> @extend %u-visually--hidden; </pre>
-// <pre> @inlclude visually-shown; </pre>
-//
-// Styleguide 4.6
-
-// Mixins
+/// Accessible way to hide elements on the page (and show them again)
+///
+/// Use as a mixin (discouraged), class, or @extend (preferred)
+/// @group utility
+/// @example scss - Sass Usage
+///  .my-module {
+///    @extend %u-visually--hidden;
+///   }
+/// @example markup - Html usage
+///  <div class="my-module visually-hidden">Hide Text</div>
 @mixin visually-hidden {
   position: absolute;
   margin: -1px;
@@ -39,6 +31,16 @@
   }
 }
 
+/// Accessible way to hide elements on the page (and show them again)
+///
+/// Use as a mixin (discouraged), class, or @extend (preferred)
+/// @group utility
+/// @example scss - Sass Usage
+///  .my-module {
+///    @extend %visually-shown;
+///   }
+/// @example markup - Html usage
+///  <div class="my-module visually-shown">Hide Text</div>
 @mixin visually-shown {
   position: static;
   margin: 0;

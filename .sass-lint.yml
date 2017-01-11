@@ -16,13 +16,13 @@ rules:
     - 1
     - max-depth: 4
   no-css-comments: 0
-  no-duplicate-properties: 
+  no-duplicate-properties:
     - 1
-    - 
+    -
       exclude:
         - src
   no-empty-rulesets: 1
-  no-extends: 1
+  no-extends: 0
   no-ids: 2
   no-important: 2
   no-misspelled-properties:
@@ -31,7 +31,7 @@ rules:
   placeholder-in-extend: 2
   quotes:
     - 1
-    - style: double
+    - style: single
   space-after-colon:
     - 1
     - include: true

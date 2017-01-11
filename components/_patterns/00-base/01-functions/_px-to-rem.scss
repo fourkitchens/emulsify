@@ -1,17 +1,17 @@
-/////////////////////
-// Functions
-
+/// base font default
 $base-font-size: 16px !default;
 
 /// Converts units from pixels to EMs
-/// @example
+/// @example scss - Basic Usage Sass
 ///   .my-module {
 ///     font-size: em(24px);
 ///   }
 ///
+/// @example scss - Basic Usage CSS Output
 ///   .my-module {
 ///     font-size: 1.5em;
 ///   }
+/// @require $base-font-size
 /// @param {string} $px - pixel units to convert
 /// @param {string} $base [16px] - base font size
 @function em($px, $base: $base-font-size) {
@@ -19,14 +19,16 @@ $base-font-size: 16px !default;
 }
 
 /// Converts units from pixels to REMs
-/// @example
+/// @example scss - Basic Usage Sass
 ///   .my-module {
 ///     font-size: rem(24px);
 ///   }
 ///
+/// @example scss - Basic Usage CSS Output
 ///   .my-module {
 ///     font-size: 1.5rem;
 ///   }
+/// @require $base-font-size
 /// @param {string} $px - pixel units to convert
 /// @param {string} $base [16px] - base font size
 @function rem($px, $base: $base-font-size) {

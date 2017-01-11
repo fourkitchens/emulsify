@@ -14,13 +14,13 @@
 
 .heading-3,
 .heading-4 {
-  @include font-size(.95);
+  // @include font-size(.95);
 }
 
 .heading-5,
 .heading-6 {
   color: $gray;
-  @include font-size(.85);
+  // @include font-size(.85);
   text-transform: uppercase;
 }
 
