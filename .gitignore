@@ -7,3 +7,6 @@ pattern-lab
 # NPM
 node_modules
 npm-debug.log
+
+# Other
+.DS_Store

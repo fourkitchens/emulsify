@@ -1,0 +1,5 @@
+boxes:
+  one:
+    info_heading: "Prototype using Atomic Design Principles"
+  two:
+    info_heading: "Include in Drupal 8 seamlessly"

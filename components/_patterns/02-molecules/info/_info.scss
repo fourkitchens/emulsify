@@ -1,6 +1,16 @@
 .info {
-  min-height: 74vh;
-  max-width: 50%;
-  display: flex;
   align-items: center;
+  display: flex;
+  min-height: 54vh;
+  max-width: 50%;
+  padding: 4%;
+
+  &:nth-child(2n) {
+    background: url(../../images/bg.svg);
+    margin-left: auto;
+
+    .heading-1 {
+      color: $white;
+    }
+  }
 }
