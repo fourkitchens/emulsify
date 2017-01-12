@@ -3,11 +3,10 @@
   "description": "Project template for Drupal 8 themes",
   "version": "1.0.0",
   "devDependencies": {
-    "emulsify-gulp": "fosterinteractive/emulsify-gulp",
-    "sass-toolkit": "^2.10.2"
+    "emulsify-gulp": "fosterinteractive/emulsify-gulp"
   },
   "scripts": {
-    "start": "gulp clean && gulp compile && gulp theme",
+    "start": "gulp clean && gulp  compile && gulp theme",
     "postinstall": "rm -rf pattern-lab && composer create-project -n pattern-lab/edition-twig-standard pattern-lab && rm -rf pattern-lab/source && ln -s ../components pattern-lab/source"
   }
 }

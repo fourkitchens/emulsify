@@ -6,6 +6,7 @@
   // General
   var gulp = require('gulp-help')(require('gulp'));
   var localConfig = {};
+  var requireDir = require('require-dir');
 
   try {
     localConfig = require('./local.gulp-config');

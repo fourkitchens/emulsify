@@ -1,8 +1,12 @@
-// @mixin svg-wrapper
-//
-// TODO: What does this do?
-//
-// Styleguide 1.10.1
+/// SVG Wrapper
+///
+///
+/// @example scss - Basic Usage Sass
+///   .my-svg-wrapper {
+///     @include svg-wrapper(300/121)
+///   }
+///
+/// @param {string} $intristic-ratio - aspect ratio of svg canvase size
 
 
 // // Apply this mixin to the svg's wrapper
