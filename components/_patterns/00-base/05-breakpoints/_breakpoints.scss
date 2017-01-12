@@ -10,100 +10,52 @@
 // Styleguide 1.3
 
 
-// Breakpoint Variables
-@include breakpoint-set('no query fallbacks', true);
-@include breakpoint-set('to ems', true);
-
-// Don't forget to update the theme .info file breakpoints!
-
-// Respond-to Syntax creates a map of breakpoints named after UI changes
-$breakpoints: add-breakpoint('expanded-wrapper', 400px);
-$breakpoints: add-breakpoint('type-large', 600px);
-$breakpoints: add-breakpoint('full-nav', 900px);
-$breakpoints: add-breakpoint('max-size', 1200px);
-
-// Range Breakpoints
-//
-// $bp-default-to-sml: 0 ($bp-med - 1px);
-// $bp-default-to-med: 0 ($bp-lrg - 1px);
-// $bp-med-to-lrg: $bp-med ($bp-lrg - 1px);
-// $bp-sml-to-max: $bp-sml $bp-huge;
-
-// Singularity Variables
-// https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
-//
-
-
-//Defines default 2 column grid
-@include add-grid(12);
-// @include add-grid(1 2 at $bp-med);
-// @include add-grid(2 4 1 at $bp-lrg);
-@include add-gutter-style('fixed');
-@include add-gutter-style('split');
-@include add-gutter(0);
-
-
-// // Must enable debug setting
-// @include sgs-change('debug', true);
-
-
 /**
  * Breakpoint Configuration
  * @see https://github.com/Team-Sass/breakpoint/wiki
  *
  */
 
-/////////
-// Singularity variables
+
+// Breakpoint Variables
+@include breakpoint-set('no query fallbacks', true);
+@include breakpoint-set('to ems', true);
+
+// Don't forget to update the theme .info file breakpoints!
+
+$bp-expanded-wrapper: 400px; // Add some padding to outer margins
+$bp-type-large: 600px; // Typography goes from smaller to large size
+$bp-full-nav: 900px; // Full Nav appears
+$bp-max: 1200px; // Max width of outer container
+
+
+// Respond-to Syntax creates a map of breakpoints named after UI changes
+$breakpoints: add-breakpoint('expanded-wrapper', $bp-expanded-wrapper);
+$breakpoints: add-breakpoint('type-large', $bp-type-large);
+$breakpoints: add-breakpoint('full-nav', $bp-full-nav);
+$breakpoints: add-breakpoint('max', $bp-max);
+
+// Range Breakpoints Examples
+
+// $bp-type-large-to-full-nav: $bp-type-large ($bp-full-nav - 1px);
+// $breakpoints: add-breakpoint('type-large to full-nav', $bp-type-large-to-full-nav);
+
+
+// Singularity Variables
+// https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
 //
-// @include breakpoint-set('to ems', true);
-// @include add-grid(12);
-// @include add-gutter(1/4);
-
-// // Breakpoints variables
-// $small: 25em;
-// $small-med: 26em;
-// $small-large: 41em;
-// $medium: 48em;
-// $large: 61.25em;
 
 
-// /// Mixin - Small Breakpoint
-// /// Allows easier @include small {} syntax
-// @mixin small {
-//   @include breakpoint($small) {
-//     @content;
-//   }
-// }
+//Defines default 12 column grid
+@include add-grid(12);
+@include add-gutter-style('fixed');
+@include add-gutter-style('split');
+@include add-gutter(0);
 
-// /// Mixin - Small-Medium Breakpoint
-// /// Allows easier @include small-med {} syntax
-// @mixin small-med {
-//   @include breakpoint($small-med) {
-//     @content;
-//   }
-// }
 
-// /// Mixin - Small-Large Breakpoint
-// /// Allows easier @include small-large {} syntax
-// @mixin small-large {
-//   @include breakpoint($small-large) {
-//     @content;
-//   }
-// }
+// // Must enable debug setting
+@include sgs-change('debug', true);
 
-// /// Mixin - Medium Breakpoint
-// /// Allows easier @include medium {} syntax
-// @mixin medium {
-//   @include breakpoint($medium) {
-//     @content;
-//   }
-// }
 
-// /// Mixin - Large Breakpoint
-// /// Allows easier @include large {} syntax
-// @mixin large {
-//   @include breakpoint($large) {
-//     @content;
-//   }
-// }
+
+
