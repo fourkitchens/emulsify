@@ -1,45 +1,74 @@
-.accordion-item__term {
-  border-top: 1px solid $gray-lightest;
-  color: $gray-dark;
-  cursor: pointer;
+// .m-accordion-item {
+
+// }
+
+.m-accordion-item__label {
+  @extend %u-clearfix;
   display: block;
-  // @include font-size(1);
-  font-weight: 600;
-  padding:1em 0;
+  position: relative;
+  outline: none;
+  background-color: palette(grey, xlight);
+  cursor: pointer;
+  padding: ru(0.75) ru(3) ru(0.75) ru(0.75);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: palette(grey, dark);
+  font-family: $title-font-family;
 
-  &::before {
-    content:"+";
-    padding: .8em;
-    top: .35em;
-  }
-
-  &:hover {
-    color: $gray;
-  }
-
-  &.is-active {
-    color: $gray;
-
-    &::before {
-      content:"-";
-      top: .45em;
-    }
-
-    & + dd {
-      height: auto;
-      margin: 0em 2em 0;
-      overflow: visible;
-      padding-bottom: 1em;
-    }
+  &:focus,
+  &:hover,
+  &:active {
+    border-color: palette(grey);
+    background-color: palette(grey, light);
   }
 }
 
-.accordion-item__def {
-  margin: 0em 2em 0;
+.m-accordion-item__label-icon {
+  @include svg-centered (ru(1.5), ru(1.5), ru(2), ru(2));
+  // Vertical center w/ Transform y
+  position: absolute;
+  top: 50%;
+  right: ru(0.25);
+  transform: translateY(-50%);
+  stroke: palette(grey, dark);
+  fill: none;
+}
 
-  &.active {
-    height: 0;
-    margin: 0 2em 0;
-    overflow: hidden;
+.m-accordion-item__svg--expand {
+  display: none;
+
+  .m-accordion-item[data-accordion-state='is-closed'] &,
+  // STOP FOUC - js is running and it is not open - Show Icon
+  .js .m-accordion-item:not([data-accordion-state='is-open']) &,
+  .no-js & {
+    display: block;
+  }
+}
+
+.m-accordion-item__svg--collapse {
+  display: none;
+
+  .c-accordion[data-accordion-state='is-open'] & {
+    display: block;
+  }
+}
+
+.m-accordion-item__label-text {
+  // pad top of text box to compensate for optical padding
+  // Caused by using all caps DIN
+  padding-top: ru(0.125);
+}
+
+.m-accordion-item__content {
+  @extend %u-remove-child--margin-top-bottom;
+  position: relative;
+  background-color: palette(grey, dark);
+  padding: ru(0.75);
+  color: $white;
+
+  .m-accordion-item[data-accordion-state='is-closed'] &,
+  // STOP FOUC - js is running and it is not open (doesn't need close state)
+  .js .m-accordion-item:not([data-accordion-state='is-open']) & {
+    display: none;
   }
 }
