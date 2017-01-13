@@ -1,2 +1,14 @@
-<dt class="accordion-item__term">{{ accordion_item }}</dt>
-<dd class="accordion-item__def">{{ accordion_def }}</dd>
+<div class="m-accordion-item" data-accordion-state='is-closed'>
+
+  <a class="m-accordion-item__label" href="#" data-accordion-component="label">
+    <div class="m-accordion-item__label-text">{{ accordion_label }}</div>
+    <div class="m-accordion-item__label-icon">
+      <svg class="m-accordion-item__svg--expand"><use xlink:href="/svg/sprite-ui.svg#circle-arrow-down"></use></svg>
+      <svg class="m-accordion-item__svg--collapse"><use xlink:href="/svg/sprite-ui.svg#circle-arrow-up"></use></svg>
+    </div>
+  </a>
+
+  <div class="m-accordion-item__content" data-accordion-component="content">
+    <p>{{ accordion_content }}</p>
+  </div>
+</div>
