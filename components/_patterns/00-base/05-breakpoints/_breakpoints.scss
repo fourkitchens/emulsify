@@ -30,10 +30,10 @@ $bp-max: 1200px; // Max width of outer container
 
 
 // Respond-to Syntax creates a map of breakpoints named after UI changes
-$breakpoints: add-breakpoint('expanded-wrapper', $bp-expanded-wrapper);
-$breakpoints: add-breakpoint('type-large', $bp-type-large);
-$breakpoints: add-breakpoint('full-nav', $bp-full-nav);
-$breakpoints: add-breakpoint('max', $bp-max);
+@include add-breakpoint('expanded-wrapper', $bp-expanded-wrapper);
+@include add-breakpoint('type-large', $bp-type-large);
+@include add-breakpoint('full-nav', $bp-full-nav);
+@include add-breakpoint('max', $bp-max);
 
 // Range Breakpoints Examples
 

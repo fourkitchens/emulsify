@@ -9,10 +9,6 @@
   text-decoration: none;
 }
 
-////
-// Size Varations
-////
-
 %a-btn--default-padding {
   padding: ru(0.5) ru(1);
 }
@@ -21,9 +17,6 @@
   padding: ru(0.25) ru(0.75);
 }
 
-////
-// Color Variations
-////
 %a-btn--palette-grey {
   border-color: palette(grey, light);
   background-color: $white;
