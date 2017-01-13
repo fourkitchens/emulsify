@@ -1,4 +1,23 @@
+%a-type__core {
+  @include font-size($p-font-sizes);
+  margin: 0 0 1rem 0;
+}
 
-.foo {
-  @include ir (12/3);
+p {
+  @extend %a-type__core;
+}
+
+%a-type__core-type--small,
+.a-type--small {
+  @include font-size($p--small-font-sizes);
+}
+
+%a-type--large,
+.a-type--large {
+  @include font-size($p--large-font-sizes);
+}
+
+%a-type--xlarge,
+.a-type--xlarge {
+  @include font-size($p--xlarge-font-sizes);
 }

@@ -10,3 +10,6 @@ items:
       href: "#"
   previous: true
   next: true
+
+ellipses:
+  next: true

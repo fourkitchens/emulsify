@@ -1,61 +1,99 @@
-%heading-font {
-  // @extend %g-type__core;
 
-  margin: 1rem 0 0.5rem;
+
+%heading-font {
   font-family: $title-font-family;
   font-weight: $title-font-weight;
 }
 
-.heading-1,
-.heading-2,
-.heading-3,
-.heading-4,
-.heading-5,
-.heading-6 {
-  color: $gray-darker;
-  font-family: $heading;
-  font-weight: 600;
-  line-height: 1.8rem;
-  margin: 0 0 .5em;
-  width: 100%; // For non header (inline) elements with these styles, e.g. legend
+.a-type__h1,
+%a-type__h1 {
+  @extend %heading-font;
+  @include font-size($h1-font-sizes);
 }
 
-.heading-3,
-.heading-4 {
-  // @include font-size(.95);
+.a-type__h2,
+%a-type__h2 {
+  @extend %heading-font;
+  @include font-size($h2-font-sizes);
 }
 
-.heading-5,
-.heading-6 {
-  color: $gray;
-  // @include font-size(.85);
-  text-transform: uppercase;
+.a-type__h3,
+%a-type__h3 {
+  @extend %heading-font;
+  @include font-size($h3-font-sizes);
 }
 
-// TODO: BEM selectors should be applied to wysiwyg-created content
-
-.text-long {
-  h1 {
-    @extend .heading-1;
-  }
-
-  h2 {
-    @extend .heading-2;
-  }
-
-  h3 {
-    @extend .heading-3;
-  }
-
-  h4 {
-    @extend .heading-4;
-  }
-
-  h5 {
-    @extend .heading-5;
-  }
-
-  h6 {
-    @extend .heading-6;
-  }
+.a-type__h4,
+%a-type__h4 {
+  @extend %heading-font;
+  @include font-size($h4-font-sizes);
 }
+
+.a-type__h5,
+%a-type__h5 {
+  @extend %heading-font;
+  @include font-size($h5-font-sizes);
+}
+
+.a-type__h6,
+%a-type__h6 {
+  @extend %heading-font;
+  @include font-size($h6-font-sizes);
+}
+
+
+// Emulsify default stuff, we can delete once type is done
+
+// .heading-1,
+// .heading-2,
+// .heading-3,
+// .heading-4,
+// .heading-5,
+// .heading-6 {
+//   color: $gray-darker;
+//   font-family: $heading;
+//   font-weight: 600;
+//   line-height: 1.8rem;
+//   margin: 0 0 .5em;
+//   width: 100%; // For non header (inline) elements with these styles, e.g. legend
+// }
+
+// .heading-3,
+// .heading-4 {
+//   // @include font-size(.95);
+// }
+
+// .heading-5,
+// .heading-6 {
+//   color: $gray;
+//   // @include font-size(.85);
+//   text-transform: uppercase;
+// }
+
+// // TODO: BEM selectors should be applied to wysiwyg-created content
+
+// .text-long {
+//   h1 {
+//     @extend .heading-1;
+//   }
+
+//   h2 {
+//     @extend .heading-2;
+//   }
+
+//   h3 {
+//     @extend .heading-3;
+//   }
+
+//   h4 {
+//     @extend .heading-4;
+//   }
+
+//   h5 {
+//     @extend .heading-5;
+//   }
+
+//   h6 {
+//     @extend .heading-6;
+//   }
+// }

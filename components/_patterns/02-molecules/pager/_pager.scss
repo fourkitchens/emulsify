@@ -1,11 +1,5 @@
-// Pager
-//
-// markup: _m-pager.html
-//
-// Styleguide 2.5
-
 .m-pager {
-  // @extend %u-clearfix;
+  @extend %u-clearfix;
 
   display: flex;
   align-items: center;
@@ -13,10 +7,10 @@
   margin-bottom: ru(1);
 
   // We need to breakpoits
-  // @include respond-to('max-size') {
-  //   margin-right: 0;
-  //   margin-left: 0;
-  // }
+  @include respond-to('max-size') {
+    margin-right: 0;
+    margin-left: 0;
+  }
 
 }
 
@@ -33,18 +27,18 @@
   // They render to maintain spacing / Centering of UI
   flex-basis: ru(3.25);
 
-  // @include respond-to('expanded-wrapper') {
-  //   flex-basis: ru(4.25);
-  // }
+  @include respond-to('expanded-wrapper') {
+    flex-basis: ru(4.25);
+  }
 }
 
 .m-pager__group-backwards {
-  // @extend %m-pager__group-core;
+  @extend %m-pager__group-core;
 
 }
 
 .m-pager__group-forwards {
-  // @extend %m-pager__group-core;
+  @extend %m-pager__group-core;
 }
 
 .m-pager__btn-first {
@@ -55,9 +49,9 @@
   border: 1px solid palette(blue, light);
 
   // We need to breakpoits
-  // @include respond-to('expanded-wrapper') {
-  //   @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -5%, $layout-mode: 'margin');
-  // }
+  @include respond-to('expanded-wrapper') {
+    @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -5%, $layout-mode: 'margin');
+  }
 }
 
 
@@ -67,9 +61,9 @@
   @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: -2%, $layout-mode: 'margin');
 
   // We need to breakpoits
-  // @include respond-to('expanded-wrapper') {
-  //   @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
-  // }
+  @include respond-to('expanded-wrapper') {
+    @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
+  }
 }
 
 .m-pager__btn-next {
@@ -78,9 +72,9 @@
   @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: 3%, $layout-mode: 'margin');
 
   // We need to breakpoits
-  // @include respond-to('expanded-wrapper') {
-  //   @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
-  // }
+  @include respond-to('expanded-wrapper') {
+    @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
+  }
 }
 
 // c-btn--icon-large c-btn--secondary
@@ -92,9 +86,9 @@
   border: 1px solid palette(blue, light);
 
   // We need to breakpoits
-  // @include respond-to('expanded-wrapper') {
-  //   @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
-  // }
+  @include respond-to('expanded-wrapper') {
+    @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
+  }
 }
 
 // Pages List. Will Shrink, but not grow. On small screens
@@ -105,14 +99,14 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 1;
-  // margin-right: ru(0.25);
-  // margin-left: ru(0.25);
+  margin-right: ru(0.25);
+  margin-left: ru(0.25);
 
   // We need to breakpoits
-  // @include respond-to('expanded-wrapper') {
-  //   margin-right: ru(0.5);
-  //   margin-left: ru(0.5);
-  // }
+  @include respond-to('expanded-wrapper') {
+    margin-right: ru(0.5);
+    margin-left: ru(0.5);
+  }
 }
 
 %m-pager__btn-core {
@@ -121,9 +115,9 @@
   font-weight: 700;
 
   // We need to breakpoits
-  // @include respond-to('expanded-wrapper') {
-  //   padding: ru(0.25) ru(0.5);
-  // }
+  @include respond-to('expanded-wrapper') {
+    padding: ru(0.25) ru(0.5);
+  }
 }
 
 %m-pager__btn,
