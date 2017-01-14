@@ -7,7 +7,7 @@
   margin-bottom: ru(1);
 
   // We need to breakpoits
-  @include respond-to('max-size') {
+  @include respond-to('expanded-wrapper') {
     margin-right: 0;
     margin-left: 0;
   }
@@ -56,18 +56,17 @@
 
 
 .m-pager__btn-prev {
-  // @extend %c-btn--palette-blue;
+  @extend %a-btn;
 
   @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: -2%, $layout-mode: 'margin');
 
-  // We need to breakpoits
   @include respond-to('expanded-wrapper') {
     @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
   }
 }
 
 .m-pager__btn-next {
-  // @extend %c-btn--palette-blue;
+  @extend %a-btn;
 
   @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: 3%, $layout-mode: 'margin');
 
