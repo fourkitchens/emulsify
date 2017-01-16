@@ -2,6 +2,8 @@
   "title" : "Pattern Lab",
   "htmlClass": "pl",
   "bodyClass": "body",
+  "base_path": "",
+  "directory": "",
   "img": {
     "landscape_4x3": {
       "src": "../../images/fpo_4x3.png",
