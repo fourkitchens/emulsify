@@ -4,6 +4,7 @@ global:
       dist/style.css: {}
   js:
     dist/scripts.js: {}
+    js/emulsify.config.js: {}
 
 # Examples of Library syntax
 # typekit:
