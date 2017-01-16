@@ -7,3 +7,9 @@ pattern-lab
 # NPM
 node_modules
 npm-debug.log
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon

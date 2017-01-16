@@ -37,30 +37,62 @@
  */
 #}
 
-
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes }}>
-      {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
+    {% if attributes.lenght > 0 %} {# Wrapper Attr !empty ? #}
+      <div{{ attributes }}>
+    {% endif %}
+
+        {% for item in items %}
+          {% if attributes.lenght > 0 %} {# Item Attr !empty? #}
+            <div{{ item.attributes }}>{{ item.content }}</div>
+          {% else %}
+            {{ item.content }}
+          {% endif %}
+        {% endfor %}
+
+    {% if attributes.lenght > 0 %} {# Wrapper Attr !empty ? #}
+      </div>
+    {% endif %}
+
+  {% else %} {# not mutiple #}
     {% for item in items %}
+
+      {% if attributes.lenght > 0 %} {# Item Attr !empty? #}
       <div{{ attributes }}>{{ item.content }}</div>
+      {% else %}
+        {{ item.content }}
+      {% endif %}
+
     {% endfor %}
   {% endif %}
-{% else %}
+
+{% else %} {# Label Not Hidden #}
+
+  {% if attributes.lenght > 0 %} {# Wrapper Attr !empty ? #}
   <div{{ attributes }}>
+  {% endif %}
+
     <div{{ title_attributes }}>{{ label }}</div>
+
     {% if multiple %}
       <div>
     {% endif %}
+
     {% for item in items %}
+      {% if attributes.lenght > 0 %} {# Item Attr !empty? #}
       <div{{ item.attributes }}>{{ item.content }}</div>
+      {% else %}
+      {{ item.content }}
+      {% endif %}
     {% endfor %}
+
     {% if multiple %}
       </div>
     {% endif %}
+
+  {% if attributes.lenght > 0 %} {# Wrapper Attr !empty ? #}
   </div>
+  {% endif %}
+
 {% endif %}

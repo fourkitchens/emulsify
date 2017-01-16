@@ -1,6 +1,6 @@
-// .m-accordion-item {
-
-// }
+.m-accordion-item {
+  border-bottom: 1px solid $white;
+}
 
 .m-accordion-item__label {
   @extend %u-clearfix;
@@ -48,7 +48,7 @@
 .m-accordion-item__svg--collapse {
   display: none;
 
-  .c-accordion[data-accordion-state='is-open'] & {
+  .m-accordion-item[data-accordion-state='is-open'] & {
     display: block;
   }
 }

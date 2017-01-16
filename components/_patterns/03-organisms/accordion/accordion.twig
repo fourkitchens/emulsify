@@ -1,10 +1,15 @@
-<dl class="accordion-item">
-  {% for listItem in listItems.four %}
-    {% include "@molecules/accordion-item/accordion-item.twig"
-      with {
-        "accordion_label": listItem.headline.short,
-        "accordion_content": listItem.excerpt.long
-      }
-    %}
-  {% endfor %}
-</dl>
+<div class="o-accordion">
+  {# Drupal content #}
+  {% if accordion_content %}
+    {{ accordion_content }}
+  {% else %}
+    {% for listItem in listItems.four %}
+      {% include "@molecules/accordion-item/accordion-item.twig"
+        with {
+          "accordion_label": listItem.headline.short,
+          "accordion_content": listItem.excerpt.long
+        }
+      %}
+    {% endfor %}
+  {% endif %}
+</div>
