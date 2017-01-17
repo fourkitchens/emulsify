@@ -1,7 +1,6 @@
-.video {
+%a-video__core {
   height: 0;
   overflow: hidden;
-  padding-bottom: 56.25%;
   padding-top: 35px;
   position: relative;
 
@@ -9,7 +8,20 @@
     height: 100%;
     left: 0;
     position: absolute;
-    top:0;
+    top: 0;
     width: 100%;
   }
+}
+
+// Default 16x9 video play
+.a-video {
+  @extend %a-video__core;
+  padding-bottom: 56.25%;
+}
+
+
+// 4x3 aspect ratio Video
+.a-video--4x3 {
+  @extend %a-video__core;
+  padding-bottom: 75%;
 }
