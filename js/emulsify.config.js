@@ -10,14 +10,13 @@
 
   'use strict';
 
-  Drupal.behaviors.alumniConfiguration = {
+  Drupal.behaviors.emulsifyConfiguration = {
     attach: function (context, settings) {
 
       // Configuration that should only be ran once globally.
-      $('body').once('alumni-configuration-global').each(function () {
+      $('body').once('emulsify-configuration-global').each(function () {
         // Init accordions.
         $('.m-accordion-item').accordion();
-        console.log($('.m-accordion-item'));
       });
 
     }

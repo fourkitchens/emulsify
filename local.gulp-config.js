@@ -84,7 +84,7 @@ var maxSvgSize = 50000; // Warn if Sprited SVG < 50kb (compressed)
   var paths = {
     js: themeDir + '/components/_patterns/00-base/*.js',
     styleguide_js: [
-      themeDir + '/js/**/*.js',
+      // themeDir + '/js/**/*.js',
       themeDir + '/components/_patterns/**/*.js'
     ],
     dist_js: themeDir + '/dist',
