@@ -16,12 +16,12 @@
 // Default 16x9 video
 .a-video {
   @extend %a-video__core;
-  padding-bottom: 56.25%;
+  padding-bottom: 9/16 * 100%;
 }
 
 
 // 4x3 video
 .a-video--4x3 {
   @extend %a-video__core;
-  padding-bottom: 75%;
+  padding-bottom: 3/4 * 100%;
 }
