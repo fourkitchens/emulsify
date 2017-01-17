@@ -13,14 +13,14 @@
   }
 }
 
-// Default 16x9 video play
+// Default 16x9 video
 .a-video {
   @extend %a-video__core;
   padding-bottom: 56.25%;
 }
 
 
-// 4x3 aspect ratio Video
+// 4x3 video
 .a-video--4x3 {
   @extend %a-video__core;
   padding-bottom: 75%;
