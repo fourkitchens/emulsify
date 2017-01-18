@@ -25,7 +25,6 @@ ckeditor_stylesheets:
 regions:
   header: Header
   content: Content  # the content region is required
-  sidebar: 'Sidebar'
   footer: Footer
 
 # Remove unwanted system stylesheets

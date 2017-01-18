@@ -1,0 +1,22 @@
+{% extends "@molecules/_block.twig" %}
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% block content %}
+  {% include "@molecules/logo/logo.twig"
+    with {
+      "url": path('<front>'),
+    }
+  %}
+{% endblock %}
