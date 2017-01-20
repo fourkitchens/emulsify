@@ -1,15 +1,15 @@
 <header class="o-header">
   <div class="o-header__logo">
-    {% if drupal_block('sitebranding') %}
-      {{ drupal_block('sitebranding') }}
+    {% if drupal_block('logo') %}
+      {{ drupal_block('logo') }}
     {% else %}
       {% include "@molecules/logo/logo.twig" %}
     {% endif %}
   </div>
 
   <div class="o-header__menu-main">
-    {% if drupal_block('emulsify_mainnavigation') %}
-      {{ drupal_block('emulsify_mainnavigation') }}
+    {% if drupal_block('menu_main') %}
+      {{ drupal_block('menu_main') }}
     {% else %}
       {% include "@molecules/navs/menu-main/menu-main.twig" %}
     {% endif %}
