@@ -1,3 +1,17 @@
 <header class="o-header">
-  {{ content }}
+  <div class="o-header__logo">
+    {% if drupal_block('sitebranding') %}
+      {{ drupal_block('sitebranding') }}
+    {% else %}
+      {% include "@molecules/logo/logo.twig" %}
+    {% endif %}
+  </div>
+
+  <div class="o-header__menu-main">
+    {% if drupal_block('emulsify_mainnavigation') %}
+      {{ drupal_block('emulsify_mainnavigation') }}
+    {% else %}
+      {% include "@molecules/navs/menu-main/menu-main.twig" %}
+    {% endif %}
+  </div>
 </header>
