@@ -14,16 +14,16 @@
 .cke_editable { // sass-lint:disable-line class-name-format
 
   ul {
-    @extend %g-list--unordered;
+    @extend %a-list--unordered;
   }
 
   ol {
-    @extend %g-list--ordered;
+    @extend %a-list--ordered;
   }
 
   // Link Styles (unless custom btn styles added in WYSIWIYG)
   a:not(.c-btn) {
-    @extend %g-link;
+    @extend %a-link;
   }
 
 }
