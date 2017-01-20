@@ -1,27 +1,61 @@
-ul,
-ol {
-  padding-left: 1em;
+%a-list--unordered,
+.a-list--unordered {
+  margin-top: ru(0.25);
+  margin-bottom: ru(0.5);
+  padding-left: 0;
+  list-style-type: none;
+
+  li {
+    position: relative;
+    margin-bottom: ru(0.25);
+    margin-left: ru(1.25);
+    padding-left: 0;
+  }
+
+  li:before {
+    position: absolute;
+    top: 0;
+    left: ru(-1);
+    // color: palette(grey);
+    content: '\2022 '; // Bullet symbol
+  }
+
+  ul {
+    margin-bottom: 0;
+   }
 }
 
-ul {
-  list-style-type: disc;
-}
 
-ol {
-  list-style-type: decimal;
-}
+%a-list--ordered,
+.a-list--ordered {
+  margin-top: ru(0.25);
+  margin-bottom: ru(0.5);
+  padding-left: 0;
+  list-style-type: none;
+  counter-reset: list;
 
-.list-item {
-  margin-bottom: .2em;
-  padding-left: 1em;
-}
 
-// TODO: BEM selectors should be applied to wysiwyg-created content
+  > li {
+    position: relative;
+    margin-bottom: ru(0.25);
+    margin-left: ru(1.25);
+    padding-left: 0;
+    list-style: none;
 
-.text-long {
-  ol, ul {
-    li {
-      @extend .list-item
+    &:before {
+      position: absolute;
+      top: 0;
+      left: ru(-1);
+      // color: palette(grey);
+      content: counter(list) '.';
+      counter-increment: list;
     }
   }
+
+  // Add in space above next paragraph (titles add their own top margin)
+  + p {
+    margin-top: ru(1);
+  }
 }
+
+

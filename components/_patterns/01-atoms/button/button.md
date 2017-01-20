@@ -1,5 +1,5 @@
 ---
-el: ".button"
+el: ".a-btn"
 title: "Button Styling"
 ---
 ## Button Styling

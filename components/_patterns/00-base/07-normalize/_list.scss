@@ -1,0 +1,17 @@
+// Lists Reset
+//
+
+// Reset to Default List Style
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+// Reset to block-like list with no padding / margins
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: none;
+}
