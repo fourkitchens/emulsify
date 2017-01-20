@@ -5,8 +5,7 @@
 ul,
 ol {
   margin: 0;
-  padding: 0 0 0 ru(1);
-  list-style-position: outside;
+  padding: 0;
 }
 
 // Reset to block-like list with no padding / margins
@@ -14,9 +13,5 @@ li {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  list-style-position: outside;
-}
-
-%u-list__item--blank {
-  margin: 0;
+  list-style-position: none;
 }

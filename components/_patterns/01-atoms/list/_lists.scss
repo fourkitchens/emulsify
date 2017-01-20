@@ -1,2 +1,61 @@
+%a-list--unordered,
+.a-list--unordered {
+  margin-top: ru(0.25);
+  margin-bottom: ru(0.5);
+  padding-left: 0;
+  list-style-type: none;
+
+  li {
+    position: relative;
+    margin-bottom: ru(0.25);
+    margin-left: ru(1.25);
+    padding-left: 0;
+  }
+
+  li:before {
+    position: absolute;
+    top: 0;
+    left: ru(-1);
+    // color: palette(grey);
+    content: '\2022 '; // Bullet symbol
+  }
+
+  ul {
+    margin-bottom: 0;
+   }
+}
+
+
+%a-list--ordered,
+.a-list--ordered {
+  margin-top: ru(0.25);
+  margin-bottom: ru(0.5);
+  padding-left: 0;
+  list-style-type: none;
+  counter-reset: list;
+
+
+  > li {
+    position: relative;
+    margin-bottom: ru(0.25);
+    margin-left: ru(1.25);
+    padding-left: 0;
+    list-style: none;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: ru(-1);
+      // color: palette(grey);
+      content: counter(list) '.';
+      counter-increment: list;
+    }
+  }
+
+  // Add in space above next paragraph (titles add their own top margin)
+  + p {
+    margin-top: ru(1);
+  }
+}
 
 

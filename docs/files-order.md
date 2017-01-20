@@ -3,12 +3,12 @@
 - `_example.scss`
 - `example.twig`
 - `example.yml`
-- `example-variation.yml
+- `example-variation.yml`
 - `example.md`
-- `example~variation.md
+- `example~variation.md`
 
-If variation is present, the order of the files are important. `.twig` should always be above `.yml` and `.md` otherwise variation if above the default will be displayed first. If needed you can preffix it with digits`00-example.twig`.
+If variation is present, the order of the files are important. `.twig` should always be above `.yml` and `.md` otherwise variation if above the default will be displayed first. If needed you can preffix it with digits `00-example.twig`.
 
-Variation title will be used what comes after tilda in `example~variation.yml` but if you all `.yml` files are loaded before `.md` files Patternlab will use the actual title in the markdown file.
+Variation title will be used what comes after tilda in `example~variation.yml` but if all `.yml` files are loaded above `.md` files, Patternlab will use the actual title in the markdown file.
 
-* The use of interger after tilda in the variation files wil cause issues.
+The use of interger after tilda in the variation files wil cause issues, such as not loading the twig code sample in the living styleguide .
