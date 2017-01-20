@@ -1,6 +1,6 @@
 example:
   true
 tab_link:
-  "/"
+  "#"
 tab_text:
   "View"

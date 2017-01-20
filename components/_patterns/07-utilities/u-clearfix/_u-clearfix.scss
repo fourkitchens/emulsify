@@ -1,0 +1,28 @@
+/// A way for an element to automatically clear its child elements.<br/>
+/// Clearfix from http://cssmojo.com/latest_new_clearfix_so_far/
+///
+/// Use as a mixin (discouraged), class, or @extend (preferred)
+/// @group utility
+/// @example scss - Sass Usage
+///  .my-module {
+///    @extend %u-clearfix;
+///   }
+/// @example markup - Html usage
+///  <div class="my-module u-clearfix">
+///    <div class="box--left">Left Box</div>
+///    <div class="box--right">Right Box</div>
+///  </div>
+
+%u-clearfix,
+.u-clearfix {
+
+  &:before,
+  &:after {
+    display: table;
+    content: '';
+  }
+
+  &:after {
+    clear: both;
+  }
+}

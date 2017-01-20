@@ -1,0 +1,54 @@
+/// Remove top margin from first child element in a container.<br/>
+/// This is useful for things like titles in WYSIWYG Fields.
+///
+/// Use as class or @extend (preferred)
+/// @group utility
+/// @example scss - Sass Usage
+///  .my-module {
+///    @extend %u-remove-child--margin-top;
+///  }
+/// @example markup - Html usage
+///  <div class="u-remove-child--margin-top">Child Elements</div>
+%u-remove-child--margin-top,
+.u-remove-child--margin-top {
+
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+/// Remove bottom margin from last child element in a container.<br/>
+/// This is useful for elements in WYSIWYG Fields.
+///
+/// Use as class or @extend (preferred)
+/// @group utility
+/// @example scss - Sass Usage
+/// .my-module {
+///    @extend %u-remove-child--margin-bottom;
+///  }
+/// @example markup - Html usage
+///  <div class="u-remove-child--margin-bottom">Child Elements</div>
+%u-remove-child--margin-bottom,
+.u-remove-child--margin-bottom {
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/// Remove margins from first and last child element. <br/>
+/// Adding generic class to apply to wysiwyg fields to allow for consitent spacing in the page layouts.
+///
+/// Use as class or @extend (preferred)
+/// @group utility
+/// @example scss - Sass Usage
+///  .my-module {
+///    @extend %u-remove-child--margin-top-bottom;
+///   }
+/// @example markup - Html usage
+///  <div class="u-remove-child--margin-top-bottom">Child Elements</div>
+%u-remove-child--margin-top-bottom,
+.u-remove-child--margin-top-bottom {
+  @extend %u-remove-child--margin-top;
+  @extend %u-remove-child--margin-bottom;
+}

@@ -53,3 +53,48 @@
   font-size: 90%;
   line-height: 1;
 }
+
+/*
+  FI Styleguide classes
+*/
+
+/* add clearfix*/
+.sg__wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.sg__wrapper--xlight-grey {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8f8f8;
+}
+
+.sg__wrapper--xlight-grey--border {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  background-color: #f8f8f8;
+  border: 1px solid #e4e4e4;
+}
+
+.sg__wrapper--light-grey {
+  background-color: #f8f8f8;
+}
+
+.sg__wrapper--sml-light-grey {
+  background-color: #f8f8f8;
+  max-width: 300px;
+}
+
+.sg__wrapper--eq {
+  background-color: #f8f8f8;
+  max-width: 700px;
+}
+
+.sg__wrapper--img {
+  max-width: 900px;
+}
+
