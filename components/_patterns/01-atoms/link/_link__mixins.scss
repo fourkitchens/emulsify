@@ -1,0 +1,21 @@
+/// Generate accessible link styling.
+/// Creates a "shadow" the same color as the background to allow text to cover the underline
+///
+@mixin accessible-link($text-background-color: $white, $underline-color: palette(blue, light), $text-background-color-hover: palette(grey, xlight)) {
+  background-color: $text-background-color;
+  background-image: linear-gradient(to right, $underline-color 0%, $underline-color 100%);
+  // You might need to play with the shadow sizes for different fonts
+  text-shadow: 1px 0 0 $text-background-color, -1px 0 0 $text-background-color, 0 0.5px 0 $text-background-color, 0 -0.5px 0 $text-background-color;
+
+  &:hover,
+  &:active {
+    background-color: $text-background-color-hover;
+    text-shadow: 1px 0 0 $text-background-color-hover, -1px 0 0 $text-background-color-hover, 0 0.5px 0 $text-background-color-hover, 0 -0.5px 0 $text-background-color-hover;
+  }
+
+  &:focus {
+    outline: 0; // Only doing it as it's already contrasty
+    background-color: $text-background-color-hover;
+    text-shadow: none;
+  }
+}

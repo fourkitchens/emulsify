@@ -1,8 +1,3 @@
-a {
-  text-decoration: none;
-}
-
-
 %a-link--core {
   @extend %u-animate-all;
   display: inline-block;
@@ -10,74 +5,35 @@ a {
   background-position: bottom center; // Default for old safari
   background-position: bottom 0.25em center; //sass-lint:disable-line no-duplicate-properties
   background-size: 100% 1px;
+  cursor: pointer;
 }
 
 %a-link,
 .a-link {
   @extend %a-link--core;
-
-  // Creates a "shadow" the same color as the background to allow text to cover the underline
-  $text-background-color: $white;
-  $underline: palette(blue, light);
-
-  background-color: $text-background-color;
-  background-image: linear-gradient(to right, $underline 0%, $underline 100%);
+  @include accessible-link();
   color: palette(blue, dark);
-  // You might need to play with the shadow sizes for different fonts
-  text-shadow: 1px 0 0 $text-background-color, -1px 0 0 $text-background-color, 0 0.5px 0 $text-background-color, 0 -0.5px 0 $text-background-color;
 
-  &:visited {
-    color: palette(blue, dark);
-  }
-
+  &:visited,
   &:hover,
+  &:focus,
   &:active {
-    $text-background-color: palette(grey, xlight);
-    background-color: $text-background-color;
     color: palette(blue, dark);
-    text-shadow: 1px 0 0 $text-background-color, -1px 0 0 $text-background-color, 0 0.5px 0 $text-background-color, 0 -0.5px 0 $text-background-color;
-  }
-
-  &:focus {
-    outline: 0; // Only doing it as it's already contrasty
-    background-color: palette(grey, xlight);
-    color: palette(blue, dark);
-    text-shadow: none;
   }
 }
 
 .a-link--grey-dark {
   @extend %a-link--core;
-
-  // Creates a "shadow" the same color as the background to allow text to cover the underline
-  $text-background-color: $white;
-  $underline: palette(blue, light);
-
-  background-color: $text-background-color;
-  background-image: linear-gradient(to right, $underline 0%, $underline 100%);
+  @include accessible-link();
   color: palette(grey, dark);
-  // You might need to play with the shadow sizes for different fonts
-  text-shadow: 1px 0 0 $text-background-color, -1px 0 0 $text-background-color, 0 0.5px 0 $text-background-color, 0 -0.5px 0 $text-background-color;
 
   &:visited {
     color: palette(grey, dark);
   }
 
   &:hover,
+  &:focus,
   &:active {
-    $text-background-color: palette(blue, xlight);
-    background-color: $text-background-color;
     color: palette(grey, xdark);
-    text-shadow: 1px 0 0 $text-background-color, -1px 0 0 $text-background-color, 0 0.5px 0 $text-background-color, 0 -0.5px 0 $text-background-color;
   }
-
-  &:focus {
-    outline: 0; // Only doing it as it's already contrasty
-    background-color: palette(grey, xlight);
-    color: palette(grey, xdark);
-    text-shadow: none;
-  }
-
-
-
 }

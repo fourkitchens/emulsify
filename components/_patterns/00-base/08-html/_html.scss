@@ -15,10 +15,10 @@
 }
 
 html {
-  box-sizing: border-box;
   line-height: ($base-line-height / $base-font-size) * 1em;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: $base-font-family;
   font-size: ($base-font-size / 16px) * 100%;
+  box-sizing: border-box;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
