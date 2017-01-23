@@ -15,11 +15,19 @@
 }
 
 html {
+  box-sizing: border-box;
   line-height: ($base-line-height / $base-font-size) * 1em;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: ($base-font-size / 16px) * 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+
+// @see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
