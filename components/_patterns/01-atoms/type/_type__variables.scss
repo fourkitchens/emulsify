@@ -6,27 +6,27 @@
 // Styleguide 1.6.2
 
 
-$p--xsmall-font-sizes: (
+$font-sizes--xsmall: (
   null: (12px, $base-line-height * 0.75)
 );
 
-$p--small-font-sizes: (
+$font-sizes--small: (
   null: (14px, $base-line-height * 0.75)
 );
 
-$p-font-sizes: (
+$font-sizes--base: (
   null: (16px, $base-line-height)
 );
 
-$p--large-font-sizes: (
+$font-sizes--large: (
   null: (18px, $base-line-height)
 );
 
-$p--xlarge-font-sizes: (
+$font-sizes--xlarge: (
   null: (20px, $base-line-height * 1.25)
 );
 
-$p--xxlarge-font-sizes: (
+$font-sizes--xxlarge: (
   null: (24px, $base-line-height * 1.25)
 );
 

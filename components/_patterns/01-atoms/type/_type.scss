@@ -1,5 +1,5 @@
 %a-type__core {
-  @include font-size($p-font-sizes);
+  @include font-size($font-sizes--base);
   margin: 0 0 1rem 0;
 }
 
@@ -7,17 +7,17 @@ p {
   @extend %a-type__core;
 }
 
-%a-type__core-type--small,
+%a-type--small,
 .a-type--small {
-  @include font-size($p--small-font-sizes);
+  @include font-size($font-sizes--small);
 }
 
 %a-type--large,
 .a-type--large {
-  @include font-size($p--large-font-sizes);
+  @include font-size($font-sizes--large);
 }
 
 %a-type--xlarge,
 .a-type--xlarge {
-  @include font-size($p--xlarge-font-sizes);
+  @include font-size($font-sizes--xlarge);
 }
