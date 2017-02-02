@@ -16,7 +16,7 @@
     position: absolute;
     top: 0;
     left: ru(-1);
-    // color: palette(grey);
+    // color: $color-primary;
     content: '\2022 '; // Bullet symbol
   }
 
@@ -46,7 +46,7 @@
       position: absolute;
       top: 0;
       left: ru(-1);
-      // color: palette(grey);
+      // color: $color-primary;
       content: counter(list) '.';
       counter-increment: list;
     }

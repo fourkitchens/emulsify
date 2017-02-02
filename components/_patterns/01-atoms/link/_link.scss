@@ -12,28 +12,31 @@
 .a-link {
   @extend %a-link--core;
   @include accessible-link();
-  color: palette(blue, dark);
+  color: $color-secondary;
 
-  &:visited,
+  &:visited {
+    color: $color-secondary;
+  }
+
   &:hover,
   &:focus,
   &:active {
-    color: palette(blue, dark);
+    color: $color-secondary-dark;
   }
 }
 
 .a-link--grey-dark {
   @extend %a-link--core;
   @include accessible-link();
-  color: palette(grey, dark);
+  color: $color-primary-dark;
 
   &:visited {
-    color: palette(grey, dark);
+    color: $color-primary-dark;
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: palette(grey, xdark);
+    color: $color-primary-dark;
   }
 }

@@ -1,7 +1,6 @@
 ---
 el: ".a-btn"
-title: "Button Styling"
+title: "Button (Default)"
 ---
 ## Button Styling
 
-Default button styling with an alternative variation

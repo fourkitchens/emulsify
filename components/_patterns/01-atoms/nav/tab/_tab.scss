@@ -1,8 +1,8 @@
 .tabs__link {
-  background-color: $near-white;
-  border: 1px solid $gray-lightest;
+  background-color: $color-primary-xxxlight;
+  border: 1px solid $color-primary-xxlight;
   border-bottom: none;
-  color: $gray;
+  color: $color-primary;
   display: block;
   font-size: 1.1rem;
   font-weight: 600;
@@ -12,7 +12,7 @@
   transition: color 0.3s;
 
   // @include medium {
-  //   border-bottom: 1px solid $gray-lightest;
+  //   border-bottom: 1px solid $color-primary-xxlight;
   //   border-left: none;
   //   display: inline-block;
   //   font-size: 1rem;
@@ -23,21 +23,21 @@
   // }
 
   &:hover {
-    background-color: $gray-lightest;
-    color: $gray-darker;
+    background-color: $color-primary-xxlight;
+    color: $color-primary-xdark;
   }
 
   &.is-active {
-    background-color: $gray;
-    border: 1px solid $gray;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
     color: $white;
 
     // @include medium {
     //   background-color: $white;
-    //   border: 1px solid $gray-lightest;
-    //   border-bottom: 1px solid $gray;
+    //   border: 1px solid $color-primary-xxlight;
+    //   border-bottom: 1px solid $color-primary;
     //   border-left: none;
-    //   color: $gray;
+    //   color: $color-primary;
     // }
   }
 }

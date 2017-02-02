@@ -1,9 +1,60 @@
+
+// Color Constants
 $white: white;
-$near-white: #f2f2f2;
-$gray-lightest: #e5e5e5;
-$gray-lighter: #ccc;
-$gray-light: #999;
-$gray: #666;
-$gray-dark: #4c4c4c;
-$gray-darker: #333;
 $black: black;
+// Note pattern lab palette demo can't evalate sass
+// for rgba($black, 0.5); so it's manually entered
+$shadow: rgba(0, 0, 0, 0.5);
+
+// Greys
+$grey-xdark: #333333;
+$grey-dark: #4c4c4c;
+$grey: #666666;
+$grey-light: #999999;
+$grey-xlight: #cccccc;
+$grey-xxlight: #e5e5e5;
+$grey-xxxlight: #f2f2f2;
+
+// Blue
+$blue: #3f3fb1;
+$blue-xdark: #232361;
+$blue-dark: #292971;
+$blue-light: #7373C6;
+$blue-xlight: #B9B9E2;
+
+// Red
+$red: #a00000;
+
+
+
+// Array of colors for /00-base/02-mixins/_debug-layout.scss
+// $debug-blue: rgb(0, 0, 160);
+// $debug-red: rgb(160, 0, 0);
+// $debug-green: rgb(0, 160, 0);
+
+// $debug-colors: $debug-red, $debug-green, $debug-blue !global;
+
+
+// Colors Vars as Maps
+// scss-lint:disable ColorVariable
+$palettes: (
+  grey: (
+    base: $grey,
+    xdark: $grey-xdark,
+    dark: $grey-dark,
+    light: $grey-light,
+    xlight: $grey-xlight,
+    xxlight: $grey-xxlight,
+    xxxlight: $grey-xxxlight,
+  ),
+  blue: (
+    base: $blue,
+    xdark: $blue-dark,
+    dark: $blue-dark,
+    light: $blue-light,
+    xlight: $blue-xlight,
+  ),
+  red: (
+    base: $red,
+  ),
+);
