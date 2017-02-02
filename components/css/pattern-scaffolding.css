@@ -54,9 +54,31 @@
   line-height: 1;
 }
 
-/*
-  FI Styleguide classes
-*/
+/**
+ * Styleguide Styles
+ */
+.sg-subtype > h2 {
+  font-family: HelveticaNeue,Helvetica,Arial,sans-serif!important;
+  text-transform: capitalize;
+}
+
+.sg-subtype > h2 > a {
+  color: black;
+}
+
+/* Hide some patterns that should not be displayed */
+#viewall-base-variables,
+#viewall-base-functions,
+#viewall-base-mixins,
+#viewall-base-breakpoints,
+#viewall-base-css-reset,
+#viewall-base-html {
+  display: none;
+}
+
+/**
+ * FI Styleguide classes
+ */
 
 /* add clearfix*/
 .sg__wrapper {
