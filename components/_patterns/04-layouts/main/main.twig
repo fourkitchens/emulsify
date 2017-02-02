@@ -1,0 +1,41 @@
+{% set element = element|default('div') %}
+
+<main class="l-main{{ main_variation }}">
+  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+  {% if attributes %}
+    <div{{ attributes }}>
+  {% endif %}
+
+  <{{ element }} {% if main_class %}class="{{ main_class }}"{% endif %}>
+
+    <div class="l-main__header {{main_header.demo_class}}">
+      {% block main_header %}
+        {{main_header.content}}
+      {% endblock %}
+    </div>
+
+    <div class="l-main__utilities {{main_utilities.demo_class}}">
+      {% block main_utilities %}
+        {{main_utilities.content}}
+      {% endblock %}
+    </div>
+
+    <div class="l-main__content {{main_content.demo_class}}">
+      {% block main_content %}
+        {{main_content.content}}
+      {% endblock %}
+    </div>
+
+    <div class="l-main__aside {{main_aside.demo_class}}">
+      {% block main_aside %}
+        {{main_aside.content}}
+      {% endblock %}
+    </div>
+
+  </{{ element }}>
+  {% if attributes %}
+    </div>
+  {% endif %}
+
+</main>

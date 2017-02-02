@@ -5,36 +5,68 @@
       "value": "white"
     },
     {
-      "name": "$near-white",
-      "value": "#f2f2f2"
+      "name": "$black",
+      "value": "black"
     },
     {
-      "name": "$gray-lightest",
-      "value": "#e5e5e5"
+      "name": "$shadow",
+      "value": "rgba(0, 0, 0, 0.5)"
     },
     {
-      "name": "$gray-lighter",
-      "value": "#ccc"
+      "name": "$grey-xdark",
+      "value": "#333333"
     },
     {
-      "name": "$gray-light",
-      "value": "#999"
-    },
-    {
-      "name": "$gray",
-      "value": "#666"
-    },
-    {
-      "name": "$gray-dark",
+      "name": "$grey-dark",
       "value": "#4c4c4c"
     },
     {
-      "name": "$gray-darker",
-      "value": "#333"
+      "name": "$grey",
+      "value": "#666666"
     },
     {
-      "name": "$black",
-      "value": "black"
+      "name": "$grey-light",
+      "value": "#999999"
+    },
+    {
+      "name": "$grey-xlight",
+      "value": "#cccccc"
+    },
+    {
+      "name": "$grey-xxlight",
+      "value": "#e5e5e5"
+    },
+    {
+      "name": "$grey-xxxlight",
+      "value": "#f2f2f2"
+    },
+    {
+      "name": "$blue",
+      "value": "#3f3fb1"
+    },
+    {
+      "name": "$blue-xdark",
+      "value": "#232361"
+    },
+    {
+      "name": "$blue-dark",
+      "value": "#292971"
+    },
+    {
+      "name": "$blue-light",
+      "value": "#7373C6"
+    },
+    {
+      "name": "$blue-xlight",
+      "value": "#B9B9E2"
+    },
+    {
+      "name": "$red",
+      "value": "#a00000"
+    },
+    {
+      "name": "$palettes",
+      "value": "("
     }
   ],
   "meta": {

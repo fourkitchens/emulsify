@@ -1,0 +1,14 @@
+main_header:
+  content: "Main Article Header"
+  demo_class: "demo--dbl1"
+main_utilities:
+  content: "Main Article Utilities"
+  demo_class: "demo--dbl2"
+main_content:
+  content: "Main Article Content"
+  demo_class: "demo--dbl3"
+main_aside:
+  content: "Main Article Aside"
+  demo_class: "demo--dbl4"
+main_variation:
+  "--white"

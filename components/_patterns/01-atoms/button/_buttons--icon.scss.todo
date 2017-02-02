@@ -12,16 +12,16 @@
   @extend %c-btn--core;
   @extend %u-animate-background-color; // Animate background
   position: relative;
-  border-color: palette(grey, light);
-  color: palette(grey, dark);
-  fill: palette(grey, dark);
+  border-color: $color-primary-light
+  color: $color-primary-dark;
+  fill: $color-primary-dark;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: palette(grey, xlight);
-    color: palette(blue, dark);
-    fill: palette(blue);
+    background-color: $color-primary-xxlight;
+    color: $color-secondary-dark;
+    fill: $color-secondary;
   }
 }
 

@@ -7,19 +7,19 @@
   display: block;
   position: relative;
   outline: none;
-  background-color: palette(grey, xlight);
+  background-color: $color-primary-xxlight;
   cursor: pointer;
   padding: ru(0.75) ru(3) ru(0.75) ru(0.75);
   text-transform: uppercase;
   text-decoration: none;
-  color: palette(grey, dark);
+  color: $color-primary-dark;
   font-family: $title-font-family;
 
   &:focus,
   &:hover,
   &:active {
-    border-color: palette(grey);
-    background-color: palette(grey, light);
+    border-color: $color-primary;
+    background-color: $color-primary-light
   }
 }
 
@@ -30,7 +30,7 @@
   top: 50%;
   right: ru(0.25);
   transform: translateY(-50%);
-  stroke: palette(grey, dark);
+  stroke: $color-primary-dark;
   fill: none;
 }
 
@@ -62,7 +62,7 @@
 .m-accordion-item__content {
   @extend %u-remove-child--margin-top-bottom;
   position: relative;
-  background-color: palette(grey, dark);
+  background-color: $color-primary-dark;
   padding: ru(0.75);
   color: $white;
 
