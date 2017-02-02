@@ -127,3 +127,40 @@ svg {
     outline: 1px dashed palette(grey, light);
   }
 }
+
+
+// Inline SVG
+// Need to offset for 2px border
+$button-vertical-padding: ru(0.5) - rem(2px);
+
+.svg-inline-left {
+  // @extend %c-btn--icon-core;
+  // See /global/g-svg/_g-svg--mixins.scss
+  @include svg-inline(
+    $baseline: rem($base-line-height), // font baseline
+    $svg-width: ru(0.75), // SVG width (units same as typography)
+    $svg-height: ru(0.75), // SVG height
+    $svg-pad-right: ru(0.25), // padding on right side of SVG
+    $svg-pad-left: 0, // padding on left side of SVG
+    $container-vertical-padding: $button-vertical-padding, // Top & bottom padding for container
+    $container-padding-left: ru(1), // Left padding for container
+    $container-padding-right: ru(1), // Right padding for container    $svg-class: 'svg', // Class for the SVG inside the parent
+    $h-alignment: 'left', // Align Icon on 'left' or 'right'
+    $v-alignment: 'middle'); // Align Icon 'middle' or 'top'
+}
+
+.svg-inline-right {
+  // @extend %c-btn--icon-core;
+  // See /global/g-svg/_g-svg--mixins.scss
+  @include svg-inline(
+    $baseline: rem($base-line-height), // font baseline
+    $svg-width: ru(0.75), // SVG width (units same as typography)
+    $svg-height: ru(0.75), // SVG height
+    $svg-pad-right: 0, // padding on left side of SVG
+    $svg-pad-left: ru(0.5), // padding on right side of SVG
+    $container-vertical-padding: $button-vertical-padding, // Top & bottom padding for container
+    $container-padding-left: ru(1), // Left padding for container
+    $container-padding-right: ru(0.5), // Right padding for container
+    $h-alignment: 'right', // Align Icon on 'left' or 'right'
+    $v-alignment: 'middle'); // Align Icon 'middle' or 'top'
+}
