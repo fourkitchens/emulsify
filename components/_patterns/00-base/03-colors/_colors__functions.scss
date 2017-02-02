@@ -23,9 +23,10 @@
 // Styleguide 1.4.1
 
 $color-base-grey: rgb(229, 231, 234) !default;
+
 // scss-lint:disable ColorVariable
 $palettes: (
-  purple: (
+  blue: (
     base: rgb(42, 40, 80),
     light: rgb(51, 46, 140),
     dark: rgb(40, 38, 65)
@@ -42,8 +43,10 @@ $palettes: (
   // Report Error if calling missing color
 
   @if map-has-key(map-get($palettes, $palette), $tone) {
-    @return map-get(map-get($palettes, $palette), $tone);
+    $color: map-get(map-get($palettes, $palette), $tone);
+    @return $color;
   } @else {
-    @error $tone + ' is not a valid key in palettes';
+
+    @error "#{$tone} is not a valid tone in #{$palette} pallette ";
   }
 }

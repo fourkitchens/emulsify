@@ -6,7 +6,7 @@
 .m-quote {
   // @include font-size($h3-font-sizes);
   text-align: center;
-  color: palette(blue, dark);
+  color: $color-secondary-dark;
   font-weight: 700;
 
   p {
@@ -17,7 +17,7 @@
 
 %m-quote--icon-core {
   @include svg-centered(ru(3),  ru(3),  ru(3),  ru(3));
-  fill: palette(blue, xlight);
+  fill: $color-secondary-xlight;
 }
 
 .m-quote__open {

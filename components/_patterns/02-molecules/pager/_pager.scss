@@ -46,7 +46,7 @@
 
   @include svg-centered(ru(1),  ru(1),  ru(1.5),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
   margin-right: ru(0.25);
-  border: 1px solid palette(blue, light);
+  border: 1px solid $color-secondary-light;
 
   // We need to breakpoits
   @include respond-to('expanded-wrapper') {
@@ -82,7 +82,7 @@
 
   @include svg-centered(ru(1),  ru(1),  ru(1.5),  ru(2), $x-offset: 2%, $layout-mode: 'margin');
   margin-left: ru(0.25);
-  border: 1px solid palette(blue, light);
+  border: 1px solid $color-secondary-light;
 
   // We need to breakpoits
   @include respond-to('expanded-wrapper') {
@@ -124,20 +124,20 @@
   // @extend %m-pager__btn-core;
 
   text-decoration: underline;
-  color: palette(blue, light);
+  color: $color-secondary-light;
 
   &:visited {
-    color: palette(blue, light);
+    color: $color-secondary-light;
   }
 
   &:hover,
   &:focus {
-    background-color: palette(blue, xlight);
-    color: palette(blue);
+    background-color: $color-secondary-xlight;
+    color: $color-secondary;
   }
 
   &:focus {
-    outline: 2px solid palette(grey);
+    outline: 2px solid $color-primary;
   }
 }
 

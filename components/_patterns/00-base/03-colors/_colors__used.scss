@@ -1,0 +1,22 @@
+// These colors are defined vars used by the default
+// bolierplate components included in the project.
+// Normally we use prefer to call palette function
+// in the components directly as color names are
+// easier to remember, but color variables by role like
+// These care be useful too.
+
+$color-primary: palette(grey);
+$color-primary-xxxlight: palette(grey, xxxlight);
+$color-primary-xxlight: palette(grey, xxlight);
+$color-primary-light: palette(grey, light);
+$color-primary-dark: palette(grey, dark);
+$color-primary-xdark: palette(grey, xdark);
+$color-shadow: palette(grey, xdark);
+
+$color-secondary: palette(blue);
+$color-secondary-xlight: palette(blue, xlight);
+$color-secondary-light: palette(blue, light);
+$color-secondary-dark: palette(blue, dark);
+$color-secondary-xdark: palette(blue, xdark);
+
+$color-error: palette(red);

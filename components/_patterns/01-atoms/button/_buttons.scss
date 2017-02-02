@@ -5,8 +5,11 @@
   border-style: solid;
   border-color: none;
   border-radius: rem(4px);
+  cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
 %a-btn--default-padding {
@@ -18,28 +21,30 @@
 }
 
 %a-btn--palette-grey {
-  border-color: palette(grey, light);
+  border-color: $color-primary-light;
   background-color: $white;
-  color: palette(grey);
+  color: $color-primary;
 
   &:hover,
   &:focus,
   &:active {
-    border-color: palette(grey);
-    background-color: palette(grey, xlight);
+    border-color: $color-primary;
+    background-color: $color-primary-xxlight;
+    color: $color-primary-dark;
   }
 }
 
 %a-btn--palette-blue {
-  border-color: palette(blue, dark);
-  background-color: palette(blue);
+  border-color: $color-secondary-dark;
+  background-color: $color-secondary;
   color: $white;
 
   &:hover,
   &:focus,
   &:active {
-    border-color: palette(blue, dark);
-    background-color: palette(blue, dark);
+    border-color: $color-secondary-dark;
+    background-color: $color-secondary-dark;
+    color: $color-primary-xxxlight;
   }
 }
 
@@ -48,25 +53,26 @@
 .a-btn {
   @extend %a-btn--core;
   @extend %a-btn--default-padding;
-  @extend %a-btn--palette-grey;
+  @extend %a-btn--palette-blue;
+
 }
 
-.a-btn--blue {
+.a-btn--secondary {
   @extend %a-btn--core;
   @extend %a-btn--default-padding;
-  @extend %a-btn--palette-blue;
+  @extend %a-btn--palette-grey;
 }
 
 .a-btn--thin {
   @extend %a-btn--core;
   @extend %a-btn--narrow-padding;
-  @extend %a-btn--palette-grey;
+  @extend %a-btn--palette-blue;
 }
 
-.a-btn--thin-blue {
+.a-btn--secondary-thin {
   @extend %a-btn--core;
   @extend %a-btn--narrow-padding;
-  @extend %a-btn--palette-blue;
+  @extend %a-btn--palette-grey;
 }
 
 
@@ -91,12 +97,12 @@
 //   }
 
 //   &:hover {
-//     background-color: $gray;
+//     background-color: $color-primary;
 //   }
 
 //   @if $alt {
 //     @include font-size(.7);
-//     background-color: $gray;
+//     background-color: $color-primary;
 //     padding: .4em .6em .3em;
 
 //     &:hover {
@@ -115,7 +121,7 @@
 //   }
 
 //   &--alt-2 {
-//     background-color: $gray-lightest;
+//     background-color: $color-primary-xxlight;
 //     color: $black;
 //     @include font-size(.8);
 //     font-weight: 600;
@@ -128,7 +134,7 @@
 //     }
 
 //     &:hover {
-//       background-color: $gray-lighter;
+//       background-color: $color-primary-lighter;
 //     }
 //   }
 // }

@@ -1,5 +1,5 @@
 .info-box  {
-  background-color: $gray-lightest;
+  background-color: $color-primary-xxxlight;
   margin-bottom: 2%;
   padding: 1em;
   width: 100%;
@@ -17,7 +17,7 @@
 }
 
 .info-box__title {
-  color: $gray;
+  color: $color-primary;
   font-weight: 400;
   text-align: center;
 }
