@@ -1,0 +1,62 @@
+%l-main,
+.l-main {
+  position: relative;
+  margin: 0 auto;
+  background-color: $grey-lighter;
+  max-width: $bp-max;
+  overflow: hidden;
+}
+
+.l-main--white {
+  @extend %l-main;
+
+  background-color: $white;
+}
+
+
+.l-main__content {
+  padding-right: ru(1.5);
+  padding-left: ru(1.5);
+
+  @include respond-to('expanded-wrapper') {
+    padding-right: ru(2);
+    padding-left: ru(2);
+  }
+
+  @include respond-to('type-large') {
+    padding-right: ru(3);
+    padding-left: ru(3);
+  }
+
+  @include respond-to('full-nav') {
+    float: left;
+    padding-right: ru(1);
+    width: 75%;
+  }
+
+  @include respond-to('max') {
+    padding-right: ru(2);
+    padding-left: ru(8);
+  }
+}
+
+.l-main__aside {
+  padding: ru(1.5);
+
+  @include respond-to('expanded-wrapper') {
+    padding-right: ru(2);
+    padding-left: ru(2);
+  }
+
+  @include respond-to('type-large') {
+    padding-right: ru(3);
+    padding-left: ru(3);
+  }
+
+  @include respond-to('full-nav') {
+    float: right;
+    padding-top: ru(5);
+    padding-left: ru(0);
+    width: 25%;
+  }
+}

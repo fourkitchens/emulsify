@@ -1,0 +1,12 @@
+main_header:
+  content: "Main Header"
+  demo_class: "demo--dbl1"
+main_utilities:
+  content: "Main Utilities"
+  demo_class: "demo--dbl2"
+main_content:
+  content: "Main Content"
+  demo_class: "demo--dbl3"
+main_aside:
+  content: "Main Aside"
+  demo_class: "demo--dbl4"
