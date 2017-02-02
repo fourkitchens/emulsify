@@ -1,6 +1,5 @@
 /// SVG Wrapper
 ///
-///
 /// @example scss - Basic Usage Sass
 ///   .my-svg-wrapper {
 ///     @include svg-wrapper(300/121)
@@ -9,21 +8,19 @@
 /// @param {string} $intristic-ratio - aspect ratio of svg canvase size
 
 
-// // Apply this mixin to the svg's wrapper
+// Apply this mixin to the svg's wrapper
 @mixin svg-wrapper($intristic-ratio) {
   @extend %svg__wrapper;
   @include ir($intristic-ratio);
 }
 
+
 // @mixin svg-centered
 //
 // Puts an fixed SVG inside a container of a specific size
 //
-// <pre>
 // svg-centered($svg-width, $svg-height, $wrapper-width, $wrapper-height, $svg-class: svg)
-// </pre>
-// <pre> </pre>
-// <pre>
+//
 // $svg-width           - Width of the SVG Icon
 // $svg-height          - Height of the SVG Icon
 // $wrapper-width       - Width of the container
@@ -33,11 +30,6 @@
 // $y-offset:0          - % vertical offset from center
 // $layout-mode:'margin'- 'margin' or 'transform' Center SVG with fixed margins or css transform
 //                        IE 11 / Safari 9 has a bug which trasform uses up space
-//
-// </pre>
-//
-// Styleguide 1.10.2
-
 
 // Default Base line for positioning SVGs next to text
 $baseline: 1.5rem !default;
@@ -86,15 +78,13 @@ $baseline: 1.5rem !default;
   }
 }
 
+
 // @mixin svg-inline
 //
 // Puts an fixed SVG inside a container of a specific size
 //
-// <pre>
 // svg-inline($baseline, $svg-width, $svg-height, $svg-pad-right, $svg-pad-left, $container-vertical-padding, $container-padding-right: 0, $container-padding-left: 0, $svg-class: 'svg', $h-alignment: 'left', $v-alignment: 'middle')
-// </pre>
-// <pre> </pre>
-// <pre>
+//
 // $baseline                        - Font baseline
 // $svg-width                       - Width of the SVG Icon
 // $svg-height                      - Height of the SVG Icon
@@ -106,9 +96,6 @@ $baseline: 1.5rem !default;
 // $svg-class: 'g-svg'                - Class for the SVG inside the parent
 // $h-alignment: 'left'             - Align Icon on 'left' or 'right'
 // $v-alignment: 'middle'           - Align Icon 'middle' or 'top'
-// </pre>
-//
-// Styleguide 1.10.3
 
 // Prefix icon with a mult-line link with vertically centered (middle or top) svg to the left
 // Apply to parent container with an SVG of the specified class inside

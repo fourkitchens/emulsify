@@ -1,17 +1,15 @@
 
 
+// Overrides presentation attributes in SVG file to
+// Allow these values to inherit from CSS file.
 svg {
-
-  // Overrides presentation attributes in SVG file to
-  // Allow these values to inherit from CSS file.
-
-  // path,
-  // line,
-  // circle {
-  //   fill: inherit;
-  //   stroke: inherit;
-  //   stroke-width: inherit;
-  // }
+  path,
+  line,
+  circle {
+    fill: inherit;
+    stroke: inherit;
+    stroke-width: inherit;
+  }
 
   // Fix for Edge not bubbling up events on clicking the use in an svg.
   // https://connect.microsoft.com/IE/feedback/details/796745/mouse-events-are-not-delivered-at-all-anymore-when-inside-an-svg-a-use-is-removed-from-the-dom
@@ -21,6 +19,7 @@ svg {
 }
 
 // Sets SVG to use "css color" as the fill in the SVG
+%svg--fill,
 .svg--fill {
   fill: currentColor;
 }
@@ -48,4 +47,83 @@ svg {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+
+// SVG - Inline Style
+// Inline Block SVG icons with EM based sizing.
+// Fill Color inherits from parent element
+
+%svg--inline-core {
+  // @extend %g-svg__wrapper;
+  display: inline-block;
+  // Render art on partial pixels
+  margin-right: ru(0.5);
+  transform-style: preserve-3d;
+}
+
+// Default size is "Larger" Icons relative to text
+%svg--inline__wrapper,
+.svg--inline__wrapper {
+  @extend %svg--inline-core;
+
+  // icons are 0.75% of baseline height in em
+  width: 1em;
+  height: 1em;
+  // Centers visually in middle of type's height
+  transform: translateY(15%);
+  // transform: scale(1.1);
+  // Centers visually in middle of type's height
+}
+
+%svg--inline-large__wrapper,
+.svg--inline-large__wrapper {
+  @extend %svg--inline-core;
+  display: inline-block;
+  // icons are 100% of baseline height in em
+  width: em($base-line-height) * 1;
+  height: em($base-line-height) * 1;
+  // Centers visually in middle of type's height
+  transform: translateY(20%);
+}
+
+%svg--inline-xlarge__wrapper,
+.svg--inline-xlarge__wrapper {
+  @extend %svg--inline-core;
+  display: inline-block;
+  // icons are 0.75% of baseline height in em
+  width: em($base-line-height) * 1.25;
+  height: em($base-line-height) * 1.25;
+  // Centers visually in middle of type's height
+  transform: translateY(25%);
+}
+
+%svg--inline,
+.svg--inline {
+  @extend %svg--fill;
+  @extend %svg__core;
+}
+
+
+// SVG Centered as icons
+.svg-centered {
+  @include svg-centered(ru(0.85),  ru(0.85),  ru(1.5),  ru(1.5));
+  display: inline-block;
+  border-radius: 50%;
+  background-color: $white;
+  color: palette(blue, dark);
+
+  &:visited {
+    color: palette(blue, dark);
+  }
+
+  &:hover,
+  &:active {
+    background-color: palette(grey, xlight);
+    color: palette(blue, light);
+  }
+
+  &:focus {
+    outline: 1px dashed palette(grey, light);
+  }
 }
