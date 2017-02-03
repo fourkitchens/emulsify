@@ -1,0 +1,6 @@
+logo:
+  join():
+    - molecules-logo
+menu_main:
+  join():
+    - molecules-menu-main
