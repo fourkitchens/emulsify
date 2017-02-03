@@ -27,19 +27,23 @@
 .l-main__content {
   background-color: palette(grey, light);
   padding: ru(1);
+  min-height: ru(10);
 
   @include respond-to('full-nav') {
     float: left;
     width: 75%;
+    min-height: 50vh;
   }
 }
 
 .l-main__aside {
   background-color: palette(blue, light);
   padding: ru(1);
+  min-height: ru(5);
 
   @include respond-to('full-nav') {
     float: right;
     width: 25%;
+    min-height: 50vh;
   }
 }

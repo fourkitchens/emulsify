@@ -10,9 +10,12 @@
   {{ content }}
 
   <div class="l-page__footer">
+    {% set year = 'now'|date('Y') %}
+
     {% include "@organisms/site/01-footer/footer.twig"
       with {
         footer_logo: drupal_block('mainspring_powered'),
+        year: year
       }
     %}
   </div>
