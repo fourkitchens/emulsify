@@ -34,15 +34,11 @@
       <ul>
     {% endif %}
     {% for item in items %}
-      {% if item.in_active_trail == TRUE %}
-        {% set classes = [
-            'm-menu-main__item',
-            'm-menu-main__item--active'
-          ]
-        %}
-      {% else %}
-        {% set classes = 'm-menu-main__item' %}
-      {% endif %}
+      {% set classes = [
+          'm-menu-main__item',
+          item.in_active_trail == TRUE ? 'is-active',
+        ]
+      %}
 
       <li{{ item.attributes.addClass(classes) }}>
         {{ link(item.title, item.url, { 'class' : ['m-menu-main__link']}) }}

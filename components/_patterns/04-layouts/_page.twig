@@ -3,6 +3,7 @@
     {% include "@organisms/site/header/header.twig"
       with {
         logo: drupal_block('logo'),
+        menu_main: drupal_block('menu_main'),
       }
     %}
   </div>
@@ -12,7 +13,7 @@
   <div class="l-page__footer">
     {% include "@organisms/site/footer/footer.twig"
       with {
-        menu_main: drupal_block('menu_main'),
+        logo: drupal_block('logo'),
       }
     %}
   </div>
