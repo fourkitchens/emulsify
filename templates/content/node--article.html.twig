@@ -70,4 +70,12 @@
  *   in different view modes.
  */
 #}
-{% include "@layouts/main/main.twig" %}
+{% include "@layouts/main/main--article.twig"
+  with {
+    main_nav: drupal_block('mainspring_main_menu'),
+    tabs: drupal_block('mainspring_local_tasks'),
+    article_title: label,
+    body: content.body,
+    searchbar: drupal_block('mainspring_search')
+  }
+%}

@@ -1,0 +1,14 @@
+.o-footer {
+  @extend %u-clearfix;
+  background-color: $color-primary-xxlight;
+  padding: ru(1);
+}
+
+.o-footer__legal {
+  float: left;
+}
+
+.o-footer__logo {
+  float: right;
+  width: ru(10);
+}

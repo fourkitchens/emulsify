@@ -1,0 +1,35 @@
+{% embed "@layouts/main/main.twig" %}
+
+  {# Override default main_header block #}
+  {# {% block main_header %} #}
+  {# {% endblock %} #}
+
+  {# Override default main_header block #}
+  {% block main_utilities %}
+    {{ tabs }}
+    {{ main_nav }}
+  {% endblock %}
+
+  {# Override default main_content block #}
+  {% block main_content %}
+    <div class="l-main__article-content">
+      <div class="l-main__article-title">
+      {% include "@atoms/00-type/00-heading-1.twig"
+        with {
+          heading: article_title,
+        }
+      %}
+      </div>
+
+      <div class="l-main__article-body">{{ body }}</div>
+    </div>
+  {% endblock %}
+
+  {# Override default main_aside block #}
+  {% block main_aside %}
+    {{ searchbar  }}
+  {% endblock %}
+
+{% endembed %}
+
+

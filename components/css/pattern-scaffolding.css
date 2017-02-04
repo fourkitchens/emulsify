@@ -120,3 +120,35 @@
   max-width: 900px;
 }
 
+/***** DEMO CLASSES *****/
+
+/* Used for header section*/
+.demo--dbl1 {
+  outline: 2px dashed red;
+  background-color: #e5e5e5;
+  min-height: 400px;
+  text-align: center;
+}
+/* Used for utilities section */
+.demo--dbl2 {
+  outline: 2px dashed blue;
+  background-color: #ccc;
+  min-height: 60px;
+  text-align: center;
+}
+
+/* Used for main content section */
+.demo--dbl3 {
+  outline: 2px dashed green;
+  background-color: #999;
+  min-height: 900px;
+  text-align: center;
+}
+
+/* Used for aside section */
+.demo--dbl4 {
+  outline: 2px dashed orange;
+  background-color: #666;
+  min-height: 300px;
+  text-align: center;
+}

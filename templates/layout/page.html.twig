@@ -43,4 +43,8 @@
  * @see html.html.twig
  */
 #}
-{% include "@layouts/_page.twig" %}
+{% include "@layouts/_page.twig"
+  with {
+    content: page.content.mainspring_content,
+  }
+%}

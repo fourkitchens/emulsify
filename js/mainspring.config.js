@@ -14,9 +14,9 @@
     attach: function (context, settings) {
 
       // Configuration that should only be ran once globally.
-      $('body').once('emulsify-configuration-global').each(function () {
+      $('body').once('mainspring-configuration-global').each(function () {
         // Init accordions.
-        $('.m-accordion-item').accordion();
+        // $('.m-accordion-item').accordion();
       });
 
     }

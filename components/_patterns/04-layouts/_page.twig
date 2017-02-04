@@ -1,8 +1,8 @@
 <div class="l-page">
   <div class="l-page__header">
-    {% include "@organisms/site/header/header.twig"
+    {% include "@organisms/site/00-header/header.twig"
       with {
-        logo: drupal_block('logo'),
+        logo: drupal_block('mainspring_branding')
       }
     %}
   </div>
@@ -10,9 +10,12 @@
   {{ content }}
 
   <div class="l-page__footer">
-    {% include "@organisms/site/footer/footer.twig"
+    {% set year = 'now'|date('Y') %}
+
+    {% include "@organisms/site/01-footer/footer.twig"
       with {
-        menu_main: drupal_block('menu_main'),
+        footer_logo: drupal_block('mainspring_powered'),
+        year: year
       }
     %}
   </div>

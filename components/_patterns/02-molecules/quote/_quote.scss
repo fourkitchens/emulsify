@@ -14,7 +14,6 @@
   }
 }
 
-
 %m-quote--icon-core {
   @include svg-centered(ru(3),  ru(3),  ru(3),  ru(3));
   fill: $color-secondary-xlight;
@@ -28,7 +27,6 @@
   @extend %m-quote--icon-core;
   margin-left: auto;
 }
-
 
 // %m-quote__cite,
 // .m-quote__cite {

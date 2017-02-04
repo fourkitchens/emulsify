@@ -8,7 +8,7 @@
 /**
  * Implements template_preprocess().
  */
-function emulsify_preprocess(&$variables, $hook) {
+function mainspring_preprocess(&$variables, $hook) {
   // Add base_path variable to all template files.
   $variables['base_path'] = base_path();
 }
