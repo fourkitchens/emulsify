@@ -1,6 +1,6 @@
 // Icon Styling
 .sprite-icon {
-  background-size: contain;
+  background-size: contain; // Replace based on sprite size with specific em digit
   display: block;
   padding: 3em;
 }
@@ -16,7 +16,7 @@
 
 .inline-arrow-down--bg {
   display: flex;
-  
+
   &:before {
     @include sprite-arrow-down;
     @include with-icon;

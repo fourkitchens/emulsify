@@ -1,0 +1,12 @@
+grid_class:
+  pl-specific
+grid_label:
+  "3-across Example"
+grid_variation:
+  3
+items:
+  one:
+  two:
+  three:
+  four:
+  five:

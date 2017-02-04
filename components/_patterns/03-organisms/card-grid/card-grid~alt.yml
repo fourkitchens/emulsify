@@ -1,0 +1,31 @@
+grid_title:
+  "News"
+grid_divider: true
+cards:
+  1:
+    card_img:
+      "http://placeimg.com/480/300/nature"
+    card_title:
+      "This is a title too"
+    card_sub:
+      "<p>November 11, 2016</p>"
+    card_body:
+      ""
+  2:
+    card_img:
+      "http://placeimg.com/480/300/nature"
+    card_title:
+      "This is a title too"
+    card_sub:
+      "<p>October 27, 2016</p>"
+    card_body:
+      ""
+  3:
+    card_img:
+      "http://placeimg.com/480/300/nature"
+    card_title:
+      "This is a title too"
+    card_sub:
+      "<p>October 4, 2016</p>"
+    card_body:
+      ""

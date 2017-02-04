@@ -1,0 +1,84 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  .grid__item {
+    margin-bottom: 1em;
+    width: 100%;
+
+    @include medium {
+      margin: 0 1% 1% 0;
+      width: auto;
+    }
+  }
+
+  &--2 .grid__item {
+    @include medium {
+      width: 49%;
+
+      &:nth-child(2n), &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &--3 .grid__item {
+    @include medium {
+      width: 32%;
+
+      &:nth-child(3n), &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &--divider {
+    .grid__item {
+      @include medium {
+        width: 25%;
+      }
+    }
+  }
+}
+
+.grid__item {
+  flex-grow: 1;
+
+  // Pattern Lab only
+  .pl-specific & {
+    background-color: rgba(0,0,0,.2);
+    margin: .5%;
+    min-height: 100px;
+  }
+
+  // With Divider
+  .grid--divider & {
+    @include medium {
+      margin: 0 5% 0 0;
+      position: relative;
+
+      &::after {
+        background-color: $gray-lighter;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: -8%;
+        top: 0;
+        width: 1px;
+      }
+    }
+
+    &:last-child {
+      @include medium {
+        margin-right: 0;
+      }
+
+      .grid--divider & {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

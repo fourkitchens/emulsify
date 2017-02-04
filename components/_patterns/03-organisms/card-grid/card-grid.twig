@@ -1,0 +1,28 @@
+{% embed "@base/layouts/grid/00-grid.twig"
+  with {
+    "grid_variation": 3
+  }
+%}
+
+{% block grid_content %}
+  {# Drupal content #}
+  {% if grid_content %}
+    {{ grid_content }}
+  {# PL content in JSON #}
+  {% else %}
+    {% for card in cards %}
+      {% include "@molecules/card/01-card.twig"
+        with {
+          "class": "grid__item",
+          "card_img": card.card_img,
+          "card_title": card.card_title,
+          "card_sub": card.card_sub,
+          "card_body": card.card_body,
+          "variation": card.variation
+        }
+      %}
+    {% endfor %}
+  {% endif %}
+{% endblock %}
+
+{% endembed %}

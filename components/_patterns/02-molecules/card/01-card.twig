@@ -1,4 +1,28 @@
-<div class="card{% if variation %}--{{variation}}{% endif %}">
-  <h1 class="card__title">{{ title }}</h1>
-  {% if body %}<p class="card__body">{{ body }}</p>{% endif %}
+<div {% if attributes %}{{ attributes.addClass(classes) }}{% else %}class="card{% if variation %} card--{{ variation }}{% endif %}{% if limit %} card--{{ limit }}{% endif %}{% if class %} {{ class }}{% endif %}"{% endif %}>
+  {% if card_img %}
+    <div class="card__img">
+      <img src="{{ card_img }}" />
+    </div>
+  {% elseif image %}
+    <div class="card__img">
+      {{ image }}
+    </div>
+  {% endif %}
+  {{ title_prefix }}
+  <h2 class="card__title{% if card_sub %} card__title--with-sub{% endif %}">
+    {% if card_link %}<a class="card__title-link" href="{{ card_link }}">{% endif %}
+      {{ card_title }}
+    {% if card_link %}</a>{% endif %}
+  </h2>
+  {{ title_suffix }}
+  {% if card_sub %}
+    <div class="card__sub">
+      {{ card_sub|raw }}
+    </div>
+  {% endif %}
+  {% if card_body %}
+    <div class="card__body">
+      {{ card_body|raw }}
+    </div>
+  {% endif %}
 </div>
