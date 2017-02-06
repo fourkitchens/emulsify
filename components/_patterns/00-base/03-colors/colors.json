@@ -70,6 +70,6 @@
     }
   ],
   "meta": {
-    "description": "To add to these items, use Sass variables that start with <code>$</code> in <code>.//components/_patterns/00-base/03-colors/_color-vars.scss</code>"
+    "description": "To add to these items, use Sass variables that start with <code>$</code> in <code>/Volumes/macStorage/work/projects/foster-emulsify/components/_patterns/00-base/03-colors/_color-vars.scss</code>"
   }
 }

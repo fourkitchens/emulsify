@@ -13,3 +13,5 @@ npm-debug.log
 .DS_Store*
 ehthumbs.db
 Icon
+
+local.gulp-config.js

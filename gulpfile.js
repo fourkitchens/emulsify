@@ -1,19 +1,30 @@
-/* globals require */
+'use strict';
 
-(function () {
-  'use strict';
+/*************************************************************
+ * Variables
+ ************************************************************/
+// Modules
+var requireDir = require('require-dir');
+var _ = {
+  isObject: require('lodash/isObject')
+};
+// Globals
+global.config = {};
 
-  // General
-  var gulp = require('gulp-help')(require('gulp'));
-  var localConfig = {};
-  var requireDir = require('require-dir');
+/*************************************************************
+ * Operations
+ ************************************************************/
+requireDir('./gulp/config'); // Binds config to the global config
 
-  try {
-    localConfig = require('./local.gulp-config');
+try {
+  // Attempt to load in a local config overrides, allowing users to customize their use of the gulp tasks
+  var localConfig = require('./local.gulp-config');
+
+  if (_.isObject(localConfig)) {
+    global.config = _.defaultsDeep(global.config, localConfig);
   }
-  catch (e) {
-    // Do nothing.
-  }
-  require('emulsify-gulp')(gulp, localConfig);
+} catch (e) {
+}
 
-})();
+// Time to kick things off with tasks!
+require('./gulp');

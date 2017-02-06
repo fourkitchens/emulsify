@@ -2,12 +2,210 @@
     background: url("svg/sprite.css.svg") no-repeat;
 }
 
-@mixin sprite-arrow-down {
+@mixin sprite-sprite-social--facebook {
+    @include svg-common;
+    background-position: 0 22.16176470588235%;
+}
+
+.sprite-sprite-social--facebook {
+  @include sprite-sprite-social--facebook;
+}
+
+@mixin sprite-sprite-social--instagram {
+    @include svg-common;
+    background-position: 23.87142857142857% 73.63235294117646%;
+}
+
+.sprite-sprite-social--instagram {
+  @include sprite-sprite-social--instagram;
+}
+
+@mixin sprite-sprite-social--twitter {
+    @include svg-common;
+    background-position: 25% 0;
+}
+
+.sprite-sprite-social--twitter {
+  @include sprite-sprite-social--twitter;
+}
+
+@mixin sprite-sprite-ui--angle-double-left {
+    @include svg-common;
+    background-position: 50% 0;
+}
+
+.sprite-sprite-ui--angle-double-left {
+  @include sprite-sprite-ui--angle-double-left;
+}
+
+@mixin sprite-sprite-ui--angle-double-right {
+    @include svg-common;
+    background-position: 0 47.89705882352941%;
+}
+
+.sprite-sprite-ui--angle-double-right {
+  @include sprite-sprite-ui--angle-double-right;
+}
+
+@mixin sprite-sprite-ui--angle-left {
+    @include svg-common;
+    background-position: 25% 47.89705882352941%;
+}
+
+.sprite-sprite-ui--angle-left {
+  @include sprite-sprite-ui--angle-left;
+}
+
+@mixin sprite-sprite-ui--angle-right {
+    @include svg-common;
+    background-position: 50% 47.89705882352941%;
+}
+
+.sprite-sprite-ui--angle-right {
+  @include sprite-sprite-ui--angle-right;
+}
+
+@mixin sprite-sprite-ui--arrow-down {
+    @include svg-common;
+    background-position: 75% 0;
+}
+
+.sprite-sprite-ui--arrow-down {
+  @include sprite-sprite-ui--arrow-down;
+}
+
+@mixin sprite-sprite-ui--arrow-left {
+    @include svg-common;
+    background-position: 74.16301737533551% 25.735294117647058%;
+}
+
+.sprite-sprite-ui--arrow-left {
+  @include sprite-sprite-ui--arrow-left;
+}
+
+@mixin sprite-sprite-ui--arrow-right {
+    @include svg-common;
+    background-position: 0 73.63235294117646%;
+}
+
+.sprite-sprite-ui--arrow-right {
+  @include sprite-sprite-ui--arrow-right;
+}
+
+@mixin sprite-sprite-ui--arrow462 {
+    @include svg-common;
+    background-position: 75% 49.69473235837001%;
+}
+
+.sprite-sprite-ui--arrow462 {
+  @include sprite-sprite-ui--arrow462;
+}
+
+@mixin sprite-sprite-ui--arrow465 {
     @include svg-common;
     background-position: 0 0;
 }
 
-.sprite-arrow-down {
-  @include sprite-arrow-down;
+.sprite-sprite-ui--arrow465 {
+  @include sprite-sprite-ui--arrow465;
+}
+
+@mixin sprite-sprite-ui--arrow466 {
+    @include svg-common;
+    background-position: 50% 24.847366179185006%;
+}
+
+.sprite-sprite-ui--arrow466 {
+  @include sprite-sprite-ui--arrow466;
+}
+
+@mixin sprite-sprite-ui--arrow467 {
+    @include svg-common;
+    background-position: 25% 24.847366179185006%;
+}
+
+.sprite-sprite-ui--arrow467 {
+  @include sprite-sprite-ui--arrow467;
+}
+
+@mixin sprite-sprite-ui--circle-arrow-down {
+    @include svg-common;
+    background-position: 48.871428571428574% 73.63235294117646%;
+}
+
+.sprite-sprite-ui--circle-arrow-down {
+  @include sprite-sprite-ui--circle-arrow-down;
+}
+
+@mixin sprite-sprite-ui--circle-arrow-up {
+    @include svg-common;
+    background-position: 73.87142857142857% 73.63235294117646%;
+}
+
+.sprite-sprite-ui--circle-arrow-up {
+  @include sprite-sprite-ui--circle-arrow-up;
+}
+
+@mixin sprite-sprite-ui--close {
+    @include svg-common;
+    background-position: 100% 0;
+}
+
+.sprite-sprite-ui--close {
+  @include sprite-sprite-ui--close;
+}
+
+@mixin sprite-sprite-ui--delete {
+    @include svg-common;
+    background-position: 100% 25.735294117647058%;
+}
+
+.sprite-sprite-ui--delete {
+  @include sprite-sprite-ui--delete;
+}
+
+@mixin sprite-sprite-ui--menu {
+    @include svg-common;
+    background-position: 100% 50.089445438282645%;
+}
+
+.sprite-sprite-ui--menu {
+  @include sprite-sprite-ui--menu;
+}
+
+@mixin sprite-sprite-ui--minus {
+    @include svg-common;
+    background-position: 0 99.36764705882352%;
+}
+
+.sprite-sprite-ui--minus {
+  @include sprite-sprite-ui--minus;
+}
+
+@mixin sprite-sprite-ui--plus {
+    @include svg-common;
+    background-position: 25% 99.36764705882352%;
+}
+
+.sprite-sprite-ui--plus {
+  @include sprite-sprite-ui--plus;
+}
+
+@mixin sprite-sprite-ui--quote-left {
+    @include svg-common;
+    background-position: 50% 99.36764705882352%;
+}
+
+.sprite-sprite-ui--quote-left {
+  @include sprite-sprite-ui--quote-left;
+}
+
+@mixin sprite-sprite-ui--quote-right {
+    @include svg-common;
+    background-position: 75% 99.36764705882352%;
+}
+
+.sprite-sprite-ui--quote-right {
+  @include sprite-sprite-ui--quote-right;
 }
 
