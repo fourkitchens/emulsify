@@ -1,1 +1,120 @@
-Code to come.
+{# This is for documenting purpose only #}
+
+{# SVG Icons examples using link or div as containers #}
+<a href="https://www.facebook.com" class="svg-centered" target="_blank">
+  <svg class="a-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-social.svg#facebook"></use></svg>
+  <span class="u-visually--hidden">View Facebook Page</span>
+</a>
+
+<a href="https://www.twitter.com" class="svg-centered" target="_blank">
+  <svg class="a-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-social.svg#twitter"></use></svg>
+  <span class="u-visually--hidden">View Twitter Page</span>
+</a>
+
+<div class="svg-centered">
+  <svg class="a-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-social.svg#instagram"></use></svg>
+  <span class="u-visually--hidden">View Instagram Page</span>
+</div>
+
+
+{# Inline svg using mixin #}
+<p class="svg-inline-left">
+  Verb Action Short Text
+  <svg class="a-svg">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#chevron-right">
+    </use>
+  </svg>
+</p>
+
+
+<div class="svg-inline-left">
+  Verb Action Long Text - Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod.
+  <svg class="a-svg">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#chevron-right">
+    </use>
+  </svg>
+</div>
+
+<p class="svg-inline-right">
+  Verb Action Short Text
+  <svg class="a-svg">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#chevron-right">
+    </use>
+  </svg>
+</p>
+
+
+<div class="svg-inline-right">
+  Verb Action Long Text - Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod.
+  <svg class="a-svg">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#chevron-right">
+    </use>
+  </svg>
+</div>
+
+
+
+{# Inline icons #}
+<h2>Inline non-mixin svg</h2>
+<p>
+  <span class="svg--inline-left__wrapper">
+    <svg class="svg--inline">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#chevron-right">
+      </use>
+    </svg>
+  </span>
+  Some Text Appearing Inline Witha Left SVG
+</p>
+
+<p>
+  Some Text Appearing Inline With a Right SVG
+  <span class="svg--inline-right__wrapper">
+    <svg class="svg--inline">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#chevron-right">
+      </use>
+    </svg>
+  </span>
+</p>
+
+<p class="a-type--xlarge">
+  <span class="svg--inline-left__wrapper">
+    <svg class="svg--inline">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#chevron-right">
+      </use>
+    </svg>
+  </span>
+  Some Large Text Appearing Inline With a Left SVG
+</p>
+
+<p class="a-type--xlarge">
+  <span class="svg--inline-large__wrapper">
+    <svg class="svg--inline">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#chevron-right">
+      </use>
+    </svg>
+  </span>
+  Some Large Text Appearing Inline With a Left Large SVG
+</p>
+
+<p>
+  <span class="svg--inline-left__wrapper">
+    <svg class="svg--inline">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#calendar">
+      </use>
+    </svg>
+  </span>
+  Some Text Appearing Inline With a Left SVG
+</p>
+
+<p class="a-type--xlarge">
+  Some Large Text Appearing Inline With a Right SVG
+  <span class="svg--inline-right__wrapper">
+    <svg class="svg--inline">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#calendar">
+      </use>
+    </svg>
+  </span>
+</p>
+
+
+
