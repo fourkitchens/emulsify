@@ -3,7 +3,8 @@
   "description": "Project template for Drupal 8 themes",
   "version": "1.0.0",
   "devDependencies": {
-    "emulsify-gulp": "fourkitchens/emulsify-gulp"
+    "emulsify-gulp": "fourkitchens/emulsify-gulp",
+    "gulp-gh-pages": "^0.5.4"
   },
   "scripts": {
     "start": "gulp clean && gulp compile && gulp theme",
