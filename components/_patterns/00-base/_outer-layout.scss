@@ -17,19 +17,19 @@ footer {
 .layout-content {
   padding: 0 1em;
 
-  @include large {
+  @include xl {
     padding: 0;
   }
 }
 
 .layout-sidebar {
-  @include large {
+  @include xl {
     @include grid-span(1,1);
   }
 }
 
 .layout-content {
-  @include large {
+  @include xl {
     @include grid-span(3,2);
     &--no-sidebar {
       @include grid-span(4,1);

@@ -12,14 +12,22 @@
 @include add-gutter(1/4);
 
 // Breakpoints variables
-$small: 25em;
-$small-med: 26em;
-$small-large: 41em;
-$medium: 48em;
-$large: 61.25em;
+$xs: 25em;
+$small: 26em;
+$medium: 41em;
+$large: 48em;
+$xl: 61.25em;
 
 
-/// Mixin - Small Breakpoint
+/// Mixin - xs Breakpoint
+/// Allows easier @include xs {} syntax
+@mixin xs {
+  @include breakpoint($xs) {
+    @content;
+  }
+}
+
+/// Mixin - small Breakpoint
 /// Allows easier @include small {} syntax
 @mixin small {
   @include breakpoint($small) {
@@ -27,23 +35,7 @@ $large: 61.25em;
   }
 }
 
-/// Mixin - Small-Medium Breakpoint
-/// Allows easier @include small-med {} syntax
-@mixin small-med {
-  @include breakpoint($small-med) {
-    @content;
-  }
-}
-
-/// Mixin - Small-Large Breakpoint
-/// Allows easier @include small-large {} syntax
-@mixin small-large {
-  @include breakpoint($small-large) {
-    @content;
-  }
-}
-
-/// Mixin - Medium Breakpoint
+/// Mixin - medium Breakpoint
 /// Allows easier @include medium {} syntax
 @mixin medium {
   @include breakpoint($medium) {
@@ -51,10 +43,18 @@ $large: 61.25em;
   }
 }
 
-/// Mixin - Large Breakpoint
+/// Mixin - large Breakpoint
 /// Allows easier @include large {} syntax
 @mixin large {
   @include breakpoint($large) {
+    @content;
+  }
+}
+
+/// Mixin - xl Breakpoint
+/// Allows easier @include xl {} syntax
+@mixin xl {
+  @include breakpoint($xl) {
     @content;
   }
 }
