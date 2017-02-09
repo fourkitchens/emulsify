@@ -11,7 +11,7 @@
   display: inline-block;
   margin: 0 .7em;
 
-  @include medium {
+  @include large {
     margin: 0 1em;
   }
 }

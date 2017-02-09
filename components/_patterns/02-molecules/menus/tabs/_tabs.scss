@@ -3,7 +3,7 @@
   @include list-reset;
   border-bottom: 1px solid $gray-lightest;
 
-  @include medium {
+  @include large {
     border-left: 1px solid $gray-lightest;
     display: flex;
   }

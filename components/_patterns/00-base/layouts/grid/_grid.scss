@@ -6,14 +6,14 @@
     margin-bottom: 1em;
     width: 100%;
 
-    @include medium {
+    @include large {
       margin: 0 1% 1% 0;
       width: auto;
     }
   }
 
   &--2 .grid__item {
-    @include medium {
+    @include large {
       width: 49%;
 
       &:nth-child(2n), &:last-child {
@@ -23,7 +23,7 @@
   }
 
   &--3 .grid__item {
-    @include medium {
+    @include large {
       width: 32%;
 
       &:nth-child(3n), &:last-child {
@@ -34,7 +34,7 @@
 
   &--divider {
     .grid__item {
-      @include medium {
+      @include large {
         width: 25%;
       }
     }
@@ -53,7 +53,7 @@
 
   // With Divider
   .grid--divider & {
-    @include medium {
+    @include large {
       margin: 0 5% 0 0;
       position: relative;
 
@@ -70,7 +70,7 @@
     }
 
     &:last-child {
-      @include medium {
+      @include large {
         margin-right: 0;
       }
 

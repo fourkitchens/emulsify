@@ -9,7 +9,7 @@
   display: block;
   font-weight: 600;
 
-  @include small {
+  @include xs {
     display: block;
     margin-right: 2%;
     padding: .6em 0;
