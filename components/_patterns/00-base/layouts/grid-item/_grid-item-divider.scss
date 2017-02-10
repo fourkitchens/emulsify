@@ -1,5 +1,6 @@
 // Grid Item With Divider
 .grid__item--divider {
+  flex-grow: 0;
   @include large {
     margin-right: 2%;
     position: relative;
