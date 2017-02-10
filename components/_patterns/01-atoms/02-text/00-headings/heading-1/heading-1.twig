@@ -14,6 +14,6 @@
 #}
 {{ title_prefix }}
 {% if title %}
-  <h1 class="heading-1{% if variation %}--{{ variation }}{% endif %}">{{ heading_1 }}</h1>
+  <h1 class="heading-1{% if blockname or modifier %} {% if blockname %}{{ blockname }}__{% endif %}heading-1{% if modifier %}--{{ modifier }}{% endif %}{% endif %}">{{ heading_1 }}</h1>
 {% endif %}
 {{ title_suffix }}

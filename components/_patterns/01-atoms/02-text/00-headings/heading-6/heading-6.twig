@@ -1,1 +1,1 @@
-<h6 class="heading-6{% if variation %}--{{ variation }}{% endif %}">{{ heading_6 }}</h6>
+<h6 class="heading-6{% if blockname or modifier %} {% if blockname %}{{ blockname }}__{% endif %}heading-6{% if modifier %}--{{ modifier }}{% endif %}{% endif %}">{{ heading_6 }}</h6>
