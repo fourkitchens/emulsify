@@ -1,10 +1,11 @@
 grid_label:
-  "3-across Example"
+  "Divider Example"
 grid_columns:
-  3
+  2
+modifier:
+  divider
 items:
   one:
   two:
   three:
   four:
-  five:
