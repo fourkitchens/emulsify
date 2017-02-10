@@ -6,12 +6,12 @@ From your Drupal Twig templates in `templates/` you can use Twig's `{% include %
 
 ### Passing Variables
 
-One of the biggest benefits of this component system is being able to give  concise, logical names to your variables. However, Drupal has it's own variable syntax that you will need to leverage to pass data. Below is an example from the page title template (`templates/page-title.html.twig`) of how to pass that data using Twig's `{% include %}` statement. Notice that the component uses a   `{{ heading }}` variable but the Drupal template uses `{{ title }}`. Simply pass the Drupal variable to the component variable as follows:
+One of the biggest benefits of this component system is being able to give  concise, logical names to your variables. However, Drupal has it's own variable syntax that you will need to leverage to pass data. Below is an example from the page title template (`templates/page-title.html.twig`) of how to pass that data using Twig's `{% include %}` statement. Notice that the component uses a   `{{ heading_1 }}` variable but the Drupal template uses `{{ title }}`. Simply pass the Drupal variable to the component variable as follows:
 
 ```
 {% include "@atoms/02-text/00-headings/heading-1/heading-1.twig"
   with {
-    "heading": title
+    "heading_1": title
   }
 %}
 ```
@@ -30,7 +30,7 @@ Below is a more complex example:
 
 ### Drupal-specific functions, filters and tags
 
-Drupal has specific Twig functions, filters, tags, etc. that it uses that Pattern Lab is not aware of. Pattern Lab has an easy way to add those though, which is in components/\_twig-components/. There are examples of filters and functions already in there (currently you can use the `t()` and `without()` filters and the `kint()` function). Documentation on how to add these can be found [here](https://github.com/pattern-lab/patternengine-php-twig#extending-twig-further).  
+Drupal has specific Twig functions, filters, tags, etc. that it uses that Pattern Lab is not aware of. Pattern Lab has an easy way to add those though, which is in components/\_twig-components/. There are examples of filters and functions already in there (currently you can use the `t()` and `without()` filters and the `kint()` function). Documentation on how to add these can be found [here](https://github.com/pattern-lab/patternengine-php-twig#extending-twig-further).
 
 ## JavaScript in Drupal
 
