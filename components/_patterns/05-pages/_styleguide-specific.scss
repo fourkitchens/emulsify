@@ -1,23 +1,29 @@
-.visually-hidden {
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  word-wrap: normal;
-}
+.pl {
+  .visually-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal;
+  }
 
-.sg-pattern {
-  clear: left;
-}
+  .sg-pattern {
+    clear: left;
+  }
 
-#icons {
-  display: flex;
-  flex-wrap: wrap;
+  #icons {
+    display: flex;
+    flex-wrap: wrap;
 
-  & > div {
-    border: 1px solid #eee;
-    padding: 1em;
-    text-align: center;
+    & > div {
+      border: 1px solid #eee;
+      padding: 1em;
+      text-align: center;
+    }
+  }
+  .grid__item {
+    background-color: rgba(0,0,0,.2);
+    min-height: 100px;
   }
 }
