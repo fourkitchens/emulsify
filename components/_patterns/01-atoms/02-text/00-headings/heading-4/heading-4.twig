@@ -1,1 +1,12 @@
-<h4 class="heading-4{% if blockname or modifier %} {% if blockname %}{{ blockname }}__{% endif %}heading-4{% if modifier %}--{{ modifier }}{% endif %}{% endif %}">{{ heading_4 }}</h4>
+<h4 class="heading-4{% if blockname or modifier %} {% if blockname %}{{ blockname }}__{% endif %}heading-4{% if modifier %}--{{ modifier }}{% endif %}{% endif %}">
+  {% if heading_4_url %} {% include "@atoms/01-links/link/link.twig"
+    with {
+      "link_url": heading_4_url,
+      "link_text": heading_4,
+      "blockname": "heading-4"
+    }
+  %}
+  {% else %}
+    {{ heading_4 }}
+  {% endif %}
+</h4>
