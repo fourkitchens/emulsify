@@ -1,9 +1,9 @@
-<div class="info-box{% if modifiers %}{% for modifier in modifiers %} {% if blockname %}{{ blockname }}__{% endif %}info-box--{{ modifier }}{% endfor %}{% elseif blockname %} {{ blockname }}__info-box{% endif %}">
+<div class="info-box{% if infobox_modifiers %}{% for modifier in infobox_modifiers %} {% if infobox_blockname %}{{ infobox_blockname }}__{% endif %}info-box--{{ modifier }}{% endfor %}{% elseif infobox_blockname %} {{ infobox_blockname }}__info-box{% endif %}">
   {% include "@atoms/02-text/00-headings/heading-3/heading-3.twig"
     with {
       "heading_3": infobox_title,
       "heading_3_url": infobox_link,
-      "heading_3_modifiers": infobox_modifiers
+      "heading_3_modifiers": infobox_title_modifiers
     }
   %}
   {{ infobox_text }}

@@ -12,6 +12,8 @@ cards:
     card_title_modifiers:
       1:
         no-space
+    card_link:
+      "/home"
     card_sub:
       "<p>Person of Interest</p><p>Director of the Program</p>"
     card_body:

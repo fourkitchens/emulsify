@@ -11,18 +11,30 @@ boxes:
       "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
     infobox_link:
       "/"
+    infobox_title_modifiers:
+      1:
+        centered
   two:
     infobox_title:
       "Short for a reason"
     infobox_text:
       "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
+    infobox_title_modifiers:
+      1:
+        centered
   three:
     infobox_title:
       "Test Title that is whatever"
     infobox_text:
       "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+    infobox_title_modifiers:
+      1:
+        centered
   four:
     infobox_title:
       "Test Title 4"
     infobox_text:
       "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+    infobox_title_modifiers:
+      1:
+        centered
