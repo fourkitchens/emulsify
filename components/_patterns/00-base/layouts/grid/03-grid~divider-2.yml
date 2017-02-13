@@ -1,6 +1,6 @@
 grid_label:
   "Divider Example"
-modifiers:
+grid_modifiers:
   1:
     divider
   2:

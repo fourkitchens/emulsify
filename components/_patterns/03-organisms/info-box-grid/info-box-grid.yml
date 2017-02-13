@@ -1,5 +1,8 @@
 grid_title:
   "This is a Grid Title"
+grid_modifiers:
+  1:
+    columns-2
 boxes:
   one:
     infobox_title:

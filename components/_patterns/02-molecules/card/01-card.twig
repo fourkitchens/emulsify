@@ -1,4 +1,4 @@
-<div class="card{% if modifiers %}{% for modifier in modifiers %} {% if blockname %}{{ blockname }}__{% endif %}card--{{ modifier }}{% endfor %}{% elseif blockname %} {{ blockname }}__card{% endif %}">
+<div class="card{% if card_modifiers %}{% for modifier in card_modifiers %} {% if blockname %}{{ blockname }}__{% endif %}card--{{ modifier }}{% endfor %}{% elseif blockname %} {{ blockname }}__card{% endif %}">
   {% if card_img %}
     <div class="card__img">
       <img src="{{ card_img }}" />
@@ -14,7 +14,7 @@
       "heading_2": card_title,
       "heading_2_url": card_link,
       "blockname": card_blockname,
-      "modifiers": card_title_modifiers
+      "heading_2_modifiers": card_title_modifiers
     }
   %}
   {{ title_suffix }}
