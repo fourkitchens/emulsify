@@ -1,7 +1,10 @@
 grid_title:
   "News"
-grid_columns:
-  3
+modifiers:
+  1:
+    divider
+  2:
+    columns-3
 cards:
   1:
     card_img:
@@ -12,9 +15,6 @@ cards:
       "<p>November 11, 2016</p>"
     card_body:
       ""
-    modifiers:
-      1:
-        divider
   2:
     card_img:
       "http://placeimg.com/480/300/nature"
@@ -24,9 +24,6 @@ cards:
       "<p>October 27, 2016</p>"
     card_body:
       ""
-    modifiers:
-      1:
-        divider
   3:
     card_img:
       "http://placeimg.com/480/300/nature"
@@ -36,6 +33,3 @@ cards:
       "<p>October 4, 2016</p>"
     card_body:
       ""
-    modifiers:
-      1:
-        divider
