@@ -1,4 +1,4 @@
-@mixin button($alt: false) {
+.button {
   background-color: $black;
   border:none;
   color: $white;
@@ -11,7 +11,6 @@
   text-align: center;
   text-transform: uppercase;
 
-  &:link,
   &:visited {
     color: $white;
   }
@@ -20,7 +19,8 @@
     background-color: $gray;
   }
 
-  @if $alt {
+  &--alt {
+    font-weight: 600;
     @include font-size(.7);
     background-color: $gray;
     padding: .4em .6em .3em;
@@ -28,16 +28,6 @@
     &:hover {
       background-color: black;
     }
-  }
-}
-
-.button,
-a.button {
-  @include button();
-
-  &--alt {
-    @include button($alt: true);
-    font-weight: 600;
   }
 
   &--alt-2 {
@@ -48,7 +38,6 @@ a.button {
     line-height: 1.4em;
     text-transform: none;
 
-    &:link,
     &:visited {
       color: $black;
     }
@@ -57,10 +46,4 @@ a.button {
       background-color: $gray-lighter;
     }
   }
-}
-
-a.button {
-  // needed to override base theme CSS
-  -moz-appearance: none;
-  -webkit-appearance: none;
 }
