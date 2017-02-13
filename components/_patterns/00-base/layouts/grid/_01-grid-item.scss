@@ -4,7 +4,7 @@
   width: 100%;
 
   @include large {
-    margin: 0 1% 1% 0;
+    margin: 0 3% 3% 0;
     width: auto;
   }
 
@@ -17,7 +17,7 @@
 .grid__item {
   .grid--columns-2 & {
     @include large {
-      width: 49%;
+      width: 48.2%;
 
       &:nth-child(2n) {
         margin-right: 0;
@@ -27,7 +27,7 @@
 
   .grid--columns-3 & {
     @include large {
-      width: 32%;
+      width: 31%;
 
       &:nth-child(3n) {
         margin-right: 0;

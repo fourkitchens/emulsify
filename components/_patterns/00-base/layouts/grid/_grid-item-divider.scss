@@ -4,7 +4,7 @@
     flex-grow: 0;
 
     @include large {
-      margin-right: 2%;
+      margin-right: 3.5%;
       position: relative;
 
       &::after {
@@ -24,7 +24,7 @@
 .grid__item {
   .grid--divider.grid--columns-2 & {
     &::after {
-      right: -2%;
+      right: -3.5%;
     }
 
     &:nth-child(2n) {
@@ -36,7 +36,7 @@
 
   .grid--divider.grid--columns-3 & {
     &::after {
-      right: -3%;
+      right: -5.5%;
     }
 
     &:nth-child(3n) {
