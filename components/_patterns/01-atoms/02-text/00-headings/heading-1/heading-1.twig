@@ -14,12 +14,12 @@
 #}
 {{ title_prefix }}
 {% if title %}
-  <h1 class="heading-1{% if blockname or modifier %} {% if blockname %}{{ blockname }}__{% endif %}heading-1{% if modifier %}--{{ modifier }}{% endif %}{% endif %}">
+  <h1 class="heading-1{% if heading_1_modifiers %}{% for modifier in heading_1_modifiers %} {% if heading_1_blockname %}{{ heading_1_blockname }}__{% endif %}heading-1--{{ modifier }}{% endfor %}{% elseif heading_1_blockname %} {{ heading_1_blockname }}__heading-1{% endif %}">
     {% if heading_1_url %} {% include "@atoms/01-links/link/link.twig"
       with {
         "link_url": heading_1_url,
         "link_text": heading_1,
-        "blockname": "heading-1"
+        "link_blockname": "heading-1"
       }
     %}
     {% else %}

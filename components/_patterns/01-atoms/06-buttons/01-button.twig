@@ -1,1 +1,1 @@
-<a href="{{ button_url }}" class="button{% if blockname or modifier %} {% if blockname %}{{ blockname }}__{% endif %}button{% if modifier %}--{{ modifier }}{% endif %}{% endif %}">{{ button_text }}</a>
+<a href="{{ button_url }}" class="button{% if modifiers %}{% for modifier in modifiers %} {% if button_blockname %}{{ button_blockname }}__{% endif %}button--{{ modifier }}{% endfor %}{% elseif button_blockname %} {{ button_blockname }}__button{% endif %}">{{ button_text }}</a>

@@ -1,6 +1,10 @@
 grid_title:
   "News"
-grid_divider: true
+grid_modifiers:
+  1:
+    divider
+  2:
+    columns-3
 cards:
   1:
     card_img:
@@ -10,6 +14,8 @@ cards:
     card_sub:
       "<p>November 11, 2016</p>"
     card_body:
+      ""
+    card_link:
       ""
   2:
     card_img:

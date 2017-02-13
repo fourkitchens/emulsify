@@ -1,11 +1,19 @@
 grid_title:
   "This is a Title"
+grid_modifiers:
+  1:
+    columns-3
 cards:
   1:
     card_img:
       "http://placeimg.com/480/300/people"
     card_title:
       "This is a title too"
+    card_title_modifiers:
+      1:
+        no-space
+    card_link:
+      "/home"
     card_sub:
       "<p>Person of Interest</p><p>Director of the Program</p>"
     card_body:
@@ -15,6 +23,9 @@ cards:
       "http://placeimg.com/480/300/people"
     card_title:
       "This is a title too"
+    card_title_modifiers:
+      1:
+        no-space
     card_sub:
       "<p>Person of Interest</p><p>Director of the Program</p>"
     card_body:
@@ -24,6 +35,9 @@ cards:
       "http://placeimg.com/480/300/people"
     card_title:
       "This is a title too"
+    card_title_modifiers:
+      1:
+        no-space
     card_sub:
       "<p>Person of Interest</p><p>Director of the Program</p>"
     card_body:

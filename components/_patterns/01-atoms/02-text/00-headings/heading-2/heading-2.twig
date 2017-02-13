@@ -1,11 +1,12 @@
-<h2 class="heading-2{% if blockname or modifier %} {% if blockname %}{{ blockname }}__{% endif %}heading-2{% if modifier %}--{{ modifier }}{% endif %}{% endif %}">
-  {% if heading_2_url %} {% include "@atoms/01-links/link/link.twig"
-    with {
-      "link_url": heading_2_url,
-      "link_text": heading_2,
-      "blockname": "heading-2"
-    }
-  %}
+<h2 class="heading-2{% if heading_2_modifiers %}{% for modifier in heading_2_modifiers %} {% if heading_2_blockname %}{{ heading_2_blockname }}__{% endif %}heading-2--{{ modifier }}{% endfor %}{% elseif heading_2_blockname %} {{ heading_2_blockname }}__heading-2{% endif %}">
+  {% if heading_2_url %}
+    {% include "@atoms/01-links/link/link.twig"
+      with {
+        "link_url": heading_2_url,
+        "link_content": heading_2,
+        "link_blockname": "heading-2"
+      }
+    %}
   {% else %}
     {{ heading_2 }}
   {% endif %}

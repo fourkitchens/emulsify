@@ -10,9 +10,12 @@
       {% set class = "info-box" %}
       {% include "@molecules/info-box/info-box.twig"
         with {
+          "infobox_modifiers": box.infobox_modifiers,
+          "infobox_blockname": box.infobox_blockname,
           "infobox_title": box.infobox_title,
-          "infobox_text": box.infobox_text,
+          "infobox_title_modifiers": box.infobox_title_modifiers,
           "infobox_link": box.infobox_link,
+          "infobox_text": box.infobox_text
         }
       %}
     {% endfor %}

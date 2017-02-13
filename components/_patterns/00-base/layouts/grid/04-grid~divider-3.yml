@@ -1,9 +1,12 @@
 grid_label:
   "Divider Example"
-grid_columns:
-  3
-modifier:
-  divider
+grid_modifiers:
+  1:
+    divider
+  2:
+    pl
+  3:
+    "columns-3"
 items:
   one:
   two:

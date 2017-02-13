@@ -1,0 +1,45 @@
+.grid__item {
+  flex-grow: 1;
+  margin-bottom: 1em;
+  width: 100%;
+
+  @include large {
+    margin: 0 3% 3% 0;
+    width: auto;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// With Columns
+.grid__item {
+  .grid--columns-2 & {
+    @include large {
+      width: 48.2%;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .grid--columns-3 & {
+    @include large {
+      width: 31%;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Pattern Lab Specific
+.grid__item {
+  .grid--pl & {
+    background-color: rgba(0,0,0,.2);
+    min-height: 100px;
+  }
+}
