@@ -5,10 +5,10 @@
   }
 %}
 {% endif %}
-<div class="grid{% if grid_columns %} grid--columns-{{ grid_columns }}{% endif %}{% if blockname or modifier %} {% if blockname %}{{ blockname }}__{% endif %}grid{% if modifier %}--{{ modifier }}{% endif %}{% endif %}">
+<div class="grid{% if modifiers %}{% for modifier in modifiers %} {% if blockname %}{{ blockname }}__{% endif %}grid--{{ modifier }}{% endfor %}{% elseif blockname %} {{ blockname }}__grid{% endif %}">
   {% block grid_content %}
     {% for item in items %}
-      {% include "@base/layouts/grid-item/grid-item.twig" %}
+      <div class="grid__item">{{ item }}</div>
     {% endfor %}
   {% endblock %}
 </div>

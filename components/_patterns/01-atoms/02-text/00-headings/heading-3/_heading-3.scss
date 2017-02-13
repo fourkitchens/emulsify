@@ -1,3 +1,5 @@
-.heading-3,
-.heading-3__link {
+.heading-3 {
+  &--centered {
+    text-align: center;
+  }
 }

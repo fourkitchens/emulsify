@@ -2,6 +2,9 @@ card_img:
   "http://placeimg.com/480/480/nature"
 card_title:
   "This is a title too"
+card_title_modifiers:
+  1:
+    no-space
 card_sub:
   "<p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>"
 card_body:

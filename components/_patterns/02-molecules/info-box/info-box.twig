@@ -1,8 +1,12 @@
-<div {% if attributes %}{{ attributes.addClass("info-box") }}{% else %} class="info-box"{% endif %}>
-  <h3 class="heading-5 info-box__title">
-    {% if infobox_link %}<a href="{{ infobox_link }}">{% endif %}
-      {{ infobox_title }}
-    {% if infobox_link is defined %}</a>{% endif %}
-  </h3>
+<div class="info-box{% if modifiers %}{% for modifier in modifiers %} {% if blockname %}{{ blockname }}__{% endif %}info-box--{{ modifier }}{% endfor %}{% elseif blockname %} {{ blockname }}__info-box{% endif %}">
+  {% include "@atoms/02-text/00-headings/heading-3/heading-3.twig"
+    with {
+      "heading_3": infobox_title,
+      "heading_3_url": infobox_link,
+      "modifiers": {
+        1: "centered"
+      }
+    }
+  %}
   {{ infobox_text }}
 </div>

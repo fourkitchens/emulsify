@@ -2,3 +2,7 @@
 .heading-2__link {
   @include font-size(1.4);
 }
+
+.heading-2--no-space {
+  margin-bottom: 0;
+}

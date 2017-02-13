@@ -1,25 +1,32 @@
 // Grid Item With Divider
-.grid__item--divider {
-  flex-grow: 0;
-  @include large {
-    margin-right: 2%;
-    position: relative;
+.grid__item {
+  .grid--divider & {
+    flex-grow: 0;
 
-    &::after {
-      background-color: $gray-lighter;
-      content: "";
-      display: block;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      width: 1px;
+    @include large {
+      margin-right: 2%;
+      position: relative;
+
+      &::after {
+        background-color: $gray-lighter;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 1px;
+      }
     }
   }
+}
 
-  .grid--columns-2 & {
+// Columns
+.grid__item {
+  .grid--divider.grid--columns-2 & {
     &::after {
       right: -2%;
     }
+
     &:nth-child(2n) {
       &::after {
         display: none;
@@ -27,16 +34,18 @@
     }
   }
 
-  .grid--columns-3 & {
+  .grid--divider.grid--columns-3 & {
     &::after {
       right: -3%;
     }
+
     &:nth-child(3n) {
       &::after {
         display: none;
       }
     }
   }
+
   &:last-child {
     @include large {
       margin-right: 0;

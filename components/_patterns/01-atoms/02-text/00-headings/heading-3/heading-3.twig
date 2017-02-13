@@ -1,8 +1,8 @@
-<h3 class="heading-3{% if blockname or modifier %} {% if blockname %}{{ blockname }}__{% endif %}heading-3{% if modifier %}--{{ modifier }}{% endif %}{% endif %}">
-    {% if heading_3_url %} {% include "@atoms/01-links/link/link.twig"
+<h3 class="heading-3{% if modifiers %}{% for modifier in modifiers %} {% if blockname %}{{ blockname }}__{% endif %}heading-3--{{ modifier }}{% endfor %}{% elseif blockname %} {{ blockname }}__heading-3{% endif %}">
+    {% if heading_3_url %}{% include "@atoms/01-links/link/link.twig"
       with {
         "link_url": heading_3_url,
-        "link_text": heading_3,
+        "link_content": heading_3,
         "blockname": "heading-3"
       }
     %}
