@@ -4,4 +4,4 @@ title: "Grid"
 ---
 ## Grid Layout
 
-Grid by default just uses flexbox with the last item(s) stretched to fill. See the syntax below changing the amount of items per grid (e.g., `class="grid--2"`). Background color, height and margin added for display in Pattern Lab only.
+Flex Grid uses flexbox with the last item(s) stretched to fill. Pass columns, divider (and more) as grid_modifiers to create classes (see any of the YAML files for examples). Background color and height added for display in Pattern Lab only.
