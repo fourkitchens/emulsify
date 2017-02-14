@@ -1,5 +1,9 @@
 <ol>
   {% for listItem in listItems.four %}
-    <li class="list-item">{{ listItem.title }}</li>
+    {% include "@atoms/03-lists/_list-item.twig"
+      with {
+        "list_item": listItem.title
+      }
+    %}
   {% endfor %}
 </ol>
