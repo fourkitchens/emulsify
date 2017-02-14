@@ -27,9 +27,12 @@
   <div id="tabs" class="tabs no-js">
     <ul class="tabs__nav">
       {% for key, listItem in listItems.three %}
-      <li>
-        <a href="#tab-{{ key }}" class="tabs__link{% if key == 0 %} is-active{% endif %}">{{ listItem.month.long }}</a>
-      </li>
+      {% include "@atoms/09-menu/tab/tab.twig"
+        with {
+          tab_link: "#tab-" ~ key,
+          tab_text: listItem.month.long
+        }
+      %}
       {% endfor %}
     </ul>
     {% for key, listItem in listItems.three %}

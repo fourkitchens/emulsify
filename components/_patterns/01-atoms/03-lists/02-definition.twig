@@ -1,4 +1,4 @@
-<dl>
+<dl class="dl-list{% if dl_list_modifiers %}{% for modifier in dl_list_modifiers %} {% if dl_list_blockname %}{{ dl_list_blockname }}__{% endif %}dl-list--{{ modifier }}{% endfor %}{% elseif dl_list_blockname %} {{ dl_list_blockname }}__dl-list{% endif %}">
   {% for dl_item in dl_list %}
     {% include "@atoms/03-lists/_definition-list-item.twig"
       with {

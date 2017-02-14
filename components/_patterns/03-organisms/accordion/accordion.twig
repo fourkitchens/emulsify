@@ -1,10 +1,7 @@
-<dl class="accordion-item">
-  {% for listItem in listItems.four %}
-    {% include "@molecules/accordion-item/accordion-item.twig"
-      with {
-        "accordion_item": listItem.headline.short,
-        "accordion_def": listItem.excerpt.long
-      }
-    %}
-  {% endfor %}
-</dl>
+{% include "@atoms/03-lists/02-definition.twig"
+  with {
+    dl_list_modifiers: accordion_modifiers,
+    dl_list_blockname: accordion_blockname,
+    dl_list: accordion_list
+  }
+%}
