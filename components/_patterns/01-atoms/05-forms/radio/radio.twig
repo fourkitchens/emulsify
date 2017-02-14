@@ -3,9 +3,13 @@
   <legend class="heading-3">Options as Radio Buttons</legend>
   <ul class="form-item--radios">
 {% endif %}
-      {% for key, listItem in listItems.four %}
-      <li class="form-item--radio__item"><label for="radio{{ key }}"><input id="radio{{ key }}" name="radio" type="radio" class="radio" checked="checked"> {{ listItem.title }}</label></li>
-      {% endfor %}
+    {% for key, listItem in listItems.four %}
+      {% include "@atoms/05-forms/radio/_radio-item.twig"
+        with {
+          "radio_item": listItem.title
+        }
+      %}
+    {% endfor %}
 {% if not attributes %}
   </ul>
 </div>
