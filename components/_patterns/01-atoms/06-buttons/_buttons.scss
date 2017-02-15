@@ -3,8 +3,7 @@
   border:none;
   color: $white;
   cursor: pointer;
-  font-family: $body;
-  line-height: 1em;
+  line-height: 1.4;
   padding: .5em 1em;
   display: inline-block;
   text-decoration: none;
@@ -35,7 +34,6 @@
     color: $black;
     @include font-size(.8);
     font-weight: 600;
-    line-height: 1.4em;
     text-transform: none;
 
     &:visited {

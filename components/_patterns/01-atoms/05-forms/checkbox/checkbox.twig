@@ -4,7 +4,11 @@
   <ul class="form-item--checkboxes">
 {% endif %}
       {% for key, listItem in listItems.four %}
-      <li class="form-item--checkbox__item"><label for="checkbox{{ key }}"><input id="checkbox{{ key }}" name="checkbox" type="checkbox" checked="checked"> {{ listItem.title }}</label></li>
+        {% include "@atoms/05-forms/checkbox/_checkbox-item.twig"
+          with {
+            "checkbox_title": listItem.title
+          }
+        %}
       {% endfor %}
 {% if not attributes %}
   </ul>

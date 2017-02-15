@@ -6,7 +6,11 @@
       <optgroup label="Whatever">
 {% endif %}
         {% for key, listItem in listItems.six %}
-        <option>{{ listItem.title }}</option>
+          {% include "@atoms/05-forms/select/_select-item.twig"
+            with {
+              "select_item": listItem.title
+            }
+          %}
         {% endfor %}
 {% if not attributes %}
       </optgroup>

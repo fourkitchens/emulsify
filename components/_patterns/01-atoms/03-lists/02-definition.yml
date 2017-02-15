@@ -1,0 +1,13 @@
+dl_list:
+  1:
+    dl_term: "Definition List"
+    dl_definition: "A number of connected items or names written or printed consecutively, typically one below the other."
+  2:
+    dl_term: "This is a term."
+    dl_definition: "This is the definition of that term, which both live in a <code>dl</code>."
+  3:
+    dl_term: "Here is another term."
+    dl_definition: "And it gets a definition too, which is this line."
+  4:
+    dl_term: "Here is term that shares a definition with the term below."
+    dl_definition: "And it gets a definition too, which is this line."
