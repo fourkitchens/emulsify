@@ -1,2 +1,7 @@
-<dt class="accordion-item__term">{{ accordion_item }}</dt>
-<dd class="accordion-item__def">{{ accordion_def }}</dd>
+{% include "@atoms/03-lists/02-definition.twig"
+  with {
+    dl_list_modifiers: accordion_modifiers,
+    dl_list_blockname: accordion_blockname,
+    dl_list: accordion_list
+  }
+%}
