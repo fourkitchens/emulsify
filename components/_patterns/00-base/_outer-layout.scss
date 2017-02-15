@@ -16,13 +16,13 @@ footer {
 
 .layout-sidebar {
   @include xl {
-    @include grid-span(4,1);
+    @include grid-span(3,1);
   }
 }
 
 .layout-content {
   @include xl {
-    @include grid-span(8,4);
+    @include grid-span(9,4);
 
     &--no-sidebar {
       @include grid-span(12,1);
