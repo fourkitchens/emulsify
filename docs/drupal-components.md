@@ -4,6 +4,10 @@ From your Drupal Twig templates in `templates/` you can use Twig's `{% include %
 
 `{% include "@organisms/path/to/file.twig" %}`
 
+### Atomic Design Structure
+
+As a Drupal developer, it may be helpful to think of the Atomic Design structure (atoms, molecules, etc.) in terms of Drupal output. In general, fields can be thought of as atoms, nodes as molecules and views, paragraphs or other listings as organisms. Component organization is really left to logic and will sometimes defy these conventions, but these principles apply as a general rule.
+
 ### Passing Variables
 
 One of the biggest benefits of this component system is being able to give  concise, logical names to your variables. However, Drupal has it's own variable syntax that you will need to leverage to pass data. Below is an example from the page title template (`templates/page-title.html.twig`) of how to pass that data using Twig's `{% include %}` statement. Notice that the component uses a   `{{ heading_1 }}` variable but the Drupal template uses `{{ title }}`. Simply pass the Drupal variable to the component variable as follows:
