@@ -10,4 +10,7 @@
  * @see template_preprocess_menu_local_action()
  */
 #}
-<li{% if attributes %}{{ attributes.addClass('list-item') }}{% else %} class="list-item"{% endif %}>{% if list_label %}<strong>{{ list_label }}</strong> {% endif %}{{ list_item }}</li>
+<li class="list-item{% for modifier in list_item_modifiers %} list-item--{{ modifier }}{% endfor %}{% if list_item_blockname %} {{ list_item_blockname }}__list-item{% endif %}">
+  {% if list_label %}<strong>{{ list_label }}</strong> {% endif %}
+  {{ list_item }}
+</li>

@@ -6,7 +6,7 @@
       {% for key, listItem in listItems.four %}
         {% include "@atoms/05-forms/checkbox/_checkbox-item.twig"
           with {
-            "checkbox_title": listItem.title
+            "checkbox_item": listItem.title
           }
         %}
       {% endfor %}

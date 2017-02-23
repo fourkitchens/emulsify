@@ -1,4 +1,4 @@
-<div class="card{% if card_modifiers %}{% for modifier in card_modifiers %} {% if card_blockname %}{{ card_blockname }}__{% endif %}card--{{ modifier }}{% endfor %}{% elseif card_blockname %} {{ card_blockname }}__card{% endif %}">
+<div class="card{% for modifier in card_modifiers %} card--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__card{% endif %}">
   {% if card_img %}
     <div class="card__img">
       <img src="{{ card_img }}" />
@@ -20,12 +20,22 @@
   {{ title_suffix }}
   {% if card_sub %}
     <div class="card__sub">
-      {{ card_sub|raw }}
+      {% include "@atoms/02-text/text/01-paragraph.twig"
+        with {
+          "paragraph_text": card_sub,
+          "paragraph_modifiers": card_sub_modifiers
+        }
+      %}
     </div>
   {% endif %}
   {% if card_body %}
     <div class="card__body">
-      {{ card_body|raw }}
+      {% include "@atoms/02-text/text/01-paragraph.twig"
+        with {
+          "paragraph_text": card_body,
+          "paragraph_modifiers": card_body_modifiers
+        }
+      %}
     </div>
   {% endif %}
 </div>

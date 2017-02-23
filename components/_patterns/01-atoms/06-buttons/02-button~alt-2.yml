@@ -2,5 +2,6 @@ button_url:
   "/"
 button_text:
   "Alternative Button 2"
-modifier:
-  "alt-2"
+button_modifiers:
+  1:
+    "alt-2"
