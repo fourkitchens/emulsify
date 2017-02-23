@@ -10,7 +10,26 @@
 This starterkit automatically compiles SCSS files from anywhere in the `components/_patterns` directory, so that you can organize your SCSS files right alongside your Twig files. There are a few things to keep in mind with this approach:
 
 - Use the `_UNDERSCORE-FIRST.scss` syntax to make sure Sass files get compiled in the expected order.
-- Default patterns use BEM syntax. While not required, an approach that keeps your CSS as modular as possible is highly recommended. By doing so, you "component-ize" your styles and the easier it will be to add/remove components without impacting the rest of the project.
+- Default patterns use BEM syntax. The simple Twig included in the patterns allows for blockname or modifier classes to be passed into the pattern. See an example below from `components/_patterns/00-base/layouts/grid/00-grid.twig`:
+
+```
+<div class="grid{% for modifier in grid_modifiers %} grid--{{ modifier }}{% endfor %}{% if grid_blockname %} {{ grid_blockname }}__grid{% endif %}">
+```
+
+This can add the following classes to an element (modifiers unlimited):
+
+`<div class="grid grid--MODIFIER grid--MODIFIER2 BLOCKNAME__grid">`
+
+If you need more flexibility you can use the more verbose approach below:
+
+```
+<div class="grid{% for modifier in grid_modifiers %} grid--{{ modifier }}{% endfor %}{% if grid_blockname %} {{ grid_blockname }}__grid{% endif %}{% if grid_blockname and grid_modifiers %}{% for modifier in grid_modifiers %} {{ grid_blockname }}__grid--{{ modifier }}{% endfor %}{% endif %}">
+```
+
+This allows for the following classes:
+
+`<div class="grid grid--MODIFIER grid--MODIFIER2 BLOCKNAME__grid BLOCKNAME__grid--MODIFIER BLOCKNAME__grid--MODIFIER2">`
+
 - All pattern SCSS is imported into a single file `components/_patterns/style.scss` and compiled by the Gulp task into `dist/style.css`.
 
 ### JS
