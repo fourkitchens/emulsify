@@ -14,7 +14,7 @@ cards:
     card_title:
       "This is a title too"
     card_sub:
-      "<p>November 11, 2016</p>"
+      "November 11, 2016"
     card_body:
       ""
     card_link:
@@ -25,7 +25,7 @@ cards:
     card_title:
       "This is a title too"
     card_sub:
-      "<p>October 27, 2016</p>"
+      "October 27, 2016"
     card_body:
       ""
   3:
@@ -34,6 +34,6 @@ cards:
     card_title:
       "This is a title too"
     card_sub:
-      "<p>October 4, 2016</p>"
+      "October 4, 2016"
     card_body:
       ""

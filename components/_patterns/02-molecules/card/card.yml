@@ -6,6 +6,9 @@ card_title_modifiers:
   1:
     no-space
 card_sub:
-  "<p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>"
+  "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
+card_sub_modifiers:
+  1:
+    no-space
 card_body:
-  "<p>Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>"
+  "Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."

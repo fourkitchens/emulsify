@@ -5,6 +5,10 @@ body {
 
 .paragraph {
   margin: 0 0 1em;
+
+  &--no-space {
+    margin-bottom: 0;
+  }
 }
 
 .blockquote {

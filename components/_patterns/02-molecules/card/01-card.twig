@@ -20,12 +20,22 @@
   {{ title_suffix }}
   {% if card_sub %}
     <div class="card__sub">
-      {{ card_sub|raw }}
+      {% include "@atoms/02-text/text/01-paragraph.twig"
+        with {
+          "paragraph_text": card_sub,
+          "paragraph_modifiers": card_sub_modifiers
+        }
+      %}
     </div>
   {% endif %}
   {% if card_body %}
     <div class="card__body">
-      {{ card_body|raw }}
+      {% include "@atoms/02-text/text/01-paragraph.twig"
+        with {
+          "paragraph_text": card_body,
+          "paragraph_modifiers": card_body_modifiers
+        }
+      %}
     </div>
   {% endif %}
 </div>

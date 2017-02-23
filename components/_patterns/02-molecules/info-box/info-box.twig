@@ -6,5 +6,10 @@
       "heading_3_modifiers": infobox_title_modifiers
     }
   %}
-  {{ infobox_text }}
+  {% include "@atoms/02-text/text/01-paragraph.twig"
+    with {
+      "paragraph_text": infobox_text,
+      "paragraph_modifiers": infobox_text_modifiers
+    }
+  %}
 </div>
