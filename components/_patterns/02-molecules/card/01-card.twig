@@ -1,4 +1,4 @@
-<div class="card{% if card_modifiers %}{% for modifier in card_modifiers %} {% if card_blockname %}{{ card_blockname }}__{% endif %}card--{{ modifier }}{% endfor %}{% elseif card_blockname %} {{ card_blockname }}__card{% endif %}">
+<div class="card{% for modifier in card_modifiers %} card--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__card{% endif %}">
   {% if card_img %}
     <div class="card__img">
       <img src="{{ card_img }}" />

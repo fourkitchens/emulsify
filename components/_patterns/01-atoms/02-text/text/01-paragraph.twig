@@ -1,1 +1,1 @@
-<p class="paragraph">{{ excerpt.long }}</p>
+<p class="paragraph{% for modifier in paragraph_modifiers %} paragraph--{{ modifier }}{% endfor %}{% if paragraph_blockname %} {{ paragraph_blockname }}__paragraph{% endif %}">{{ excerpt.long }}</p>

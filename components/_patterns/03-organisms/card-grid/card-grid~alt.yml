@@ -1,5 +1,7 @@
-grid_title:
-  "News"
+grid_label:
+  "Card Grid"
+grid_blockname:
+  card
 grid_modifiers:
   1:
     divider

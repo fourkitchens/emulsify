@@ -1,3 +1,3 @@
-<div class="video">
+<div class="video{% for modifier in video_modifiers %} video--{{ modifier }}{% endfor %}{% if video_blockname %} {{ video_blockname }}__video{% endif %}">
   {{ video|raw }}
 </div>
