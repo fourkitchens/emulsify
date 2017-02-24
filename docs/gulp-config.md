@@ -2,13 +2,6 @@
 
 ### Available Commands
 
-#### Linting
-Javascript: `gulp eslint`
-
-PHP: `gulp phpcs`
-
-Both: `gulp lint`
-
 #### Performance Testing
 Google PageSpeed Insights: `gulp psi`
 
