@@ -1,3 +1,13 @@
 {% include "@atoms/02-text/00-headings/heading-2/heading-2.twig" with { "heading_2": "Performance Charts" } %}
 
-{{ runs.1.firstView.loadTime }}
+<div id="chart-hidden">
+  <div class="chart">
+    <h2 class="chart-label">First View Load Time</h2>
+    <span class="baseline">1000</span>
+    <span class="element">
+      {{ runs.1.firstView.loadTime }}
+    </span>
+  </div>
+</div>
+<div class="ct-chart">
+</div>
