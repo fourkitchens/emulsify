@@ -1,1 +1,1 @@
-<a class="link{% for modifier in link_modifiers %} link--{{ modifier }}{% endfor %}{% if link_blockname %} {{ link_blockname }}__link{% endif %}" href="{{ link_url }}">{{ link_content }}</a>
+<a class="link{% for modifier in link_modifiers %} link--{{ modifier }}{% endfor %}{% if link_blockname %} {{ link_blockname }}__link{% endif %}" {% for attribute,value in link_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ link_url }}">{% block link_content %}{{ link_content }}{% endblock %}</a>
