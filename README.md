@@ -50,23 +50,20 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 Forms, tables, video, accordion, cards, breadcrumbs, tabs, pager, status messages, grid
 
 ## Documentation
+Documentation is currently provided in [the Wiki](https://github.com/fourkitchens/emulsify/wiki). Here are a few basic links:
 
 #### General Orientation
 
-See [`/docs/orientation.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/orientation.md)
+See [Orientation](https://github.com/fourkitchens/emulsify/wiki/Orientation)
 
 #### For Designers (Prototyping)
 
-See [`/docs/designers.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/designers.md)
+See [Designers](https://github.com/fourkitchens/emulsify/wiki/For-Designers)
 
 #### For Drupal 8 Developers
 
-See [`/docs/drupal-components.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/drupal-components.md)
+See [Drupal Components](https://github.com/fourkitchens/emulsify/wiki/Drupal-Components)
 
 #### Gulp Configuration
 
-See [`/docs/gulp-config.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/gulp-config.md)
-
-## Acknowledgements
-
-See [`/docs/acknowledgements.md`](https://github.com/fourkitchens/emulsify/blob/master/docs/acknowledgements.md)
+See [Gulp Config](https://github.com/fourkitchens/emulsify/wiki/Gulp-Config)
