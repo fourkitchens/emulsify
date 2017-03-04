@@ -1,3 +1,14 @@
-<blockquote class="blockquote{% for modifier in blockquote_modifiers %} blockquote--{{ modifier }}{% endfor %}{% if blockquote_blockname %} {{ blockquote_blockname }}__blockquote{% endif %}">
-  {{ blockquote }}
-</blockquote>
+{#
+/**
+ * Available variables:
+ * - blockquote_modifiers - array of modifiers to add to the base classname
+ * - blockquote_blockname - blockname prepended to the base classname
+ * - blockquote_url - the url this blockquote should poing to
+ * - blockquote_content - the content of the blockquote (typically text)
+ *
+ * Available blocks:
+ * - blockquote_content - used to replace the content of the blockquote with something other than text
+ *   for example: A formatted text field in Drupal
+ */
+#}
+<blockquote class="blockquote{% for modifier in blockquote_modifiers %} blockquote--{{ modifier }}{% endfor %}{% if blockquote_blockname %} {{ blockquote_blockname }}__blockquote{% endif %}">{% block blockquote_content %}{{ blockquote_content }}{% endblock %}</blockquote>

@@ -7,7 +7,6 @@
  * - heading_2 - the content of the heading (typically text)
  */
 #}
-
 <h2 class="heading-2{% for modifier in heading_2_modifiers %} heading-2--{{ modifier }}{% endfor %}{% if heading_2_blockname %} {{ heading_2_blockname }}__heading-2{% endif %}">
   {% if heading_2_url %}
     {% include "@atoms/01-links/link/link.twig"

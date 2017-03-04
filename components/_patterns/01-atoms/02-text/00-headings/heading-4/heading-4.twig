@@ -7,7 +7,6 @@
  * - heading_4 - the content of the heading (typically text)
  */
 #}
-
 <h4 class="heading-4{% for modifier in heading_4_modifiers %} heading-4--{{ modifier }}{% endfor %}{% if heading_4_blockname %} {{ heading_4_blockname }}__heading-4{% endif %}">
   {% if heading_4_url %}
     {% include "@atoms/01-links/link/link.twig"

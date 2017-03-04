@@ -1,1 +1,13 @@
-<p class="paragraph{% for modifier in paragraph_modifiers %} paragraph--{{ modifier }}{% endfor %}{% if paragraph_blockname %} {{ paragraph_blockname }}__paragraph{% endif %}">{{ paragraph_text }}</p>
+{#
+/**
+ * Available variables:
+ * - paragraph_modifiers - array of modifiers to add to the base classname
+ * - paragraph_blockname - blockname prepended to the base classname
+ * - paragraph_content - the content of the paragraph (typically text)
+ *
+ * Available blocks:
+ * - paragraph_content - used to replace the content of the paragraph with something other than plain text
+ *   for example: A formatted text field in Drupal
+ */
+#}
+<p class="paragraph{% for modifier in paragraph_modifiers %} paragraph--{{ modifier }}{% endfor %}{% if paragraph_blockname %} {{ paragraph_blockname }}__paragraph{% endif %}">{% block paragraph_content %}{{ paragraph_content }}{% endblock %}</p>
