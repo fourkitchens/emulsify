@@ -3,16 +3,17 @@
  * Available variables:
  * - list_item_modifiers - array of modifiers to add to the base classname
  * - list_item_blockname - blockname prepended to the base classname
- * - list_item_attributes - array of attribute,value pairs
- * - list_item_url - the url this list_item should poing to
+ * - list_label - (optional) a <strong> label before the list item itself
  * - list_item_content - the content of the list_item (typically text)
  *
  * Available blocks:
  * - list_item_content - used to replace the content of the list_item with something other than text
- *   for example: to insert the image component
+ *   for example: to insert the image and/or link components
  */
 #}
 <li class="list-item{% for modifier in list_item_modifiers %} list-item--{{ modifier }}{% endfor %}{% if list_item_blockname %} {{ list_item_blockname }}__list-item{% endif %}">
-  {% if list_label %}<strong>{{ list_label }}</strong> {% endif %}
-  {{ list_item }}
+  {% block list_item_content %}
+    {% if list_label %}<strong>{{ list_label }}</strong> {% endif %}
+    {{ list_item_content }}
+  {% endblock %}
 </li>
