@@ -38,4 +38,14 @@
       %}
     </div>
   {% endif %}
+  {% if card_link_url %}
+    {% include "@atoms/01-links/link/link.twig"
+      with {
+        "link_blockname": card_link_blockname,
+        "link_modifiers": card_link_modifiers,
+        "link_url": card_link_url,
+        "link_content": card_link_text
+      }
+    %}
+  {% endif %}
 </div>
