@@ -1,9 +1,20 @@
+{#
+/**
+ * Available variables:
+ * - heading_3_modifiers - array of modifiers to add to the base classname
+ * - heading_3_blockname - blockname prepended to the base classname
+ * - heading_3_url - (optional) the url the heading should poing to
+ * - heading_3 - the content of the heading (typically text)
+ */
+#}
+
 <h3 class="heading-3{% for modifier in heading_3_modifiers %} heading-3--{{ modifier }}{% endfor %}{% if heading_3_blockname %} {{ heading_3_blockname }}__heading-3{% endif %}">
-    {% if heading_3_url %}{% include "@atoms/01-links/link/link.twig"
+  {% if heading_3_url %}
+    {% include "@atoms/01-links/link/link.twig"
       with {
+        "link_blockname": "heading-3",
         "link_url": heading_3_url,
         "link_content": heading_3,
-        "link_blockname": "heading-3"
       }
     %}
   {% else %}
