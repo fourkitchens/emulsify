@@ -1,1 +1,33 @@
-<a href="{{ link.pages-homepage }}"><img src="../../images/logo.png" alt="Logo Alt Text" /></a>
+{#
+/**
+ * Available variables:
+ * The variables in this file are all defined here, which effectively set's the defaults.
+ * You can still override them when including this file in other components.
+ *
+ * - link_blockname - defined here as "logo" to produce the class "logo__link"
+ * - link_url - defined here as "/" to link to the homepage
+ *
+ * Available blocks:
+ * - link_content - includes the image component
+ *   Available variables in this block
+ *   - img_blockname - defined here as "logo" to produce the class "logo__img"
+ *   - img_src - points to the logo.png file in the themeroot/images folder
+ *   - img_alt - alt text defined as simply "Logo"
+ */
+#}
+{% embed "@atoms/01-links/link/link.twig"
+  with {
+    "link_blockname": "logo",
+    "link_url": "/",
+  }
+%}
+  {% block link_content %}
+    {%include "@atoms/04-images/00-image/image.twig"
+      with {
+        "img_blockname": "logo",
+        "img_src": "../../images/logo.png",
+        "img_alt": "Logo",
+      }
+    %}
+  {% endblock %}
+{% endembed %}
