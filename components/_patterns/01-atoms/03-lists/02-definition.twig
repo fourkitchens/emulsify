@@ -1,9 +1,18 @@
-<dl class="dl-list{% for modifier in dl_list_modifiers %} dl-list--{{ modifier }}{% endfor %}{% if dl_list_blockname %} {{ dl_list_blockname }}__dl-list{% endif %}">
-  {% for dl_item in dl_list %}
+{#
+/**
+ * Available variables:
+ * - list_dl_modifiers - array of modifiers to add to the base classname
+ * - list_dl_blockname - blockname prepended to the base classname
+ *
+ * - listItems
+ */
+#}
+<dl class="list-dl{% for modifier in list_dl_modifiers %} list-dl--{{ modifier }}{% endfor %}{% if list_dl_blockname %} {{ list_dl_blockname }}__list-dl{% endif %}">
+  {% for dl_item in list_dl %}
     {% include "@atoms/03-lists/_definition-list-item.twig"
       with {
         "dl_term": dl_item.dl_term,
-        "dl_definition": dl_item.dl_definition
+        "dl_definition": dl_item.dl_definition,
       }
     %}
   {% endfor %}

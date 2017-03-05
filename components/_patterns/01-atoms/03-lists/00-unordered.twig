@@ -1,8 +1,18 @@
-<ul>
-  {% for listItem in listItems.four %}
+{#
+/**
+ * Available variables:
+ * - list_ul_modifiers - array of modifiers to add to the base classname
+ * - list_ul_blockname - blockname prepended to the base classname
+ *
+ * - listItems
+ */
+#}
+<ul class="list-ul{% for modifier in list_ul_modifiers %} list-ul--{{ modifier }}{% endfor %}{% if list_ul_blockname %} {{ list_ul_blockname }}__list-ul{% endif %}">
+  {% for list_ul_item in list_ul_items %}
     {% include "@atoms/03-lists/_list-item.twig"
       with {
-        "list_item": listItem.title
+        "list_item_label": list_ul_item.label,
+        "list_item_content": list_ul_item.content,
       }
     %}
   {% endfor %}
