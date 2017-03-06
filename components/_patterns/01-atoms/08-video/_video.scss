@@ -1,10 +1,16 @@
-// Responsive Video using only CSS
+// Responsive Video using CSS only
 .video {
   height: 0;
   overflow: hidden;
-  padding-bottom: 56.25%;
   padding-top: 35px;
   position: relative;
+
+  &--wide {
+    padding-bottom: 56.25%; // 56.25% = 16x9
+  }
+  &--full {
+    padding-bottom: 75%; // 75% = 4x3
+  }
 
   iframe {
     height: 100%;
