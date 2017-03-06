@@ -5,7 +5,14 @@
     <h2 class="chart-label">First View Load Time</h2>
     <span class="baseline">1000</span>
     <span class="element">
-      {{ runs.1.firstView.loadTime }}
+      {{ runs.1.firstView.loadTime|trim }}
+    </span>
+  </div>
+  <div class="chart">
+    <h2 class="chart-label">Fully Loaded</h2>
+    <span class="baseline">3000</span>
+    <span class="element">
+      {{ runs.1.firstView.fullyLoaded|trim }}
     </span>
   </div>
 </div>

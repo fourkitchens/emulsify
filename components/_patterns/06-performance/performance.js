@@ -6,45 +6,58 @@
   var charts = document.getElementById('charts');
   var i = 0;
 
-  for (i=0; i< stats.length; i++) {
+  for (i=0; i < stats.length; i++) {
     var chart = stats[i];
-    var baseline = chart.getElementsByClassName("baseline")[i].innerHTML;
-    var element = chart.getElementsByClassName("element")[i].innerHTML;
-    var label = chart.getElementsByClassName("chart-label")[i].innerHTML;
-    var chartDiv = document.createElement('ct-chart-' + [i]);
+    var baseline = chart.getElementsByClassName("baseline")[0].innerHTML;
+    var baselineNum = parseInt(baseline, 10);
+    var element = chart.getElementsByClassName("element")[0].innerHTML;
+    var elementNum = parseInt(element, 10);
+    var label = chart.getElementsByClassName("chart-label")[0].innerHTML;
+    var chartDiv = document.createElement('div');
+    chartDiv.setAttribute('class', 'ct-chart');
+    chartDiv.setAttribute('id', 'ct-chart-' + [i]);
     charts.appendChild(chartDiv);
-    console.log(charts);
+    var chartClass = 'ct-bar';
+    if (baselineNum < elementNum) {
+      chartClass = 'ct-bar-red';
+    }
 
     var data = {
-      labels: label,
-      series: [
-        [baseline],
-        [element]
-      ]
+      labels: [label],
+      series: [{
+        data: [
+          {value: baseline}
+        ]
+      }, {
+        data: [
+          {value: element}
+        ]
+      }]
     };
 
     var options = {
       seriesBarDistance: 10,
       reverseData: true,
-      horizontalBars: true,
       axisY: {
         offset: 200
       },
-      width: "75%"
+      width: "85%",
+      stackBars: true,
+      plugins: [
+        Chartist.plugins.ctAxisTitle({
+          axisY: {
+            axisTitle: '(Milliseconds)',
+            offset: {
+              x: 0,
+              y: -1
+            },
+            flipTitle: false
+          }
+        })
+      ]
     };
 
-    // var responsiveOptions = [
-    //   ['screen and (max-width: 640px)', {
-    //     seriesBarDistance: 10,
-    //     axisX: {
-    //       labelInterpolationFnc: function (value) {
-    //         return value[0];
-    //       }
-    //     }
-    //   }]
-    // ];
-
-    new Chartist.Bar(chartDiv, data, options);
+    new Chartist.Bar('#ct-chart-' + [i], data, options);
   }
 
 })();
