@@ -8,8 +8,8 @@
     'use strict';
 
     // Set 'document' to 'context' if Drupal
-    var accordionItem = document.querySelectorAll('.accordion__dl-list .dl-term');
-    var accordionDef = document.querySelectorAll('.accordion__dl-list .dl-definition');
+    var accordionItem = document.querySelectorAll('.accordion__list-dl .dl-term');
+    var accordionDef = document.querySelectorAll('.accordion__list-dl .dl-definition');
 
     // If javascript, hide accordion definition on load
     function jsCheck() {

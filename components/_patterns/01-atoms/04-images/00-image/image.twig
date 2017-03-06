@@ -1,0 +1,10 @@
+{#
+/**
+ * Available variables:
+ * - img_modifiers - array of modifiers to add to the base classname
+ * - img_blockname - blockname prepended to the base classname
+ * - img_src - the actual image file location
+ * - img_alt - (optional) the alt text for screen readers and when the image cannot load
+ */
+#}
+<img src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} class="img{% for modifier in img_modifiers %} img--{{ modifier }}{% endfor %}{% if img_blockname %} {{ img_blockname }}__img{% endif %}" />

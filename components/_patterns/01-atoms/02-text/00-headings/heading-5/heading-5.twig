@@ -1,12 +1,22 @@
+{#
+/**
+ * Available variables:
+ * - heading_5_modifiers - array of modifiers to add to the base classname
+ * - heading_5_blockname - blockname prepended to the base classname
+ * - heading_5_url - (optional) the url the heading should poing to
+ * - heading_5 - the content of the heading (typically text)
+ */
+#}
 <h5 class="heading-5{% for modifier in heading_5_modifiers %} heading-5--{{ modifier }}{% endfor %}{% if heading_5_blockname %} {{ heading_5_blockname }}__heading-5{% endif %}">
-  {% if heading_5_url %} {% include "@atoms/01-links/link/link.twig"
-    with {
-      "link_url": heading_5_url,
-      "link_text": heading_5,
-      "link_blockname": "heading-5"
-    }
-  %}
+  {% if heading_5_url %}
+    {% include "@atoms/01-links/link/link.twig"
+      with {
+        "link_blockname": "heading-5",
+        "link_url": heading_5_url,
+        "link_content": heading_5,
+      }
+    %}
   {% else %}
     {{ heading_5 }}
   {% endif %}
-  </h5>
+</h5>
