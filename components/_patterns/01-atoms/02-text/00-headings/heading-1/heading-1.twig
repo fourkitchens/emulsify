@@ -1,30 +1,22 @@
 {#
 /**
- * @file
- * Theme override for page titles.
- *
  * Available variables:
- * - title_attributes: HTML attributes for the page title element.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the main title tag that appears in the template.
- * - title: The page title, for use in the actual content.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the main title tag that appears in the template.
+ * - heading_1_modifiers - array of modifiers to add to the base classname
+ * - heading_1_blockname - blockname prepended to the base classname
+ * - heading_1_url - (optional) the url the heading should poing to
+ * - heading_1 - the content of the heading (typically text)
  */
 #}
-{{ title_prefix }}
-{% if title %}
-  <h1 class="heading-1{% for modifier in heading_1_modifiers %} heading-1--{{ modifier }}{% endfor %}{% if heading_1_blockname %} {{ heading_1_blockname }}__heading-1{% endif %}">
-    {% if heading_1_url %} {% include "@atoms/01-links/link/link.twig"
+<h1 class="heading-1{% for modifier in heading_1_modifiers %} heading-1--{{ modifier }}{% endfor %}{% if heading_1_blockname %} {{ heading_1_blockname }}__heading-1{% endif %}">
+  {% if heading_1_url %}
+    {% include "@atoms/01-links/link/link.twig"
       with {
+        "link_blockname": "heading-1",
         "link_url": heading_1_url,
-        "link_text": heading_1,
-        "link_blockname": "heading-1"
+        "link_content": heading_1,
       }
     %}
-    {% else %}
-      {{ heading_1 }}
-    {% endif %}
-  </h1>
-{% endif %}
-{{ title_suffix }}
+  {% else %}
+    {{ heading_1 }}
+  {% endif %}
+</h1>

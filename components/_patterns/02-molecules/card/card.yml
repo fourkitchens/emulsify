@@ -12,3 +12,10 @@ card_sub_modifiers:
     no-space
 card_body:
   "Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
+card_link_url:
+  "#"
+card_link_text:
+  'Read more about this card'
+card_link_modifiers:
+  1:
+    more-link

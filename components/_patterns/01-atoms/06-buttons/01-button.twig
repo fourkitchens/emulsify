@@ -1,1 +1,19 @@
-<a href="{{ button_url }}" class="button{% for modifier in button_modifiers %} button--{{ modifier }}{% endfor %}{% if button_blockname %} {{ button_blockname }}__button{% endif %}">{{ button_text }}</a>
+{#
+/**
+ * Available variables:
+ * - button_modifiers - array of modifiers to add to the base classname
+ * - button_blockname - blockname prepended to the base classname
+ * - button_attributes - array of attribute,value pairs
+ * - button_url - the url this button should poing to
+ * - button_content - the content of the button (typically text)
+ *
+ * Available blocks:
+ * - button_content - used to replace the content of the button with something other than text
+ *   for example: to insert the image component
+ */
+#}
+<button class="button{% for modifier in button_modifiers %} button--{{ modifier }}{% endfor %}{% if button_blockname %} {{ button_blockname }}__button{% endif %}" {% for attribute,value in button_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ button_url }}">
+  {% block button_content %}
+    {{ button_content }}
+  {% endblock %}
+</button>

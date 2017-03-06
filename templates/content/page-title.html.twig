@@ -12,8 +12,13 @@
  *   displayed after the main title tag that appears in the template.
  */
 #}
-{% include "@atoms/02-text/00-headings/heading-1/heading-1.twig"
-  with {
-    "heading_1": title
-  }
-%}
+
+{{ title_prefix }}
+{% if title %}
+  {% include "@atoms/02-text/00-headings/heading-1/heading-1.twig"
+    with {
+      "heading_1": title,
+    }
+  %}
+{% endif %}
+{{ title_suffix }}

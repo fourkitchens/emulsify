@@ -1,8 +1,18 @@
-<ol>
-  {% for listItem in listItems.four %}
+{#
+/**
+ * Available variables:
+ * - list_ol_modifiers - array of modifiers to add to the base classname
+ * - list_ol_blockname - blockname prepended to the base classname
+ *
+ * - listItems - TBD
+ */
+#}
+<ol class="list-ol{% for modifier in list_ol_modifiers %} list-ol--{{ modifier }}{% endfor %}{% if list_ol_blockname %} {{ list_ol_blockname }}__list-ol{% endif %}">
+  {% for list_ol_item in list_ol_items %}
     {% include "@atoms/03-lists/_list-item.twig"
       with {
-        "list_item": listItem.title
+        "list_item_label": list_ol_item.label,
+        "list_item_content": list_ol_item.content,
       }
     %}
   {% endfor %}

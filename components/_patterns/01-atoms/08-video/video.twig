@@ -1,3 +1,20 @@
+{#
+/**
+ * Available variables:
+ * - video_modifiers - array of modifiers to add to the base classname
+ *   by default, videos are expected to be 16x9, include the modifier "full" to support a 4x3 video
+ * - video_blockname - blockname prepended to the base classname
+ * - video_content - the content of the video (typically an iframe)
+ *   the "|raw" filter is applied so that the iframe is rendered instead
+ *   of simply passing the iframe as plain text.
+ *
+ * Available blocks:
+ * - video_content - used to replace the content of the video with something other than the typical iframe
+ *   for example: to insert an html5 video component
+ */
+#}
 <div class="video{% for modifier in video_modifiers %} video--{{ modifier }}{% endfor %}{% if video_blockname %} {{ video_blockname }}__video{% endif %}">
-  {{ video|raw }}
+  {% block video_content %}
+    {{ video_content|raw }}
+  {% endblock %}
 </div>
