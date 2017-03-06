@@ -2,24 +2,24 @@
 
   'use strict';
 
-  var charts = document.getElementById('chart-hidden').getElementsByTagName('div');
+  var stats = document.getElementById('chart-hidden').getElementsByTagName('div');
+  var charts = document.getElementById('charts');
   var i = 0;
 
-  for (i=0; i< charts.length; i++) {
-    var chart = charts[i];
-    var baseline = chart.getElementsByClassName("baseline");
-    var baselineNum = baseline[i].innerHTML;
-    var element = chart.getElementsByClassName("element");
-    var elementNum = element[i].innerHTML;
-    var label = chart.getElementsByClassName("chart-label");
-    var specificLabel = label[i].innerHTML;
+  for (i=0; i< stats.length; i++) {
+    var chart = stats[i];
+    var baseline = chart.getElementsByClassName("baseline")[i].innerHTML;
+    var element = chart.getElementsByClassName("element")[i].innerHTML;
+    var label = chart.getElementsByClassName("chart-label")[i].innerHTML;
     var chartDiv = document.createElement('ct-chart-' + [i]);
+    charts.appendChild(chartDiv);
+    console.log(charts);
 
     var data = {
-      labels: specificLabel,
+      labels: label,
       series: [
-        [baselineNum],
-        [elementNum]
+        [baseline],
+        [element]
       ]
     };
 
@@ -33,18 +33,18 @@
       width: "75%"
     };
 
-    var responsiveOptions = [
-      ['screen and (max-width: 640px)', {
-        seriesBarDistance: 10,
-        axisX: {
-          labelInterpolationFnc: function (value) {
-            return value[0];
-          }
-        }
-      }]
-    ];
+    // var responsiveOptions = [
+    //   ['screen and (max-width: 640px)', {
+    //     seriesBarDistance: 10,
+    //     axisX: {
+    //       labelInterpolationFnc: function (value) {
+    //         return value[0];
+    //       }
+    //     }
+    //   }]
+    // ];
 
-    new Chartist.Bar(chartDiv, data, options, responsiveOptions);
+    new Chartist.Bar(chartDiv, data, options);
   }
 
 })();
