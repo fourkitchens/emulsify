@@ -3,11 +3,9 @@
   height: 0;
   overflow: hidden;
   padding-top: 35px;
+  padding-bottom: 56.25%; // 56.25% = 16x9
   position: relative;
 
-  &--wide {
-    padding-bottom: 56.25%; // 56.25% = 16x9
-  }
   &--full {
     padding-bottom: 75%; // 75% = 4x3
   }
