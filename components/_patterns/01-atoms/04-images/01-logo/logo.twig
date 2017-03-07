@@ -26,7 +26,7 @@
   }
 %}
   {% block link_content %}
-    {%include "@atoms/04-images/00-image/image.twig"
+    {% include "@atoms/04-images/00-image/image.twig"
       with {
         "img_blockname": logo_blockname|default('logo'),
         "img_src": logo_src|default('../../images/logo.png'),
