@@ -22,7 +22,7 @@
     <div class="card__sub">
       {% include "@atoms/02-text/text/01-paragraph.twig"
         with {
-          "paragraph_text": card_sub,
+          "paragraph_content": card_sub,
           "paragraph_modifiers": card_sub_modifiers
         }
       %}
@@ -32,7 +32,7 @@
     <div class="card__body">
       {% include "@atoms/02-text/text/01-paragraph.twig"
         with {
-          "paragraph_text": card_body,
+          "paragraph_content": card_body,
           "paragraph_modifiers": card_body_modifiers
         }
       %}
