@@ -32,16 +32,16 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
 ## Emulsify versus Pattern Lab Starter
 
-[Pattern Lab Starter](https://github.com/phase2/pattern-lab-starter) and Emulsify share a lot in common (see [`Acknowledgements`](https://github.com/fourkitchens/emulsify/blob/master/docs/acknowledgements.md)). Below is a breakdown of the two to aid in deciding which is best for your project.
+[Pattern Lab Starter](https://github.com/phase2/pattern-lab-starter) and Emulsify share a lot in common (see [`Acknowledgements`](https://github.com/fourkitchens/emulsify/wiki/Acknowledgements)). Below is a breakdown of the two to aid in deciding which is best for your project.
 
 <table><tbody>
 <tr><td></td><td><strong>Emulsify</strong></td><td>Pattern Lab Starter</td><td></td></tr>
-<tr><td>Lightweight</td><td>✔</td><td></td><td>Emulsify is about 1/2 the size</td></tr>
-<tr><td>SVG sprite support </td><td><strong>✔</strong></td><td></td><td>Pattern Lab Starter uses icon fonts.</td></tr>
-<tr><td>Stock Drupal templates </td><td><strong>✔</strong></td><td></td><td>see `/templates`</td></tr>
-<tr><td>Stock Components (see below) </td><td><strong>✔</strong></td><td></td><td> Drupal support built-in</td></tr>
-<tr><td>Yeoman generator support</td><td></td><td>✔</td><td>Adds functionality to generate a new component using `yo component`</td></tr>
-<tr><td>Faker support built-in</td><td></td><td>✔</td><td>PHP "dummy" content generator</td></tr>
+<tr><td>Lightweight</td><td>✔</td><td></td><td>Emulsify is about 1/2 the size of PLS</td></tr>
+<tr><td>SVG sprite support </td><td><strong>✔</strong></td><td></td><td>PLS uses icon fonts.</td></tr>
+<tr><td>Stock Drupal templates </td><td><strong>✔</strong></td><td></td><td>see /templates directory</td></tr>
+<tr><td>Stock Components (see below) </td><td><strong>✔</strong></td><td></td><td>with Drupal support built-in</td></tr>
+<tr><td>Yeoman generator</td><td></td><td>✔</td><td>Adds functionality to generate a new component using `yo component`</td></tr>
+<tr><td>Faker support</td><td></td><td>✔</td><td>PHP "dummy" content generator</td></tr>
 </tbody>
 </table>
 
