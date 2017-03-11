@@ -10,7 +10,7 @@ boxes:
     infobox_text:
       "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
     infobox_link:
-      "/"
+      "#"
     infobox_title_modifiers:
       1:
         centered
