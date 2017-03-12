@@ -1,0 +1,11 @@
+{#
+/**
+ * Available variables:
+ * - cell_modifiers - array of modifiers to add to the base classname
+ * - cell_blockname - blockname prepended to the base classname
+ * - cell_attributes - array of attribute,value pairs. ie: colspan="2"
+ * - cell_content - the content of the cell (typically text)
+#}
+<td class="cell{% for modifier in cell_modifiers %} cell--{{ modifier }}{% endfor %}{% if cell_blockname %} {{ cell_blockname }}__cell{% endif %}" {% for attribute,value in cell_attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+  {{ cell_content }}
+</td>

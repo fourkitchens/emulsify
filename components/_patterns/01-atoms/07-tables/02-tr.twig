@@ -1,0 +1,45 @@
+{#
+/**
+ * Available variables:
+ * - row_modifiers - array of modifiers to add to the base classname
+ * - row_blockname - blockname prepended to the base classname
+ * - row_attributes - array of attribute,value pairs. ie: colspan="2"
+ */
+#}
+<tr class="row{% for modifier in row_modifiers %} row--{{ modifier }}{% endfor %}{% if row_blockname %} {{ row_blockname }}__row{% endif %}" {% for attribute,value in row_attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+  {% if tr_heading_cell_content %}
+    {% include "@atoms/07-tables/03-th.twig"
+      with {
+        "heading_cell_modifiers": tr_heading_cell_modifiers,
+        "heading_cell_blockname": tr_heading_cell_blockname|default('table-row'),
+        "heading_cell_attributes": tr_heading_cell_attributes,
+        "heading_cell_content": tr_heading_cell_content,
+      }
+    %}
+  {% else %}
+    {% include "@atoms/07-tables/01-td.twig"
+      with {
+        "cell_modifiers": tr_cell_modifiers,
+        "cell_blockname": tr_cell_blockname|default('table-row'),
+        "cell_attributes": tr_cell_attributes,
+        "cell_content": tr_cell_content,
+      }
+    %}
+    {% include "@atoms/07-tables/01-td.twig"
+      with {
+        "cell_modifiers": tr_cell_modifiers,
+        "cell_blockname": tr_cell_blockname|default('table-row'),
+        "cell_attributes": tr_cell_attributes,
+        "cell_content": tr_cell_content,
+      }
+    %}
+    {% include "@atoms/07-tables/01-td.twig"
+      with {
+        "cell_modifiers": tr_cell_modifiers,
+        "cell_blockname": tr_cell_blockname|default('table-row'),
+        "cell_attributes": tr_cell_attributes,
+        "cell_content": tr_cell_content,
+      }
+    %}
+  {% endif %}
+</tr>

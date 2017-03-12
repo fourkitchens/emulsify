@@ -1,0 +1,38 @@
+table_caption:
+  "This is the table caption."
+
+table_thead_heading_cell_modifiers:
+table_thead_heading_cell_blockname:
+table_thead_heading_cell_attributes:
+table_thead_row_modifiers:
+table_thead_row_blockname:
+table_thead_row_attributes:
+table_thead_heading_cell_content:
+  This is the new thead content
+table_thead_modifiers:
+table_thead_blockname:
+table_thead_attributes:
+
+table_tbody_cell_modifiers:
+table_tbody_cell_blockname:
+table_tbody_cell_attributes:
+table_tbody_row_modifiers:
+table_tbody_row_blockname:
+table_tbody_row_attributes:
+table_tbody_cell_content:
+  This is the new table content
+table_tbody_modifiers:
+table_tbody_blockname:
+table_tbody_attributes:
+
+table_tfoot_cell_modifiers:
+table_tfoot_cell_blockname:
+table_tfoot_cell_attributes:
+table_tfoot_row_modifiers:
+table_tfoot_row_blockname:
+table_tfoot_row_attributes:
+table_tfoot_cell_content:
+  This is the new tfoot content
+table_tfoot_modifiers:
+table_tfoot_blockname:
+table_tfoot_attributes:

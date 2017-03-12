@@ -1,0 +1,21 @@
+{#
+/**
+ * Available variables:
+ * - thead_modifiers - array of modifiers to add to the base classname
+ * - thead_blockname - blockname prepended to the base classname
+ * - thead_attributes - array of attribute,value pairs. ie: colspan="2"
+ */
+#}
+<thead class="thead{% for modifier in thead_modifiers %} thead--{{ modifier }}{% endfor %}{% if thead_blockname %} {{ thead_blockname }}__thead{% endif %}" {% for attribute,value in thead_attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+  {% include "@atoms/07-tables/02-tr.twig"
+    with {
+      "tr_heading_cell_modifiers": thead_heading_cell_modifiers,
+      "tr_heading_cell_blockname": thead_heading_cell_blockname|default('thead'),
+      "tr_heading_cell_attributes": thead_heading_cell_attributes,
+      "tr_heading_cell_content": thead_heading_cell_content,
+      "row_modifiers": thead_row_modifiers,
+      "row_blockname": thead_row_blockname|default('thead'),
+      "row_attributes": thead_row_attributes,
+    }
+  %}
+</thead>

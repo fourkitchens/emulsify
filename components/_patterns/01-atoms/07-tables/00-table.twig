@@ -1,0 +1,47 @@
+<table class="table{% for modifier in table_modifiers %} table--{{ modifier }}{% endfor %}{% if table_blockname %} {{ table_blockname }}__table{% endif %}" {% for attribute,value in table_attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+  {% if table_caption %}
+    {{ table_caption }}
+  {% endif %}
+  {% include "@atoms/07-tables/04-thead.twig"
+    with {
+      "thead_heading_cell_modifiers": table_thead_heading_cell_modifiers,
+      "thead_heading_cell_blockname": table_thead_heading_cell_blockname|default('table'),
+      "thead_heading_cell_attributes": table_thead_heading_cell_attributes,
+      "thead_row_modifiers": table_thead_row_modifiers,
+      "thead_row_blockname": table_thead_row_blockname|default('thead'),
+      "thead_row_attributes": table_thead_row_attributes,
+      "thead_heading_cell_content": table_thead_heading_cell_content,
+      "thead_modifiers": table_thead_modifiers,
+      "thead_blockname": table_thead_blockname|default('table'),
+      "thead_attributes": table_thead_attributes,
+    }
+  %}
+  {% include "@atoms/07-tables/05-tbody.twig"
+    with {
+      "tbody_cell_modifiers": table_tbody_cell_modifiers,
+      "tbody_cell_blockname": table_tbody_cell_blockname|default('table'),
+      "tbody_cell_attributes": table_tbody_cell_attributes,
+      "tbody_row_modifiers": table_tbody_row_modifiers,
+      "tbody_row_blockname": table_tbody_row_blockname|default('tbody'),
+      "tbody_row_attributes": table_tbody_row_attributes,
+      "tbody_cell_content": table_tbody_cell_content,
+      "tbody_modifiers": table_tbody_modifiers,
+      "tbody_blockname": table_tbody_blockname|default('table'),
+      "tbody_attributes": table_tbody_attributes,
+    }
+  %}
+  {% include "@atoms/07-tables/06-tfoot.twig"
+    with {
+      "tfoot_cell_modifiers": table_tfoot_cell_modifiers,
+      "tfoot_cell_blockname": table_tfoot_cell_blockname|default('table'),
+      "tfoot_cell_attributes": table_tfoot_cell_attributes,
+      "tfoot_row_modifiers": table_tfoot_row_modifiers,
+      "tfoot_row_blockname": table_tfoot_row_blockname|default('tfoot'),
+      "tfoot_row_attributes": table_tfoot_row_attributes,
+      "tfoot_cell_content": table_tfoot_cell_content,
+      "tfoot_modifiers": table_tfoot_modifiers,
+      "tfoot_blockname": table_tfoot_blockname|default('table'),
+      "tfoot_attributes": table_tfoot_attributes,
+    }
+  %}
+</table>

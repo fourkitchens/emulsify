@@ -1,0 +1,21 @@
+{#
+/**
+ * Available variables:
+ * - tbody_modifiers - array of modifiers to add to the base classname
+ * - tbody_blockname - blockname prepended to the base classname
+ * - tbody_attributes - array of attribute,value pairs. ie: colspan="2"
+ */
+#}
+<tbody class="tbody{% for modifier in tbody_modifiers %} tbody--{{ modifier }}{% endfor %}{% if tbody_blockname %} {{ tbody_blockname }}__tbody{% endif %}" {% for attribute,value in tbody_attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+  {% include "@atoms/07-tables/02-tr.twig"
+    with {
+      "tr_cell_modifiers": tbody_cell_modifiers,
+      "tr_cell_blockname": tbody_cell_blockname|default('tbody'),
+      "tr_cell_attributes": tbody_cell_attributes,
+      "tr_cell_content": tbody_cell_content,
+      "row_modifiers": tbody_row_modifiers,
+      "row_blockname": tbody_row_blockname|default('tbody'),
+      "row_attributes": tbody_row_attributes,
+    }
+  %}
+</tbody>

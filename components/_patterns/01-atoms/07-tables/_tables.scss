@@ -21,7 +21,7 @@ $table-gray: #f8f8f8;
   }
 }
 
-.table__row {
+.tbody__row {
   &:nth-child(odd) {
     background-color: $white;
   }
@@ -71,7 +71,7 @@ $table-gray: #f8f8f8;
   }
 
   tbody tr {
-    @extend .table__row;
+    @extend .tbody__row;
   }
 
   tfoot th {

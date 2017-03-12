@@ -1,0 +1,21 @@
+{#
+/**
+ * Available variables:
+ * - tfoot_modifiers - array of modifiers to add to the base classname
+ * - tfoot_blockname - blockname prepended to the base classname
+ * - tfoot_attributes - array of attribute,value pairs. ie: colspan="2"
+ */
+#}
+<tfoot class="tfoot{% for modifier in tfoot_modifiers %} tfoot--{{ modifier }}{% endfor %}{% if tfoot_blockname %} {{ tfoot_blockname }}__tfoot{% endif %}" {% for attribute,value in tfoot_attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+  {% include "@atoms/07-tables/02-tr.twig"
+    with {
+      "tr_cell_modifiers": tfoot_cell_modifiers,
+      "tr_cell_blockname": tfoot_cell_blockname|default('tfoot'),
+      "tr_cell_attributes": tfoot_cell_attributes,
+      "tr_cell_content": tfoot_cell_content,
+      "row_modifiers": tfoot_row_modifiers,
+      "row_blockname": tfoot_row_blockname|default('tfoot'),
+      "row_attributes": tfoot_row_attributes,
+    }
+  %}
+</tfoot>

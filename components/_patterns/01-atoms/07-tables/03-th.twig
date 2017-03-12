@@ -1,0 +1,11 @@
+{#
+/**
+ * Available variables:
+ * - heading_cell_modifiers - array of modifiers to add to the base classname
+ * - heading_cell_blockname - blockname prepended to the base classname
+ * - heading_cell_attributes - array of attribute,value pairs. ie: colspan="2"
+ * - heading_cell_content - the content of the heading_cell (typically text)
+#}
+<th class="heading-cell{% for modifier in heading_cell_modifiers %} heading-cell--{{ modifier }}{% endfor %}{% if heading_cell_blockname %} {{ heading_cell_blockname }}__heading-cell{% endif %}" {% for attribute,value in heading_cell_attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+  {{ heading_cell_content }}
+</th>
