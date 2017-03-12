@@ -21,6 +21,21 @@ $table-gray: #f8f8f8;
   }
 }
 
+.table__tfoot {
+  .table__cell {
+    border: none;
+    border-left: 1px solid $gray-lightest;
+    color: $black;
+    font-weight: 700;
+    padding: 1.2em;
+    text-align: left;
+
+    &:first-child {
+      border:none;
+    }
+  }
+}
+
 .tbody__row {
   &:nth-child(odd) {
     background-color: $white;

@@ -18,4 +18,26 @@
       "row_attributes": tbody_row_attributes,
     }
   %}
+  {% include "@atoms/07-tables/02-tr.twig"
+    with {
+      "tr_cell_modifiers": tbody_cell_modifiers,
+      "tr_cell_blockname": tbody_cell_blockname|default('tbody'),
+      "tr_cell_attributes": tbody_cell_attributes,
+      "tr_cell_content": tbody_cell_content,
+      "row_modifiers": tbody_row_modifiers,
+      "row_blockname": tbody_row_blockname|default('tbody'),
+      "row_attributes": tbody_row_attributes,
+    }
+  %}
+  {% include "@atoms/07-tables/02-tr.twig"
+    with {
+      "tr_cell_modifiers": tbody_cell_modifiers,
+      "tr_cell_blockname": tbody_cell_blockname|default('tbody'),
+      "tr_cell_attributes": tbody_cell_attributes,
+      "tr_cell_content": tbody_cell_content,
+      "row_modifiers": tbody_row_modifiers,
+      "row_blockname": tbody_row_blockname|default('tbody'),
+      "row_attributes": tbody_row_attributes,
+    }
+  %}
 </tbody>
