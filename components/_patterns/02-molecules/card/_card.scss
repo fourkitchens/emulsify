@@ -1,9 +1,19 @@
+.card__title {
+  @include heading-2;
+}
+
+.card__subtitle {
+  @include heading-3;
+  color: $gray;
+  margin-bottom: 1em;
+}
+
+.card__body {
+  @include paragraph;
+}
+
 // Variations
 .card--bg {
   background-color: $gray-lightest;
   padding: 1em;
-}
-
-.card__subtitle {
-  margin-bottom: 1em;
 }
