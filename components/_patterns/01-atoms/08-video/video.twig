@@ -13,7 +13,7 @@
  *   for example: to insert an html5 video component
  */
 #}
-<div class="video{% for modifier in video_modifiers %} video--{{ modifier }}{% endfor %}{% if video_blockname %} {{ video_blockname }}__video{% endif %}">
+<div class="{{ video_base_class|default('video') }}{% for modifier in video_modifiers %} {{ video_base_class|default('video') }}--{{ modifier }}{% endfor %}{% if video_blockname %} {{ video_blockname }}__{{ video_base_class|default('video') }}{% endif %}">
   {% block video_content %}
     {{ video_content|raw }}
   {% endblock %}

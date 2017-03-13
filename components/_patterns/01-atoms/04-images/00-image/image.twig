@@ -7,4 +7,4 @@
  * - img_alt - (optional) the alt text for screen readers and when the image cannot load
  */
 #}
-<img src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} class="img{% for modifier in img_modifiers %} img--{{ modifier }}{% endfor %}{% if img_blockname %} {{ img_blockname }}__img{% endif %}" />
+<img src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} class="{{ image_base_class|default('image') }}{% for modifier in image_modifiers %} {{ image_base_class|default('image') }}--{{ modifier }}{% endfor %}{% if image_blockname %} {{ image_blockname }}__{{ image_base_class|default('image') }}{% endif %}" />
