@@ -12,7 +12,7 @@
  *   for example: to insert the image component
  */
 #}
-<a class="link{% for modifier in link_modifiers %} link--{{ modifier }}{% endfor %}{% if link_blockname %} {{ link_blockname }}__link{% endif %}" {% for attribute,value in link_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ link_url }}">
+<a class="{{ link_base_class|default('link') }}{% for modifier in link_modifiers %} {{ link_base_class|default('link') }}--{{ modifier }}{% endfor %}{% if link_blockname %} {{ link_blockname }}__{{ link_base_class|default('link') }}{% endif %}" {% for attribute,value in link_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ link_url }}">
   {% block link_content %}
     {{ link_content }}
   {% endblock %}

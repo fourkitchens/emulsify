@@ -7,11 +7,12 @@
  * - heading_1 - the content of the heading (typically text)
  */
 #}
-<h1 class="heading-1{% for modifier in heading_1_modifiers %} heading-1--{{ modifier }}{% endfor %}{% if heading_1_blockname %} {{ heading_1_blockname }}__heading-1{% endif %}">
+<h1 class="{{ h1_base_class|default('heading-1') }}{% for modifier in heading_1_modifiers %} {{ h1_base_class|default('heading-1') }}--{{ modifier }}{% endfor %}{% if heading_1_blockname %} {{ heading_1_blockname }}__{{ h1_base_class|default('heading-1') }}{% endif %}">
   {% if heading_1_url %}
     {% include "@atoms/01-links/link/link.twig"
       with {
-        "link_blockname": "heading-1",
+        "link_base_class": heading_1_link_base_class,
+        "link_blockname": heading_1_link_blockname|default('heading-1'),
         "link_url": heading_1_url,
         "link_content": heading_1,
       }

@@ -1,14 +1,15 @@
 card_modifiers:
   1:
     bg
-card_img:
-  "http://placeimg.com/480/480/nature"
+
+# Title
 card_title:
-  "This is a title too"
-card_title_modifiers:
-  1:
-    no-space
-card_sub:
-  "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
-card_body:
-  "Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
+  "This is a card-bg title"
+
+# Subtitle
+card_subtitle:
+  ""
+
+# Link
+card_link_text:
+  'Read more about cards with a background'

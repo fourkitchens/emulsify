@@ -11,7 +11,7 @@
  *   for example: A formatted text field in Drupal
  */
 #}
-<blockquote class="blockquote{% for modifier in blockquote_modifiers %} blockquote--{{ modifier }}{% endfor %}{% if blockquote_blockname %} {{ blockquote_blockname }}__blockquote{% endif %}">
+<blockquote class="{{ blockquote_base_class|default('blockquote') }}{% for modifier in blockquote_modifiers %} {{ blockquote_base_class|default('blockquote') }}--{{ modifier }}{% endfor %}{% if blockquote_blockname %} {{ blockquote_blockname }}__{{ blockquote_base_class|default('blockquote') }}{% endif %}">
   {% block blockquote_content %}
     {{ blockquote_content }}
   {% endblock %}

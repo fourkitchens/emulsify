@@ -10,7 +10,7 @@
  *   for example: A formatted text field in Drupal
  */
 #}
-<p class="paragraph{% for modifier in paragraph_modifiers %} paragraph--{{ modifier }}{% endfor %}{% if paragraph_blockname %} {{ paragraph_blockname }}__paragraph{% endif %}">
+<p class="{{ paragraph_base_class|default('paragraph') }}{% for modifier in paragraph_modifiers %} {{ paragraph_base_class|default('paragraph') }}--{{ modifier }}{% endfor %}{% if paragraph_blockname %} {{ paragraph_blockname }}__{{ paragraph_base_class|default('paragraph') }}{% endif %}">
   {% block paragraph_content %}
     {{ paragraph_content }}
   {% endblock %}
