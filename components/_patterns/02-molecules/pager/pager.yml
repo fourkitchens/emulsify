@@ -1,4 +1,20 @@
 items:
+  first:
+    href: "#"
+    attributes: ""
+    text: "first"
+  previous:
+    href: "#"
+    attributes: ""
+    text: "first"
+  next:
+    href: "#"
+    attributes: ""
+    text: "first"
+  last:
+    href: "#"
+    attributes: ""
+    text: "first"
   pages:
     1:
       href: "#"
@@ -8,5 +24,15 @@ items:
       href: "#"
     4:
       href: "#"
+    5:
+      href: "#"
+    6:
+      href: "#"
+    7:
+      href: "#"
+    8:
+      href: "#"
+current: 2
+ellipses:
   previous: true
   next: true
