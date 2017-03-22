@@ -7,3 +7,6 @@ pattern-lab
 # NPM
 node_modules
 npm-debug.log
+
+# Visual Regression Content Pages
+full.*px.png
