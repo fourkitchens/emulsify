@@ -1,5 +1,5 @@
-var wdio = require("webdriverio");
-var browser = wdio.remote({
+const WDIO = require("webdriverio");
+var browser = WDIO.remote({
   desiredCapabilities: {
     browserName: "chrome"
   }
@@ -15,8 +15,8 @@ var hidden = [
 ];
 
 require('webdrivercss').init(browser, {
-  screenshotRoot: 'visreg',
-  failedComparisonsRoot: 'visreg/diffs',
+  screenshotRoot: 'tests/visual/images',
+  failedComparisonsRoot: 'tests/visual/images/diffs',
   misMatchTolerance: 0.6,
   screenWidth: [320,480,640,1024]
 });
