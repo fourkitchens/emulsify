@@ -5,6 +5,9 @@
  * - card_modifiers - array of modifiers to add to the base classname of the wrapper
  * - card_blockname - blockname prepended to the base classname of the wrapper(s) and each component
  *
+ * - card_label_base_class - base classname of the card label
+ * - card_label - the card label
+ *
  * - card_caption_base_class - base classname of the caption wrapper
  *
  * - card_img_src - the actual image file location
@@ -40,6 +43,11 @@
  */
 #}
 <div class="{{ card_base_class|default('card') }}{% for modifier in card_modifiers %} {{ card_base_class|default('card') }}--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__{{ card_base_class|default('card') }}{% endif %}">
+  {% if card_label %}
+    <h2 class="{{ card_label_base_class|default('card-label') }}{% for modifier in card_modifiers %} {{ card_label_base_class|default('card-label') }}--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__{{ card_label_base_class|default('card-label') }}{% endif %}">
+      {{ card_label }}
+    </h2>
+  {% endif %}
   <div class="{{ card_inner_base_class|default('card-inner') }}{% for modifier in card_modifiers %} {{ card_inner_base_class|default('card-inner') }}--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__{{ card_inner_base_class|default('card-inner') }}{% endif %}">
     {% if card_img_src %}
       {% include "@atoms/04-images/00-image/image.twig"
@@ -55,25 +63,25 @@
     <div class="{{ card_caption_base_class|default('caption') }}{% for modifier in card_modifiers %} {{ card_caption_base_class|default('caption') }}--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__{{ card_caption_base_class|default('caption') }}{% endif %}">
       {% if card_title %}
         {{ title_prefix }}
-        {% include "@atoms/02-text/00-headings/heading-2/heading-2.twig"
+        {% include "@atoms/02-text/00-headings/heading-3/heading-3.twig"
           with {
-            "heading_2": card_title,
-            "heading_2_url": card_title_link,
-            "h2_base_class": card_title_base_class|default('title'),
-            "hxeading_2_modifiers": card_title_modifiers,
-            "heading_2_blockname": card_blockname|default('card'),
+            "heading_3": card_title,
+            "heading_3_url": card_title_link,
+            "h3_base_class": card_title_base_class|default('title'),
+            "hxeading_3_modifiers": card_title_modifiers,
+            "heading_3_blockname": card_blockname|default('card'),
           }
         %}
         {{ title_suffix }}
       {% endif %}
       {% if card_subtitle %}
-        {% include "@atoms/02-text/00-headings/heading-3/heading-3.twig"
+        {% include "@atoms/02-text/00-headings/heading-4/heading-4.twig"
           with {
-            "heading_3": card_subtitle,
-            "heading_3_url": card_subtitle_link,
-            "h3_base_class": card_subtitle_base_class|default('subtitle'),
-            "heading_3_modifiers": card_subtitle_modifiers,
-            "heading_3_blockname": card_blockname|default('card'),
+            "heading_4": card_subtitle,
+            "heading_4_url": card_subtitle_link,
+            "h4_base_class": card_subtitle_base_class|default('subtitle'),
+            "heading_4_modifiers": card_subtitle_modifiers,
+            "heading_4_blockname": card_blockname|default('card'),
           }
         %}
       {% endif %}
