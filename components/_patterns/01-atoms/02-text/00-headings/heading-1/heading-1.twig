@@ -1,11 +1,13 @@
 {#
 /**
  * Available variables:
- * - heading_1_base_class - the base class name
- * - heading_1_modifiers - array of modifiers to add to the base classname
- * - heading_1_blockname - blockname prepended to the base classname
- * - heading_1_url - (optional) the url the heading should poing to
  * - heading_1 - the content of the heading (typically text)
+ * - heading_1_url - the url the heading should poing to
+ * - heading_1_modifiers - array of modifiers to add to the base classname
+ * - heading_1_base_class - the base class name
+ * - heading_1_blockname - blockname prepended to the base classname
+ * - heading_1_link_base_class - override the link base class
+ * - heading_1_link_blockname - override the link block name
  */
 #}
 <h1 class="{{ heading_1_base_class|default('heading-1') }}{% for modifier in heading_1_modifiers %} {{ heading_1_base_class|default('heading-1') }}--{{ modifier }}{% endfor %}{% if heading_1_blockname %} {{ heading_1_blockname }}__{{ heading_1_base_class|default('heading-1') }}{% endif %}">
