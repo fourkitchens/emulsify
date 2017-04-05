@@ -8,4 +8,6 @@
  * - img_alt - (optional) the alt text for screen readers and when the image cannot load
  */
 #}
-<img src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} class="{{ image_base_class|default('image') }}{% for modifier in image_modifiers %} {{ image_base_class|default('image') }}--{{ modifier }}{% endfor %}{% if image_blockname %} {{ image_blockname }}__{{ image_base_class|default('image') }}{% endif %}" />
+{% set image_base_class_var = image_base_class|default('image') %}
+
+<img src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} class="{{ image_base_class_var }}{% for modifier in image_modifiers %} {{ image_base_class_var }}--{{ modifier }}{% endfor %}{% if image_blockname %} {{ image_blockname }}__{{ image_base_class_var }}{% endif %}" />

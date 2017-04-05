@@ -11,7 +11,9 @@
  *   for example: A formatted text field in Drupal
  */
 #}
-<p class="{{ paragraph_base_class|default('paragraph') }}{% for modifier in paragraph_modifiers %} {{ paragraph_base_class|default('paragraph') }}--{{ modifier }}{% endfor %}{% if paragraph_blockname %} {{ paragraph_blockname }}__{{ paragraph_base_class|default('paragraph') }}{% endif %}">
+{% set paragraph_base_class_var = paragraph_base_class|default('paragraph') %}
+
+<p class="{{ paragraph_base_class_var }}{% for modifier in paragraph_modifiers %} {{ paragraph_base_class_var }}--{{ modifier }}{% endfor %}{% if paragraph_blockname %} {{ paragraph_blockname }}__{{ paragraph_base_class_var }}{% endif %}">
   {% block paragraph_content %}
     {{ paragraph_content }}
   {% endblock %}
