@@ -2,5 +2,5 @@
 # To see this example in Pattern Lab remove the underscore and refresh
 heading_6:
   "This is a Header 6 styling with a link"
-heading_6_url:
+heading_url:
   "#"

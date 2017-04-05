@@ -71,10 +71,10 @@
         {% include "@atoms/02-text/00-headings/heading-3/heading-3.twig"
           with {
             "heading_3": card_title,
-            "heading_3_url": card_title_link,
-            "heading_3_base_class": card_title_base_class|default('title'),
-            "heading_3_modifiers": card_title_modifiers,
-            "heading_3_blockname": card_blockname_var,
+            "heading_url": card_title_link,
+            "heading_base_class": card_title_base_class|default('title'),
+            "heading_modifiers": card_title_modifiers,
+            "heading_blockname": card_blockname_var,
           }
         %}
         {{ title_suffix }}
@@ -83,10 +83,10 @@
         {% include "@atoms/02-text/00-headings/heading-4/heading-4.twig"
           with {
             "heading_4": card_subtitle,
-            "heading_4_url": card_subtitle_link,
-            "heading_4_base_class": card_subtitle_base_class|default('subtitle'),
-            "heading_4_modifiers": card_subtitle_modifiers,
-            "heading_4_blockname": card_blockname_var,
+            "heading_url": card_subtitle_link,
+            "heading_base_class": card_subtitle_base_class|default('subtitle'),
+            "heading_modifiers": card_subtitle_modifiers,
+            "heading_blockname": card_blockname_var,
           }
         %}
       {% endif %}
