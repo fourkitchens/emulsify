@@ -1,7 +1,7 @@
 {#
 /**
  * Available variables:
- * - heading_6 - the content of the heading (typically text)
+ * - heading - the content of the heading (typically text)
  * - heading_url - the url the heading should poing to
  * - heading_modifiers - array of modifiers to add to the base classname
  * - heading_base_class - the base class name
@@ -19,10 +19,10 @@
         "link_base_class": heading_link_base_class,
         "link_blockname": heading_link_blockname|default('heading-6'),
         "link_url": heading_url,
-        "link_content": heading_6,
+        "link_content": heading,
       }
     %}
   {% else %}
-    {{ heading_6 }}
+    {{ heading }}
   {% endif %}
 </h6>

@@ -70,7 +70,7 @@
         {{ title_prefix }}
         {% include "@atoms/02-text/00-headings/heading-3/heading-3.twig"
           with {
-            "heading_3": card_title,
+            "heading": card_title,
             "heading_url": card_title_link,
             "heading_base_class": card_title_base_class|default('title'),
             "heading_modifiers": card_title_modifiers,
@@ -82,7 +82,7 @@
       {% if card_subtitle %}
         {% include "@atoms/02-text/00-headings/heading-4/heading-4.twig"
           with {
-            "heading_4": card_subtitle,
+            "heading": card_subtitle,
             "heading_url": card_subtitle_link,
             "heading_base_class": card_subtitle_base_class|default('subtitle'),
             "heading_modifiers": card_subtitle_modifiers,
