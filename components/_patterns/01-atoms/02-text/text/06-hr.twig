@@ -1,1 +1,1 @@
-<hr />
+<hr class="hr" />

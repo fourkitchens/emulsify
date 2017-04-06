@@ -1,10 +1,13 @@
 {#
 /**
  * Available variables:
- * - img_modifiers - array of modifiers to add to the base classname
- * - img_blockname - blockname prepended to the base classname
+ * - image_base_class - base class name
+ * - image_modifiers - array of modifiers to add to the base classname
+ * - image_blockname - blockname prepended to the base classname
  * - img_src - the actual image file location
  * - img_alt - (optional) the alt text for screen readers and when the image cannot load
  */
 #}
-<img src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} class="img{% for modifier in img_modifiers %} img--{{ modifier }}{% endfor %}{% if img_blockname %} {{ img_blockname }}__img{% endif %}" />
+{% set image_base_class_var = image_base_class|default('image') %}
+
+<img src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} class="{{ image_base_class_var }}{% for modifier in image_modifiers %} {{ image_base_class_var }}--{{ modifier }}{% endfor %}{% if image_blockname %} {{ image_blockname }}__{{ image_base_class_var }}{% endif %}" />

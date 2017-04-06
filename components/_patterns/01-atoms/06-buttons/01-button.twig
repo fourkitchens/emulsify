@@ -1,6 +1,7 @@
 {#
 /**
  * Available variables:
+ * - button_base_class - the base class name
  * - button_modifiers - array of modifiers to add to the base classname
  * - button_blockname - blockname prepended to the base classname
  * - button_attributes - array of attribute,value pairs
@@ -9,10 +10,12 @@
  *
  * Available blocks:
  * - button_content - used to replace the content of the button with something other than text
- *   for example: to insert the image component
+ *   for example: to insert an icon
  */
 #}
-<button class="button{% for modifier in button_modifiers %} button--{{ modifier }}{% endfor %}{% if button_blockname %} {{ button_blockname }}__button{% endif %}" {% for attribute,value in button_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ button_url }}">
+{% set button_base_class_var = button_base_class|default('button') %}
+
+<button class="{{ button_base_class_var }}{% for modifier in button_modifiers %} {{ button_base_class_var }}--{{ modifier }}{% endfor %}{% if button_blockname %} {{ button_blockname }}__{{ button_base_class_var }}{% endif %}" {% for attribute,value in button_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ button_url }}">
   {% block button_content %}
     {{ button_content }}
   {% endblock %}

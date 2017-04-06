@@ -1,18 +1,21 @@
 {#
 /**
  * Available variables:
- * - link_modifiers - array of modifiers to add to the base classname
- * - link_blockname - blockname prepended to the base classname
- * - link_attributes - array of attribute,value pairs
- * - link_url - the url this link should poing to
  * - link_content - the content of the link (typically text)
+ * - link_url - the url this link should poing to
+ * - link_attributes - array of attribute,value pairs
+ * - link_modifiers - array of modifiers to add to the base classname
+ * - link_base_class - the base class name
+ * - link_blockname - blockname prepended to the base classname
  *
  * Available blocks:
- * - link_content - used to replace the content of the link with something other than text
- *   for example: to insert the image component
+ * - link_content - used to replace the content of the link
+ *     Example: to insert the image component
  */
 #}
-<a class="link{% for modifier in link_modifiers %} link--{{ modifier }}{% endfor %}{% if link_blockname %} {{ link_blockname }}__link{% endif %}" {% for attribute,value in link_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ link_url }}">
+{% set link_base_class_var = link_base_class|default('link') %}
+
+<a class="{{ link_base_class_var }}{% for modifier in link_modifiers %} {{ link_base_class_var }}--{{ modifier }}{% endfor %}{% if link_blockname %} {{ link_blockname }}__{{ link_base_class_var }}{% endif %}" {% for attribute,value in link_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ link_url }}">
   {% block link_content %}
     {{ link_content }}
   {% endblock %}

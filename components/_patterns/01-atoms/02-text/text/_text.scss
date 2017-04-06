@@ -1,10 +1,16 @@
+// Create a mixin for paragraph styles that can be implemented
+// in components with other classnames.
+@mixin paragraph($margin: 0 0 1em) {
+  margin: #{$margin};
+}
+
 body {
   color:$gray;
   @include body-copy;
 }
 
 .paragraph {
-  margin: 0 0 1em;
+  @include paragraph;
 
   &--no-space {
     margin-bottom: 0;

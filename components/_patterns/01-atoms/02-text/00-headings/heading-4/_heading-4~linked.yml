@@ -1,6 +1,6 @@
 # This file is disabled because it's name begins with an underscore.
 # To see this example in Pattern Lab remove the underscore and refresh
-heading_4:
+heading:
   "This is a Header 4 styling with a link"
-heading_4_url:
+heading_url:
   "#"

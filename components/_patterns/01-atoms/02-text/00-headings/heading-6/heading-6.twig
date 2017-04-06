@@ -1,22 +1,28 @@
 {#
 /**
  * Available variables:
- * - heading_6_modifiers - array of modifiers to add to the base classname
- * - heading_6_blockname - blockname prepended to the base classname
- * - heading_6_url - (optional) the url the heading should poing to
- * - heading_6 - the content of the heading (typically text)
+ * - heading - the content of the heading (typically text)
+ * - heading_url - the url the heading should poing to
+ * - heading_modifiers - array of modifiers to add to the base classname
+ * - heading_base_class - the base class name
+ * - heading_blockname - blockname prepended to the base classname
+ * - heading_link_base_class - override the link base class
+ * - heading_link_blockname - override the link block name
  */
 #}
-<h6 class="heading-6{% for modifier in heading_6_modifiers %} heading-6--{{ modifier }}{% endfor %}{% if heading_6_blockname %} {{ heading_6_blockname }}__heading-6{% endif %}">
-  {% if heading_6_url %}
+{% set heading_base_class_var = heading_base_class|default('heading-6') %}
+
+<h6 class="{{ heading_base_class_var }}{% for modifier in heading_modifiers %} {{ heading_base_class_var }}--{{ modifier }}{% endfor %}{% if heading_blockname %} {{ heading_blockname }}__{{ heading_base_class_var }}{% endif %}">
+  {% if heading_url %}
     {% include "@atoms/01-links/link/link.twig"
       with {
-        "link_blockname": "heading-6",
-        "link_url": heading_6_url,
-        "link_content": heading_6,
+        "link_base_class": heading_link_base_class,
+        "link_blockname": heading_link_blockname|default('heading-6'),
+        "link_url": heading_url,
+        "link_content": heading,
       }
     %}
   {% else %}
-    {{ heading_6 }}
+    {{ heading }}
   {% endif %}
 </h6>
