@@ -1,13 +1,16 @@
 {#
 /**
  * Available variables:
+ * - list_ul_base_class - the base classname
  * - list_ul_modifiers - array of modifiers to add to the base classname
  * - list_ul_blockname - blockname prepended to the base classname
  *
  * - listItems - TBD
  */
 #}
-<ul class="list-ul{% for modifier in list_ul_modifiers %} list-ul--{{ modifier }}{% endfor %}{% if list_ul_blockname %} {{ list_ul_blockname }}__list-ul{% endif %}">
+{% set list_ul_base_class_var = list_ul_base_class|default('list-ul') %}
+
+<ul class="{{ list_ul_base_class_var }}{% for modifier in list_ul_modifiers %} {{ list_ul_base_class_var }}--{{ modifier }}{% endfor %}{% if list_ul_blockname %} {{ list_ul_blockname }}__{{ list_ul_base_class_var }}{% endif %}">
   {% for list_ul_item in list_ul_items %}
     {% include "@atoms/03-lists/_list-item.twig"
       with {

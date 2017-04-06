@@ -1,6 +1,7 @@
 {#
 /**
  * Available variables:
+ * - list_item_base_class - the base classname
  * - list_item_modifiers - array of modifiers to add to the base classname
  * - list_item_blockname - blockname prepended to the base classname
  * - list_item_label - (optional) a <strong> label before the list item itself
@@ -11,7 +12,9 @@
  *   for example: to insert the image and/or link components
  */
 #}
-<li class="list-item{% for modifier in list_item_modifiers %} list-item--{{ modifier }}{% endfor %}{% if list_item_blockname %} {{ list_item_blockname }}__list-item{% endif %}">
+{% set list_item_base_class_var = list_item_base_class|default('list-item') %}
+
+<li class="{{ list_item_base_class_var }}{% for modifier in list_item_modifiers %} {{ list_item_base_class_var }}--{{ modifier }}{% endfor %}{% if list_item_blockname %} {{ list_item_blockname }}__{{ list_item_base_class_var }}{% endif %}">
   {% block list_item_content %}
     {% if list_item_label %}<strong>{{ list_item_label }}</strong> {% endif %}
     {{ list_item_content }}

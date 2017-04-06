@@ -1,6 +1,7 @@
 {#
 /**
  * Available variables:
+ * - video_base_class - the base classname
  * - video_modifiers - array of modifiers to add to the base classname
  *   by default, videos are expected to be 16x9, include the modifier "full" to support a 4x3 video
  * - video_blockname - blockname prepended to the base classname
@@ -13,7 +14,9 @@
  *   for example: to insert an html5 video component
  */
 #}
-<div class="video{% for modifier in video_modifiers %} video--{{ modifier }}{% endfor %}{% if video_blockname %} {{ video_blockname }}__video{% endif %}">
+{% set video_base_class_var = video_base_class|default('video') %}
+
+<div class="{{ video_base_class_var }}{% for modifier in video_modifiers %} {{ video_base_class_var }}--{{ modifier }}{% endfor %}{% if video_blockname %} {{ video_blockname }}__{{ video_base_class_var }}{% endif %}">
   {% block video_content %}
     {{ video_content|raw }}
   {% endblock %}

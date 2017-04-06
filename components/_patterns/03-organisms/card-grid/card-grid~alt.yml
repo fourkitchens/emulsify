@@ -13,7 +13,7 @@ cards:
       "http://placeimg.com/480/300/nature"
     card_title:
       "This is a title too"
-    card_sub:
+    card_subtitle:
       "November 11, 2016"
     card_body:
       ""
@@ -24,7 +24,7 @@ cards:
       "http://placeimg.com/480/300/nature"
     card_title:
       "This is a title too"
-    card_sub:
+    card_subtitle:
       "October 27, 2016"
     card_body:
       ""
@@ -33,7 +33,7 @@ cards:
       "http://placeimg.com/480/300/nature"
     card_title:
       "This is a title too"
-    card_sub:
+    card_subtitle:
       "October 4, 2016"
     card_body:
       ""
