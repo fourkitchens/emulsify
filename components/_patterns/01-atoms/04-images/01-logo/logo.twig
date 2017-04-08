@@ -28,7 +28,7 @@
   {% block link_content %}
     {% include "@atoms/04-images/00-image/image.twig"
       with {
-        "img_blockname": logo_blockname|default('logo'),
+        "image_blockname": logo_blockname|default('logo'),
         "img_src": logo_src|default('../../images/logo.png'),
         "img_alt": logo_alt|default('Logo'),
       }
