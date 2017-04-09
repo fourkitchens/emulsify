@@ -3,6 +3,10 @@
   padding-left: 1em;
 }
 
+.list-item--bg {
+  background-color: $gray-lightest;
+}
+
 // TODO: BEM selectors should be applied to wysiwyg-created content
 
 .text-long {
