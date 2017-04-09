@@ -1,0 +1,43 @@
+{#
+/**
+ * Available variables:
+ * - definition_item_base_class - the base classname
+ * - definition_item_modifiers - array of modifiers to add to the base classname
+ * - definition_item_blockname - blockname prepended to the base classname
+ * - definition_item_terms - an array of terms
+ * - definition_item_definitions - an array of definitions
+ *
+ * Available blocks:
+ * - definition_item_terms - replace the term
+ * - definition_item_definitions - replace the definition
+ *   Example: to insert multiple components (images, links, etc.)
+ *
+ * Additional Resources:
+ * - http://www.benmeadowcroft.com/webdev/articles/definition-lists/
+ */
+#}
+{% set definition_item_base_class_var = definition_item_base_class|default('definition-item') %}
+
+<div class="{{ definition_item_base_class_var }}{% for modifier in definition_item_modifiers %} {{ definition_item_base_class_var }}--{{ modifier }}{% endfor %}{% if definition_item_blockname %} {{ definition_item_blockname }}__{{ definition_item_base_class_var }}{% endif %}">
+
+  {% block definition_item_terms %}
+    {% for definition_item_term in definition_item_terms %}
+      {% include "@atoms/03-lists/definition-list-term/definition-list-term.twig"
+        with {
+          "definition_list_term": definition_item_term,
+        }
+      %}
+    {% endfor %}
+  {% endblock %}
+
+  {% block definition_item_definitions %}
+    {% for definition_item_definition in definition_item_definitions %}
+      {% include "@atoms/03-lists/definition-list-definition/definition-list-definition.twig"
+        with {
+          "definition_list_definition": definition_item_definition,
+        }
+      %}
+    {% endfor %}
+  {% endblock %}
+
+</div>
