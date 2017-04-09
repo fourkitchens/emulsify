@@ -1,8 +1,6 @@
-accordion_blockname:
-  accordion
-accordion_list:
+accordion_item_terms:
   1:
-    dl_term:
-      Item 1
-    dl_definition:
-      Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut libero malesuada feugiat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+    Item 1
+accordion_item_definitions:
+  1:
+    Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut libero malesuada feugiat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.

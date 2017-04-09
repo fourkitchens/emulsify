@@ -1,5 +1,5 @@
-.dl-term {
-  .accordion__list-dl & {
+.accordion-term {
+  & {
     border-top: 1px solid $gray-lightest;
     color: $gray-dark;
     cursor: pointer;
@@ -36,8 +36,8 @@
   }
 }
 
-.dl-definition {
-  .accordion__list-dl & {
+.accordion-definition {
+  & {
     margin: 0em 2em 0;
 
     &.active {

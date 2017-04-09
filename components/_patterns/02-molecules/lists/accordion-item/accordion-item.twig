@@ -1,7 +1,46 @@
-{% include "@atoms/03-lists/02-definition.twig"
-  with {
-    list_dl_modifiers: accordion_modifiers,
-    list_dl_blockname: accordion_blockname,
-    list_dl: accordion_list
-  }
-%}
+{#
+/**
+ * Available variables:
+ * - accordion_item_base_class - the base classname
+ * - accordion_item_modifiers - array of modifiers to add to the base classname
+ * - accordion_item_blockname - blockname prepended to the base classname
+ * - accordion_item_terms - an array of terms
+ * - accordion_item_definitions - an array of definitions
+ *
+ * Available blocks:
+ * - accordion_item_terms - replace the term
+ * - accordion_item_definitions - replace the definition
+ *   Example: to insert multiple components (images, links, etc.)
+ *
+ * Additional notes:
+ * - Although the defintion list supports multiple defintions and terms the
+ *   accordion does not.
+ */
+#}
+{% set accordion_item_base_class_var = accordion_item_base_class|default('accordion-item') %}
+
+<div class="{{ accordion_item_base_class_var }}{% for modifier in accordion_item_modifiers %} {{ accordion_item_base_class_var }}--{{ modifier }}{% endfor %}{% if accordion_item_blockname %} {{ accordion_item_blockname }}__{{ accordion_item_base_class_var }}{% endif %}">
+
+  {% block accordion_item_terms %}
+    {% for accordion_item_term in accordion_item_terms %}
+      {% include "@atoms/03-lists/definition-list-term/definition-list-term.twig"
+        with {
+          "definition_list_term_base_class": "accordion-term",
+          "definition_list_term": accordion_item_term,
+        }
+      %}
+    {% endfor %}
+  {% endblock %}
+
+  {% block accordion_item_definitions %}
+    {% for accordion_item_definition in accordion_item_definitions %}
+      {% include "@atoms/03-lists/definition-list-definition/definition-list-definition.twig"
+        with {
+          "definition_list_definition_base_class": "accordion-definition",
+          "definition_list_definition": accordion_item_definition,
+        }
+      %}
+    {% endfor %}
+  {% endblock %}
+
+</div>
