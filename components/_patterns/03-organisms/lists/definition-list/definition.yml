@@ -1,13 +1,35 @@
-list_dl:
+definition_list_items:
   1:
-    dl_term: "Definition List"
-    dl_definition: "A number of connected items or names written or printed consecutively, typically one below the other."
+    definition_item_modifiers:
+      1:
+        bg
+    definition_item_terms:
+      1:
+        "Definition item term one"
+    definition_item_definitions:
+      1:
+        "Definition item definition one."
   2:
-    dl_term: "This is a term."
-    dl_definition: "This is the definition of that term, which both live in a <code>dl</code>."
+    definition_item_terms:
+      1:
+        "Definition item term two"
+    definition_item_definitions:
+      1:
+        "Definition item definition two."
   3:
-    dl_term: "Here is another term."
-    dl_definition: "And it gets a definition too, which is this line."
+    definition_item_modifiers:
+      1:
+        bg
+    definition_item_terms:
+      1:
+        "Definition item term three"
+    definition_item_definitions:
+      1:
+        "Definition item definition three."
   4:
-    dl_term: "Here is term that shares a definition with the term below."
-    dl_definition: "And it gets a definition too, which is this line."
+    definition_item_terms:
+      1:
+        "Definition item term four"
+    definition_item_definitions:
+      1:
+        "Definition item definition four."
