@@ -3,34 +3,40 @@
 //   attach: function (context, settings) {
 
 // REMOVE IF DRUPAL
-(function() {
+(function () {
 
-    'use strict';
+  'use strict';
 
-    // Set 'document' to 'context' if Drupal
-    var accordionItem = document.querySelectorAll('.accordion__list-dl .dl-term');
-    var accordionDef = document.querySelectorAll('.accordion__list-dl .dl-definition');
-
-    // If javascript, hide accordion definition on load
-    function jsCheck() {
-      for (var i = 0; i < accordionDef.length; i++) {
-        if (accordionDef[i].classList) {
-          accordionDef[i].classList.add('active');
-          accordionDef[0].previousElementSibling.classList.add('is-active');
-        }
-        else {
-          accordionDef[i].className += ' active';
-          accordionDef[0].previousElementSibling.classList.add('is-active');
-        }
+  // If javascript, hide accordion definition on load
+  function jsHideOnLoad(accordionDefs) {
+    for (var i = 0; i < accordionDefs.length; i++) {
+      if (accordionDefs[i].classList) {
+        accordionDefs[i].classList.add('active');
+      }
+      else {
+        accordionDefs[i].className += ' active';
       }
     }
+  }
 
-    jsCheck();
+  // Set 'document' to 'context' if Drupal
+  var accordionItems = document.querySelectorAll('.accordion-item');
+
+  // Process each accordion item.
+  for (var x = 0; x < accordionItems.length; x++) {
+    // Set 'document' to 'context' if Drupal
+    // Note: There can be more than one definition.
+    var accordionDefs = accordionItems[x].querySelectorAll('.accordion-definition');
+
+    // Hide accordion definitions on load
+    jsHideOnLoad(accordionDefs);
+
+    // Note: There can be more than one term.
+    var accordionTerm = accordionItems[x].querySelectorAll('.accordion-term');
 
     // Accordion Toggle
-    // Mobile Click Menu Transition
-    for (var i = 0; i < accordionItem.length; i++) {
-      accordionItem[i].addEventListener('click', function (e) {
+    for (var y = 0; y < accordionTerm.length; y++) {
+      accordionTerm[y].addEventListener('click', function (e) {
         var className = 'is-active';
         // Add is-active class
         if (this.classList) {
@@ -51,6 +57,32 @@
         e.preventDefault();
       });
     }
+  }
+
+  // If javascript, hide accordion definition on load
+  function jsUnhideFirstAccordionItem(accordionDef) {
+    if (accordionDef[0].classList) {
+      accordionDef[0].classList.add('active');
+      accordionDef[0].previousElementSibling.classList.add('is-active');
+    }
+    else {
+      accordionDef[0].className += ' active';
+      accordionDef[0].previousElementSibling.classList.add('is-active');
+    }
+  }
+
+  // Set 'document' to 'context' if Drupal
+  var accordions = document.querySelectorAll('.accordion');
+
+  // Process each accordion.
+  for (var z = 0; z < accordions.length; z++) {
+    // Set 'document' to 'context' if Drupal
+    // Note: There can be more than one definition.
+    var accordionDef = accordions[z].querySelectorAll('.accordion-definition');
+
+    // Hide accordion definitions on load
+    jsUnhideFirstAccordionItem(accordionDef);
+  }
 
 // REMOVE IF DRUPAL
 })();
