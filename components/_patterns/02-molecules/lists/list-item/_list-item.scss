@@ -3,8 +3,18 @@
   padding-left: 1em;
 }
 
+// Variations
 .list-item--bg {
   background-color: $gray-lightest;
+}
+
+// Example Modifiers
+.list-item-label--red {
+  color: red;
+}
+
+.list-item-content--blue {
+  color: blue;
 }
 
 // TODO: BEM selectors should be applied to wysiwyg-created content

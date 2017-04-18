@@ -5,7 +5,9 @@
  * - list_item_modifiers - array of modifiers to add to the base classname
  * - list_item_blockname - blockname prepended to the base classname
  * - list_item_label - (optional) a bold label before the list item itself
+ *   passed as a string or an array.
  * - list_item_content - the content of the list_item (typically text)
+ *   passed as a string or an array.
  *
  * Available blocks:
  * - list_item_label - replace the label
@@ -18,7 +20,17 @@
 <li class="{{ list_item_base_class_var }}{% for modifier in list_item_modifiers %} {{ list_item_base_class_var }}--{{ modifier }}{% endfor %}{% if list_item_blockname %} {{ list_item_blockname }}__{{ list_item_base_class_var }}{% endif %}">
 
   {% block list_item_label %}
-    {% if list_item_label %}
+    {# Allow passing either a string or an array for each item #}
+    {% if list_item_label is iterable %}
+      {% include "@atoms/03-lists/list-item-label/list-item-label.twig"
+        with {
+          "list_item_label_base_class": list_item_label.list_item_label_base_class,
+          "list_item_label_modifiers": list_item_label.list_item_label_modifiers,
+          "list_item_label_blockname": list_item_label.list_item_label_blockname,
+          "list_item_label": list_item_label.list_item_label
+        }
+      %}
+    {% elseif list_item_label %}
       {% include "@atoms/03-lists/list-item-label/list-item-label.twig"
         with {
           "list_item_label": list_item_label
@@ -28,10 +40,22 @@
   {% endblock %}
 
   {% block list_item_content %}
-    {% include "@atoms/03-lists/list-item-content/list-item-content.twig"
-      with {
-        "list_item_content": list_item_content,
-      }
-    %}
+    {# Allow passing either a string or an array for each item #}
+    {% if list_item_content is iterable %}
+      {% include "@atoms/03-lists/list-item-content/list-item-content.twig"
+        with {
+          "list_item_content_base_class": list_item_content.list_item_content_base_class,
+          "list_item_content_modifiers": list_item_content.list_item_content_modifiers,
+          "list_item_content_blockname": list_item_content.list_item_content_blockname,
+          "list_item_content": list_item_content.list_item_content
+        }
+      %}
+    {% else %}
+      {% include "@atoms/03-lists/list-item-content/list-item-content.twig"
+        with {
+          "list_item_content": list_item_content,
+        }
+      %}
+    {% endif %}
   {% endblock %}
 </li>
