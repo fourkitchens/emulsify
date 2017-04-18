@@ -1,0 +1,16 @@
+{#
+/**
+ * Available variables:
+ * - definition_list_definition_base_class - the base classname
+ * - definition_list_definition_modifiers - array of modifiers to add to the base classname
+ * - definition_list_definition_blockname - blockname prepended to the base classname
+ * - definition_list_definition - the content of the list_item (typically text)
+ */
+#}
+{% set definition_list_definition_base_class_var = definition_list_definition_base_class|default('definition-list-definition') %}
+
+<dd class="{{ definition_list_definition_base_class_var }}{% for modifier in definition_list_definition_modifiers %} {{ definition_list_definition_base_class_var }}--{{ modifier }}{% endfor %}{% if definition_list_definition_blockname %} {{ definition_list_definition_blockname }}__{{ definition_list_definition_base_class_var }}{% endif %}">
+
+  {{ definition_list_definition }}
+
+</dd>

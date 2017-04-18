@@ -1,5 +1,12 @@
-.dl-term {
-  .accordion__list-dl & {
+.accordion {
+}
+
+.accordion--bg {
+  background-color: $gray-lightest;
+}
+
+.accordion-term {
+  & {
     border-top: 1px solid $gray-lightest;
     color: $gray-dark;
     cursor: pointer;
@@ -33,11 +40,18 @@
         padding-bottom: 1em;
       }
     }
+
+    // Example Modifiers
+    &.accordion-term--red {
+      color: red;
+    }
   }
 }
 
-.dl-definition {
-  .accordion__list-dl & {
+
+
+.accordion-definition {
+  & {
     margin: 0em 2em 0;
 
     &.active {

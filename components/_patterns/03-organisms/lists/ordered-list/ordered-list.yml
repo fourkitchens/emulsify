@@ -1,10 +1,13 @@
-list_ul_items:
+ordered_list_items:
   1:
-    content: "This is the first item in the <ul>."
+    content: "This is the first item in the <ol>."
   2:
     label: "This is the optional label"
     content: "And here is the item that goes with the label."
   3:
+    modifiers:
+      1:
+        "bg"
     content: "Here's the third item."
   4:
     content: "And here's the last item."

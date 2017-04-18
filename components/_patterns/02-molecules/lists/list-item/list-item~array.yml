@@ -1,0 +1,16 @@
+list_item_label:
+  list_item_label_base_class:
+  list_item_label_modifiers:
+    1:
+      "red"
+  list_item_label_blockname:
+  list_item_label:
+    "List item label"
+list_item_content:
+  list_item_content_base_class:
+  list_item_content_modifiers:
+    1:
+      "blue"
+  list_item_content_blockname:
+  list_item_content:
+    "List item content."

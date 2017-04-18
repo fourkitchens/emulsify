@@ -1,0 +1,24 @@
+{#
+/**
+ * Available variables:
+ * - definition_list_base_class - the base classname
+ * - definition_list_modifiers - array of modifiers to add to the base classname
+ * - definition_list_blockname - blockname prepended to the base classname
+ * - definition_list_items - an array of definition items
+ */
+#}
+{% set definition_list_base_class_var = definition_list_base_class|default('definition-list') %}
+
+<dl class="{{ definition_list_base_class_var }}{% for modifier in definition_list_modifiers %} {{ definition_list_base_class_var }}--{{ modifier }}{% endfor %}{% if definition_list_blockname %} {{ definition_list_blockname }}__{{ definition_list_base_class_var }}{% endif %}">
+  {% for definition_list_item in definition_list_items %}
+    {% include "@molecules/lists/definition-item/definition-item.twig"
+      with {
+        "definition_item_base_class": definition_list_item.definition_item_base_class,
+        "definition_item_modifiers": definition_list_item.definition_item_modifiers,
+        "definition_item_blockname": definition_list_item.definition_item_blockname,
+        "definition_item_terms": definition_list_item.definition_item_terms,
+        "definition_item_definitions": definition_list_item.definition_item_definitions,
+      }
+    %}
+  {% endfor %}
+</dl>

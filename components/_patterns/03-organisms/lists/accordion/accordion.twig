@@ -1,0 +1,41 @@
+{#
+/**
+ * Available variables:
+ * - accordion_base_class - the base classname
+ * - accordion_modifiers - set accordion modifiers
+ * - accordion_blockname - override accordion blockname
+ * - accordion_items - the accordion list should contain terms and definitions
+ */
+#}
+
+{% set accordion_base_class_var = accordion_base_class|default('accordion') %}
+
+{# Before changing any of these class names you will need to update the js #}
+{% set accordion_item_terms_base_class_var = accordion_item_terms_base_class|default('accordion-term') %}
+{% set accordion_item_definitions_base_class_var = accordion_item_definitions_base_class|default('accordion-definition') %}
+
+<div class="{{ accordion_base_class_var }}{% for modifier in accordion_modifiers %} {{ accordion_base_class_var }}--{{ modifier }}{% endfor %}{% if accordion_blockname %} {{ accordion_blockname }}__{{ accordion_base_class_var }}{% endif %}">
+
+{% block accordion_content %}
+  {% for accordion_item in accordion_items %}
+
+    {# process terms into a baseclass ready array test #}
+    {# NOTE: This can handle a mix of strings or arrays passed #}
+    {% set processed_terms = arraybaseclass(accordion_item.accordion_item_terms, 'definition_list_term_base_class', accordion_item_terms_base_class_var, 'definition_list_term') %}
+
+    {% set processed_definitions = arraybaseclass(accordion_item.accordion_item_definitions, 'definition_list_definition_base_class', accordion_item_definitions_base_class_var, 'definition_list_definition') %}
+
+    {% include "@molecules/lists/definition-item/definition-item.twig"
+      with {
+        "definition_item_base_class": accordion_item_base_class|default('accordion-item'),
+        "definition_item_modifiers": accordion_item.accordion_item_modifiers,
+        "definition_item_blockname": accordion_item.accordion_item_blockname,
+        "definition_item_terms": processed_terms,
+        "definition_item_definitions": processed_definitions,
+      }
+    %}
+  {% endfor %}
+
+{% endblock %}
+
+</div>

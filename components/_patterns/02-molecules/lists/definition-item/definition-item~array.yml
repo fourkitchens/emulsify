@@ -1,0 +1,31 @@
+definition_item_terms:
+  1:
+    definition_list_term_base_class:
+    definition_list_term_modifiers:
+      1:
+        "red"
+    definition_list_term_blockname:
+    definition_list_term:
+      "Garbage"
+  2:
+    definition_list_term_base_class:
+    definition_list_term_modifiers:
+    definition_list_term_blockname:
+    definition_list_term:
+      "Rubbish"
+definition_item_definitions:
+  1:
+    definition_list_definition_base_class:
+    definition_list_definition_modifiers:
+    definition_list_definition_blockname:
+    definition_list_definition:
+      "Waste material that is disposed of."
+  2:
+    definition_list_definition_base_class:
+    definition_list_definition_modifiers:
+    definition_list_definition_blockname:
+    definition_list_definition:
+      "Television shown during the daytime, \"Daytime TV\"."
+  3:
+  4:
+  5:
