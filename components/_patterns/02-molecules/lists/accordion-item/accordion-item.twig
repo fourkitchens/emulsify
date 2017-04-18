@@ -5,7 +5,11 @@
  * - accordion_item_modifiers - array of modifiers to add to the base classname
  * - accordion_item_blockname - blockname prepended to the base classname
  * - accordion_item_terms - an array of terms
+ * - accordion_item_terms_base_class - the base classname for all terms
+ *   NOTE: this needs to be overridden for the js to work.
  * - accordion_item_definitions - an array of definitions
+ * - accordion_item_definitions_base_class - the base classname for all defintions
+ *   NOTE: this needs to be overridden for the js to work.
  *
  * Available blocks:
  * - accordion_item_terms - replace the term
@@ -17,18 +21,31 @@
  *   accordion does not.
  */
 #}
+
+{# Before changing any of these class names you will need to update the js #}
 {% set accordion_item_base_class_var = accordion_item_base_class|default('accordion-item') %}
+{% set accordion_item_terms_base_class_var = accordion_item_terms_base_class|default('accordion-term') %}
+{% set accordion_item_definitions_base_class_var = accordion_item_definitions_base_class|default('accordion-definition') %}
 
 <div class="{{ accordion_item_base_class_var }}{% for modifier in accordion_item_modifiers %} {{ accordion_item_base_class_var }}--{{ modifier }}{% endfor %}{% if accordion_item_blockname %} {{ accordion_item_blockname }}__{{ accordion_item_base_class_var }}{% endif %}">
 
   {% block accordion_item_terms %}
     {% for accordion_item_term in accordion_item_terms %}
-      {% include "@atoms/03-lists/definition-list-term/definition-list-term.twig"
-        with {
-          "definition_list_term_base_class": "accordion-term",
-          "definition_list_term": accordion_item_term,
-        }
-      %}
+      {% if accordion_item_term is iterable %}
+        {% include "@atoms/03-lists/definition-list-term/definition-list-term.twig"
+          with {
+            "definition_list_term_base_class": accordion_item_terms_base_class_var,
+            "definition_list_term": accordion_item_term,
+          }
+        %}
+      {% else %}
+        {% include "@atoms/03-lists/definition-list-term/definition-list-term.twig"
+          with {
+            "definition_list_term_base_class": accordion_item_terms_base_class_var,
+            "definition_list_term": accordion_item_term,
+          }
+        %}
+      {% endif %}
     {% endfor %}
   {% endblock %}
 
@@ -36,7 +53,7 @@
     {% for accordion_item_definition in accordion_item_definitions %}
       {% include "@atoms/03-lists/definition-list-definition/definition-list-definition.twig"
         with {
-          "definition_list_definition_base_class": "accordion-definition",
+          "definition_list_definition_base_class": accordion_item_definitions_base_class_var,
           "definition_list_definition": accordion_item_definition,
         }
       %}
