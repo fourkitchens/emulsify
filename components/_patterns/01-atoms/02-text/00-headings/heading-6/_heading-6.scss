@@ -1,4 +1,13 @@
-.heading-6,
-.heading-6__link {
-  @include font-size(.8);
+// Create a mixin for heading-6 styles that can be implemented
+// in components with other classnames.
+@mixin heading-6 {
+  @include headings(
+    $color: $gray,
+    $font-size: 0.8em
+  );
+  text-transform: uppercase;
+}
+
+.heading-6 {
+  @include heading-6;
 }

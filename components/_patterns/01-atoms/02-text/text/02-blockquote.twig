@@ -1,9 +1,10 @@
 {#
 /**
  * Available variables:
+ * - blockquote_base_class - the base classname
  * - blockquote_modifiers - array of modifiers to add to the base classname
  * - blockquote_blockname - blockname prepended to the base classname
- * - blockquote_url - the url this blockquote should poing to
+ * - blockquote_url - the url this blockquote should point to
  * - blockquote_content - the content of the blockquote (typically text)
  *
  * Available blocks:
@@ -11,7 +12,9 @@
  *   for example: A formatted text field in Drupal
  */
 #}
-<blockquote class="blockquote{% for modifier in blockquote_modifiers %} blockquote--{{ modifier }}{% endfor %}{% if blockquote_blockname %} {{ blockquote_blockname }}__blockquote{% endif %}">
+{% set blockquote_base_class_var = blockquote_base_class|default('blockquote') %}
+
+<blockquote class="{{ blockquote_base_class_var }}{% for modifier in blockquote_modifiers %} {{ blockquote_base_class_var }}--{{ modifier }}{% endfor %}{% if blockquote_blockname %} {{ blockquote_blockname }}__{{ blockquote_base_class_var }}{% endif %}">
   {% block blockquote_content %}
     {{ blockquote_content }}
   {% endblock %}

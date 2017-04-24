@@ -1,13 +1,16 @@
 {#
 /**
  * Available variables:
+ * - list_ol_base_class - the base classname
  * - list_ol_modifiers - array of modifiers to add to the base classname
  * - list_ol_blockname - blockname prepended to the base classname
  *
  * - listItems - TBD
  */
 #}
-<ol class="list-ol{% for modifier in list_ol_modifiers %} list-ol--{{ modifier }}{% endfor %}{% if list_ol_blockname %} {{ list_ol_blockname }}__list-ol{% endif %}">
+{% set list_ol_base_class_var = list_ol_base_class|default('list-ol') %}
+
+<ol class="{{ list_ol_base_class_var }}{% for modifier in list_ol_modifiers %} {{ list_ol_base_class_var }}--{{ modifier }}{% endfor %}{% if list_ol_blockname %} {{ list_ol_blockname }}__{{ list_ol_base_class_var }}{% endif %}">
   {% for list_ol_item in list_ol_items %}
     {% include "@atoms/03-lists/_list-item.twig"
       with {
