@@ -3,11 +3,11 @@
   "description": "Project template for Drupal 8 themes",
   "version": "1.0.0",
   "devDependencies": {
-    "chromedriver": "^2.28.0",
+    "chromedriver": "^2.29.0",
     "emulsify-gulp": "fourkitchens/emulsify-gulp",
     "gulp": "^3.9.1",
     "webdrivercss": "github:visualregressiontesting/webdrivercss",
-    "webdriverio": "^4.6.2"
+    "webdriverio": "^4.7.1"
   },
   "scripts": {
     "start": "gulp clean && gulp compile && gulp theme",
