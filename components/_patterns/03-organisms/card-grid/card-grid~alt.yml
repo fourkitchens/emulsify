@@ -10,7 +10,7 @@ grid_modifiers:
 cards:
   1:
     card_img:
-      "http://placeimg.com/480/300/nature"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_subtitle:
@@ -21,7 +21,7 @@ cards:
       ""
   2:
     card_img:
-      "http://placeimg.com/480/300/nature"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_subtitle:
@@ -30,7 +30,7 @@ cards:
       ""
   3:
     card_img:
-      "http://placeimg.com/480/300/nature"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_subtitle:

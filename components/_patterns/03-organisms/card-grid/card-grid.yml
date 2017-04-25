@@ -6,7 +6,7 @@ grid_modifiers:
 cards:
   1:
     card_img_src:
-      "http://placeimg.com/480/300/people"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_title_modifiers:
@@ -20,7 +20,7 @@ cards:
       "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat."
   2:
     card_img_src:
-      "http://placeimg.com/480/300/people"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_title_modifiers:
@@ -32,7 +32,7 @@ cards:
       "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat."
   3:
     card_img_src:
-      "http://placeimg.com/480/300/people"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_title_modifiers:
