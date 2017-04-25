@@ -23,24 +23,36 @@
  */
 #}
 {% set logo_blockname_var = logo_blockname|default('logo') %}
-{% embed "@atoms/01-links/link/link.twig"
-  with {
-    "link_base_class": logo_link_base_class|default('link'),
-    "link_modifiers": logo_link_modifiers,
-    "link_blockname": logo_blockname_var,
-    "link_attributes": logo_attributes,
-    "link_url": logo_url|default('/'),
-  }
-%}
-  {% block link_content %}
-    {% include "@atoms/04-images/00-image/image.twig"
-      with {
-        "image_base_class": logo_image_base_class|default('image'),
-        "image_modifiers": logo_image_modifiers,
-        "image_blockname": logo_blockname_var,
-        "img_src": logo_src|default('../../images/logo.png'),
-        "img_alt": logo_alt|default('Logo'),
-      }
-    %}
-  {% endblock %}
-{% endembed %}
+{% if logo_url %}
+  {% embed "@atoms/01-links/link/link.twig"
+    with {
+      "link_base_class": logo_link_base_class|default('link'),
+      "link_modifiers": logo_link_modifiers,
+      "link_blockname": logo_blockname_var,
+      "link_attributes": logo_attributes,
+      "link_url": logo_url|default('/'),
+    }
+  %}
+    {% block link_content %}
+      {% include "@atoms/04-images/00-image/image.twig"
+        with {
+          "image_base_class": logo_image_base_class|default('image'),
+          "image_modifiers": logo_image_modifiers,
+          "image_blockname": logo_blockname_var,
+          "img_src": logo_src|default('../../images/logo.png'),
+          "img_alt": logo_alt|default('Logo'),
+        }
+      %}
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  {% include "@atoms/04-images/00-image/image.twig"
+    with {
+      "image_base_class": logo_image_base_class|default('image'),
+      "image_modifiers": logo_image_modifiers,
+      "image_blockname": logo_blockname_var,
+      "img_src": logo_src|default('../../images/logo.png'),
+      "img_alt": logo_alt|default('Logo'),
+    }
+  %}
+{% endif %}
