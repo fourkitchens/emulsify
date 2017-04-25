@@ -20,7 +20,7 @@
 
   &--alt {
     font-weight: 600;
-    @include font-size(.7);
+    font-size: .7rem;
     background-color: $gray;
     padding: .4em .6em .3em;
 
@@ -32,7 +32,7 @@
   &--alt-2 {
     background-color: $gray-lightest;
     color: $black;
-    @include font-size(.8);
+    font-size: .8rem;
     font-weight: 600;
     text-transform: none;
 

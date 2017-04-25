@@ -92,7 +92,7 @@
       {% endif %}
       {% if card_body %}
         <div class="{{ card_body_base_class|default('body') }}{% for modifier in card_modifiers %} {{ card_body_base_class|default('body') }}--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__{{ card_body_base_class|default('body') }}{% endif %}">
-          {% include "@atoms/02-text/text/01-paragraph/paragraph.twig"
+          {% include "@atoms/02-text/text/01-paragraph.twig"
             with {
               "paragraph_content": card_body,
               "paragraph_base_class": card_body_base_class|default('body'),

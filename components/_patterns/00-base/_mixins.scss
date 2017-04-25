@@ -1,15 +1,6 @@
 /////////////////////
 // Mixins
 
-/// Mixin - Font-Size.
-/// Adds px value for fallback - then rem value
-/// use example =   @include font-size(1.6); = 1.6rem / 16px
-
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
-}
-
 /// Mixin - Clearfix.
 /// Adds clearfix based on http://bourbon.io/docs/#clearfix
 /// use example =   @include cleafix
@@ -61,7 +52,7 @@
 /// Used in a number of views
 @mixin more-link {
   a {
-    @include font-size(.9);
+    font-size: .9rem;
     font-weight: 600;
     text-decoration: none;
 
@@ -77,7 +68,7 @@
 /// Used in a number of views
 @mixin back-link {
   display: block;
-  @include font-size(.9);
+  font-size: .9rem;
   font-weight: 600;
   text-decoration: none;
 
@@ -91,7 +82,7 @@
 /// Mixin - Body Copy
 @mixin body-copy {
   font-family: $body;
-  @include font-size(.9);
+  font-size: .9rem;
   line-height: 1.6em;
 }
 
