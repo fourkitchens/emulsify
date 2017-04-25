@@ -6,8 +6,7 @@ var browser = WDIO.remote({
 }).init();
 
 var excludes = [
-  "#atoms-image img",
-  ".card__img > img"
+  "img"
 ];
 
 var hidden = [
