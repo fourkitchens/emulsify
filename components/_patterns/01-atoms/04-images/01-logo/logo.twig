@@ -4,8 +4,11 @@
  * Many of the variables in this file are defined with defaults that make sense to this component
  * You can still override them when including this file in other components.
  *
- * - logo_blockname - default is 'logo' to produce the class "logo__link"
- *   becuase this is the same variable as the img blockname, the two will stay in sync
+ * - logo_blockname - blockname prepended to the base classname of the link and image
+ *
+ * - logo_link_base_class - the base class name. Defaults to 'link'
+ * - logo_link_modifiers - array of modifiers to add to the base classname of the link
+ * - logo_attributes - array of attribute,value pairs
  * - logo_url - default is '/' to link to the homepage
  *   this is overridden in the logo.yml file to show (only in Pattern Lab) that overrides do work
  *   delete the logo_url definition from logo.yml to see the default take effect
@@ -13,25 +16,43 @@
  * Defined blocks:
  * - link_content - replaces the link_content block of the link component
  *   Available variables in this block
- *   - logo_blockname - default is 'logo' to produce the class "logo__img"
- *     becuase this is the same variable as the link blockname, the two will stay in sync
- *   - logo_src - defaults to the logo.png file in the themeroot/components/images directory
- *   - logo_alt - defaults to 'Logo'
+ *   - logo_image_base_class - the base class name. Defaults to 'image'
+ *   - logo_image_modifiers - array of modifiers to add to the base classname of the image
+ *   - img_src - defaults to the logo.png file in the themeroot/components/images directory
+ *   - img_alt - the alt text for screen readers, seo, and when the image cannot load
  */
 #}
-{% embed "@atoms/01-links/link/link.twig"
-  with {
-    "link_blockname": logo_blockname|default('logo'),
-    "link_url": logo_url|default('/'),
-  }
-%}
-  {% block link_content %}
-    {% include "@atoms/04-images/00-image/image.twig"
-      with {
-        "image_blockname": logo_blockname|default('logo'),
-        "img_src": logo_src|default('../../images/logo.png'),
-        "img_alt": logo_alt|default('Logo'),
-      }
-    %}
-  {% endblock %}
-{% endembed %}
+{% set logo_blockname_var = logo_blockname|default('logo') %}
+{% if logo_url %}
+  {% embed "@atoms/01-links/link/link.twig"
+    with {
+      "link_base_class": logo_link_base_class|default('link'),
+      "link_modifiers": logo_link_modifiers,
+      "link_blockname": logo_blockname_var,
+      "link_attributes": logo_attributes,
+      "link_url": logo_url|default('/'),
+    }
+  %}
+    {% block link_content %}
+      {% include "@atoms/04-images/00-image/image.twig"
+        with {
+          "image_base_class": logo_image_base_class|default('image'),
+          "image_modifiers": logo_image_modifiers,
+          "image_blockname": logo_blockname_var,
+          "img_src": logo_src|default('../../images/logo.png'),
+          "img_alt": logo_alt|default('Logo'),
+        }
+      %}
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  {% include "@atoms/04-images/00-image/image.twig"
+    with {
+      "image_base_class": logo_image_base_class|default('image'),
+      "image_modifiers": logo_image_modifiers,
+      "image_blockname": logo_blockname_var,
+      "img_src": logo_src|default('../../images/logo.png'),
+      "img_alt": logo_alt|default('Logo'),
+    }
+  %}
+{% endif %}
