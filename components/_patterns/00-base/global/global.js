@@ -2,7 +2,7 @@
 
 // If using Typekit
 // try {
-//   Typekit.load();
+//   Typekit.load({ async: true });
 // }
 // catch (e) {
 //   alert('An error has occurred: ' + e.message);
