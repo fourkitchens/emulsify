@@ -11,16 +11,13 @@
 @include add-grid(12);
 @include add-gutter(1/4);
 
-/// Widths and base sizing
-$max-width: 1200px;
-
 // Breakpoints variables
 $xs: 25em;
 $small: 26em;
 $medium: 41em;
 $large: 48em;
 $xl: 61.25em;
-
+$max-width: $xl;
 
 /// Mixin - xs Breakpoint
 /// Allows easier @include xs {} syntax
@@ -58,6 +55,14 @@ $xl: 61.25em;
 /// Allows easier @include xl {} syntax
 @mixin xl {
   @include breakpoint($xl) {
+    @content;
+  }
+}
+
+/// Mixin - max-width Breakpoint
+/// Allows easier @include max-width {} syntax
+@mixin max-width {
+  @include breakpoint($max-width) {
     @content;
   }
 }
