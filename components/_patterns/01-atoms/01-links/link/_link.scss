@@ -1,7 +1,7 @@
 .link {
-  color: $black;
-  
+  color: $color-link;
+
   &:hover {
-    color: $gray;
+    color: $color-link--hover;
   }
 }
