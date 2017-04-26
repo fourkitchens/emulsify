@@ -11,6 +11,9 @@
 @include add-grid(12);
 @include add-gutter(1/4);
 
+/// Widths and base sizing
+$max-width: 1200px;
+
 // Breakpoints variables
 $xs: 25em;
 $small: 26em;

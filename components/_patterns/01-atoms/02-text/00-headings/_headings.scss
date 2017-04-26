@@ -8,7 +8,7 @@
 // or, to define new values:
 // @include headings($font-size: 1.4em, $color: $accent, $line-height: 2);
 //
-@mixin headings ($color: $header-text, $font-family: $heading, $font-weight: 600, $font-size: 1em, $line-height: 1.5, $margin: 0 0 0.5em, $width: 100%){
+@mixin headings ($color: $color-heading, $font-family: $font-heading, $font-weight: 600, $font-size: 1em, $line-height: 1.5, $margin: 0 0 0.5em, $width: 100%){
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
