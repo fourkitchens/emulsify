@@ -30,22 +30,19 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
   ---
 
-## Emulsify versus Pattern Lab Starter
-
-[Pattern Lab Starter](https://github.com/phase2/pattern-lab-starter) and Emulsify share a lot in common (see [`Acknowledgements`](https://github.com/fourkitchens/emulsify/wiki/Acknowledgements)). Below is a breakdown of the two to aid in deciding which is best for your project.
+## Highlighted Features
 
 <table><tbody>
-<tr><td></td><td><strong>Emulsify</strong></td><td>Pattern Lab Starter</td><td></td></tr>
-<tr><td>Lightweight</td><td>✔</td><td></td><td>Emulsify is about 1/2 the size of PLS</td></tr>
-<tr><td>SVG sprite support </td><td><strong>✔</strong></td><td></td><td>PLS uses icon fonts.</td></tr>
-<tr><td>Stock Drupal templates </td><td><strong>✔</strong></td><td></td><td>see /templates directory</td></tr>
-<tr><td>Stock Components (see below) </td><td><strong>✔</strong></td><td></td><td>with Drupal support built-in</td></tr>
-<tr><td>Yeoman generator</td><td></td><td>✔</td><td>Adds functionality to generate a new component using `yo component`</td></tr>
-<tr><td>Faker support</td><td></td><td>✔</td><td>PHP "dummy" content generator</td></tr>
+<tr><td>Lightweight</td><td>✔</td><td>Emulsify is focused on being as lightweight as possible.</td></tr>
+<tr><td>SVG sprite support </td><td><strong>✔</strong></td><td>Automated support for creating SVG sprites mixins/classes.</td></tr>
+<tr><td>Stock Drupal templates </td><td><strong>✔</strong></td><td>Templates from Stable theme - see /templates directory</td></tr>
+<tr><td>Stock Components (see list below) </td><td><strong>✔</strong></td><td>with Drupal support built-in</td></tr>
+<tr><td>Performance Testing </td><td><strong>✔</strong></td><td>Support for testing via Google PageSpeed Insights and WebPageTest.org ([documentation](https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#performance-testing))</td></tr>
+<tr><td>Automated Github Deployment </td><td><strong>✔</strong></td><td>Deploy your Pattern Lab instance as a Github page ([documentation](https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#deployment))</td></tr>
 </tbody>
 </table>
 
-<h3 id="components">Emulsify's Built in Components (all responsive)</h3>
+<h3 id="components">Emulsify's Built in Components with Drupal support</h3>
 Forms, tables, video, accordion, cards, breadcrumbs, tabs, pager, status messages, grid
 
 ## Documentation
