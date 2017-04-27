@@ -37,8 +37,8 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 <tr><td>SVG sprite support </td><td><strong>✔</strong></td><td>Automated support for creating SVG sprites mixins/classes.</td></tr>
 <tr><td>Stock Drupal templates </td><td><strong>✔</strong></td><td>Templates from Stable theme - see /templates directory</td></tr>
 <tr><td>Stock Components (see list below) </td><td><strong>✔</strong></td><td>with Drupal support built-in</td></tr>
-<tr><td>Performance Testing </td><td><strong>✔</strong></td><td>Support for testing via Google PageSpeed Insights and WebPageTest.org ([documentation](https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#performance-testing))</td></tr>
-<tr><td>Automated Github Deployment </td><td><strong>✔</strong></td><td>Deploy your Pattern Lab instance as a Github page ([documentation](https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#deployment))</td></tr>
+<tr><td>Performance Testing </td><td><strong>✔</strong></td><td>Support for testing via Google PageSpeed Insights and WebPageTest.org (https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#performance-testing)</td></tr>
+<tr><td>Automated Github Deployment </td><td><strong>✔</strong></td><td>Deploy your Pattern Lab instance as a Github page (https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#deployment)</td></tr>
 </tbody>
 </table>
 
