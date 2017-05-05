@@ -13,7 +13,9 @@
  *     Example: to insert the image component
  */
 #}
-<a class="{{ classes('link') }}" {% for attribute,value in link_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ link_url }}">
+{% set link_base_class_var = link_base_class|default('link') %}
+
+<a class="{{ link_base_class_var }}{% for modifier in link_modifiers %} {{ link_base_class_var }}--{{ modifier }}{% endfor %}{% if link_blockname %} {{ link_blockname }}__{{ link_base_class_var }}{% endif %}" {% for attribute,value in link_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ link_url }}">
   {% block link_content %}
     {{ link_content }}
   {% endblock %}
