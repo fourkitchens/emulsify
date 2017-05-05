@@ -3,6 +3,8 @@ link_modifiers:
     alt
   2:
     more-link
+link_blockname:
+  pretty-link
 link_attributes:
   target:
     _blank

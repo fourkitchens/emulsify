@@ -20,6 +20,5 @@
   &:before {
     @include sprite-arrow-down;
     @include with-icon;
-    @include icon-bg($gray-light);
   }
 }
