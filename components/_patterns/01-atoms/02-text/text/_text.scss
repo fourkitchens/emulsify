@@ -5,7 +5,8 @@
 }
 
 body {
-  color:$gray;
+  color: $gray;
+
   @include body-copy;
 }
 
@@ -28,7 +29,6 @@ body {
   max-width: 100%;
   height: auto;
 }
-
 
 .hr {
   border-style: solid;

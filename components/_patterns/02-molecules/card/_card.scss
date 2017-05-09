@@ -4,6 +4,7 @@
 
 .card__subtitle {
   @include heading-3;
+
   color: $gray;
   margin-bottom: 1em;
 }

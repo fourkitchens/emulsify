@@ -4,12 +4,13 @@
 
 .pager__items {
   @include list-reset;
+
   text-align: center;
 }
 
 .pager__item {
   display: inline-block;
-  margin: 0 .7em;
+  margin: 0 0.7em;
 
   @include large {
     margin: 0 1em;
@@ -57,8 +58,8 @@
 
 .pager__link--prev {
   &::before {
-    border-left-color:transparent;
-    border-right-color:$gray-light;
+    border-left-color: transparent;
+    border-right-color: $gray-light;
   }
 
   &:hover {

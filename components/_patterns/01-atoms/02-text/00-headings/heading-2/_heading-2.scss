@@ -9,6 +9,7 @@
 
 .heading-2 {
   @include heading-2;
+
   &--no-space {
     margin-bottom: 0;
   }
