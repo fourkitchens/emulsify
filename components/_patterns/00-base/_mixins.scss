@@ -15,7 +15,6 @@
 
 /// Mixin - list-reset
 /// Reset list item defaults when no margin, padding, list styles needed
-
 @mixin list-reset {
   list-style: none;
   margin: 0;
@@ -30,14 +29,6 @@
   display: inline-block;
   margin-right: 0.1em;
   padding: 0.8em;
-}
-
-/// Mixin - Icon with circular bg
-/// Mixin for the circular icon-bg (see source/patterns/01-atoms/headings for usage)
-@mixin icon-bg($color: $black) {
-  background-color: $color;
-  border-radius: 20px;
-  margin-right: 0.4em;
 }
 
 /// Mixin - Outer container
