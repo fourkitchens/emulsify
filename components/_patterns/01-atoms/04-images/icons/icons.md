@@ -14,10 +14,4 @@ If you look in `_icon_sprite.scss`, you will notice there is a mixin and class f
   @include ICONNAME; // e.g., sprite-chevron-right
   @include with-icon;
 }
-
-.TEXT_WITH_COLOR_BACKGROUND_ICON_BEFORE_IT {
-  @include ICONNAME; // e.g., sprite-chevron-right-white
-  @include with-icon;
-  @include icon-bg(COLOR); // color optional
-}
 ```
