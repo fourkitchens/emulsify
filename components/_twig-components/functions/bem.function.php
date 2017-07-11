@@ -4,7 +4,7 @@
  * Add "bem" function for Pattern Lab & Drupal
  */
 
-$function = new Twig_SimpleFunction('bem', function ($base_class, $modifiers = array(), $blockname = '') {
+$function = new Twig_SimpleFunction('bem', function (Twig_Environment $env, $context, $base_class, $modifiers = array(), $blockname = '') {
   $classes = array();
   // If using a blockname to override default class.
   if ($blockname) {
@@ -29,16 +29,14 @@ $function = new Twig_SimpleFunction('bem', function ($base_class, $modifiers = a
     }
   }
 
+  $classString = implode(' ', $classes);
   if (class_exists('Drupal')) {
-    $classLoader = new ClassLoader();
-    $classLoader.loadClass("Attribute");
-    $attributes = new Attribute();
-    $attributes['class'][] = $classes;
+    $context['attributes']->addClass($classString);
+    return $context['attributes'];
   }
   else {
-    $classString = implode(' ', $classes);
     $classesSafe = ' class="' . $classString . '"';
     return $classesSafe;
   }
 
-});
+}, array('needs_context' => true, 'needs_environment' => true, 'is_safe' => array('html')));
