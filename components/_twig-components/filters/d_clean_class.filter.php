@@ -6,6 +6,8 @@
  * Bring Drupal filters in just so Pattern Lab doesn't bork.
  */
 
-$filter = new Twig_SimpleFilter('clean_class', function ($string) {
-  return $string;
-});
+if (!class_exists('Drupal')) {
+  $filter = new Twig_SimpleFilter('clean_class', function ($string) {
+    return $string;
+  });
+}
