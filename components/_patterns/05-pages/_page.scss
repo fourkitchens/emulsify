@@ -6,6 +6,7 @@
 .main,
 .footer {
   @include outer-container;
+
   margin-bottom: 4em;
 }
 

@@ -1,10 +1,10 @@
 .button {
   background-color: $black;
-  border:none;
+  border: none;
   color: $white;
   cursor: pointer;
   line-height: 1.4;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   display: inline-block;
   text-decoration: none;
   text-align: center;
@@ -20,9 +20,9 @@
 
   &--alt {
     font-weight: 600;
-    font-size: .7rem;
+    font-size: 0.7rem;
     background-color: $gray;
-    padding: .4em .6em .3em;
+    padding: 0.4em 0.6em 0.3em;
 
     &:hover {
       background-color: black;
@@ -32,7 +32,7 @@
   &--alt-2 {
     background-color: $gray-lightest;
     color: $black;
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: none;
 
