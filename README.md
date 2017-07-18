@@ -24,9 +24,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
   Start up watches and local server after compiling (runs all gulp required tasks):
 
-  ```bash
-  npm start
-  ```
+  1. `npm start` or `yarn start`
 
   ---
 
