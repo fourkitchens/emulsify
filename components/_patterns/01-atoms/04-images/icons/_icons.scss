@@ -8,7 +8,7 @@
 .inline-arrow-down {
   display: flex;
 
-  &:before {
+  &::before {
     @include sprite-arrow-down;
     @include with-icon;
   }

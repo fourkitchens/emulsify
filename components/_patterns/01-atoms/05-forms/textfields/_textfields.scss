@@ -2,6 +2,7 @@
   color: $gray;
   margin-bottom: 1em;
   max-width: 32em;
+
   @include clearfix;
 }
 
@@ -12,37 +13,37 @@
   @include xs {
     display: block;
     margin-right: 2%;
-    padding: .6em 0;
+    padding: 0.6em 0;
   }
 }
 
 .form-item__textfield {
   border: 1px solid $gray-lightest;
-  padding: .6em;
+  padding: 0.6em;
 
   &:focus {
-  	border-color:$black;
+    border-color: $black;
   }
 
   &::-webkit-input-placeholder {
-    color:$gray-light;
+    color: $gray-light;
   }
 
   &:-moz-placeholder {
-    color:$gray-light;
+    color: $gray-light;
   }
 
   &::-moz-placeholder {
-    color:$gray-light;
+    color: $gray-light;
   }
 
   &:-ms-input-placeholder {
-    color:$gray-light;
+    color: $gray-light;
   }
 }
 
 .form-item__description {
-  margin-top: .3em;
+  margin-top: 0.3em;
 }
 
 .form-fieldset {

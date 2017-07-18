@@ -8,6 +8,7 @@
 
 .heading-3 {
   @include heading-3;
+
   &--centered {
     text-align: center;
   }

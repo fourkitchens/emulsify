@@ -1,6 +1,7 @@
 // Tab Navigation
 .tabs__nav {
   @include list-reset;
+
   border-bottom: 1px solid $gray-lightest;
 
   @include large {
@@ -31,10 +32,10 @@
 
 // Drupal Local Tasks variant
 .tabs__nav--local-tasks {
-  margin: 1em 0 .5em;
+  margin: 1em 0 0.5em;
   padding: 0;
 }
 
 .tabs__link--local-tasks {
-  padding: .3em 1.5em;
+  padding: 0.3em 1.5em;
 }

@@ -27,8 +27,8 @@
   background-size: cover;
   content: "";
   display: inline-block;
-  margin-right: .1em;
-  padding: .8em;
+  margin-right: 0.1em;
+  padding: 0.8em;
 }
 
 /// Mixin - Outer container
@@ -36,6 +36,7 @@
 @mixin outer-container {
   margin: 0 auto;
   max-width: $max-width;
+
   @include clearfix;
 }
 
@@ -43,14 +44,14 @@
 /// Used in a number of views
 @mixin more-link {
   a {
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
 
     &::before {
       content: "»";
       font-size: 1.2rem;
-      margin-right: .2em;
+      margin-right: 0.2em;
     }
   }
 }
@@ -59,29 +60,29 @@
 /// Used in a number of views
 @mixin back-link {
   display: block;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
 
   &::before {
     content: "«";
     font-size: 1.2rem;
-    margin-right: .2em;
+    margin-right: 0.2em;
   }
 }
 
 /// Mixin - Body Copy
 @mixin body-copy {
   font-family: $font-body;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.6em;
 }
 
 /// Mixin - Transition
 @mixin transition($transition-property, $transition-time, $method) {
-	-webkit-transition: $transition-property $transition-time $method;
-	-moz-transition: $transition-property $transition-time $method;
-	-ms-transition: $transition-property $transition-time $method;
-	-o-transition: $transition-property $transition-time $method;
-	transition: $transition-property $transition-time $method;
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
 }
