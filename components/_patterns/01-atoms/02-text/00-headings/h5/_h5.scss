@@ -1,6 +1,6 @@
 // Create a mixin for heading-5 styles that can be implemented
 // in components with other classnames.
-@mixin heading-5 {
+@mixin h5 {
   @include headings(
     $color: $gray,
     $font-size: 0.85em
@@ -9,6 +9,6 @@
   text-transform: uppercase;
 }
 
-.heading-5 {
-  @include heading-5;
+.h5 {
+  @include h5;
 }

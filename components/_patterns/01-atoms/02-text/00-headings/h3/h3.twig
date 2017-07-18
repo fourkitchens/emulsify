@@ -3,20 +3,21 @@
  * Available variables:
  * - heading - the content of the heading (typically text)
  * - heading_url - the url the heading should poing to
- * - heading_modifiers - array of modifiers to add to the base classname
- * - heading_base_class - the base class name
- * - heading_blockname - blockname prepended to the base classname
+ * - h3_base_class - the base class name
+ * - modifiers - array of modifiers to add to the base classname
+ * - blockname - blockname prepended to the base classname
  * - heading_link_base_class - override the link base class
  * - heading_link_blockname - override the link block name
  */
 #}
-{% set heading_2_base_class = 'heading-2' %}
+{% set h3_base_class = h3_base_class|default('h3') %}
 
-<h2{{ bem(heading_2_base_class, (modifiers), blockname) }}>
+<h3{{ bem(h3_base_class, (modifiers), blockname) }}>
   {% if heading_url %}
     {% include "@atoms/01-links/link/link.twig"
       with {
-        "blockname": blockname|default('heading-2'),
+        "link_base_class": heading_link_base_class,
+        "link_blockname": heading_link_blockname|default(h3_base_class),
         "link_url": heading_url,
         "link_content": heading,
       }
@@ -24,4 +25,4 @@
   {% else %}
     {{ heading }}
   {% endif %}
-</h2>
+</h3>

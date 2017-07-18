@@ -1,16 +1,28 @@
 .card__title {
-  @include heading-2;
+  @include h2;
+  @include no-bottom;
+
+  &-link {
+    @include link;
+  }
 }
 
 .card__subtitle {
-  @include heading-3;
-
+  @include h3;
+  @include no-bottom;
   color: $gray;
-  margin-bottom: 1em;
 }
 
 .card__body {
-  @include paragraph;
+  margin: .7em 0 1em;
+}
+
+.card__link {
+  @include link;
+}
+
+.card__button {
+  @include button;
 }
 
 // Variations

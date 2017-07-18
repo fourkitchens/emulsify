@@ -1,15 +1,19 @@
-<div class="info-box{% for modifier in infobox_modifiers %} info-box--{{ modifier }}{% endfor %}{% if infobox_blockname %} {{ infobox_blockname }}__info-box{% endif %}">
-  {% include "@atoms/02-text/00-headings/heading-3/heading-3.twig"
+{% set ib_base_class = ib_base_class|default('info-box') %}
+
+<div{{ bem(ib_base_class, (modifiers), blockname) }}>
+  {% include "@atoms/02-text/00-headings/h3/h3.twig"
     with {
       "heading": infobox_title,
       "heading_url": infobox_link,
-      "heading_modifiers": infobox_title_modifiers
+      "blockname": ib_base_class,
+      "h3_base_class": 'title',
     }
   %}
   {% include "@atoms/02-text/text/01-paragraph.twig"
     with {
       "paragraph_content": infobox_text,
-      "paragraph_modifiers": infobox_text_modifiers
+      "blockname": ib_base_class,
+      "paragraph_base_class": card_body_base_class|default('body'),
     }
   %}
 </div>

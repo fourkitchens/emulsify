@@ -1,1 +1,5 @@
-// Empty
+.card {
+  .grid & {
+    @include grid-item(3);
+  }
+}

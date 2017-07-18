@@ -4,6 +4,10 @@
   margin: #{$margin};
 }
 
+@mixin no-bottom {
+  margin-bottom: 0;
+}
+
 body {
   color: $gray;
 
@@ -12,10 +16,6 @@ body {
 
 .paragraph {
   @include paragraph;
-
-  &--no-space {
-    margin-bottom: 0;
-  }
 }
 
 .blockquote {
@@ -23,11 +23,6 @@ body {
   border-left: solid 3px $color-border;
   margin-left: 1em;
   padding-left: 1em;
-}
-
-.img {
-  max-width: 100%;
-  height: auto;
 }
 
 .hr {

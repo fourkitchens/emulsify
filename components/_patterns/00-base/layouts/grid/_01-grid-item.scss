@@ -1,4 +1,4 @@
-.grid__item {
+@mixin grid-item($columns: '') {
   flex-grow: 1;
   margin-bottom: 1em;
   width: 100%;
@@ -11,11 +11,8 @@
   &:last-child {
     margin-right: 0;
   }
-}
 
-// With Columns
-.grid__item {
-  .grid--columns-2 & {
+  @if $columns == 2 {
     @include large {
       width: 48.2%;
 
@@ -25,7 +22,7 @@
     }
   }
 
-  .grid--columns-3 & {
+  @if $columns == 3 {
     @include large {
       width: 31%;
 
@@ -36,8 +33,19 @@
   }
 }
 
-// Pattern Lab Specific
 .grid__item {
+  @include grid-item;
+
+  // With Columns
+  .grid--columns-2 & {
+    @include grid-item(2);
+  }
+
+  .grid--columns-3 & {
+    @include grid-item(3);
+  }
+
+  // Pattern Lab Specific
   .grid--pl & {
     background-color: rgba(0, 0, 0, 0.2);
     min-height: 100px;

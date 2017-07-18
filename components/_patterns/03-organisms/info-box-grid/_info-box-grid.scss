@@ -1,0 +1,5 @@
+.info-box {
+  .grid & {
+    @include grid-item(2);
+  }
+}

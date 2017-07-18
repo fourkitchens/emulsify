@@ -1,4 +1,4 @@
-list_ul_items:
+ul_items:
   1:
     content: "This is the first item in the <ul>."
   2:

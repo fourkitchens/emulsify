@@ -1,8 +1,5 @@
 grid_label:
   "This is a Title"
-grid_modifiers:
-  1:
-    columns-3
 cards:
   1:
     card_img_src:
@@ -11,9 +8,9 @@ cards:
       "This is a title too"
     card_title_modifiers:
       1:
-        no-space
-    card_link:
-      "/home"
+        "no-space"
+    card_link_url:
+      "#"
     card_subtitle:
       "Person of Interest"
     card_body:

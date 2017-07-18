@@ -3,21 +3,14 @@
   margin-bottom: 2%;
   padding: 1em;
   width: 100%;
-
-  @include large {
-    flex: 1 0 43%;
-    margin: 0 2% 2% 0;
-    width: auto;
-
-    &:nth-child(2n+2),
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 }
 
 .info-box__title {
-  color: $gray;
+  @include h3;
   font-weight: 400;
   text-align: center;
+}
+
+.info-box__link {
+  @include link;
 }

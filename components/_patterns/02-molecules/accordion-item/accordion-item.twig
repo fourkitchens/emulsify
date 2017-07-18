@@ -1,7 +1,8 @@
-{% include "@atoms/03-lists/02-definition.twig"
+{% include "@atoms/03-lists/_list-item-definition.twig"
   with {
-    list_dl_modifiers: accordion_modifiers,
-    list_dl_blockname: accordion_blockname,
-    list_dl: accordion_list
+    dl_term_base_class: 'accordion-term',
+    dl_def_base_class: 'accordion-def',
+    dl_term: accordion_term,
+    dl_def: accordion_def
   }
 %}

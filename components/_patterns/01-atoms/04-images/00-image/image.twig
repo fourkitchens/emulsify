@@ -2,12 +2,33 @@
 /**
  * Available variables:
  * - image_base_class - base class name
- * - image_modifiers - array of modifiers to add to the base classname
- * - image_blockname - blockname prepended to the base classname
+ * - image_link_base_class - base class override for link
+ * - img_url - url for linked image
+ * - image_link_modifiers - modifiers for image link
+ * - image_link_base_class - base class for the image link
+ * - image_link_attributes - attributes key/value pair for link attributes
+ * - modifiers - array of modifiers to add to the base classname
+ * - blockname - blockname prepended to the base classname
  * - img_src - the actual image file location
  * - img_alt - (optional) the alt text for screen readers and when the image cannot load
  */
 #}
-{% set image_base_class_var = image_base_class|default('image') %}
+{% set image_link_base_class = image_link_base_class|default('image') %}
+{% set image_base_class = image_base_class|default('img') %}
 
-<img src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} class="{{ image_base_class_var }}{% for modifier in image_modifiers %} {{ image_base_class_var }}--{{ modifier }}{% endfor %}{% if image_blockname %} {{ image_blockname }}__{{ image_base_class_var }}{% endif %}" />
+{% if img_url %}
+  {% embed "@atoms/01-links/link/link.twig"
+    with {
+      "modifiers": image_link_modifiers,
+      "link_base_class": image_link_base_class,
+      "link_attributes": image_link_attributes,
+      "link_url": img_url|default('#'),
+    }
+  %}
+    {% block link_content %}
+      <img{{ bem(image_base_class, (modifiers), blockname|default(image_link_base_class)) }} src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} />
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  <img{{ bem(image_base_class, (modifiers), blockname) }} src="{{ img_src }}"{% if img_alt %} alt="{{ img_alt }}"{% endif %} />
+{% endif %}
