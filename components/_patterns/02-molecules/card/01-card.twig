@@ -42,16 +42,22 @@
  * - card_button_modifiers - array of modifiers to add to the base classname of the button
  */
 #}
-{% set card_base_class_var = card_base_class|default('card') %}
+{% set base_class = 'card' %}
 {% set card_blockname_var = card_blockname|default('card') %}
 {% set card_inner_base_class_var = card_inner_base_class|default('card-inner') %}
 {% set card_label_base_class_var = card_label_base_class|default('card-label') %}
 
-<div class="{{ card_base_class_var }}{% for modifier in card_modifiers %} {{ card_base_class_var }}--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__{{ card_base_class_var }}{% endif %}">
+<div{{ bem('card', (modifiers), blockname) }}>
   {% if card_label %}
-    <h2 class="{{ card_label_base_class_var }}{% for modifier in card_modifiers %} {{ card_label_base_class_var }}--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__{{ card_label_base_class_var }}{% endif %}">
-      {{ card_label }}
-    </h2>
+    {% include "@atoms/02-text/00-headings/heading-2/heading-2.twig"
+      with {
+        "heading": card_label,
+        "heading_2_base_class": "title",
+        "blockname": base_class,
+        "heading_url": "/",
+        "link_base_class": "title"
+      }
+    %}
   {% endif %}
   <div class="{{ card_inner_base_class_var }}{% for modifier in card_modifiers %} {{ card_inner_base_class_var }}--{{ modifier }}{% endfor %}{% if card_blockname %} {{ card_blockname }}__{{ card_inner_base_class_var }}{% endif %}">
     {% if card_img_src %}

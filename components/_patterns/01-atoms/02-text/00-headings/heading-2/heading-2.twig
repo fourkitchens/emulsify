@@ -10,14 +10,13 @@
  * - heading_link_blockname - override the link block name
  */
 #}
-{% set heading_base_class_var = heading_base_class|default('heading-2') %}
+{% set heading_2_base_class = 'heading-2' %}
 
-<h2 class="{{ heading_base_class_var }}{% for modifier in heading_modifiers %} {{ heading_base_class_var }}--{{ modifier }}{% endfor %}{% if heading_blockname %} {{ heading_blockname }}__{{ heading_base_class_var }}{% endif %}">
+<h2{{ bem(heading_2_base_class, (modifiers), blockname) }}>
   {% if heading_url %}
     {% include "@atoms/01-links/link/link.twig"
       with {
-        "link_base_class": heading_link_base_class,
-        "link_blockname": heading_link_blockname|default('heading-2'),
+        "blockname": blockname|default('heading-2'),
         "link_url": heading_url,
         "link_content": heading,
       }

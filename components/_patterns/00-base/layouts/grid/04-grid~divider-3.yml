@@ -1,6 +1,6 @@
 grid_label:
   "3-Column Divider Example"
-grid_modifiers:
+modifiers:
   1:
     divider
   2:
