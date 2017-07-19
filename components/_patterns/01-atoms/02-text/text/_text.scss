@@ -30,3 +30,19 @@ body {
   border-width: 1px 0 0;
   color: currentColor;
 }
+
+// TODO: BEM selectors should be applied to wysiwyg-created content
+
+.text-long {
+  p {
+    @extend .paragraph;
+  }
+
+  blockquote {
+    @extend .blockquote;
+  }
+
+  hr {
+    @extend .hr;
+  }
+}
