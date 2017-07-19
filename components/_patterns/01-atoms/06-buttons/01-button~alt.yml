@@ -1,7 +1,7 @@
 button_url:
-    "#"
+  "#"
 button_content:
   "Alternative Button"
-modifiers:
+button_modifiers:
   1:
     "alt"

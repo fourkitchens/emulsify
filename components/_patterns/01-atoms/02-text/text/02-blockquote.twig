@@ -14,7 +14,9 @@
 #}
 {% set blockquote_base_class = blockquote_base_class|default('blockquote') %}
 
-<blockquote{{ bem(blockquote_base_class, (modifiers), blockname) }}>
+<blockquote
+  {{ bem(blockquote_base_class, (blockquote_modifiers), blockquote_blockname) }}
+>
   {% block blockquote_content %}
     {{ blockquote_content }}
   {% endblock %}

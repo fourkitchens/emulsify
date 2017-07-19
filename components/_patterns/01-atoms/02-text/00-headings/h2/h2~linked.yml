@@ -1,0 +1,6 @@
+# This file is disabled because it's name begins with an underscore.
+# To see this example in Pattern Lab remove the underscore and refresh
+heading:
+  "This is a Header 2 styling with a link"
+heading_url:
+  "#"

@@ -2,9 +2,9 @@
 /**
  * Available variables:
  * - video_base_class - the base classname
- * - modifiers - array of modifiers to add to the base classname
+ * - video_modifiers - array of modifiers to add to the base classname
  *   by default, videos are expected to be 16x9, include the modifier "full" to support a 4x3 video
- * - blockname - blockname prepended to the base classname
+ * - video_blockname - blockname prepended to the base classname
  * - video_content - the content of the video (typically an iframe)
  *   the "|raw" filter is applied so that the iframe is rendered instead
  *   of simply passing the iframe as plain text.
@@ -16,7 +16,7 @@
 #}
 {% set video_base_class = video_base_class|default('video') %}
 
-<div{{ bem(video_base_class, (modifiers), blockname) }}>
+<div{{ bem(video_base_class, (video_modifiers), video_blockname) }}>
   {% block video_content %}
     {{ video_content|raw }}
   {% endblock %}

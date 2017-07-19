@@ -9,6 +9,9 @@ grid_modifiers:
     columns-3
 cards:
   1:
+    card_modifiers:
+      1: "grid-item"
+      2: "divider-3"
     card_img:
       "http://placeimg.com/480/300/nature"
     card_title:
@@ -20,6 +23,9 @@ cards:
     card_link:
       ""
   2:
+    card_modifiers:
+      1: "grid-item"
+      2: "divider-3"
     card_img:
       "http://placeimg.com/480/300/nature"
     card_title:
@@ -29,6 +35,9 @@ cards:
     card_body:
       ""
   3:
+    card_modifiers:
+      1: "grid-item"
+      2: "divider-3"
     card_img:
       "http://placeimg.com/480/300/nature"
     card_title:

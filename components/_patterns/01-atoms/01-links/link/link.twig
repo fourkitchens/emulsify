@@ -5,8 +5,8 @@
  * - link_url - the url this link should poing to
  * - link_attributes - array of attribute,value pairs
  * - link_base_class - the base class name
- * - modifiers - array of modifiers to add to the base classname
- * - blockname - blockname prepended to the base classname
+ * - link_modifiers - array of modifiers to add to the base classname
+ * - link_blockname - blockname prepended to the base classname
  *
  * Available blocks:
  * - link_content - used to replace the content of the link
@@ -15,7 +15,13 @@
 #}
 {% set link_base_class = link_base_class|default('link') %}
 
-<a{{ bem(link_base_class, (modifiers), blockname) }}{% for attribute,value in link_attributes %} {{ attribute }}="{{ value }}"{% endfor %} href="{{ link_url }}">
+<a
+  {{ bem(link_base_class, (link_modifiers), link_blockname) }}
+  {% for attribute,value in link_attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}
+  href="{{ link_url }}"
+>
   {% block link_content %}
     {{ link_content }}
   {% endblock %}

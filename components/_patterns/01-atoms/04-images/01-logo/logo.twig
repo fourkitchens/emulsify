@@ -14,13 +14,11 @@
 #}
 {% set logo_link_base_class = 'logo' %}
 
-{% include "@atoms/04-images/00-image/image.twig"
-  with {
-    "img_url": logo_url|default("/"),
-    "image_link_base_class": logo_link_base_class,
-    "image_modifiers": logo_image_modifiers,
-    "blockname": logo_base_class,
-    "img_src": logo_src|default('../../images/logo.png'),
-    "img_alt": logo_alt|default('Logo'),
-  }
-%}
+{% include "@atoms/04-images/00-image/image.twig" with {
+  "img_url": logo_url|default("/"),
+  "image_link_base_class": logo_link_base_class,
+  "image_modifiers": logo_image_modifiers,
+  "image_blockname": logo_base_class,
+  "img_src": logo_src|default('../../images/logo.png'),
+  "img_alt": logo_alt|default('Logo'),
+} %}

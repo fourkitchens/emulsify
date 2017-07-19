@@ -1,5 +1,12 @@
-.card {
-  .grid & {
-    @include grid-item(3);
-  }
+.card__grid {
+  @include grid;
+  @include margin;
+}
+
+.card--grid-item {
+  @include grid-item(3);
+}
+
+.card--divider-3 {
+  @include grid-divider(3);
 }

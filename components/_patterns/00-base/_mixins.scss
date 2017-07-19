@@ -86,3 +86,8 @@
   -o-transition: $transition-property $transition-time $method;
   transition: $transition-property $transition-time $method;
 }
+
+/// Mixin - Standard Margin
+@mixin margin {
+  margin-bottom: 1em;
+}

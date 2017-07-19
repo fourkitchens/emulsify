@@ -1,11 +1,17 @@
 <div class="example-page">
 {% include "@atoms/02-text/00-headings/h1/h1.twig" with {
-  "heading": "This is an Example Page"
-}%}
+  "heading": "This is an Example Page",
+  "h1_modifiers": {
+    1: "margin"
+  },
+} %}
 
 {% include "@organisms/info-box-grid/info-box-grid.twig" with {
   "boxes": {
     1: {
+      "ib_modifiers": {
+        1: "grid-item"
+      },
       "infobox_title":
         "Test Title that is fairly long for a reason",
       "infobox_text":
@@ -14,6 +20,9 @@
         "#",
     },
     2: {
+      "ib_modifiers": {
+        1: "grid-item"
+      },
       "infobox_title":
         "Test Title that is fairly long for a reason",
       "infobox_text":
@@ -22,11 +31,20 @@
         "#",
     },
   }
-}%}
+} %}
 
 {% include "@organisms/card-grid/card-grid.twig" with {
+  "grid_blockname": "card",
+  "grid_modifiers": {
+    1: "divider",
+    2: "columns-3",
+  },
   "cards": {
     1: {
+      "card_modifiers": {
+        1: "grid-item",
+        2: "divider-3",
+      },
       "card_img_src":
         "http://placeimg.com/480/300/people",
       "card_title":
@@ -39,6 +57,10 @@
         "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.",
     },
     2: {
+      "card_modifiers": {
+        1: "grid-item",
+        2: "divider-3",
+      },
       "card_img_src":
         "http://placeimg.com/480/300/people",
       "card_title":
@@ -51,6 +73,10 @@
         "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.",
     },
     3: {
+      "card_modifiers": {
+        1: "grid-item",
+        2: "divider-3",
+      },
       "card_img_src":
         "http://placeimg.com/480/300/people",
       "card_title":
@@ -63,6 +89,6 @@
         "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.",
     },
   }
-}%}
+} %}
 
 </div>
