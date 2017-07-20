@@ -44,6 +44,8 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 <h3 id="components">Emulsify's Built in Components with Drupal support</h3>
 Forms, tables, video, accordion, cards, breadcrumbs, tabs, pager, status messages, grid
 
+View a [demo of these default Emulsify components](https://fourkitchens.github.io/emulsify/pattern-lab/public/).
+
 ## Documentation
 Documentation is currently provided in [the Wiki](https://github.com/fourkitchens/emulsify/wiki). Here are a few basic links:
 

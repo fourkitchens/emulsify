@@ -7,7 +7,7 @@ cards:
     card_modifiers:
       1: "grid-item"
     card_img_src:
-      "http://placeimg.com/480/300/people"
+      "https://placeimg.com/480/300/people"
     card_title:
       "This is a title too"
     card_title_modifiers:
@@ -23,7 +23,7 @@ cards:
     card_modifiers:
       1: "grid-item"
     card_img_src:
-      "http://placeimg.com/480/300/people"
+      "https://placeimg.com/480/300/people"
     card_title:
       "This is a title too"
     card_title_modifiers:
@@ -37,7 +37,7 @@ cards:
     card_modifiers:
       1: "grid-item"
     card_img_src:
-      "http://placeimg.com/480/300/people"
+      "https://placeimg.com/480/300/people"
     card_title:
       "This is a title too"
     card_title_modifiers:
