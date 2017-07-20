@@ -1,5 +1,5 @@
 /////////////////////
-// Mixins
+// General Mixins (put specific ones in component files where applicable)
 
 /// Mixin - Clearfix.
 /// Adds clearfix based on http://bourbon.io/docs/#clearfix
@@ -85,4 +85,9 @@
   -ms-transition: $transition-property $transition-time $method;
   -o-transition: $transition-property $transition-time $method;
   transition: $transition-property $transition-time $method;
+}
+
+/// Mixin - Standard Margin
+@mixin margin {
+  margin-bottom: 1em;
 }

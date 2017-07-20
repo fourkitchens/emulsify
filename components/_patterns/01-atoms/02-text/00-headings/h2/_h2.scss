@@ -1,16 +1,16 @@
 // Create a mixin for heading-2 styles that can be implemented
 // in components with other classnames.
-@mixin heading-2 {
+@mixin h2 {
   @include headings(
     $font-size: 1.4em,
     $font-weight: 700
   );
 }
 
-.heading-2 {
-  @include heading-2;
+.h2 {
+  @include h2;
 
-  &--no-space {
-    margin-bottom: 0;
+  &__link {
+    @include link;
   }
 }

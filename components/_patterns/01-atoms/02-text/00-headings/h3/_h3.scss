@@ -1,15 +1,15 @@
 // Create a mixin for heading-3 styles that can be implemented
 // in components with other classnames.
-@mixin heading-3 {
+@mixin h3 {
   @include headings(
     $font-size: 0.95em
   );
 }
 
-.heading-3 {
-  @include heading-3;
+.h3 {
+  @include h3;
 
-  &--centered {
-    text-align: center;
+  &__link {
+    @include link;
   }
 }

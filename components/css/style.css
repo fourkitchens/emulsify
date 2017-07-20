@@ -543,14 +543,6 @@ td {
   padding: 0;
   border-bottom: 1px solid #dbdbdb; }
 
-.logo {
-  float: left;
-  max-width: 8rem;
-  margin: 0.4rem; }
-  @media all and (min-width: 46.8em) {
-    .logo {
-      max-width: 9rem; } }
-
 .nav-toggle {
   float: right;
   display: block;

@@ -4,6 +4,10 @@
   margin: #{$margin};
 }
 
+@mixin no-bottom {
+  margin-bottom: 0;
+}
+
 body {
   color: $gray;
 
@@ -12,10 +16,6 @@ body {
 
 .paragraph {
   @include paragraph;
-
-  &--no-space {
-    margin-bottom: 0;
-  }
 }
 
 .blockquote {
@@ -25,13 +25,24 @@ body {
   padding-left: 1em;
 }
 
-.img {
-  max-width: 100%;
-  height: auto;
-}
-
 .hr {
   border-style: solid;
   border-width: 1px 0 0;
   color: currentColor;
+}
+
+// TODO: BEM selectors should be applied to wysiwyg-created content
+
+.text-long {
+  p {
+    @extend .paragraph;
+  }
+
+  blockquote {
+    @extend .blockquote;
+  }
+
+  hr {
+    @extend .hr;
+  }
 }
