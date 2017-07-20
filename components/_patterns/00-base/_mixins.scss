@@ -31,9 +31,9 @@
   padding: 0.8em;
 }
 
-/// Mixin - Outer container
+/// Mixin - Wrapper
 /// Outer container mixin for large screens
-@mixin outer-container {
+@mixin wrapper {
   margin: 0 auto;
   max-width: $max-width;
 

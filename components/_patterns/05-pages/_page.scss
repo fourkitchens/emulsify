@@ -5,7 +5,7 @@
 .header,
 .main,
 .footer {
-  @include outer-container;
+  @include wrapper;
 
   margin-bottom: 4em;
 }
