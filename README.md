@@ -18,6 +18,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 #### (Drupal-specific installation)
 
   1. Download and enable [Components](https://www.drupal.org/project/components) module
+  2. Download and enable this fork of the [Unified Twig Extensions](https://github.com/evanmwillhite/unified-twig-extensions/tree/develop) module
   2. Enable Emulsify theme
 
 ## Starting Pattern Lab and watch task
