@@ -40,7 +40,7 @@
   }
 }
 
-@mixin heading-medium($font-family: $font-heading, $font-size: 1.6rem, $line-height: 1.6, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em){
+@mixin heading-medium($font-family: $font-heading, $font-size: 1.4rem, $line-height: 1.6, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em){
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -59,7 +59,7 @@
   }
 }
 
-@mixin heading-small($font-family: $font-heading, $font-size: 1.4rem, $line-height: 1.6, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em){
+@mixin heading-small($font-family: $font-heading, $font-size: 1.2rem, $line-height: 1.6, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em){
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -78,7 +78,7 @@
   }
 }
 
-@mixin heading-xs($font-family: $font-heading, $font-size: 1.2rem, $line-height: 2.0, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em){
+@mixin heading-xs($font-family: $font-heading, $font-size: 1.1rem, $line-height: 2.0, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em){
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
