@@ -57,24 +57,26 @@
   <div{{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
     {% if card_title %}
       {{ title_prefix }}
-      {% include "@atoms/02-text/00-headings/h2/h2.twig" with {
+      {% include "@atoms/02-text/00-headings/_heading.twig" with {
+        "heading_level": 2,
         "heading": card_title,
         "heading_url": card_title_link|default(card_link_url),
-        "h2_blockname": card_title_blockname|default(card_base_class),
-        "h2_modifiers": card_title_modifiers,
+        "heading_blockname": card_title_blockname|default(card_base_class),
+        "heading_modifiers": card_title_modifiers,
         "heading_link_base_class": card_title_link_base_class|default('title-link'),
         "heading_link_blockname": card_base_class,
-        "h2_base_class": card_title_base_class|default('title'),
+        "heading_base_class": card_title_base_class|default('title'),
       } %}
       {{ title_suffix }}
     {% endif %}
     {% if card_subtitle %}
-      {% include "@atoms/02-text/00-headings/h3/h3.twig" with {
+      {% include "@atoms/02-text/00-headings/_heading.twig" with {
+        "heading_level": 3,
         "heading": card_subtitle,
         "heading_url": card_subtitle_link,
-        "h3_blockname": card_subtitle_blockname|default(card_base_class),
-        "h3_modifiers": card_subtitle_modifiers,
-        "h3_base_class": card_subtitle_base_class|default('subtitle'),
+        "heading_blockname": card_subtitle_blockname|default(card_base_class),
+        "heading_modifiers": card_subtitle_modifiers,
+        "heading_base_class": card_subtitle_base_class|default('subtitle'),
       } %}
     {% endif %}
     {% if card_body %}

@@ -6,7 +6,7 @@
 }
 
 .info-box__title {
-  @include h3;
+  @include heading-medium;
   font-weight: 400;
   text-align: center;
 }
