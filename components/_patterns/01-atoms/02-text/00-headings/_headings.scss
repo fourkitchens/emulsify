@@ -99,43 +99,23 @@
 
 .h1 {
   @include heading-xl();
-
-  &--pl {
-    color: $black;
-  }
 }
 
 .h2 {
   @include heading-large();
-
-  &--pl {
-    color: $black;
-  }
 }
 
 .h3 {
   @include heading-medium();
-
-  &--pl {
-    color: $black;
-  }
 }
 
 .h4 {
   @include heading-small();
-
-  &--pl {
-    color: $black;
-  }
 }
 
 .h5,
 .h6 {
   @include heading-xs();
-
-  &--pl {
-    color: $black;
-  }
 }
 
 // TODO: BEM selectors should be applied to wysiwyg-created content
