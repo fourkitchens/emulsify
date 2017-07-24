@@ -289,9 +289,9 @@ function _emulsify_file_str_replace($file_path, $find, $replace) {
  */
 function _emulsify_notify($name, $subtheme_path) {
   // Notify user of the newly created theme.
-  $message = 'Successfully created the Emulsify subtheme "!name" created in: !path, you can now run yarn to install the node modules.';
+  $message = 'Successfully created the Emulsify subtheme "!name" created in: !path, you can now run \'yarn\' or \'npm install\' to install the node modules.';
 
-  $message = dt($message . '.', array(
+  $message = dt($message, array(
     '!name' => $name,
     '!path' => $subtheme_path,
   ));
