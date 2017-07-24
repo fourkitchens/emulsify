@@ -12,19 +12,19 @@ function emulsify_drush_command() {
   $items = array();
 
   $items['emulsify'] = array(
-    'description' => 'Create an Emulsify subtheme.',
+    'description' => 'Create an Emulsify theme.',
     'arguments' => array(
-      'name'         => 'The name of your subtheme.',
+      'name'         => 'The name of your theme.',
     ),
     'options' => array(
-      'machine_name' => 'The machine-readable name of your subtheme. This will be auto-generated from the human-readable name if ommited.',
-      'description' => 'The description of your subtheme',
-      'path' => 'The destination of your subtheme. Defaults to "all" (themes).',
+      'machine_name' => 'The machine-readable name of your theme. This will be auto-generated from the human-readable name if ommited.',
+      'description' => 'The description of your theme',
+      'path' => 'The destination of your theme. Defaults to "all" (themes).',
       'slim' => 'Only copy base files',
     ),
     'examples' => array(
-      'drush emulsify "subtheme"' => 'Creates an Emulsify subtheme called "subtheme", using the default options.',
-      'drush emulsify "subtheme" --machine_name=subtheme' => 'Creates a Emulsify subtheme called "subtheme" with a specific machine name.',
+      'drush emulsify "theme"' => 'Creates an Emulsify theme called "theme", using the default options.',
+      'drush emulsify "theme" --machine_name=theme' => 'Creates a Emulsify theme called "theme" with a specific machine name.',
     ),
   );
 
@@ -37,7 +37,7 @@ function emulsify_drush_command() {
 function emulsify_drush_help($section) {
   switch ($section) {
     case 'drush:emulsify':
-      return dt('This command will create an Emulsify subtheme. See examples to get started.');
+      return dt('This command will create an Emulsify theme. See examples to get started.');
   }
 }
 
@@ -71,42 +71,42 @@ function drush_emulsify($name = NULL) {
   );
   $machine_name = preg_replace($search, '', $machine_name);
 
-  // Description of subtheme.
+  // Description of theme.
   $description = (drush_get_option('description')) ? trim(drush_get_option('description')) : 'Theme that uses Pattern Lab v2.';
 
-  // Determine the path to the new subtheme.
-  $subtheme_path = 'themes';
+  // Determine the path to the new theme.
+  $theme_path = 'themes/custom';
   if ($path = drush_get_option('path')) {
-    $subtheme_path = drush_trim_path($path);
+    $theme_path = drush_trim_path($path);
   }
 
-  drush_emulsify_create($name, $machine_name, $description, $subtheme_path);
+  drush_emulsify_create($name, $machine_name, $description, $theme_path);
 }
 
 /**
  * Create frontend theme.
  */
-function drush_emulsify_create($name, $machine_name, $description, $subtheme_path) {
-  $subtheme_path = drush_normalize_path(drush_get_context('DRUSH_DRUPAL_ROOT') . '/' . $subtheme_path . '/' . $machine_name);
+function drush_emulsify_create($name, $machine_name, $description, $theme_path) {
+  $theme_path = drush_normalize_path(drush_get_context('DRUSH_DRUPAL_ROOT') . '/' . $theme_path . '/' . $machine_name);
 
-  if (!is_dir(dirname($subtheme_path))) {
-    drush_die(dt('The directory "!directory" was not found.', array('!directory' => dirname($subtheme_path))));
+  if (!is_dir(dirname($theme_path))) {
+    drush_die(dt('The directory "!directory" was not found.', array('!directory' => dirname($theme_path))));
   }
 
   // Phase 1: Copy files.
   $files_to_copy = _emulsify_get_files_to_copy();
-  _emulsify_copy_files($files_to_copy, $subtheme_path);
+  _emulsify_copy_files($files_to_copy, $theme_path);
 
   // Phase 2: Alter files.
   $alterations = _emulsify_get_alterations($name, $machine_name);
   $files_to_alter = _emulsify_get_files_to_alter();
-  _emulsify_alter_files($subtheme_path, $files_to_alter, $alterations);
+  _emulsify_alter_files($theme_path, $files_to_alter, $alterations);
 
   // Phase 3: Rename files.
   $files_to_rename = _emulsify_get_files_to_rename();
-  _emulsify_rename_files($subtheme_path, $machine_name, $files_to_rename);
+  _emulsify_rename_files($theme_path, $machine_name, $files_to_rename);
 
-  _emulsify_notify($name, $subtheme_path);
+  _emulsify_notify($name, $theme_path);
 }
 
 /**
@@ -217,7 +217,7 @@ function _emulsify_get_files_to_rename() {
 /**
  * Alter strings within files.
  */
-function _emulsify_alter_files($subtheme_path, $files_to_alter = array(), $alterations = array(), $absolute = FALSE) {
+function _emulsify_alter_files($theme_path, $files_to_alter = array(), $alterations = array(), $absolute = FALSE) {
   if (empty($files_to_alter) || empty($alterations)) {
     return TRUE;
   }
@@ -227,13 +227,13 @@ function _emulsify_alter_files($subtheme_path, $files_to_alter = array(), $alter
       $file_path = $file_to_replace;
     }
     else {
-      $file_type = filetype($subtheme_path . DIRECTORY_SEPARATOR . $file_to_replace);
-      $file_path = $subtheme_path . DIRECTORY_SEPARATOR . $file_to_replace;
+      $file_type = filetype($theme_path . DIRECTORY_SEPARATOR . $file_to_replace);
+      $file_path = $theme_path . DIRECTORY_SEPARATOR . $file_to_replace;
     }
 
     if ($file_type === 'dir') {
       $files = file_scan_directory($file_path, '/\.*/');
-      _emulsify_alter_files($subtheme_path, array_keys($files), $alterations, TRUE);
+      _emulsify_alter_files($theme_path, array_keys($files), $alterations, TRUE);
     }
     elseif ($file_type === 'file') {
       _emulsify_file_str_replace($file_path, array_keys($alterations), $alterations);
@@ -266,10 +266,10 @@ function _emulsify_copy_files($files = array(), $destination_path = '') {
 /**
  * Rename files.
  */
-function _emulsify_rename_files($subtheme_path, $machine_name, $files_to_rename = array()) {
+function _emulsify_rename_files($theme_path, $machine_name, $files_to_rename = array()) {
   foreach ($files_to_rename as $file_to_rename_path) {
-    $file_original_path = $subtheme_path . DIRECTORY_SEPARATOR . $file_to_rename_path;
-    $file_new_path = $subtheme_path . DIRECTORY_SEPARATOR . str_replace('emulsify', $machine_name, $file_to_rename_path);
+    $file_original_path = $theme_path . DIRECTORY_SEPARATOR . $file_to_rename_path;
+    $file_new_path = $theme_path . DIRECTORY_SEPARATOR . str_replace('emulsify', $machine_name, $file_to_rename_path);
     drush_op('rename', drush_normalize_path($file_original_path), drush_normalize_path($file_new_path));
   }
 }
@@ -287,13 +287,13 @@ function _emulsify_file_str_replace($file_path, $find, $replace) {
 /**
  * Notifies the user of success.
  */
-function _emulsify_notify($name, $subtheme_path) {
+function _emulsify_notify($name, $theme_path) {
   // Notify user of the newly created theme.
-  $message = 'Successfully created the Emulsify subtheme "!name" created in: !path, you can now run \'yarn\' or \'npm install\' to install the node modules.';
+  $message = 'Successfully created the Emulsify theme "!name" created in: !path, you can now run \'yarn\' or \'npm install\' to install the node modules.';
 
   $message = dt($message, array(
     '!name' => $name,
-    '!path' => $subtheme_path,
+    '!path' => $theme_path,
   ));
   drush_print($message);
 }
