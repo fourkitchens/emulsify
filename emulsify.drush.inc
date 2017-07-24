@@ -110,7 +110,7 @@ function drush_emulsify_create($name, $machine_name, $description, $subtheme_pat
 }
 
 /**
- * Gets files to copy.
+ * Gets alterations (string replacements).
  *
  * This function supports both directories and individual files.  Alterations
  * happen in sequential order so you can replace something that was previously
@@ -154,6 +154,8 @@ function _emulsify_get_files_to_alter() {
  * This function supports both directories and individual files.
  *
  * The following directories/files will never be copied:
+ * css/
+ * dist/
  * node_modules/
  * github.com/
  * composer.json
@@ -180,8 +182,6 @@ function _emulsify_get_files_to_copy() {
   }
   else {
     return array_merge($slim_array, array(
-      'css',
-      'dist',
       'fonts',
       'images',
       'templates',
@@ -289,7 +289,7 @@ function _emulsify_file_str_replace($file_path, $find, $replace) {
  */
 function _emulsify_notify($name, $subtheme_path) {
   // Notify user of the newly created theme.
-  $message = 'Successfully created the Emulsify subtheme "!name" created in: !path';
+  $message = 'Successfully created the Emulsify subtheme "!name" created in: !path, you can now run yarn to install the node modules.';
 
   $message = dt($message . '.', array(
     '!name' => $name,
