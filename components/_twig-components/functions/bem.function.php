@@ -6,7 +6,7 @@
 
 use Drupal\Core\Template\Attribute;
 
-$function = new Twig_SimpleFunction('bem', function (Twig_Environment $env, $context, $base_class, $modifiers = array(), $blockname = '') {
+$function = new Twig_SimpleFunction('bem', function ($context, $base_class, $modifiers = array(), $blockname = '') {
   $classes = [];
 
   // If using a blockname to override default class.
@@ -55,4 +55,4 @@ $function = new Twig_SimpleFunction('bem', function (Twig_Environment $env, $con
     return $classesSafe;
   }
 
-}, array('needs_context' => true, 'needs_environment' => true, 'is_safe' => array('html')));
+}, array('needs_context' => true, 'is_safe' => array('html')));
