@@ -15,13 +15,14 @@
 #}
 {% set link_base_class = link_base_class|default('link') %}
 
-<a
-  {{ bem(link_base_class, (link_modifiers), link_blockname, attributes) }}
-  {% for attribute,value in attributes %}
-    {{ attribute }}="{{ value }}"
-  {% endfor %}
-  href="{{ link_url }}"
->
+{% set additional_attributes = {
+  "class": bem(link_base_class, (link_modifiers), link_blockname),
+  "href": link_url
+} %}
+
+{% set additional_attributes = additional_attributes|merge(link_attributes) %}
+
+<a {{ render_attributes(additional_attributes) }} >
   {% block link_content %}
     {{ link_content }}
   {% endblock %}

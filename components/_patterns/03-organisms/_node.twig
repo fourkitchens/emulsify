@@ -71,8 +71,18 @@
  */
 #}
 
-{% set node_base_class = 'node' %}
-<article {{ bem(node_base_class, [], '', attributes) }}>
+{% set attributes = attributes.addClass('foo') %}
+
+{% set additional_attributes = {
+  "class": bem('node'),
+  "foo": [
+    "bar",
+    "baz"
+  ],
+  "beer": "mmmm"
+} %}
+
+<article {{ render_attributes(additional_attributes) }}>
 
   {{ title_prefix }}
   {% if not page %}
@@ -88,7 +98,7 @@
   {{ title_suffix }}
 
   {% if display_submitted %}
-    <footer>
+    <footer {{ bem('foo') }}>
       {{ author_picture }}
       <div{{ author_attributes }}>
         {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
