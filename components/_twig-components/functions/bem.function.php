@@ -6,7 +6,59 @@
 
 use Drupal\Core\Template\Attribute;
 
-$function = new Twig_SimpleFunction('bem', function (Twig_Environment $env, $context, $base_class, $modifiers = array(), $blockname = '') {
+//$function = new Twig_SimpleFunction('bem', function ($base_class = '', $modifiers = array(), $blockname = '', $additional_classes = []) {
+//  $bem = [];
+//
+//  // If using a blockname to override default class.
+//  if ($blockname) {
+//    // Set blockname class.
+//    $bem[] = $blockname . '__' . $base_class;
+//
+//    // Set blockname--modifier classes for each modifier.
+//    if (isset($modifiers) && is_array($modifiers)) {
+//      foreach ($modifiers as $modifier) {
+//        $bem[] = $blockname . '__' . $base_class . '--' . $modifier;
+//      };
+//    }
+//  }
+//  // If not overriding base class.
+//  else {
+//    // Set base class.
+//    $bem[] = $base_class;
+//    // Set base--modifier class for each modifier
+//    if (isset($modifiers) && is_array($modifiers)) {
+//      foreach ($modifiers as $modifier) {
+//        $bem[] = $base_class . '--' . $modifier;
+//      };
+//    }
+//  }
+//
+//  if (!empty($additional_classes)) {
+//    foreach ($additional_classes as $additional_class) {
+//      $bem[] = $additional_class;
+//    }
+//  }
+//
+//  if (class_exists('Drupal')) {
+//    $classes = new Attribute();
+//
+//    if (!empty($bem)) {
+//      foreach ($bem as $class) {
+//        $classes->addClass($class);
+//      }
+//    }
+//
+//    return $classes;
+//  }
+//  else {
+//    $classString = implode(' ', $bem);
+//    $classesSafe = ' class="' . $classString . '"';
+//    return $classesSafe;
+//  }
+//
+//}, array('is_safe' => array('html')));
+
+$function = new Twig_SimpleFunction('bem', function ($context, $base_class = '', $modifiers = array(), $blockname = '', $attributes = []) {
   $classes = [];
 
   // If using a blockname to override default class.
@@ -33,18 +85,21 @@ $function = new Twig_SimpleFunction('bem', function (Twig_Environment $env, $con
     }
   }
 
+  // Add existing classes from attributes.
+  if (isset($attributes['class'])) {
+    foreach ($attributes['class'] as $class) {
+      $classes[] = $class;
+    }
+  }
+
   if (class_exists('Drupal')) {
-    if (!isset($context['attributes'])) {
+    if (!$attributes) {
       $attributes = new Attribute();
     }
-    else {
-      $attributes = clone $context['attributes'];
-    }
 
+    // Set new or override existing class attribute.
     if (!empty($classes)) {
-      foreach ($classes as $class) {
-        $attributes->addClass($class);
-      }
+      $attributes->setAttribute('class', $classes);
     }
 
     return $attributes;
@@ -55,4 +110,4 @@ $function = new Twig_SimpleFunction('bem', function (Twig_Environment $env, $con
     return $classesSafe;
   }
 
-}, array('needs_context' => true, 'needs_environment' => true, 'is_safe' => array('html')));
+}, array('needs_context' => true, 'is_safe' => array('html')));

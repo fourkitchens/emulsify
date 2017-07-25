@@ -19,7 +19,7 @@
 {% set heading_base_class = heading_base_class|default('h' ~ heading_level) %}
 
 <h{{ heading_level }}
-  {{ bem(heading_base_class, (heading_modifiers), heading_blockname) }}
+  {{ bem(heading_base_class, (heading_modifiers), heading_blockname, attributes) }}
 >
   {% if heading_url %}
     {% include "@atoms/01-links/link/link.twig" with {
