@@ -12,14 +12,14 @@ function emulsify_drush_command() {
   $items = array();
 
   $items['emulsify'] = array(
-    'description' => 'Create an Emulsify theme.',
+    'description' => 'Create an Emulsify-based theme.',
     'arguments' => array(
-      'name'         => 'The name of your theme.',
+      'human_readable_name'         => 'The name of your theme.',
     ),
     'options' => array(
       'machine_name' => 'The machine-readable name of your theme. This will be auto-generated from the human-readable name if ommited.',
       'description' => 'The description of your theme',
-      'path' => 'The destination of your theme. Defaults to "all" (themes).',
+      'path' => 'The destination of your theme. Defaults to "themes/custom".',
       'slim' => 'Only copy base files',
     ),
     'examples' => array(
@@ -44,23 +44,23 @@ function emulsify_drush_help($section) {
 /**
  * Implements drush_hook_COMMAND().
  */
-function drush_emulsify($name = NULL) {
+function drush_emulsify($human_readable_name = NULL) {
 
-  // If no $name provided, abort.
-  if (!$name) {
+  // If no $human_readable_name provided, abort.
+  if (!$human_readable_name) {
     drush_print(dt('Theme name missing. See help using drush emulsify --help.'));
     return;
   }
 
   // Determine the theme name.
-  if (!isset($name)) {
-    $name = drush_get_option('name');
+  if (!isset($human_readable_name)) {
+    $human_readable_name = drush_get_option('human_readable_name');
   }
 
   // Determine the machine name.
   $machine_name = drush_get_option('machine_name');
   if (!$machine_name) {
-    $machine_name = $name;
+    $machine_name = $human_readable_name;
   }
   $machine_name = str_replace(' ', '_', strtolower($machine_name));
   $search = array(
@@ -72,7 +72,7 @@ function drush_emulsify($name = NULL) {
   $machine_name = preg_replace($search, '', $machine_name);
 
   // Description of theme.
-  $description = (drush_get_option('description')) ? trim(drush_get_option('description')) : 'Theme that uses Pattern Lab v2.';
+  $description = (drush_get_option('description')) ? trim(drush_get_option('description')) : 'Theme based on <a href="http://emulsify.info">Emulsify</a>.';
 
   // Determine the path to the new theme.
   $theme_path = 'themes/custom';
@@ -80,13 +80,13 @@ function drush_emulsify($name = NULL) {
     $theme_path = drush_trim_path($path);
   }
 
-  drush_emulsify_create($name, $machine_name, $description, $theme_path);
+  drush_emulsify_create($human_readable_name, $machine_name, $description, $theme_path);
 }
 
 /**
  * Create frontend theme.
  */
-function drush_emulsify_create($name, $machine_name, $description, $theme_path) {
+function drush_emulsify_create($human_readable_name, $machine_name, $description, $theme_path) {
   $theme_path = drush_normalize_path(drush_get_context('DRUSH_DRUPAL_ROOT') . '/' . $theme_path . '/' . $machine_name);
 
   if (!is_dir(dirname($theme_path))) {
@@ -98,7 +98,7 @@ function drush_emulsify_create($name, $machine_name, $description, $theme_path) 
   _emulsify_copy_files($files_to_copy, $theme_path);
 
   // Phase 2: Alter files.
-  $alterations = _emulsify_get_alterations($name, $machine_name);
+  $alterations = _emulsify_get_alterations($human_readable_name, $machine_name);
   $files_to_alter = _emulsify_get_files_to_alter();
   _emulsify_alter_files($theme_path, $files_to_alter, $alterations);
 
@@ -106,7 +106,7 @@ function drush_emulsify_create($name, $machine_name, $description, $theme_path) 
   $files_to_rename = _emulsify_get_files_to_rename();
   _emulsify_rename_files($theme_path, $machine_name, $files_to_rename);
 
-  _emulsify_notify($name, $theme_path);
+  _emulsify_notify($human_readable_name, $theme_path);
 }
 
 /**
@@ -116,9 +116,9 @@ function drush_emulsify_create($name, $machine_name, $description, $theme_path) 
  * happen in sequential order so you can replace something that was previously
  * replaced.
  */
-function _emulsify_get_alterations($name, $machine_name) {
+function _emulsify_get_alterations($human_readable_name, $machine_name) {
   return array(
-    'Emulsify' => $name,
+    'Emulsify' => $human_readable_name,
     'emulsify' => $machine_name,
     'hidden: true' => '',
   );
@@ -287,12 +287,12 @@ function _emulsify_file_str_replace($file_path, $find, $replace) {
 /**
  * Notifies the user of success.
  */
-function _emulsify_notify($name, $theme_path) {
+function _emulsify_notify($human_readable_name, $theme_path) {
   // Notify user of the newly created theme.
-  $message = 'Successfully created the Emulsify theme "!name" created in: !path, you can now run \'yarn\' or \'npm install\' to install the node modules.';
+  $message = 'Successfully created the Emulsify theme "!name" created in: !path, you can now run \'yarn\' or \'yarn install\' or \'npm install\' to install the node modules.';
 
   $message = dt($message, array(
-    '!name' => $name,
+    '!name' => $human_readable_name,
     '!path' => $theme_path,
   ));
   drush_print($message);
