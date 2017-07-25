@@ -4,12 +4,16 @@ card_modifiers:
 
 # Title
 card_title:
-  "This is a card-bg title"
+  'This is a card-bg title'
 
 # Subtitle
 card_subtitle:
-  ""
 
 # Link
-card_link_text:
-  'Read more about cards with a background'
+card_link_url:
+
+# Button
+card_button_url:
+  '#'
+card_button_content:
+  'Read more'

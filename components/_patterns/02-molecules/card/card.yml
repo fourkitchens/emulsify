@@ -2,11 +2,13 @@
 card_img_modifiers:
 card_img_blockname:
 card_img_src:
-  "http://placeimg.com/1280/720/nature"
+  "https://placeimg.com/1280/720/nature"
 card_img_alt:
   "This is the card image's alt text"
 
 # Title
+card_label:
+  "This is a Card Label"
 card_title:
   "This is a card title"
 card_title_link:

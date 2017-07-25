@@ -25,10 +25,12 @@
  * @see template_preprocess_block()
  */
 #}
-<div{{ attributes }}>
+
+
+<div{{ bem('block') }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes.addClass('heading-2') }}>{{ label }}</h2>
+    <h2{{ title_attributes.addClass('h2') }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}

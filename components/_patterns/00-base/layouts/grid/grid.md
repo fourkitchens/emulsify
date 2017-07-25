@@ -4,4 +4,4 @@ title: "Grid"
 ---
 ## Grid Layout
 
-Flex Grid uses flexbox with the last item(s) stretched to fill. Pass columns, divider (and more) as grid_modifiers to create classes (see any of the YAML files for examples). Background color and height added for display in Pattern Lab only.
+Flex Grid uses flexbox with the last item(s) stretched to fill by default. Grid includes classes and mixins for usage (mixins recommended - see `components/_patterns/03-organisms/card-grid/_card-grid.scss` for an example). Background color and height added for display in Pattern Lab only.

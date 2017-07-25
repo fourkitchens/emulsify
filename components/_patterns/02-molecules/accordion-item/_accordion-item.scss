@@ -1,49 +1,45 @@
-.dl-term {
-  .accordion__list-dl & {
-    border-top: 1px solid $gray-lightest;
-    color: $gray-dark;
-    cursor: pointer;
-    display: block;
-    @include font-size(1);
-    font-weight: 600;
-    padding:1em 0;
+.accordion-term {
+  border-top: 1px solid $gray-lightest;
+  color: $gray-dark;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1em 0;
+
+  &::before {
+    content: "+";
+    padding: 0.8em;
+    top: 0.35em;
+  }
+
+  &:hover {
+    color: $gray;
+  }
+
+  &.is-active {
+    color: $gray;
 
     &::before {
-      content:"+";
-      padding: .8em;
-      top: .35em;
+      content: "-";
+      top: 0.45em;
     }
 
-    &:hover {
-      color: $gray;
-    }
-
-    &.is-active {
-      color: $gray;
-
-      &::before {
-        content:"-";
-        top: .45em;
-      }
-
-      & + dd {
-        height: auto;
-        margin: 0em 2em 0;
-        overflow: visible;
-        padding-bottom: 1em;
-      }
+    & + dd {
+      height: auto;
+      margin: 0 2em;
+      overflow: visible;
+      padding-bottom: 1em;
     }
   }
 }
 
-.dl-definition {
-  .accordion__list-dl & {
-    margin: 0em 2em 0;
+.accordion-def {
+  margin: 0 2em;
 
-    &.active {
-      height: 0;
-      margin: 0 2em 0;
-      overflow: hidden;
-    }
+  &.active {
+    height: 0;
+    margin: 0 2em;
+    overflow: hidden;
   }
 }

@@ -4,11 +4,9 @@
   <ul class="form-item--radios">
 {% endif %}
     {% for key, listItem in listItems.four %}
-      {% include "@atoms/05-forms/radio/_radio-item.twig"
-        with {
-          "radio_item": listItem.title
-        }
-      %}
+      {% include "@atoms/05-forms/radio/_radio-item.twig" with {
+        "radio_item": listItem.title
+      } %}
     {% endfor %}
 {% if not attributes %}
   </ul>

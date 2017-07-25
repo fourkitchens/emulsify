@@ -8,6 +8,8 @@ link_attributes:
     _blank
   foo:
     bar
+  href:
+    "#"
 link_url:
   https://github.com/fourkitchens/emulsify
 link_content:

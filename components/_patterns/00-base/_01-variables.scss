@@ -1,11 +1,10 @@
 //////////////////////////
-
-/// Widths and base sizing
-$max-width: 1200px;
-$base-font-size: 62.5%; // setup to work with rems
-$base-border-size: 5px;
-$measure-max: 675px; // use for paragraph measure.
+// General Variables
+// Note: colors should go into
+// components/_patterns/00-base/global/01-colors/_color-vars.scss
+// and breakpoint related vars into
+// components/_patterns/00-base/_breakpoints.scss
 
 // Fonts
-$body: Georgia, Times, "Times New Roman", serif;
-$heading: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+$font-body: Georgia, Times, "Times New Roman", serif;
+$font-heading: "HelveticaNeue", "Helvetica", "Arial", sans-serif;

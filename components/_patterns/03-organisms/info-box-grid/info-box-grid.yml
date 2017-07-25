@@ -1,20 +1,20 @@
 grid_title:
   "This is a Grid Title"
-grid_modifiers:
-  1:
-    columns-2
 boxes:
   one:
+    ib_modifiers:
+      1:
+        "grid-item"
     infobox_title:
       "Test Title that is fairly long for a reason"
     infobox_text:
       "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
     infobox_link:
       "#"
-    infobox_title_modifiers:
-      1:
-        centered
   two:
+    ib_modifiers:
+      1:
+        "grid-item"
     infobox_title:
       "Short for a reason"
     infobox_text:
@@ -23,18 +23,18 @@ boxes:
       1:
         centered
   three:
+    ib_modifiers:
+      1:
+        "grid-item"
     infobox_title:
       "Test Title that is whatever"
     infobox_text:
       "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
-    infobox_title_modifiers:
-      1:
-        centered
   four:
+    ib_modifiers:
+      1:
+        "grid-item"
     infobox_title:
       "Test Title 4"
     infobox_text:
       "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
-    infobox_title_modifiers:
-      1:
-        centered

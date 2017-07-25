@@ -1,45 +1,45 @@
 // Grid Item With Divider
-.grid__item {
-  .grid--divider & {
-    flex-grow: 0;
+@mixin grid-divider($columns: '') {
+  flex-grow: 0;
 
-    @include large {
-      margin-right: 3.5%;
-      position: relative;
+  @include large {
+    margin-right: 3.5%;
+    position: relative;
 
-      &::after {
-        background-color: $gray-lighter;
-        content: "";
-        display: block;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        width: 1px;
-      }
+    &::after {
+      background-color: $gray-lighter;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 1px;
     }
   }
-}
 
-// Columns
-.grid__item {
-  .grid--divider.grid--columns-2 & {
+  // Columns
+  @if $columns == 2 {
     &::after {
       right: -3.5%;
     }
 
     &:nth-child(2n) {
+      margin-right: 0;
+
       &::after {
         display: none;
       }
     }
   }
 
-  .grid--divider.grid--columns-3 & {
+  @if $columns == 3 {
     &::after {
       right: -5.5%;
     }
 
     &:nth-child(3n) {
+      margin-right: 0;
+
       &::after {
         display: none;
       }
@@ -51,10 +51,22 @@
       margin-right: 0;
     }
 
-    .grid--divider & {
-      &::after {
-        display: none;
-      }
+    &::after {
+      display: none;
     }
+  }
+}
+
+.grid__item {
+  .grid--divider & {
+    @include grid-divider;
+  }
+
+  .grid--divider.grid--columns-2 & {
+    @include grid-divider(2);
+  }
+
+  .grid--divider.grid--columns-3 & {
+    @include grid-divider(3);
   }
 }

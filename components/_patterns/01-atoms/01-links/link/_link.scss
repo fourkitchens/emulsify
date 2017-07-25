@@ -1,7 +1,12 @@
-.link {
-  color: $black;
-  
+/// Link
+@mixin link {
+  color: $color-link;
+
   &:hover {
-    color: $gray;
+    color: $color-link--hover;
   }
+}
+
+.link {
+  @include link;
 }
