@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Add "bem" function for Pattern Lab & Drupal
+ * Add "render_attributes" function for Pattern Lab & Drupal
  */
 
 use Drupal\Core\Template\Attribute;
@@ -12,7 +12,7 @@ $function = new Twig_SimpleFunction('render_attributes', function ($context, $ad
 
     if (!empty($additional_attributes)) {
       foreach ($additional_attributes as $key => $value) {
-        // If value is an instance of Attribute(), get it's value.
+        // If value is an instance of Attribute(), get its value.
         if ($value instanceof Attribute && $value->offsetExists($key)) {
           $value = $value->offsetGet($key)->value();
         }
@@ -30,8 +30,8 @@ $function = new Twig_SimpleFunction('render_attributes', function ($context, $ad
     // Set all attributes.
     foreach($context['attributes'] as $key => $value) {
       $attributes->setAttribute($key, $value);
-      // Remove this attribute from context so it doesn't filter down to
-      // child elements.
+      // Remove this attribute from context so it doesn't filter down to child
+      // elements.
       $context['attributes']->removeAttribute($key);
     }
 
