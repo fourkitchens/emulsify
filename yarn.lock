@@ -1313,9 +1313,9 @@ emitter-steward@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/emitter-steward/-/emitter-steward-1.0.0.tgz#f3411ade9758a7565df848b2da0cbbd1b46cbd64"
 
-emulsify-gulp@fourkitchens/emulsify-gulp#feature/js-linting:
+emulsify-gulp@fourkitchens/emulsify-gulp:
   version "1.0.0"
-  resolved "https://codeload.github.com/fourkitchens/emulsify-gulp/tar.gz/7a63947ecf7b8cb771f4db25aa42f57875c69800"
+  resolved "https://codeload.github.com/fourkitchens/emulsify-gulp/tar.gz/2352ad64f6475639293f9bc800fb92fb0940c333"
   dependencies:
     breakpoint-sass "^2.7.0"
     browser-sync "^2.11.0"
