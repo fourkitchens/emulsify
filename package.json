@@ -3,11 +3,12 @@
   "description": "Project template for Drupal 8 themes",
   "version": "1.0.0",
   "devDependencies": {
-    "emulsify-gulp": "fourkitchens/emulsify-gulp",
+    "emulsify-gulp": "fourkitchens/emulsify-gulp#feature/js-linting",
     "gulp": "^3.9.1"
   },
   "scripts": {
     "start": "gulp clean && gulp compile && gulp theme",
     "postinstall": "rm -rf pattern-lab && composer create-project -n pattern-lab/edition-twig-standard pattern-lab && rm -rf pattern-lab/source && ln -s ../components pattern-lab/source && git clone https://github.com/drupal-pattern-lab/bem-twig-extension.git && cp bem-twig-extension/bem.function.php components/_twig-components/functions && rm -rf bem-twig-extension/"
-  }
+  },
+  "precommit.silent": true
 }
