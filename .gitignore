@@ -8,4 +8,7 @@ pattern-lab
 node_modules
 npm-debug.log
 
+# Git deploy
+.publish
+
 .DS_Store
