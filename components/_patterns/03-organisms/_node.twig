@@ -74,9 +74,14 @@
 
   {{ title_prefix }}
   {% if not page %}
-    <h2{{ title_attributes.addClass('h2') }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      "heading_level": 2,
+      "heading": label,
+      "heading_url": url,
+      "heading_link_attributes": {
+        'rel': 'bookmark'
+      },
+    } only %}
   {% endif %}
   {{ title_suffix }}
 
