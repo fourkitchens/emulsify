@@ -4,3 +4,39 @@
  * @file
  * Functions to support theming in the Pattern Lab theme.
  */
+
+use Drupal\Component\Utility\NestedArray;
+use Drupal\Core\Template\Attribute;
+
+function emulsify_preprocess(&$variables, $hook, $info) {
+//  kint($variables['attributes']);
+//  $default_variables = _template_preprocess_default_variables();
+//  kint($default_variables['attributes']);
+
+
+//  if (isset($info['render element'])) {
+////    kint($variables['attributes']);
+//    $key = $info['render element'];
+//
+////    $variables['emulsify_attributes'] = 'Emulsify attributes.';
+//
+//    if (isset($variables[$key]['#attributes'])) {
+//      $variables['emulsify_attributes'] = NestedArray::mergeDeep($variables['attributes'], $variables[$key]['#attributes']);
+//
+//    }
+//  }
+
+//  dsm($hook);
+
+//  static $attrs;
+//
+//  $attributes = new Attribute();
+//
+//  foreach ($goobar_variables as $attribute => $value) {
+//    $attributes->setAttribute($attribute, $value);
+//    unset($variables['attributes'][$attribute]);
+//  }
+//
+//  $variables['goobar'] = $attributes;
+
+}

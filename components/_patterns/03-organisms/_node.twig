@@ -71,11 +71,7 @@
  */
 #}
 
-{% set additional_attributes = {
-  "class": bem('node')
-} %}
-
-<article {{ render_attributes(additional_attributes) }}>
+<article {{ bem('foo') }}>
 
   {{ title_prefix }}
   {% if not page %}
@@ -91,7 +87,7 @@
   {{ title_suffix }}
 
   {% if display_submitted %}
-    <footer>
+    <footer class="{{ bem('goobar') }}">
       {{ author_picture }}
       <div{{ author_attributes }}>
         {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}

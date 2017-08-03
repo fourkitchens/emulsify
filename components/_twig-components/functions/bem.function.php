@@ -33,17 +33,36 @@ $function = new Twig_SimpleFunction('bem', function ($context, $base_class, $mod
     }
   }
 
-  if (class_exists('Drupal')) {
+  foreach($context['attributes'] as $key => $value) {
+    if ($key === 'class') {
+      foreach ($value as $class) {
+        $classes[] = $class;
+      }
+
+      $context['attributes']->removeAttribute($key);
+    }
+  }
+
+  if (class_exists('Attribute')) {
     $attributes = new Attribute();
 
     if (!empty($classes)) {
       $attributes->setAttribute('class', $classes);
     }
 
+    foreach($context['attributes'] as $key => $value) {
+      if ($key !== 'class') {
+        $attributes->setAttribute($key, $value);
+        // Remove this attribute from context so it doesn't filter down to child
+        // elements.
+        $context['attributes']->removeAttribute($key);
+      }
+    }
+
     return $attributes;
   }
   else {
-    $classString = implode(' ', $classes);
+    $classString = 'class="' . implode(' ', $classes) . '"';
     return $classString;
   }
 
