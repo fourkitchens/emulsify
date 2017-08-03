@@ -1,9 +1,8 @@
-// UNCOMMENT IF DRUPAL
+// UNCOMMENT IF DRUPAL - see components/_meta/_01-foot.twig for attachBehaviors
 // Drupal.behaviors.accordion = {
 //   attach: function (context, settings) {
 
-// REMOVE IF DRUPAL
-(function () {
+(function () { // REMOVE IF DRUPAL
 
   'use strict';
 
@@ -52,8 +51,7 @@
     });
   }
 
-// REMOVE IF DRUPAL
-})();
+})(); // REMOVE IF DRUPAL
 
 // UNCOMMENT IF DRUPAL
 //   }
