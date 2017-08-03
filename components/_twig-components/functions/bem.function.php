@@ -33,37 +33,37 @@ $function = new Twig_SimpleFunction('bem', function ($context, $base_class, $mod
     }
   }
 
-  foreach($context['attributes'] as $key => $value) {
-    if ($key === 'class') {
-      foreach ($value as $class) {
-        $classes[] = $class;
-      }
-
-      $context['attributes']->removeAttribute($key);
-    }
-  }
-
-  if (class_exists('Attribute')) {
+  if (class_exists('Drupal')) {
     $attributes = new Attribute();
 
-    if (!empty($classes)) {
-      $attributes->setAttribute('class', $classes);
+    // Iterate the attributes available in context.
+    foreach($context['attributes'] as $key => $value) {
+      // If there are classes, add them to the classes array.
+      if ($key === 'class') {
+        foreach ($value as $class) {
+          $classes[] = $class;
+        }
+      }
+      // Otherwise add the attribute straightaway.
+      else {
+        $attributes->setAttribute($key, $value);
+      }
+
+      // Remove the attribute from context so it doesn't trickle down to
+      // includes.
+      $context['attributes']->removeAttribute($key);
     }
 
-    foreach($context['attributes'] as $key => $value) {
-      if ($key !== 'class') {
-        $attributes->setAttribute($key, $value);
-        // Remove this attribute from context so it doesn't filter down to child
-        // elements.
-        $context['attributes']->removeAttribute($key);
-      }
+    // Add class attribute.
+    if (!empty($classes)) {
+      $attributes->setAttribute('class', $classes);
     }
 
     return $attributes;
   }
   else {
-    $classString = 'class="' . implode(' ', $classes) . '"';
-    return $classString;
+    $attributes = 'class="' . implode(' ', $classes) . '"';
+    return $attributes;
   }
 
 }, array('needs_context' => true, 'is_safe' => array('html')));

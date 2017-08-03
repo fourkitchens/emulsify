@@ -70,24 +70,23 @@
  *   in different view modes.
  */
 #}
-
-<article {{ bem('foo') }}>
+<article {{ bem("node") }}>
 
   {{ title_prefix }}
   {% if not page %}
     {% include "@atoms/02-text/00-headings/_heading.twig" with {
-    "heading_level": 2,
-    "heading": label,
-    "heading_url": url,
-    "heading_link_attributes": {
-    'rel': 'bookmark'
-    },
+      "heading_level": 2,
+      "heading": label,
+      "heading_url": url,
+      "heading_link_attributes": {
+        'rel': 'bookmark'
+      },
     } %}
   {% endif %}
   {{ title_suffix }}
 
   {% if display_submitted %}
-    <footer class="{{ bem('goobar') }}">
+    <footer>
       {{ author_picture }}
       <div{{ author_attributes }}>
         {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
