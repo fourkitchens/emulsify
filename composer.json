@@ -2,6 +2,7 @@
     "name": "fourkitchens/emulsify",
     "description": "Project template for Drupal 8 themes",
     "type": "drupal-theme",
+    "homepage": "http://emulsify.info",
     "license": "MIT",
     "authors": [
         {
@@ -17,7 +18,7 @@
             "role": ""
         },
         {
-            "name": "Ben Teegarden",
+            "name": "Chris Martin",
             "role": ""
         },
         {
@@ -28,6 +29,10 @@
     "repositories": [],
     "require": {},
     "require-dev": {},
+    "suggest": {
+      "drupal/components": "Required for components to work in Drupal.",
+      "drupal-pattern-lab/unified-twig-extensions": "Use our fork. Details here: <url>"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
