@@ -7,23 +7,19 @@
     "authors": [
         {
             "name": "Brian Lewis",
-            "email": "",
-            "role": ""
+            "email": "brian@fourkitchens.com"
         },
         {
             "name": "Chris Martin",
-            "email": "",
-            "role": ""
+            "email": "chris.martin@fourkitchens.com"
         },
         {
             "name": "Evan Willhite",
-            "email": "",
-            "role": ""
+            "email": "evan@fourkitchens.com"
         },
         {
             "name": "Randy Oest",
-            "email": "",
-            "role": ""
+            "email": "randy@fourkitchens.com"
         }
     ],
     "repositories": {},
