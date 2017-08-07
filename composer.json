@@ -6,23 +6,23 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Evan Willhite",
-            "role": ""
-        },
-        {
             "name": "Brian Lewis",
-            "role": ""
-        },
-        {
-            "name": "Luke Herrington",
+            "email": "",
             "role": ""
         },
         {
             "name": "Chris Martin",
+            "email": "",
+            "role": ""
+        },
+        {
+            "name": "Evan Willhite",
+            "email": "",
             "role": ""
         },
         {
             "name": "Randy Oest",
+            "email": "",
             "role": ""
         }
     ],
@@ -32,10 +32,6 @@
         "drupal-pattern-lab/unified-twig-extensions": "dev-develop"
     },
     "require-dev": {},
-    "suggest": {
-        "drupal/components": "Required for components to work in Drupal.",
-        "drupal-pattern-lab/unified-twig-extensions": "Use our fork. Details here: <url>"
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
