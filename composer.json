@@ -26,9 +26,15 @@
             "role": ""
         }
     ],
-    "repositories": [],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/evanmwillhite/unified-twig-extensions"
+        }
+    ],
     "require": {
-      "drupal/components": "^1.0"
+      "drupal/components": "^1.0",
+      "drupal-pattern-lab/unified-twig-extensions": "dev-develop"
     },
     "require-dev": {},
     "suggest": {
