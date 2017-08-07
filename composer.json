@@ -26,20 +26,20 @@
             "role": ""
         }
     ],
-    "repositories": [
-        {
+    "repositories": {
+        "unified-twig-extensions": {
             "type": "vcs",
             "url": "https://github.com/evanmwillhite/unified-twig-extensions"
         }
-    ],
+    },
     "require": {
-      "drupal/components": "^1.0",
-      "drupal-pattern-lab/unified-twig-extensions": "dev-develop"
+        "drupal/components": "^1.0",
+        "drupal-pattern-lab/unified-twig-extensions": "dev-develop"
     },
     "require-dev": {},
     "suggest": {
-      "drupal/components": "Required for components to work in Drupal.",
-      "drupal-pattern-lab/unified-twig-extensions": "Use our fork. Details here: <url>"
+        "drupal/components": "Required for components to work in Drupal.",
+        "drupal-pattern-lab/unified-twig-extensions": "Use our fork. Details here: <url>"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -49,5 +49,5 @@
         "post-install-cmd": [],
         "post-update-cmd": []
     },
-    "extra": {}
+    "extra": []
 }
