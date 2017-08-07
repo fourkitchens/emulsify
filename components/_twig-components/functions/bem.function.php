@@ -4,12 +4,16 @@
  * Add "bem" function for Pattern Lab & Drupal
  */
 
-$function = new Twig_SimpleFunction('bem', function (Twig_Environment $env, $context, $base_class, $modifiers = array(), $blockname = '') {
-  $classes = array();
+use Drupal\Core\Template\Attribute;
+
+$function = new Twig_SimpleFunction('bem', function ($context, $base_class, $modifiers = array(), $blockname = '') {
+  $classes = [];
+
   // If using a blockname to override default class.
   if ($blockname) {
     // Set blockname class.
     $classes[] = $blockname . '__' . $base_class;
+
     // Set blockname--modifier classes for each modifier.
     if (isset($modifiers) && is_array($modifiers)) {
       foreach ($modifiers as $modifier) {
@@ -21,7 +25,7 @@ $function = new Twig_SimpleFunction('bem', function (Twig_Environment $env, $con
   else {
     // Set base class.
     $classes[] = $base_class;
-    // Set base--modifier class for each modifier
+    // Set base--modifier class for each modifier.
     if (isset($modifiers) && is_array($modifiers)) {
       foreach ($modifiers as $modifier) {
         $classes[] = $base_class . '--' . $modifier;
@@ -29,14 +33,37 @@ $function = new Twig_SimpleFunction('bem', function (Twig_Environment $env, $con
     }
   }
 
-  $classString = implode(' ', $classes);
   if (class_exists('Drupal')) {
-    $context['attributes']->addClass($classString);
-    return $context['attributes'];
+    $attributes = new Attribute();
+
+    // Iterate the attributes available in context.
+    foreach($context['attributes'] as $key => $value) {
+      // If there are classes, add them to the classes array.
+      if ($key === 'class') {
+        foreach ($value as $class) {
+          $classes[] = $class;
+        }
+      }
+      // Otherwise add the attribute straightaway.
+      else {
+        $attributes->setAttribute($key, $value);
+      }
+
+      // Remove the attribute from context so it doesn't trickle down to
+      // includes.
+      $context['attributes']->removeAttribute($key);
+    }
+
+    // Add class attribute.
+    if (!empty($classes)) {
+      $attributes->setAttribute('class', $classes);
+    }
+
+    return $attributes;
   }
   else {
-    $classesSafe = ' class="' . $classString . '"';
-    return $classesSafe;
+    $attributes = 'class="' . implode(' ', $classes) . '"';
+    return $attributes;
   }
 
-}, array('needs_context' => true, 'needs_environment' => true, 'is_safe' => array('html')));
+}, array('needs_context' => true, 'is_safe' => array('html')));
