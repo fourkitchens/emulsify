@@ -41,8 +41,12 @@
     "scripts": {
         "pre-install-cmd": [],
         "pre-update-cmd": [],
-        "post-install-cmd": [],
-        "post-update-cmd": []
+        "post-install-cmd": {
+          "drush emulsify"
+        },
+        "post-update-cmd": {
+          "drush emulsify"
+        }
     },
     "extra": []
 }
