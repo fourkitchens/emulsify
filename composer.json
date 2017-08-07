@@ -28,7 +28,7 @@
     ],
     "repositories": [],
     "require": {
-      "drupal/components": "^1.0",
+      "drupal/components": "^1.0"
     },
     "require-dev": {},
     "suggest": {
