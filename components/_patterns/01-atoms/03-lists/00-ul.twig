@@ -10,7 +10,7 @@
 #}
 {% set ul_base_class = ul_base_class|default('ul') %}
 
-<ul {{ bem(ul_base_class, (ul_modifiers), ul_blockname) }}>
+<ul{{ bem(ul_base_class, (ul_modifiers), ul_blockname) }}>
   {% for ul_item in ul_items %}
     {% include "@atoms/03-lists/_list-item.twig" with {
       "list_item_label": ul_item.label,

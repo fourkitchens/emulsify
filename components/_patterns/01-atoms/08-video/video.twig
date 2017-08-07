@@ -16,7 +16,7 @@
 #}
 {% set video_base_class = video_base_class|default('video') %}
 
-<div {{ bem(video_base_class, (video_modifiers), video_blockname) }}>
+<div{{ bem(video_base_class, (video_modifiers), video_blockname) }}>
   {% block video_content %}
     {{ video_content|raw }}
   {% endblock %}

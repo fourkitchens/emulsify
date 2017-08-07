@@ -10,7 +10,7 @@
 #}
 {% set ol_base_class = ol_base_class|default('ol') %}
 
-<ol {{ bem(ol_base_class, (ol_modifiers), ol_blockname) }}>
+<ol{{ bem(ol_base_class, (ol_modifiers), ol_blockname) }}>
   {% for ol_item in ol_items %}
     {% include "@atoms/03-lists/_list-item.twig" with {
       "list_item_label": ol_item.label,
