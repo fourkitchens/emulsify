@@ -95,7 +95,11 @@ function drush_emulsify_create($human_readable_name, $machine_name, $description
 
   // Phase 1: Copy files.
   $files_to_copy = _emulsify_get_files_to_copy();
-  _emulsify_copy_files($files_to_copy, $theme_path);
+  $files_to_copy_status = _emulsify_copy_files($files_to_copy, $theme_path);
+
+  if ($files_to_copy_status !== TRUE) {
+    return FALSE;
+  }
 
   // Phase 2: Alter files.
   $alterations = _emulsify_get_alterations($human_readable_name, $machine_name);
@@ -255,11 +259,25 @@ function _emulsify_copy_files($files = array(), $destination_path = '') {
   if (empty($files) || empty($destination_path)) {
     return FALSE;
   }
-  file_prepare_directory($destination_path, FILE_CREATE_DIRECTORY);
-  foreach ($files as $files_to_copy) {
-    drush_copy_dir(__DIR__ . DIRECTORY_SEPARATOR . $files_to_copy, $destination_path . DIRECTORY_SEPARATOR . $files_to_copy);
+  $writeable = file_prepare_directory($destination_path, FILE_CREATE_DIRECTORY);
+  if ($writeable === TRUE) {
+    foreach ($files as $files_to_copy) {
+      drush_copy_dir(__DIR__ . DIRECTORY_SEPARATOR . $files_to_copy, $destination_path . DIRECTORY_SEPARATOR . $files_to_copy);
+    }
+    return TRUE;
   }
-  return TRUE;
+  else {
+    // Notify user of the path write error.
+    $message = 'There was an error writting to "!path".  This is normally due to permissions on one of the base directories or "!path" directory not allowing the web server to write data.  You can use the "chmod" command to implement either a temporary or permanent fix for this.';
+
+    $message = dt($message, array(
+      '!path' => $destination_path,
+    ));
+
+    drush_print($message);
+
+    return FALSE;
+  }
 }
 
 /**
