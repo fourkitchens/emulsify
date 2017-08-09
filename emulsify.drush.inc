@@ -130,9 +130,10 @@ function _emulsify_get_alterations($human_readable_name, $machine_name) {
 function _emulsify_get_files_to_alter() {
   // Slim files and directories declaration.
   $slim_array = array(
-    'components',
     'emulsify.info.yml',
     'emulsify.theme',
+    'emulsify.breakpoints.yml',
+    'emulsify.libraries.yml',
   );
   // If we would like to have a bare copy we use is slim option.
   if (drush_get_option('slim') === TRUE) {
@@ -140,9 +141,8 @@ function _emulsify_get_files_to_alter() {
   }
   else {
     return array_merge($slim_array, array(
+      'components',
       'templates',
-      'emulsify.breakpoints.yml',
-      'emulsify.libraries.yml',
       'README.md',
     ));
   }
@@ -165,12 +165,13 @@ function _emulsify_get_files_to_alter() {
 function _emulsify_get_files_to_copy() {
   // Slim files and directories declaration.
   $slim_array = array(
-    'components',
     '.editorconfig',
     '.gitignore',
     '.stylelintrc',
     'emulsify.info.yml',
     'emulsify.theme',
+    'emulsify.breakpoints.yml',
+    'emulsify.libraries.yml',
     'gulpfile.js',
     'package.json',
     'yarn.lock',
@@ -181,11 +182,10 @@ function _emulsify_get_files_to_copy() {
   }
   else {
     return array_merge($slim_array, array(
+      'components',
       'fonts',
       'images',
       'templates',
-      'emulsify.breakpoints.yml',
-      'emulsify.libraries.yml',
       'README.md',
       'screenshot.png',
     ));
