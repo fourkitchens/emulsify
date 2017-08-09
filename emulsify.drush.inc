@@ -166,7 +166,6 @@ function _emulsify_get_files_to_copy() {
   // Slim files and directories declaration.
   $slim_array = array(
     'components',
-    'pattern-lab',
     '.editorconfig',
     '.gitignore',
     '.stylelintrc',
