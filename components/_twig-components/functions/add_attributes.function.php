@@ -45,7 +45,7 @@ $function = new Twig_SimpleFunction('add_attributes', function ($context, $addit
 
     foreach ($additional_attributes as $key => $value) {
       if (is_array($value)) {
-        $attributes[] = $key . '="' . implode(' ', $value) . '"';
+        $attributes[] = $value[0];
       }
       else {
         $attributes[] = $key . '="' . $value . '"';
