@@ -3,6 +3,7 @@ dist
 
 # Pattern Lab (ignored initially)
 pattern-lab
+**/bem.function.php
 
 # NPM
 node_modules
