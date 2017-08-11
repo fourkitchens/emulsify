@@ -20,6 +20,14 @@ $function = new Twig_SimpleFunction('add_attributes', function ($context, $addit
             continue;
           }
         }
+        else {
+          // BEM-function specific.
+          if (substr($value[0], 1, 7) === 'class="') {
+            // Remove everything but actual class.
+            $value[0] = substr($value[0], 8);
+            $value[0] = rtrim($value[0],'"');
+          }
+        }
         // Merge additional attribute values with existing ones.
         if ($context['attributes']->offsetExists($key)) {
           $existing_attribute = $context['attributes']->offsetGet($key)->value();
@@ -40,12 +48,16 @@ $function = new Twig_SimpleFunction('add_attributes', function ($context, $addit
 
     return $attributes;
   }
+  // Pattern Lab.
   else {
     $attributes = [];
 
     foreach ($additional_attributes as $key => $value) {
+      // Bem function specific
       if (is_array($value)) {
-        $attributes[] = $value[0];
+        foreach ($value as $item) {
+          $attributes[] = $item;
+        }
       }
       else {
         $attributes[] = $key . '="' . $value . '"';
