@@ -12,12 +12,22 @@ $function = new Twig_SimpleFunction('add_attributes', function ($context, $addit
 
     if (!empty($additional_attributes)) {
       foreach ($additional_attributes as $key => $value) {
-        // BEM-function specific.
-        if (is_object($value)) {
-          echo $value;
+        if (is_array($value)) {
+          foreach ($value as $index => $item) {
+            // Handle bem() output.
+            if ($item instanceof Attribute) {
+              // Remove the item.
+              unset($value[$index]);
+              $value = array_merge($value, $item->toArray()[$key]);
+            }
+          }
         }
-        if (!is_array($value)) {
-          if (is_string($value)) {
+        else {
+          // Handle bem() output.
+          if ($value instanceof Attribute) {
+            $value = $value->toArray()[$key];
+          }
+          elseif (is_string($value)) {
             $value = [$value];
           }
           else {
@@ -50,12 +60,22 @@ $function = new Twig_SimpleFunction('add_attributes', function ($context, $addit
 
     foreach ($additional_attributes as $key => $value) {
       if (is_array($value)) {
+        foreach ($value as $index => $item) {
+          // Handle bem() output.
+          if (strpos($item, $key . '=') !== FALSE) {
+            parse_str($item, $result);
+            // Remove the item.
+            unset($value[$index]);
+            // Strip surrounding quotes.
+            $value[] = substr($result[$key], 1, -1);
+          }
+        }
+
         $attributes[] = $key . '="' . implode(' ', $value) . '"';
       }
       else {
-        // BEM-function specific.
-        if (substr($value, 0, 7) === 'class="') {
-          // Print as-is.
+        // Handle bem() output.
+        if (strpos($value, $key . '=') !== FALSE) {
           $attributes[] = $value;
         }
         else {
