@@ -12,20 +12,16 @@ $function = new Twig_SimpleFunction('add_attributes', function ($context, $addit
 
     if (!empty($additional_attributes)) {
       foreach ($additional_attributes as $key => $value) {
+        // BEM-function specific.
+        if (is_object($value)) {
+          echo $value;
+        }
         if (!is_array($value)) {
           if (is_string($value)) {
             $value = [$value];
           }
           else {
             continue;
-          }
-        }
-        else {
-          // BEM-function specific.
-          if (substr($value[0], 1, 7) === 'class="') {
-            // Remove everything but actual class.
-            $value[0] = substr($value[0], 8);
-            $value[0] = rtrim($value[0],'"');
           }
         }
         // Merge additional attribute values with existing ones.
@@ -53,14 +49,18 @@ $function = new Twig_SimpleFunction('add_attributes', function ($context, $addit
     $attributes = [];
 
     foreach ($additional_attributes as $key => $value) {
-      // Bem function specific
       if (is_array($value)) {
-        foreach ($value as $item) {
-          $attributes[] = $item;
-        }
+        $attributes[] = $key . '="' . implode(' ', $value) . '"';
       }
       else {
-        $attributes[] = $key . '="' . $value . '"';
+        // BEM-function specific.
+        if (substr($value, 0, 7) === 'class="') {
+          // Print as-is.
+          $attributes[] = $value;
+        }
+        else {
+          $attributes[] = $key . '="' . $value . '"';
+        }
       }
     }
 
