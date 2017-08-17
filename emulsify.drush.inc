@@ -80,7 +80,7 @@ function drush_emulsify($human_readable_name = NULL) {
 
   // Notify the user of failure.
   if ($status === FALSE) {
-    drush_set_error("EMULSIFY", "Your theme was not successfully created.");
+    drush_set_error('EMULSIFY', 'Your theme was not successfully created.');
   }
 }
 
