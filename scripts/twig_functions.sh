@@ -10,6 +10,10 @@ elif [ -d vendor ]
 then
   # Standalone
   VENDORDIR=vendor
+elif [ -d ../../../vendor ]
+then
+  # Composer-less Drupal
+  VENDORDIR=../../../vendor
 else
   # No vendor directory found
   echo "Vendor directory not found. Please run composer install."
