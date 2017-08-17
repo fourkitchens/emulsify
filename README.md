@@ -25,7 +25,8 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
   2. `cd web/themes/contrib/emulsify/`
   3. `npm install` or `yarn install`
   4. Optional (but recommended): Create "child" theme `drush emulsify "Theme Name"` (run `drush help emulsify` for available options)
-  5. Enable the theme in Drupal
+  5. Enable the components and unified twig extensions modules `drush en -y components unified_twig_ext`
+  6. Enable the theme in Drupal
 
 If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
 
