@@ -27,34 +27,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
   4. Optional (but recommended): Create "child" theme `drush emulsify "Theme Name"` (more details below)
   5. Enable the theme in Drupal
 
-### In a non-Composer Drupal install (e.g. tarball download from drupal.org)
-
-  1. `cd themes/custom` (You may need to create this directory)
-  2. `composer create-project fourkitchens/emulsify --stability dev --no-interaction emulsify`
-  3. `cd emulsify`
-  4. `npm install` or `yarn install`
-  5. Optional (but recommended): Create "child" theme `drush emulsify "Theme Name"` (more details below)
-  6. Enable the theme in Drupal
-
-### If you can not use Composer at all (not recommended)
-
-  1. `cd themes/custom` (You may need to create this directory)
-  2. `git clone git@github.com:fourkitchens/emulsify.git`
-  3. `cd emulsify`
-  4. get the [bem.function.php](https://github.com/drupal-pattern-lab/bem-twig-extension) and [add_attributes.function.php](https://github.com/drupal-pattern-lab/add-attributes-twig-extension) files from their respective repos and place them in `emulsify/components/_twig-components/functions/` so that your directory structure looks like this:
-  ```
-  emulsify/
-    components/
-      _twig-components/
-        functions/
-          add_attributes.function.php
-          bem.function.php
-  ```
-  5. `npm install` or `yarn install` (And ignore the "Vendor directory not found. Please run composer install." message since you're managing the bem and add_attributes functions manually.)
-  6. Download and enable the [Components](https://www.drupal.org/project/components) module
-  7. Download and enable the [Unified Twig Extensions](https://github.com/drupal-pattern-lab/unified-twig-extensions) module
-  8. Optional (but recommended): Create "child" theme `drush emulsify "Theme Name"` (more details below)
-  9. Enable the theme in Drupal
+If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
 
 ## Starting Pattern Lab and watch task
 
