@@ -1,6 +1,6 @@
 {% set ib_base_class = ib_base_class|default('info-box') %}
 
-<div{{ bem(ib_base_class, (ib_modifiers), ib_blockname) }}>
+<div {{ bem(ib_base_class, (ib_modifiers), ib_blockname) }}>
   {% include "@atoms/02-text/00-headings/_heading.twig" with {
     "heading_level": 3,
     "heading": infobox_title,

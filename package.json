@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "gulp clean && gulp compile && gulp theme",
-    "postinstall": "rm -rf pattern-lab && composer create-project -n pattern-lab/edition-twig-standard pattern-lab && rm -rf pattern-lab/source && ln -s ../components pattern-lab/source && git clone https://github.com/drupal-pattern-lab/bem-twig-extension.git && cp bem-twig-extension/bem.function.php components/_twig-components/functions && rm -rf bem-twig-extension/"
+    "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh"
   },
   "precommit.silent": true
 }

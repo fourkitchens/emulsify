@@ -11,19 +11,28 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
   3. [Composer](https://getcomposer.org/)
   4. Optional: [Yarn](https://github.com/yarnpkg/yarn)
 
-## Quickstart
+## Quickstart (Emulsify Standalone)
 
-  1. `npm install` or `yarn install`
+  1. `composer create-project fourkitchens/emulsify --stability dev --no-interaction emulsify`
+  2. `cd emulsify`
+  3. `npm install` or `yarn install`
 
-#### (Drupal-specific installation)
+## Drupal-specific installation
 
-  1. Download and enable [Components](https://www.drupal.org/project/components) module
-  2. Download and enable this fork of the [Unified Twig Extensions](https://github.com/evanmwillhite/unified-twig-extensions/tree/develop) module
-  2. Enable Emulsify theme
+### In a Composer-based Drupal install (recommended)
+
+  1. `composer require fourkitchens/emulsify`
+  2. `cd web/themes/contrib/emulsify/`
+  3. `npm install` or `yarn install`
+  4. Optional (but recommended): Create "child" theme `drush emulsify "Theme Name"` (run `drush help emulsify` for available options)
+  5. Enable the components and unified twig extensions modules `drush en -y components unified_twig_ext`
+  6. Enable the theme in Drupal
+
+If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
 
 ## Starting Pattern Lab and watch task
 
-  Start up watches and local server after compiling (runs all gulp required tasks):
+The `start` command spins up a local server, compiles everything (runs all required gulp tasks), and watches for changes.
 
   1. `npm start` or `yarn start`
 
@@ -38,8 +47,7 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 <tr><td>Stock Components </td><td><strong>✔</strong></td><td>with Drupal support built-in (https://github.com/fourkitchens/emulsify#emulsifys-built-in-components-with-drupal-support)</td></tr>
 <tr><td>Performance Testing </td><td><strong>✔</strong></td><td>Support for testing via Google PageSpeed Insights and WebPageTest.org (https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#performance-testing)</td></tr>
 <tr><td>Automated Github Deployment </td><td><strong>✔</strong></td><td>Deploy your Pattern Lab instance as a Github page (https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#deployment)</td></tr>
-</tbody>
-</table>
+</tbody></table>
 
 <h3 id="components">Emulsify's Built in Components with Drupal support</h3>
 Forms, tables, video, accordion, cards, breadcrumbs, tabs, pager, status messages, grid

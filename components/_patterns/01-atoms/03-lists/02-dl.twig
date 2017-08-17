@@ -10,7 +10,7 @@
 #}
 {% set dl_base_class = dl_base_class|default('dl') %}
 
-<dl{{ bem(dl_base_class, (dl_modifiers), dl_blockname) }}>
+<dl {{ bem(dl_base_class, (dl_modifiers), dl_blockname) }}>
   {% for dl_item in dl_items %}
     {% include "@atoms/03-lists/_list-item-definition.twig" with {
       "dl_term": dl_item.dl_term,
