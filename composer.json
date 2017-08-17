@@ -23,14 +23,6 @@
         }
     ],
     "repositories": {
-        "bem-twig-extension": {
-            "type": "vcs",
-            "url": "https://github.com/drupal-pattern-lab/bem-twig-extension"
-        },
-        "add-attributes-twig-extension": {
-            "type": "vcs",
-            "url": "https://github.com/drupal-pattern-lab/add-attributes-twig-extension"
-        },
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
