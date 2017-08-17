@@ -24,16 +24,16 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
   1. `composer require fourkitchens/emulsify`
   2. `cd web/themes/contrib/emulsify/`
   3. `npm install` or `yarn install`
-  4. Optional (but recommeded): Create "child" theme `drush emulsify "Theme Name"` (more details below)
+  4. Optional (but recommended): Create "child" theme `drush emulsify "Theme Name"` (more details below)
   5. Enable the theme in Drupal
 
-### In a non-Composer Drupal install (e.g. tarball dowanload from drupal.org)
+### In a non-Composer Drupal install (e.g. tarball download from drupal.org)
 
   1. `cd themes/custom` (You may need to create this directory)
   2. `composer create-project fourkitchens/emulsify --stability dev --no-interaction emulsify`
   3. `cd emulsify`
   4. `npm install` or `yarn install`
-  5. Optional (but recommeded): Create "child" theme `drush emulsify "Theme Name"` (more details below)
+  5. Optional (but recommended): Create "child" theme `drush emulsify "Theme Name"` (more details below)
   6. Enable the theme in Drupal
 
 ### If you can not use Composer at all (not recommended)
@@ -50,10 +50,10 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
           add_attributes.function.php
           bem.function.php
   ```
-  5. `npm install` or `yarn install` (And ignore the "Vendor directory not found. Please run composer install." message since you're managing the bem and add_attributes funtions manually.)
+  5. `npm install` or `yarn install` (And ignore the "Vendor directory not found. Please run composer install." message since you're managing the bem and add_attributes functions manually.)
   6. Download and enable the [Components](https://www.drupal.org/project/components) module
   7. Download and enable the [Unified Twig Extensions](https://github.com/drupal-pattern-lab/unified-twig-extensions) module
-  8. Optional (but recommeded): Create "child" theme `drush emulsify "Theme Name"` (more details below)
+  8. Optional (but recommended): Create "child" theme `drush emulsify "Theme Name"` (more details below)
   9. Enable the theme in Drupal
 
 ## Starting Pattern Lab and watch task
