@@ -22,23 +22,29 @@
             "email": "randy@fourkitchens.com"
         }
     ],
-    "repositories": {},
+    "repositories": {
+        "bem-twig-extension": {
+            "type": "vcs",
+            "url": "https://github.com/drupal-pattern-lab/bem-twig-extension"
+        },
+        "add-attributes-twig-extension": {
+            "type": "vcs",
+            "url": "https://github.com/drupal-pattern-lab/add-attributes-twig-extension"
+        },
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
     "require": {
         "drupal/components": "^1.0",
-        "drupal-pattern-lab/unified-twig-extensions": "dev-develop"
+        "drupal-pattern-lab/add-attributes-twig-extension": "^1.0",
+        "drupal-pattern-lab/bem-twig-extension": "^1.0",
+        "drupal-pattern-lab/unified-twig-extensions": "^0.1"
     },
     "require-dev": {},
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "scripts": {
-        "pre-install-cmd": [],
-        "pre-update-cmd": [],
-        "post-install-cmd": [
-          "drush emulsify"
-        ],
-        "post-update-cmd": [
-          "drush emulsify"
-        ]
-    },
+    "scripts": {},
     "extra": []
 }
