@@ -14,7 +14,7 @@ function emulsify_drush_command() {
   $items['emulsify'] = array(
     'description' => 'Create an Emulsify-based theme.',
     'arguments' => array(
-      'human_readable_name'         => 'The name of your theme.',
+      'human_readable_name' => 'The name of your theme.',
     ),
     'options' => array(
       'machine-name' => 'The machine-readable name of your theme. This will be auto-generated from the human_readable_name if ommited.',
@@ -50,11 +50,6 @@ function drush_emulsify($human_readable_name = NULL) {
   if (!$human_readable_name) {
     drush_print(dt('Theme name missing. See help using \'drush help emulsify\'.'));
     return;
-  }
-
-  // Determine the theme name.
-  if (!isset($human_readable_name)) {
-    $human_readable_name = drush_get_option('human_readable_name');
   }
 
   // Determine the machine name.
@@ -265,6 +260,7 @@ function _emulsify_get_files_to_copy() {
     'emulsify.libraries.yml',
     'gulpfile.js',
     'package.json',
+    'scripts',
     'yarn.lock',
   );
   // If we would like to have a bare copy we use is slim option.
