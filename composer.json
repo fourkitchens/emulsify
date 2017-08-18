@@ -2,39 +2,41 @@
     "name": "fourkitchens/emulsify",
     "description": "Project template for Drupal 8 themes",
     "type": "drupal-theme",
+    "homepage": "http://emulsify.info",
     "license": "MIT",
     "authors": [
         {
-            "name": "Evan Willhite",
-            "role": ""
-        },
-        {
             "name": "Brian Lewis",
-            "role": ""
+            "email": "brian@fourkitchens.com"
         },
         {
-            "name": "Luke Herrington",
-            "role": ""
+            "name": "Chris Martin",
+            "email": "chris.martin@fourkitchens.com"
         },
         {
-            "name": "Ben Teegarden",
-            "role": ""
+            "name": "Evan Willhite",
+            "email": "evan@fourkitchens.com"
         },
         {
             "name": "Randy Oest",
-            "role": ""
+            "email": "randy@fourkitchens.com"
         }
     ],
-    "repositories": [],
-    "require": {},
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+    "require": {
+        "drupal/components": "^1.0",
+        "drupal-pattern-lab/add-attributes-twig-extension": "^1.0",
+        "drupal-pattern-lab/bem-twig-extension": "^1.0",
+        "drupal-pattern-lab/unified-twig-extensions": "^0.1"
+    },
     "require-dev": {},
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "scripts": {
-        "pre-install-cmd": [],
-        "pre-update-cmd": [],
-        "post-install-cmd": [],
-        "post-update-cmd": []
-    },
-    "extra": {}
+    "scripts": {},
+    "extra": []
 }
