@@ -100,7 +100,7 @@ function drush_emulsify($human_readable_name = NULL) {
  * @return boolean
  *   A boolean representing the success or failure of the function.
  */
-function drush_emulsify_create(string $human_readable_name, string $machine_name, string $description, string $theme_path) {
+function drush_emulsify_create($human_readable_name, $machine_name, $description, $theme_path) {
   $theme_path = drush_normalize_path(drush_get_context('DRUSH_DRUPAL_ROOT') . DIRECTORY_SEPARATOR . $theme_path . DIRECTORY_SEPARATOR . $machine_name);
 
   // Phase: Validate theme path is writeable.
@@ -170,7 +170,7 @@ function drush_emulsify_create(string $human_readable_name, string $machine_name
  *   An array with a key representing the string to be replaced and value
  *   representing the string to replace it with.
  */
-function _emulsify_get_alterations(string $human_readable_name, string $machine_name, string $description) {
+function _emulsify_get_alterations($human_readable_name, $machine_name, $description) {
   return array(
     'Emulsify' => $human_readable_name,
     'emulsify' => $machine_name,
@@ -328,7 +328,7 @@ function _emulsify_get_files_to_rename() {
  * @return boolean
  *   A boolean representing the success or failure of the function.
  */
-function _emulsify_alter_files(string $theme_path, array $files_to_alter = array(), array $alterations = array(), bool $absolute = FALSE) {
+function _emulsify_alter_files($theme_path, array $files_to_alter = array(), array $alterations = array(), $absolute = FALSE) {
   if (empty($files_to_alter) || empty($alterations)) {
     return TRUE;
   }
@@ -372,7 +372,7 @@ function _emulsify_alter_files(string $theme_path, array $files_to_alter = array
  * @return boolean
  *   A boolean representing the success or failure of the function.
  */
-function _emulsify_make_directories(array $directories = array(), string $destination_path = '') {
+function _emulsify_make_directories(array $directories = array(), $destination_path = '') {
 
   // Check for invalid settings and return an error.
   if (!is_array($directories) || !is_string($destination_path) || empty($destination_path)) {
@@ -410,7 +410,7 @@ function _emulsify_make_directories(array $directories = array(), string $destin
  * @return boolean
  *   A boolean representing the success or failure of the function.
  */
-function _emulsify_copy_files(array $files = array(), string $destination_path = '') {
+function _emulsify_copy_files(array $files = array(), $destination_path = '') {
 
   // Check for invalid settings and return an error.
   if (!is_array($files) || !is_string($destination_path) || empty($destination_path)) {
@@ -450,7 +450,7 @@ function _emulsify_copy_files(array $files = array(), string $destination_path =
  * @return boolean
  *   A boolean representing success or failure of the rename.
  */
-function _emulsify_rename_files(string $theme_path, string $machine_name, array $files_to_rename = array()) {
+function _emulsify_rename_files($theme_path, $machine_name, array $files_to_rename = array()) {
   foreach ($files_to_rename as $file_to_rename_path) {
     $file_original_path = $theme_path . DIRECTORY_SEPARATOR . $file_to_rename_path;
     $file_new_path = $theme_path . DIRECTORY_SEPARATOR . str_replace('emulsify', $machine_name, $file_to_rename_path);
@@ -473,7 +473,7 @@ function _emulsify_rename_files(string $theme_path, string $machine_name, array 
  * @return boolean
  *   A boolean representing success or failure of the replacement.
  */
-function _emulsify_file_str_replace(string $file_path, array $find, array $replace) {
+function _emulsify_file_str_replace($file_path, array $find, array $replace) {
   $file_path = drush_normalize_path($file_path);
   $file_contents = file_get_contents($file_path);
   $file_contents = str_replace($find, $replace, $file_contents);
@@ -490,7 +490,7 @@ function _emulsify_file_str_replace(string $file_path, array $find, array $repla
  * @return boolean
  *   A boolean representing success or failure.
  */
-function _emulsify_validate_path(string $path) {
+function _emulsify_validate_path($path) {
   // Check for succees, if not, log the error and return FALSE.
   $return = file_prepare_directory($path, FILE_CREATE_DIRECTORY);
 
@@ -510,7 +510,7 @@ function _emulsify_validate_path(string $path) {
  * @return boolean
  *   A boolean representing if the path is empty or not.
  */
-function _emulsify_validate_path_is_empty(string $path) {
+function _emulsify_validate_path_is_empty($path) {
 
   if (!is_readable($path)) {
     return FALSE;
@@ -531,7 +531,7 @@ function _emulsify_validate_path_is_empty(string $path) {
  * @return boolean
  *   Always return false in the case we use this function as a return value.
  */
-function _emulsify_notify_fail(string $path = '', string $message = '') {
+function _emulsify_notify_fail($path = '', $message = '') {
 
   // Set a default message for the most common error.
   if (empty($message)) {
@@ -563,7 +563,7 @@ function _emulsify_notify_fail(string $path = '', string $message = '') {
  * @return boolean
  *   Always TRUE in the case we want to use this function as a return value.
  */
-function _emulsify_notify_success(string $human_readable_name, string $theme_path) {
+function _emulsify_notify_success($human_readable_name, $theme_path) {
   // Notify user of the newly created theme.
   $message = 'Successfully created the Emulsify theme "!name" created in: !path, you can now run \'yarn\' or \'yarn install\' or \'npm install\' to install the node modules.';
 
