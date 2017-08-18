@@ -2,15 +2,15 @@
 # Link contrib twig functions into the components directory
 
 # First we need to find out whether this is inside a Drupal install or standalone Emulsify
-if [ -d ../../../../vendor ]
+if [ -f ../../../../vendor/drupal-pattern-lab/bem-twig-extension/bem.function.php ]
 then
   # Drupal install
   VENDORDIR=../../../../vendor
-elif [ -d vendor ]
+elif [ -f vendor/drupal-pattern-lab/bem-twig-extension/bem.function.php ]
 then
   # Standalone
   VENDORDIR=vendor
-elif [ -d ../../../vendor ]
+elif [ -f ../../../vendor/drupal-pattern-lab/bem-twig-extension/bem.function.php ]
 then
   # Composer-less Drupal
   VENDORDIR=../../../vendor
