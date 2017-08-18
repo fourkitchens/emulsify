@@ -224,6 +224,11 @@ function _emulsify_get_directories_to_make() {
       'components/_patterns/03-organisms',
       'components/_patterns/04-templates',
       'components/_patterns/05-pages',
+      'fonts',
+      'images',
+      'images/icons',
+      'images/icons/src',
+      'templates',
     );
   }
   else {
@@ -272,7 +277,9 @@ function _emulsify_get_files_to_copy() {
       'components/_twig-components',
       'components/css',
       'components/images',
+      'components/_patterns/style.scss',
       'components/_patterns/00-base/global/01-colors',
+      'components/_patterns/00-base/global/global.js',
     ));
   }
   else {
@@ -298,16 +305,15 @@ function _emulsify_get_files_to_rename() {
   $default_array = array(
     'emulsify.info.yml',
     'emulsify.theme',
+    'emulsify.breakpoints.yml',
+    'emulsify.libraries.yml',
   );
   // If we would like to have a bare copy we use is slim option.
   if (drush_get_option('slim') === TRUE) {
-    return $default_array;
+    return array_merge($default_array, array());
   }
   else {
-    return array_merge($default_array, array(
-      'emulsify.breakpoints.yml',
-      'emulsify.libraries.yml',
-    ));
+    return array_merge($default_array, array());
   }
 }
 
