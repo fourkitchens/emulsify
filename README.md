@@ -30,13 +30,14 @@ Yarn:
 ### In a Composer-based Drupal install (recommended)
 
   1. `composer require fourkitchens/emulsify`
-  2. `cd web/themes/contrib/emulsify/`
-  3. `npm install` or `yarn install`
-  4. Enable Emulsify and its dependencies `drush en emulsify components unified_twig_ext -y`
-  5. Optional (but recommended): Create cloned theme `drush emulsify "Theme Name"` (You may need to run `drush cc drush` to clear the drush cache. Also, you can run `drush help emulsify` for other available options)
-  6. Enable your new theme in Drupal
+  2. Enable Emulsify and its dependencies `drush en emulsify components unified_twig_ext -y`
+  3. **Optional**: Create cloned theme `drush emulsify "THEME NAME"` (You may need to run `drush cc drush` to clear the drush cache. Also, you can run `drush help emulsify` for other available options)
+  4. If you created a cloned theme, `cd web/themes/custom/THEME_NAME/`. If not, `cd web/themes/contrib/emulsify/`
+  5. `npm install` or `yarn install`
 
 If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
+
+Troubleshooting Installation: See [Drupal Installation FAQ](https://github.com/fourkitchens/emulsify/wiki/Installation#drupal-installation-faq).
 
 ## Starting Pattern Lab and watch task
 
