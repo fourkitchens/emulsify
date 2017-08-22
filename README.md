@@ -33,7 +33,7 @@ Yarn:
   2. `cd web/themes/contrib/emulsify/`
   3. `npm install` or `yarn install`
   4. Enable Emulsify and its dependencies `drush en emulsify components unified_twig_ext -y`
-  4. Optional (but recommended): Create cloned theme `drush emulsify "Theme Name"` (You may need to run `drush cc drush` to clear the drush cache. Also, you can run `drush help emulsify` for other available options)
+  5. Optional (but recommended): Create cloned theme `drush emulsify "Theme Name"` (You may need to run `drush cc drush` to clear the drush cache. Also, you can run `drush help emulsify` for other available options)
   6. Enable your new theme in Drupal
 
 If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
