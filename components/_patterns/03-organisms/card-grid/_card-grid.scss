@@ -1,6 +1,7 @@
 .card__grid {
   @include grid;
-  @include margin;
+
+  margin-bottom: 1em;
 }
 
 .card--grid-item {

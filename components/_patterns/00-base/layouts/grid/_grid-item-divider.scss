@@ -2,12 +2,12 @@
 @mixin grid-divider($columns: '') {
   flex-grow: 0;
 
-  @include large {
+  @include breakpoint($large) {
     margin-right: 3.5%;
     position: relative;
 
     &::after {
-      background-color: $gray-lighter;
+      background-color: $gray-light;
       content: "";
       display: block;
       height: 100%;
@@ -47,7 +47,7 @@
   }
 
   &:last-child {
-    @include large {
+    @include breakpoint($large) {
       margin-right: 0;
     }
 

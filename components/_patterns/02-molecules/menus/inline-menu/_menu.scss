@@ -5,7 +5,7 @@
 .menu__item {
   margin: 0 1em 0.5em 0;
 
-  @include large {
+  @include breakpoint($large) {
     display: inline;
     margin-bottom: 1em;
   }

@@ -1,4 +1,4 @@
-$breadcrumb-active: #bbb;
+$breadcrumb-active: $gray;
 
 .breadcrumb {
   @include list-reset;

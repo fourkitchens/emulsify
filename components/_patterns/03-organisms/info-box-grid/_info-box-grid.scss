@@ -1,8 +1,0 @@
-.info-box__grid {
-  @include grid;
-  @include margin;
-}
-
-.info-box--grid-item {
-  @include grid-item(2);
-}

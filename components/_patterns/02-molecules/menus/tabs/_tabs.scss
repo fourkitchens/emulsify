@@ -2,10 +2,10 @@
 .tabs__nav {
   @include list-reset;
 
-  border-bottom: 1px solid $gray-lightest;
+  border-bottom: 1px solid $gray-light;
 
-  @include large {
-    border-left: 1px solid $gray-lightest;
+  @include breakpoint($large) {
+    border-left: 1px solid $gray-light;
     display: flex;
   }
 }

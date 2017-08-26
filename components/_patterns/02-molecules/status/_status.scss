@@ -1,9 +1,9 @@
 // See http://refills.bourbon.io/components/#flashes.
 $base-spacing: 1.5em !default;
 $statuses: (
-  "warning": #f9fb93,
-  "error": #fbe3e4,
-  "status": #cfefc2,
+  "warning": #F9FB93,
+  "error": #FBE3E4,
+  "status": #CFEFC2,
 ) !default;
 
 @each $status-type, $color in $statuses {

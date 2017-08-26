@@ -1,68 +1,13 @@
-/**
- * Breakpoint Configuration
- * @see https://github.com/Team-Sass/breakpoint/wiki
- *
- */
+/////////////////////
+// Global Breakpoints
 
-/////////
-// Singularity variables
-//
-@include breakpoint-set('to ems', true);
-@include add-grid(12);
-@include add-gutter(1/4);
-
-// Breakpoints variables
-$xs: 25em;
-$small: 26em;
-$medium: 41em;
-$large: 48em;
-$xl: 75em;
+// Avoid using in favor of atomic, content-specific, breakpoints.
+// These should be used for generic code, like layouts and typography, only.
+$xs: 320px;
+$small: 480px;
+$medium: 720px;
+$large: 920px;
+$xl: 1224px;
+// The max-width breakpoint is used when the design should be applied at whatever the
+// largest breakpoint is regardless of actual pixel value. e.g. removing outer margin on body wrapper
 $max-width: $xl;
-
-/// Mixin - xs Breakpoint
-/// Allows easier @include xs {} syntax
-@mixin xs {
-  @include breakpoint($xs) {
-    @content;
-  }
-}
-
-/// Mixin - small Breakpoint
-/// Allows easier @include small {} syntax
-@mixin small {
-  @include breakpoint($small) {
-    @content;
-  }
-}
-
-/// Mixin - medium Breakpoint
-/// Allows easier @include medium {} syntax
-@mixin medium {
-  @include breakpoint($medium) {
-    @content;
-  }
-}
-
-/// Mixin - large Breakpoint
-/// Allows easier @include large {} syntax
-@mixin large {
-  @include breakpoint($large) {
-    @content;
-  }
-}
-
-/// Mixin - xl Breakpoint
-/// Allows easier @include xl {} syntax
-@mixin xl {
-  @include breakpoint($xl) {
-    @content;
-  }
-}
-
-/// Mixin - max-width Breakpoint
-/// Allows easier @include max-width {} syntax
-@mixin max-width {
-  @include breakpoint($max-width) {
-    @content;
-  }
-}

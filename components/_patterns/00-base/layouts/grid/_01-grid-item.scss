@@ -3,7 +3,7 @@
   margin-bottom: 1em;
   width: 100%;
 
-  @include large {
+  @include breakpoint($large) {
     margin: 0 3% 3% 0;
     width: auto;
   }
@@ -13,7 +13,7 @@
   }
 
   @if $columns == 2 {
-    @include large {
+    @include breakpoint($large) {
       width: 48.2%;
 
       &:nth-child(2n) {
@@ -23,7 +23,7 @@
   }
 
   @if $columns == 3 {
-    @include large {
+    @include breakpoint($large) {
       width: 31%;
 
       &:nth-child(3n) {

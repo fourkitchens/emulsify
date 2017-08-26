@@ -12,7 +12,7 @@
   display: inline-block;
   margin: 0 0.7em;
 
-  @include large {
+  @include breakpoint($large) {
     margin: 0 1em;
   }
 }
