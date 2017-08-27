@@ -10,5 +10,5 @@
   {% endfor %}
 </ul>
 {% if meta %}
-  <p> <small>{{ meta.description }}</small> </p>
+  <p> <small>{{ meta.description|raw }}</small> </p>
 {% endif %}
