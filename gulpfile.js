@@ -15,4 +15,12 @@
   }
   require('emulsify-gulp')(gulp, localConfig);
 
+  /**
+   * Move fonts into dist/.
+   */
+  gulp.task('move-fonts', () => {
+    gulp.src(localConfig.paths.fonts + '/**/*')
+    .pipe(gulp.dest(localConfig.paths.dist_fonts))
+  })
+
 })();

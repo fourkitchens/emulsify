@@ -1,0 +1,66 @@
+html {
+  font-size: 62.5%; /* Set 1rem to equal 10px */
+}
+
+body {
+  font-size: 2rem;
+}
+
+@mixin font-face-whitney($name, $font-weight, $font-style: normal) {
+  $face-file: "fonts/Whitney/Whitney-#{$name}";
+
+  @font-face {
+    font-family: Whitney;
+    src: url('#{$face-file}.otf') format('opentype');
+    // src: url('#{$face-file}.eot');
+    // src:
+    //   url('#{$face-file}.eot?#iefix') format('embedded-opentype'),
+    //   url('#{$face-file}.woff2') format('woff2'),
+    //   url('#{$face-file}.woff') format('woff');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+@mixin font-face-sentinel($name, $font-weight, $font-style: normal) {
+  $face-file: "fonts/Sentinel/Sentinel-#{$name}";
+
+  @font-face {
+    font-family: Sentinel;
+    src: url('#{$face-file}.eot');
+    src:
+      url('#{$face-file}.eot?#iefix') format('embedded-opentype'),
+      url('#{$face-file}.woff2') format('woff2'),
+      url('#{$face-file}.woff') format('woff');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+// Run @font-face for the Whitney font
+@include font-face-whitney($name: 'Light', $font-weight: 300);
+@include font-face-whitney($name: 'LightItalic', $font-weight: 300, $font-style: 'italic');
+@include font-face-whitney($name: 'Book', $font-weight: 400);
+@include font-face-whitney($name: 'BookItalic', $font-weight: 400, $font-style: 'italic');
+@include font-face-whitney($name: 'Medium', $font-weight: 500);
+@include font-face-whitney($name: 'MediumItalic', $font-weight: 500, $font-style: 'italic');
+@include font-face-whitney($name: 'Semibold', $font-weight: 600);
+@include font-face-whitney($name: 'SemiboldItalic', $font-weight: 600, $font-style: 'italic');
+@include font-face-whitney($name: 'Bold', $font-weight: 700);
+@include font-face-whitney($name: 'BoldItalic', $font-weight: 700, $font-style: 'italic');
+@include font-face-whitney($name: 'Black', $font-weight: 800);
+@include font-face-whitney($name: 'BlackItalic', $font-weight: 800, $font-style: 'italic');
+
+// Run @font-face for the Sentinel font
+@include font-face-sentinel($name: 'Regular', $font-weight: 400);
+@include font-face-sentinel($name: 'RegularItalic', $font-weight: 400, $font-style: 'italic');
+@include font-face-sentinel($name: 'Medium', $font-weight: 500);
+@include font-face-sentinel($name: 'MediumItalic', $font-weight: 500, $font-style: 'italic');
+@include font-face-sentinel($name: 'Semibold', $font-weight: 600);
+@include font-face-sentinel($name: 'SemiboldItalic', $font-weight: 600, $font-style: 'italic');
+@include font-face-sentinel($name: 'Bold', $font-weight: 700);
+@include font-face-sentinel($name: 'BoldItalic', $font-weight: 700, $font-style: 'italic');
+
+// Implement the fonts we created above
+$font-family-serif: Sentinel, serif;
+$font-family-sans-serif: Whitney, sans-serif;

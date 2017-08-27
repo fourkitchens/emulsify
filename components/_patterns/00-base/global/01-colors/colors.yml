@@ -1,16 +1,24 @@
 items:
+  - name: $green-lighter
+    value: '#78DC8D'
   - name: $green-light
     value: '#3FD03F'
   - name: $green
     value: '#35AA4E'
   - name: $green-dark
     value: '#2B8A31'
+  - name: $green-darker
+    value: '#127218'
+  - name: $blue-lighter
+    value: '#99BFEB'
   - name: $blue-light
     value: '#68A2E3'
   - name: $blue
-    value: '#4180C7'
-  - name: $blue-dark
     value: '#0C62C2'
+  - name: $blue-dark
+    value: '#4180C7'
+  - name: $blue-darker
+    value: '#2C5D95'
   - name: $yellow
     value: '#ECDF13'
   - name: $yellow-dark
@@ -19,13 +27,23 @@ items:
     value: '#FD880B'
   - name: $orange-dark
     value: '#D86601'
+  - name: $red
+    value: '#B83B2B'
+  - name: $red-dark
+    value: '#672118'
   - name: $white
     value: '#FFF'
+  - name: $gray-lightest
+    value: '#EEE'
+  - name: $gray-lighter
+    value: '#E4E4E4'
   - name: $gray-light
     value: '#D2D2D2'
   - name: $gray
-    value: '#A0A0A0'
+    value: '#555'
   - name: $gray-dark
+    value: '#666'
+  - name: $gray-darker
     value: '#414141'
   - name: $black
     value: '#000'
