@@ -36,8 +36,8 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 
 @media (min-width: 1224px) {
   .sg-main {
-    padding-left: calc(1rem + calc(-50vw + calc(1224 / 2)));
-    padding-right: calc(1rem + calc(-50vw + calc(1224 / 2)));
+    padding-left: calc(1rem + calc(-50vw + calc(1224px / 2)));
+    padding-right: calc(1rem + calc(-50vw + calc(1224px / 2)));
   }
 }
 
@@ -46,50 +46,9 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
   flex-flow: column nowrap;
 }
 
-.pl .sg-subtype h2 {
-  font-size: 2rem;
-  line-height: 1.6;
-  text-transform: uppercase;
-  background-color: #213138;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  margin-top: 0;
-}
-
-.pl .sg-subtype h2 a {
-  /* @include outer-container; */
-  max-width: 1224px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: block;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-@media (min-width: 1224px) {
-  .pl .sg-subtype h2 a {
-    padding-left: calc(1rem + calc(-50vw + calc(1224 / 2)));
-    padding-right: calc(1rem + calc(-50vw + calc(1224 / 2)));
-  }
-}
-
-.pl .sg-pattern-title a {
-  color: #1169BA !important;
-  font-family: serif;
-  font-size: 2.2rem;
-  font-weight: 500;
-  text-transform: uppercase !important;
-}
-
-.pl .sg-pattern-title {
-  color: #738BA3;
-  font-size: 1.4rem !important;
-  text-transform: none !important;
-}
-
+.pl .sg-subtype h2,
 .sg-main .sg-subtype h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 1.6;
   text-transform: uppercase;
   background-color: #213138;
@@ -98,6 +57,7 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
   margin-top: 0;
 }
 
+.pl .sg-subtype h2 a,
 .sg-main .sg-subtype h2 a {
   /* @include outer-container; */
   max-width: 1224px;
@@ -110,13 +70,14 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 }
 
 @media (min-width: 1224px) {
+  .pl .sg-subtype h2 a,
   .sg-main .sg-subtype h2 a {
-    padding-left: calc(1rem + calc(-50vw + calc(1224 / 2)));
-    padding-right: calc(1rem + calc(-50vw + calc(1224 / 2)));
+    padding-left: calc(1rem + calc(-50vw + calc(1224px / 2)));
+    padding-right: calc(1rem + calc(-50vw + calc(1224px / 2)));
   }
 }
 
-
+.pl .sg-pattern-title a,
 .sg-main .sg-pattern-title a {
   color: #1169BA !important;
   font-family: serif;
@@ -125,6 +86,7 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
   text-transform: uppercase !important;
 }
 
+.pl .sg-pattern-title,
 .sg-main .sg-pattern-title {
   color: #738BA3;
   font-size: 1.4rem !important;
