@@ -12,15 +12,15 @@
 }
 
 // Outer container
-@mixin wrapper($tb-padding: 0, $lr-padding: $gutter-spacing) {
+@mixin wrapper($v-padding: 0, $h-padding: $gutter-spacing) {
   max-width: $max-width;
   width: 100%;
   margin: 0 auto;
-  padding: #{$tb-padding} #{$lr-padding};
+  padding: #{$v-padding} #{$h-padding};
 
   @include breakpoint($max-width) {
-    padding-left: calc(#{$lr-padding} + calc(-50vw + calc(#{$max-width} / 2)));
-    padding-right: calc(#{$lr-padding} + calc(-50vw + calc(#{$max-width} / 2)));
+    padding-left: calc(#{$h-padding} + calc(-50vw + calc(#{$max-width} / 2)));
+    padding-right: calc(#{$h-padding} + calc(-50vw + calc(#{$max-width} / 2)));
   }
 }
 
