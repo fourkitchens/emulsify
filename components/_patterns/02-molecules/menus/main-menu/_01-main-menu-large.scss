@@ -1,0 +1,131 @@
+@include large {
+  #toggle-expand {
+    display: none;
+  }
+
+  #main-menu {
+    display: block;
+  }
+
+  // LI
+  .main-menu__item {
+    display: inline-block;
+
+    // exclude submenu from getting an icon
+    & > .main-menu__link:not(.main-menu__link--sub)::after {
+      color: $white;
+      display: inline-block;
+      content: ">";
+    }
+
+    &:hover {
+      background-color: $black;
+      transition: all 0.2s;
+
+      & > .main-menu__link:not(.main-menu__link--sub)::after {
+        color: $gray-light;
+      }
+
+      & > .main-menu--sub {
+        display: block;
+      }
+    }
+  }
+
+  .main-menu__link {
+    color: $white;
+
+    &.active,
+    &:active,
+    &:hover {
+      color: $gray-lighter;
+    }
+  }
+
+  .main-menu__link {
+    color: $gray;
+  }
+
+  // A
+  .main-menu__link {
+    border-bottom: none;
+    color: $gray-dark;
+    display: inline-block;
+    font-size: 1.1rem;
+    padding: $space $space-double $space $space;
+    text-transform: none;
+    position: relative;
+  }
+
+  // make top-level menu items retain their active
+  // lt-blue when the sub_menu is active/hovered
+  .main-menu__item:hover {
+    > .main-menu__link {
+      color: $gray-lighter;
+    }
+  }
+  //
+  // Sub Navigation
+  //
+
+  // Expand Button
+  .expand-sub {
+    display: none;
+  }
+
+  // UL (nested)
+  .main-menu--sub {
+    background-color: $gray-lightest;
+    display: none;
+    height: auto;
+    left: 0;
+    overflow: visible;
+    padding: $space 0;
+    position: absolute;
+    top: 55px;
+    width: 315px;
+    z-index: 1;
+    font-size: 0.9rem;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+      background-color: $black;
+      transition: all 0.2s;
+
+      .main-menu__link--sub {
+        color: $white;
+
+        &.active,
+        &:active,
+        &:hover {
+          color: $gray-lighter;
+          background-color: $black;
+        }
+      }
+    }
+
+    .main-menu--sub {
+      display: none !important; // Never shown on large screens
+    }
+  }
+
+  .main-menu__item--sub + .main-menu__item--sub {
+    border-top: 1px solid $gray-light;
+  }
+
+  .main-menu__link--sub {
+    color: $gray-light;
+    display: block;
+  }
+
+  // LI (Nested)
+  .main-menu__item--sub {
+    display: block;
+  }
+
+  // A (Nested)
+  .main-menu__link--sub {
+    padding: $space-one-third $space;
+  }
+} // End Breakpoint

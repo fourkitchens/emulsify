@@ -1,0 +1,170 @@
+// Toggle
+
+.toggle-expand {
+  @include link;
+
+  display: inline-block;
+  padding: $space;
+  text-decoration: none;
+  width: 100%;
+}
+
+.toggle-expand__text {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+
+  .menu-open & {
+    color: $white;
+  }
+}
+
+.toggle-expand__icon {
+  width: 5rem;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+}
+
+.toggle-expand__open {
+  display: inline-block;
+  text-align: center;
+
+  .menu-open & {
+    display: none;
+  }
+}
+
+.toggle-expand__close {
+  display: none;
+  text-align: center;
+
+  &::before {
+    color: $white;
+    content: "X";
+    display: block;
+    font-size: 2.5rem;
+    line-height: 2;
+  }
+
+  .menu-open & {
+    display: inline-block;
+  }
+}
+
+.toggle-expand.menu-open {
+  background-color: $gray-dark;
+
+  & + #main-menu {
+    display: block;
+  }
+}
+
+#main-menu {
+  display: none;
+
+  &.menu-open {
+    position: fixed;
+    top: 134px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 85%;
+    overflow-y: scroll;
+    background-color: $white;
+  }
+}
+
+// UL
+.main-menu {
+  @include list-reset;
+
+  position: relative;
+  z-index: 10;
+}
+
+// LI
+.main-menu__item {
+  position: relative;
+}
+
+// A
+.main-menu__link {
+  border-bottom: 1px solid;
+  color: $gray-dark;
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: $space $space-sextuple $space $space-double;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+//
+// Sub Navigation
+//
+
+// Expand Button
+.expand-sub {
+  background-color: $black;
+  cursor: pointer;
+  display: block;
+  height: 61px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 17%;
+  color: $white;
+
+  // Down triangle
+  &::after {
+    border: 15px solid;
+    border-bottom-color: transparent;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    content: "";
+    display: block;
+    margin-right: -12px;
+    margin-top: -6px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 0;
+  }
+
+  &.opened {
+    background-color: $black;
+    color: $near-white;
+
+    &::after {
+      border-top-color: transparent;
+      border-bottom: 15px solid;
+      margin-top: -20px;
+    }
+  }
+}
+
+// UL (Nested)
+.main-menu--sub {
+  height: 0;
+  overflow: hidden;
+  background-color: $near-white;
+
+  &.open {
+    height: auto;
+  }
+}
+
+// A (Nested)
+.main-menu__link--sub {
+  color: $gray-dark;
+  padding-left: $space-triple;
+  font-weight: normal;
+}
+
+.main-menu--sub .main-menu--sub {
+  background-color: $gray-lightest;
+
+  .main-menu__link--sub {
+    padding-left: $space-quadruple;
+  }
+}
