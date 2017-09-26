@@ -3,7 +3,7 @@
   {% set item_modifiers = item_modifiers|merge(['active']) %}
 {% endif %}
 {% if menu_level > 0 %}
-  {% set item_modifiers = item_modifiers|merge(['sub']) %}
+  {% set item_modifiers = item_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
 {% endif %}
 
 {% embed "@atoms/03-lists/_list-item.twig" with {

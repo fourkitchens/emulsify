@@ -1,11 +1,5 @@
 items:
-  1:
-    title:
-      "Test"
-    url:
-      "/"
-  2:
-    title:
-      "Number 2"
-    url:
-      "/test-2"
+  - title: "Test"
+    url: "/"
+  - title: "Number 2"
+    url: "/test-2"
