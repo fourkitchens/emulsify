@@ -1,66 +1,9 @@
-// Toggle
-
-.toggle-expand {
-  @include link;
-
-  display: inline-block;
-  padding: $space;
-  text-decoration: none;
-  width: 100%;
-}
-
-.toggle-expand__text {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: bold;
-
-  .menu-open & {
-    color: $white;
-  }
-}
-
-.toggle-expand__icon {
-  width: 5rem;
-  padding-bottom: 3rem;
-  margin: 0 auto;
-}
-
-.toggle-expand__open {
-  display: inline-block;
-  text-align: center;
-
-  .menu-open & {
-    display: none;
-  }
-}
-
-.toggle-expand__close {
-  display: none;
-  text-align: center;
-
-  &::before {
-    color: $white;
-    content: "X";
-    display: block;
-    font-size: 2.5rem;
-    line-height: 2;
-  }
-
-  .menu-open & {
-    display: inline-block;
-  }
-}
-
-.toggle-expand.menu-open {
-  background-color: $gray-dark;
-
-  & + #main-menu {
-    display: block;
-  }
-}
-
 #main-menu {
   display: none;
+
+  @include large {
+    display: block;
+  }
 
   &.menu-open {
     position: fixed;
@@ -80,11 +23,6 @@
 
   position: relative;
   z-index: 10;
-}
-
-// LI
-.main-menu__item {
-  position: relative;
 }
 
 // A
@@ -114,6 +52,10 @@
   right: 0;
   width: 17%;
   color: $white;
+
+  @include large {
+    display: none;
+  }
 
   // Down triangle
   &::after {
@@ -149,8 +91,48 @@
   overflow: hidden;
   background-color: $near-white;
 
+  @include large {
+    background-color: $gray-lightest;
+    display: none;
+    height: auto;
+    left: 0;
+    overflow: visible;
+    padding: $space 0;
+    position: absolute;
+    top: 55px;
+    width: 315px;
+    z-index: 1;
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+
+  &:hover {
+    @include large {
+      opacity: 1;
+      background-color: $black;
+      transition: all 0.2s;
+
+      .main-menu__link--sub {
+        color: $white;
+
+        &.active,
+        &:active,
+        &:hover {
+          color: $gray-lighter;
+          background-color: $black;
+        }
+      }
+    }
+  }
+
   &.open {
     height: auto;
+  }
+
+  .main-menu--sub {
+    @include large {
+      display: none !important; // Never shown on large screens
+    }
   }
 }
 
