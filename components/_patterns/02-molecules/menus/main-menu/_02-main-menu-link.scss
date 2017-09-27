@@ -1,15 +1,18 @@
 // A
 .main-menu__link {
-  border-bottom: 1px solid;
   color: $gray-dark;
   display: block;
   font-size: 1.2rem;
   line-height: 1.5;
-  padding: $space $space-sextuple $space $space-double;
+  padding: $space $space-triple $space $space-double;
   text-decoration: none;
   font-weight: bold;
 
-  @include large {
+  &--with-sub {
+    width: 80%;
+  }
+
+  @include breakpoint($main-menu-medium) {
     border-bottom: none;
     color: $gray-dark;
     display: inline-block;
@@ -17,6 +20,7 @@
     padding: $space $space-double $space $space;
     text-transform: none;
     position: relative;
+    width: auto;
 
     &.active,
     &:active,
@@ -53,7 +57,7 @@
   padding-left: $space-triple;
   font-weight: normal;
 
-  @include large {
+  @include breakpoint($main-menu-medium) {
     color: $gray-light;
     display: block;
     padding: $space-one-third $space;

@@ -1,8 +1,11 @@
+// Menu Breakpoint
+$main-menu-medium: 43em;
+
 // Nav
 .main-nav {
   display: none;
 
-  @include large {
+  @include breakpoint($main-menu-medium) {
     display: block;
   }
 
@@ -15,8 +18,13 @@
 .main-menu {
   @include list-reset;
 
+  border-bottom: 1px solid;
   position: relative;
   z-index: 10;
+
+  @include breakpoint($main-menu-medium) {
+    border-bottom: none;
+  }
 
   &--open {
     position: fixed;
@@ -36,11 +44,13 @@
 
 // UL (Nested)
 .main-menu--sub {
+  border-bottom: none;
   height: 0;
   overflow: hidden;
   background-color: $near-white;
+  width: 100%;
 
-  @include large {
+  @include breakpoint($main-menu-medium) {
     background-color: $gray-lightest;
     display: none;
     height: auto;
@@ -56,7 +66,7 @@
   }
 
   &:hover {
-    @include large {
+    @include breakpoint($main-menu-medium) {
       opacity: 1;
       background-color: $black;
       transition: all 0.2s;
@@ -81,7 +91,7 @@
 }
 
 .main-menu--sub-2 {
-  @include large {
+  @include breakpoint($main-menu-medium) {
     display: none; // Never shown on large screens
   }
 }

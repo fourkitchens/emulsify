@@ -5,6 +5,9 @@
 {% if menu_level > 0 %}
   {% set item_modifiers = item_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
 {% endif %}
+{% if item.below %}
+  {% set item_modifiers = item_modifiers|merge(['with-sub']) %}
+{% endif %}
 
 {% embed "@atoms/03-lists/_list-item.twig" with {
   "list_item_label": item_label,

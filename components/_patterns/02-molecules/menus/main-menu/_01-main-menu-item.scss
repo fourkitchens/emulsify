@@ -1,8 +1,12 @@
 // LI
 .main-menu__item {
+  border-top: 1px solid;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
 
-  @include large {
+  @include breakpoint($main-menu-medium) {
+    border-top: none;
     display: inline-block;
 
     // Only top level
@@ -28,14 +32,11 @@
   background-color: $black;
   cursor: pointer;
   display: block;
-  height: 61px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 17%;
+  width: 20%;
   color: $white;
+  position: relative;
 
-  @include large {
+  @include breakpoint($main-menu-medium) {
     display: none;
   }
 
@@ -73,7 +74,7 @@
 //
 // LI (Nested)
 .main-menu__item--sub {
-  @include large {
+  @include breakpoint($main-menu-medium) {
     display: block;
 
     &:not(:first-child) {
