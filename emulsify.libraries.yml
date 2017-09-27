@@ -11,9 +11,8 @@ global:
 #   js:
 #     //use.typekit.net/TYPEKIT_ID.js: { every_page: true }
 
-# COMPONENT_NAME:
-#   css:
-#     component:
-#       source/_patterns/02-molecules/COMPONENT_NAME/COMPONENT_NAME/COMPONENT_NAME.js: {}
-#   js:
-#     source/_patterns/02-molecules/COMPONENT_NAME/COMPONENT_NAME/COMPONENT_NAME.js: {}
+main_menu:
+  js:
+    components/_patterns/02-molecules/menus/main-menu/main-menu.js: {}
+  dependencies:
+    - core/drupal

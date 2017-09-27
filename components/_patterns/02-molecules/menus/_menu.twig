@@ -24,34 +24,30 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0) }}
+{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
 
-{% macro menu_links(items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname) %}
   {% import _self as menus %}
   {% if items %}
-    {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu') }}>
-    {% else %}
-      <ul>
-    {% endif %}
-    {% for item in items %}
-      {% if item.in_active_trail == TRUE %}
-        {% set classes = [
-            'menu__item',
-            'menu__item--active'
-          ]
-        %}
-      {% else %}
-        {% set classes = 'menu__item' %}
-      {% endif %}
 
-      <li{{ item.attributes.addClass(classes) }}>
-        {{ link(item.title, item.url, { 'class' : ['menu__link']}) }}
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
+    {# Set classes #}
+    {% set menu_class = menu_class|default('menu') %}
+    {% set menu_modifiers = [] %}
+    {% if menu_level > 0 %}
+      {% set menu_modifiers = menu_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
+    {% endif %}
+
+    {# List #}
+    {% embed "@atoms/03-lists/00-ul.twig" with {
+      ul_base_class: menu_class,
+      ul_modifiers: menu_modifiers,
+      ul_blockname: menu_blockname
+    } %}
+      {% block list_content %}
+        {% for item in items %}
+          {% include "@molecules/menus/_menu-item.twig" %}
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
   {% endif %}
 {% endmacro %}

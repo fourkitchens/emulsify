@@ -1,0 +1,60 @@
+// Toggle
+.toggle-expand {
+  @include link;
+
+  @include breakpoint($main-menu-medium) {
+    display: none;
+  }
+
+  display: inline-block;
+  padding: $space;
+  text-decoration: none;
+  width: 100%;
+
+  // See main-menu.js
+  &--open {
+    background-color: $gray-dark;
+  }
+}
+
+.toggle-expand__text {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+
+  .toggle-expand--open & {
+    color: $white;
+  }
+}
+
+.toggle-expand__icon {
+  width: 5rem;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+}
+
+.toggle-expand__open {
+  display: inline-block;
+  text-align: center;
+
+  .toggle-expand--open & {
+    display: none;
+  }
+}
+
+.toggle-expand__close {
+  display: none;
+  text-align: center;
+
+  &::before {
+    color: $white;
+    content: "X";
+    display: block;
+    font-size: 2.5rem;
+    line-height: 2;
+  }
+
+  .toggle-expand--open & {
+    display: inline-block;
+  }
+}

@@ -2,13 +2,13 @@
   background: url("svg/sprite.css.svg") no-repeat;
 }
 
-@mixin sprite-arrow-down {
+@mixin sprite-menu {
   @include svg-common;
 
   background-position: 0 0;
 }
 
-.sprite-arrow-down {
-  @include sprite-arrow-down;
+.sprite-menu {
+  @include sprite-menu;
 }
 
