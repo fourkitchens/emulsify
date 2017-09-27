@@ -1,11 +1,24 @@
-#main-menu {
+// Nav
+.main-nav {
   display: none;
 
   @include large {
     display: block;
   }
 
-  &.menu-open {
+  &--open {
+    display: block;
+  }
+}
+
+// UL
+.main-menu {
+  @include list-reset;
+
+  position: relative;
+  z-index: 10;
+
+  &--open {
     position: fixed;
     top: 134px;
     left: 0;
@@ -17,73 +30,9 @@
   }
 }
 
-// UL
-.main-menu {
-  @include list-reset;
-
-  position: relative;
-  z-index: 10;
-}
-
-// A
-.main-menu__link {
-  border-bottom: 1px solid;
-  color: $gray-dark;
-  display: block;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  padding: $space $space-sextuple $space $space-double;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 //
 // Sub Navigation
 //
-
-// Expand Button
-.expand-sub {
-  background-color: $black;
-  cursor: pointer;
-  display: block;
-  height: 61px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 17%;
-  color: $white;
-
-  @include large {
-    display: none;
-  }
-
-  // Down triangle
-  &::after {
-    border: 15px solid;
-    border-bottom-color: transparent;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    content: "";
-    display: block;
-    margin-right: -12px;
-    margin-top: -6px;
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    width: 0;
-  }
-
-  &.opened {
-    background-color: $black;
-    color: $near-white;
-
-    &::after {
-      border-top-color: transparent;
-      border-bottom: 15px solid;
-      margin-top: -20px;
-    }
-  }
-}
 
 // UL (Nested)
 .main-menu--sub {
@@ -113,40 +62,26 @@
       transition: all 0.2s;
 
       .main-menu__link--sub {
-        color: $white;
+        color: $gray-light;
 
         &.active,
         &:active,
         &:hover {
-          color: $gray-lighter;
+          color: $white;
           background-color: $black;
         }
       }
     }
   }
 
-  &.open {
+  // See main-menu.js
+  &-open {
     height: auto;
   }
-
-  .main-menu--sub {
-    @include large {
-      display: none !important; // Never shown on large screens
-    }
-  }
 }
 
-// A (Nested)
-.main-menu__link--sub {
-  color: $gray-dark;
-  padding-left: $space-triple;
-  font-weight: normal;
-}
-
-.main-menu--sub .main-menu--sub {
-  background-color: $gray-lightest;
-
-  .main-menu__link--sub {
-    padding-left: $space-quadruple;
+.main-menu--sub-2 {
+  @include large {
+    display: none; // Never shown on large screens
   }
 }
