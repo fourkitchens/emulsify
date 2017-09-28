@@ -1,0 +1,22 @@
+{#
+/**
+ * Available variables:
+ * - image_base_class - the base class
+ * - image_modifiers - array of modifiers to add to the base class
+ * - image_blockname - blockname prepended to the base class
+ *
+ * - image_src - path to the image
+ * - image_alt - (optional) alternative text when the image can't be displayed or
+ *   isn't available. When alt text is not supplied, aria-hidden will be applied.
+ */
+#}
+{% set image_base_class_var = image_base_class|default('image') %}
+<img
+  {{ bem(image_base_class_var, image_modifiers, image_blockname) }}
+  src="{{ image_src }}"
+  {% if image_alt %}
+    alt="{{ image_alt }}"
+  {% else %}
+    aria-hidden="true"
+  {% endif %}
+>
