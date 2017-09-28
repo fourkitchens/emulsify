@@ -46,14 +46,38 @@
       ],
       includePaths: (['./node_modules']),
     },
+    iconConfig: {
+      shape: {
+        dimension: {
+          maxWidth: 15,
+          maxHeight: 15,
+        },
+        spacing: {
+          padding: 10,
+        },
+      },
+      mode: {
+        css: {
+          bust: false,
+          dest: '../../dist',
+          prefix: '@mixin sprite-%s',
+          render: {
+            scss: {
+              dest: '../components/_patterns/01-atoms/images/icons/_icon_sprite.scss',
+              template: 'node_modules/emulsify-gulp/gulp-tasks/svg-icons/sprite.scss.handlebars',
+            },
+          },
+        },
+      },
+    },
     patternLab: {
       enabled: true,
       configFile: `${themeDir}pattern-lab/config/config.yml`,
       watchedExtensions: (['twig', 'json', 'yaml', 'yml', 'md', 'jpg', 'jpeg', 'png']),
       scssToYAML: [
         {
-          src: `${themeDir}/components/_patterns/00-base/global/01-colors/_color-vars.scss`,
-          dest: `${themeDir}/components/_patterns/00-base/global/01-colors/colors.yml`,
+          src: `${themeDir}/components/_patterns/00-base/global/colors/_color-vars.scss`,
+          dest: `${themeDir}/components/_patterns/00-base/global/colors/colors.yml`,
           lineStartsWith: '$',
           allowVarValues: false,
         },

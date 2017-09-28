@@ -48,4 +48,4 @@ items:
 meta:
   description: >-
     To add to these items, use Sass variables that start with <code>$</code> in
-    <code>.//components/_patterns/00-base/global/01-colors/_color-vars.scss</code>
+    <code>.//components/_patterns/00-base/global/colors/_color-vars.scss</code>
