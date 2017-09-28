@@ -12,23 +12,27 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
   4. Optional: [Yarn](https://github.com/yarnpkg/yarn)
 
 ## Quickstart (Emulsify Standalone)
+Emulsify supports both NPM and YARN.
 
-  1. `composer create-project fourkitchens/emulsify --stability dev --no-interaction emulsify`
-  2. `cd emulsify`
-  3. `npm install` or `yarn install`
+Install with NPM:
+`composer create-project fourkitchens/emulsify --stability dev --no-interaction emulsify && cd emulsify && npm install`
+
+Install with Yarn:
+`composer create-project fourkitchens/emulsify --stability dev --no-interaction emulsify && cd emulsify && yarn install`
 
 ## Drupal-specific installation
 
 ### In a Composer-based Drupal install (recommended)
 
   1. `composer require fourkitchens/emulsify`
-  2. `cd web/themes/contrib/emulsify/`
-  3. `npm install` or `yarn install`
-  4. Optional (but recommended): Create "child" theme `drush emulsify "Theme Name"` (run `drush help emulsify` for available options)
-  5. Enable the components and unified twig extensions modules `drush en -y components unified_twig_ext`
-  6. Enable the theme in Drupal
+  2. Enable Emulsify and its dependencies `drush en emulsify components unified_twig_ext -y`
+  3. **Optional**: Create cloned theme `drush emulsify "THEME NAME"` (You may need to run `drush cc drush` to clear the drush cache. Also, you can run `drush help emulsify` for other available options)
+  4. If you created a cloned theme, `cd web/themes/custom/THEME_NAME/`. If not, `cd web/themes/contrib/emulsify/`
+  5. `npm install` or `yarn install`
 
 If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
+
+Troubleshooting Installation: See [Drupal Installation FAQ](https://github.com/fourkitchens/emulsify/wiki/Installation#drupal-installation-faq).
 
 ## Starting Pattern Lab and watch task
 
