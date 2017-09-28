@@ -1,0 +1,79 @@
+// Colors
+$color-button-bg: $blue;
+$color-button-text: $white;
+$color-button-outline: $white;
+
+@mixin button($font-size: 1.6rem, $font-weight: 600, $font-family: $font-family-sans-serif, $letter-spacing: 1px, $line-height: 1, $color: $color-button-text, $display: inline-block, $background-color: $color-button-bg, $padding: 1.2rem 1.6rem, $padding-large: 1.6rem, $break-large: $max-width, $border: none, $min-width: 14.4rem, $cursor: pointer, $text-transform: uppercase, $text-align: center) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-family: $font-family;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  color: $color;
+  display: $display;
+  background-color: $background-color;
+  padding: $padding;
+  border: $border;
+  min-width: $min-width;
+  cursor: $cursor;
+  text-transform: $text-transform;
+  text-align: $text-align;
+
+  &:hover {
+    background-color: darken($color-button-bg, 10%);
+    color: $color;
+    text-decoration: none;
+  }
+
+  @include breakpoint($break-large) {
+    padding: $padding-large;
+  }
+}
+
+@mixin button-outline($font-size: 1.6rem, $font-weight: 600, $font-family: $font-family-sans-serif, $letter-spacing: 1.4px, $line-height: 1, $color: $color-button-outline, $display: inline-block, $background-color: transparent, $padding: 1rem 1.6rem, $padding-large: 1.4rem 1.6rem, $break-large: $max-width, $border-style: solid, $border-width: 2px, $border-color: $color-button-outline, $min-width: 14.4rem, $cursor: pointer, $text-transform: uppercase, $text-align: center) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-family: $font-family;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  color: $color;
+  display: $display;
+  background-color: $background-color;
+  padding: $padding;
+  border-style: $border-style;
+  border-width: $border-width;
+  border-color: $border-color;
+  min-width: $min-width;
+  cursor: $cursor;
+  text-transform: $text-transform;
+  text-align: $text-align;
+
+  &:hover {
+    background-color: rgba($background-color, 0.1);
+    color: $color;
+    text-decoration: none;
+  }
+
+  @include breakpoint($break-large) {
+    padding: $padding-large;
+  }
+}
+
+.link {
+  &--button {
+    @include button;
+  }
+
+  &--button-outline {
+    @include button-outline;
+  }
+}
+
+// Pattern Lab specific styles
+.pl {
+  .link {
+    &--button-outline {
+      @include button-outline($color: $blue, $border-color: $blue);
+    }
+  }
+}

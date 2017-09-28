@@ -1,0 +1,25 @@
+{#
+/**
+ * Available variables:
+ * - link_blockname - blockname prepended to the base class
+ *
+ * - link_base_class - the base class
+ * - link_modifiers - array of modifiers to add to the base class
+
+ * - link_content - the content of the link
+ * - link_url - the target of the link
+ * - link_attributes - array of attribute,value pairs
+ */
+#}
+{% set link_base_class_var = link_base_class|default('link') %}
+
+{% set link_attributes = {
+  "class": bem(link_base_class_var, link_modifiers, link_blockname),
+  "href": link_url,
+} %}
+
+<a {{ add_attributes(link_attributes) }}>
+  {% block link_content %}
+    {{ link_content }}
+  {% endblock %}
+</a>
