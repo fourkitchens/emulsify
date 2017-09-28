@@ -32,7 +32,9 @@
 
     {# Set classes #}
     {% set menu_class = menu_class|default('menu') %}
-    {% set menu_modifiers = [] %}
+    {% if not menu_modifiers %}
+      {% set menu_modifiers = [] %}
+    {% endif %}
     {% if menu_level > 0 %}
       {% set menu_modifiers = menu_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
     {% endif %}
