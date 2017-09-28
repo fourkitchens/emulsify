@@ -1,0 +1,6 @@
+ul_items:
+  - content: "This is the first item in the <ul>."
+  - label: "This is the optional label"
+    content: "And here is the item that goes with the label."
+  - content: "Here's the third item."
+  - content: "And here's the last item."
