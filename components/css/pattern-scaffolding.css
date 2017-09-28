@@ -26,6 +26,10 @@
   margin: 0 0.5rem 1rem;
 }
 
+.sg-colors li::before {
+  display: none;
+}
+
 .sg-swatch {
   display: block;
   height: 100px;
