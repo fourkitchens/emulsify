@@ -1,15 +1,29 @@
 .card__title {
-  @include heading-2;
+  @include heading-large($font-size: 1.3rem);
+  @include no-bottom;
+
+  &-link {
+    @include link;
+  }
 }
 
 .card__subtitle {
-  @include heading-3;
+  @include heading-medium($font-size: 1rem);
+  @include no-bottom;
+
   color: $gray;
-  margin-bottom: 1em;
 }
 
 .card__body {
-  @include paragraph;
+  margin: 0.7em 0 1em;
+}
+
+.card__link {
+  @include link;
+}
+
+.card__button {
+  @include button;
 }
 
 // Variations

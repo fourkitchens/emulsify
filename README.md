@@ -11,42 +11,52 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
   3. [Composer](https://getcomposer.org/)
   4. Optional: [Yarn](https://github.com/yarnpkg/yarn)
 
-## Quickstart
+## Quickstart (Emulsify Standalone)
+Emulsify supports both NPM and YARN.
 
-  1. `npm install` or `yarn install`
+Install with NPM:
+`composer create-project fourkitchens/emulsify --stability dev --no-interaction emulsify && cd emulsify && npm install`
 
-#### (Drupal-specific installation)
+Install with Yarn:
+`composer create-project fourkitchens/emulsify --stability dev --no-interaction emulsify && cd emulsify && yarn install`
 
-  1. Download and enable [Components](https://www.drupal.org/project/components) module
-  2. Enable Emulsify theme
+## Drupal-specific installation
+
+### In a Composer-based Drupal install (recommended)
+
+  1. `composer require fourkitchens/emulsify`
+  2. Enable Emulsify and its dependencies `drush en emulsify components unified_twig_ext -y`
+  3. **Optional**: Create cloned theme `drush emulsify "THEME NAME"` (You may need to run `drush cc drush` to clear the drush cache. Also, you can run `drush help emulsify` for other available options)
+  4. If you created a cloned theme, `cd web/themes/custom/THEME_NAME/`. If not, `cd web/themes/contrib/emulsify/`
+  5. `npm install` or `yarn install`
+
+If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
+
+Troubleshooting Installation: See [Drupal Installation FAQ](https://github.com/fourkitchens/emulsify/wiki/Installation#drupal-installation-faq).
 
 ## Starting Pattern Lab and watch task
 
-  Start up watches and local server after compiling (runs all gulp required tasks):
+The `start` command spins up a local server, compiles everything (runs all required gulp tasks), and watches for changes.
 
-  ```bash
-  npm start
-  ```
+  1. `npm start` or `yarn start`
 
   ---
 
-## Emulsify versus Pattern Lab Starter
-
-[Pattern Lab Starter](https://github.com/phase2/pattern-lab-starter) and Emulsify share a lot in common (see [`Acknowledgements`](https://github.com/fourkitchens/emulsify/wiki/Acknowledgements)). Below is a breakdown of the two to aid in deciding which is best for your project.
+## Highlighted Features
 
 <table><tbody>
-<tr><td></td><td><strong>Emulsify</strong></td><td>Pattern Lab Starter</td><td></td></tr>
-<tr><td>Lightweight</td><td>✔</td><td></td><td>Emulsify is about 1/2 the size of PLS</td></tr>
-<tr><td>SVG sprite support </td><td><strong>✔</strong></td><td></td><td>PLS uses icon fonts.</td></tr>
-<tr><td>Stock Drupal templates </td><td><strong>✔</strong></td><td></td><td>see /templates directory</td></tr>
-<tr><td>Stock Components (see below) </td><td><strong>✔</strong></td><td></td><td>with Drupal support built-in</td></tr>
-<tr><td>Yeoman generator</td><td></td><td>✔</td><td>Adds functionality to generate a new component using `yo component`</td></tr>
-<tr><td>Faker support</td><td></td><td>✔</td><td>PHP "dummy" content generator</td></tr>
-</tbody>
-</table>
+<tr><td>Lightweight</td><td>✔</td><td>Emulsify is focused on being as lightweight as possible.</td></tr>
+<tr><td>SVG sprite support </td><td><strong>✔</strong></td><td>Automated support for creating SVG sprites mixins/classes.</td></tr>
+<tr><td>Stock Drupal templates </td><td><strong>✔</strong></td><td>Templates from Stable theme - see /templates directory</td></tr>
+<tr><td>Stock Components </td><td><strong>✔</strong></td><td>with Drupal support built-in (https://github.com/fourkitchens/emulsify#emulsifys-built-in-components-with-drupal-support)</td></tr>
+<tr><td>Performance Testing </td><td><strong>✔</strong></td><td>Support for testing via Google PageSpeed Insights and WebPageTest.org (https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#performance-testing)</td></tr>
+<tr><td>Automated Github Deployment </td><td><strong>✔</strong></td><td>Deploy your Pattern Lab instance as a Github page (https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#deployment)</td></tr>
+</tbody></table>
 
-<h3 id="components">Emulsify's Built in Components (all responsive)</h3>
+<h3 id="components">Emulsify's Built in Components with Drupal support</h3>
 Forms, tables, video, accordion, cards, breadcrumbs, tabs, pager, status messages, grid
+
+View a [demo of these default Emulsify components](https://fourkitchens.github.io/emulsify/pattern-lab/public/).
 
 ## Documentation
 Documentation is currently provided in [the Wiki](https://github.com/fourkitchens/emulsify/wiki). Here are a few basic links:

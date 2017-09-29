@@ -1,25 +1,17 @@
 // Icon Styling
 .sprite-icon {
-  background-size: contain; // Replace based on sprite size with specific em digit
+  background-size: 100% 100%;
   display: block;
-  padding: 3em;
+  height: 0;
+  padding: 40%;
+  width: 100%;
 }
 
-.inline-arrow-down {
+.icon-inline-menu {
   display: flex;
 
-  &:before {
-    @include sprite-arrow-down;
+  &::before {
+    @include sprite-menu;
     @include with-icon;
-  }
-}
-
-.inline-arrow-down--bg {
-  display: flex;
-
-  &:before {
-    @include sprite-arrow-down;
-    @include with-icon;
-    @include icon-bg($gray-light);
   }
 }

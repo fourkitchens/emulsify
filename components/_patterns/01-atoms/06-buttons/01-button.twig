@@ -13,9 +13,15 @@
  *   for example: to insert an icon
  */
 #}
-{% set button_base_class_var = button_base_class|default('button') %}
+{% set button_base_class = button_base_class|default('button') %}
 
-<button class="{{ button_base_class_var }}{% for modifier in button_modifiers %} {{ button_base_class_var }}--{{ modifier }}{% endfor %}{% if button_blockname %} {{ button_blockname }}__{{ button_base_class_var }}{% endif %}" {% for attribute,value in button_attributes %}{{ attribute }}="{{ value }}"{% endfor %} href="{{ button_url }}">
+<button
+  {{ bem(button_base_class, (button_modifiers), button_blockname) }}
+  {% for attribute,value in button_attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}
+  href="{{ button_url }}"
+>
   {% block button_content %}
     {{ button_content }}
   {% endblock %}

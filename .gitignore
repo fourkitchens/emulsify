@@ -1,12 +1,24 @@
 # Ignore compiled files.
 dist
+vendor
 
 # Pattern Lab (ignored initially)
 pattern-lab
+**/bem.function.php
+
+# Twig helper functions
+**/add_attributes.function.php
+**/bem.function.php
 
 # NPM
 node_modules
 npm-debug.log
+
+# Git deploy
+.publish
+
+# System Files
+.DS_Store
 
 # Visual Regression Content Pages
 full.*px.png

@@ -27,12 +27,10 @@
   <div id="tabs" class="tabs no-js">
     <ul class="tabs__nav">
       {% for key, listItem in listItems.three %}
-      {% include "@atoms/09-menu/tab/tab.twig"
-        with {
-          tab_link: "#tab-" ~ key,
-          tab_text: listItem.month.long
-        }
-      %}
+      {% include "@atoms/09-menu/tab/tab.twig" with {
+        tab_link: "#tab-" ~ key,
+        tab_text: listItem.month.long
+      } %}
       {% endfor %}
     </ul>
     {% for key, listItem in listItems.three %}
