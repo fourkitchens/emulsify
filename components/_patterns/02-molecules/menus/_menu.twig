@@ -26,7 +26,7 @@
 #}
 {{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
 
-{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname) %}
+{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) %}
   {% import _self as menus %}
   {% if items %}
 
@@ -47,7 +47,11 @@
     } %}
       {% block list_content %}
         {% for item in items %}
-          {% include "@molecules/menus/_menu-item.twig" %}
+          {% include "@molecules/menus/_menu-item.twig" with {
+            li_base_class: item_base_class,
+            li_modifiers: item_modifiers,
+            li_blockname: item_blockname,
+          } %}
         {% endfor %}
       {% endblock %}
     {% endembed %}
