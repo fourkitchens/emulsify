@@ -71,7 +71,7 @@ See [Designers](https://github.com/fourkitchens/emulsify/wiki/For-Designers)
 
 #### For Drupal 8 Developers
 
-See [Drupal Components](https://github.com/fourkitchens/emulsify/wiki/Drupal-Components)
+See [Drupal Usage](https://github.com/fourkitchens/emulsify/wiki/Drupal-Usage)
 
 #### Gulp Configuration
 
