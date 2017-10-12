@@ -8,18 +8,34 @@
  */
 #}
 {% if breadcrumb %}
+  {% set breadcrumb_class = breadcrumb_class|default('breadcrumb') %}
+
   <nav role="navigation" aria-labelledby="system-breadcrumb">
     <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
-    <ol class="breadcrumb">
-    {% for item in breadcrumb %}
-      <li class="breadcrumb__item">
-        {% if item.url %}
-          <a class="breadcrumb__link" href="{{ item.url }}">{{ item.text }}</a>
-        {% else %}
-          {{ item.text }}
-        {% endif %}
-      </li>
-    {% endfor %}
-    </ol>
+    {% embed "@atoms/03-lists/00-ol.twig" with {
+      ol_base_class: breadcrumb_class,
+      ol_modifiers: breadcrumb_modifiers,
+      ol_blockname: breadcrumb_blockname
+    } %}
+      {% block list_content %}
+        {% for item in breadcrumb %}
+          {% include "@atoms/03-lists/_list-item.twig" with {
+            "list_item_label": ul_item.label,
+            "list_item_content": ul_item.content,
+            "li_base_class": ul_item.li_base_class,
+            "li_base_class": ul_item.li_base_class,
+            "li_modifiers": ul_item.li_modifiers,
+            "li_blockname": ul_item.li_blockname,
+          } %}
+          <li class="breadcrumb__item">
+            {% if item.url %}
+              <a class="breadcrumb__link" href="{{ item.url }}">{{ item.text }}</a>
+            {% else %}
+              {{ item.text }}
+            {% endif %}
+          </li>
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
   </nav>
 {% endif %}
