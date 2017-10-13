@@ -11,7 +11,9 @@
     localConfig = require('./local.gulp-config');
   }
   catch (e) {
-    // Do nothing.
+    if (e.code !== 'MODULE_NOT_FOUND') {
+      throw e;
+    }
   }
   require('emulsify-gulp')(gulp, localConfig);
 
