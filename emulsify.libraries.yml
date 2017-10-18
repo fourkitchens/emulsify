@@ -2,17 +2,10 @@ global:
   css:
     theme:
       dist/style.css: {}
-  js:
-    dist/scripts.js: {}
 
-# Examples of Library syntax
-# typekit:
-#   header: true
-#   js:
-#     //use.typekit.net/TYPEKIT_ID.js: { every_page: true }
-
+# Example of Library syntax
 main_menu:
   js:
-    components/_patterns/02-molecules/menus/main-menu/main-menu.js: {}
+    dist/02-molecules/menus/main-menu/main-menu.js: {}
   dependencies:
     - core/drupal
