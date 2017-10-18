@@ -7,7 +7,7 @@ cards:
     card_modifiers:
       1: "grid-item"
     card_img_src:
-      "https://placeimg.com/480/300/people"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_title_modifiers:
@@ -23,7 +23,7 @@ cards:
     card_modifiers:
       1: "grid-item"
     card_img_src:
-      "https://placeimg.com/480/300/people"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_title_modifiers:
@@ -37,7 +37,7 @@ cards:
     card_modifiers:
       1: "grid-item"
     card_img_src:
-      "https://placeimg.com/480/300/people"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_title_modifiers:

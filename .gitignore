@@ -17,4 +17,8 @@ npm-debug.log
 # Git deploy
 .publish
 
+# System Files
 .DS_Store
+
+# Visual Regression Content Pages
+full.*px.png

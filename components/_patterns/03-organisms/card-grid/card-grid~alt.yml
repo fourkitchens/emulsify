@@ -13,7 +13,7 @@ cards:
       1: "grid-item"
       2: "divider-3"
     card_img:
-      "https://placeimg.com/480/300/nature"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_subtitle:
@@ -27,7 +27,7 @@ cards:
       1: "grid-item"
       2: "divider-3"
     card_img:
-      "https://placeimg.com/480/300/nature"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_subtitle:
@@ -39,7 +39,7 @@ cards:
       1: "grid-item"
       2: "divider-3"
     card_img:
-      "https://placeimg.com/480/300/nature"
+      "../../images/sample/landscape-16x9-mountains.jpg"
     card_title:
       "This is a title too"
     card_subtitle:
