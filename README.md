@@ -29,7 +29,7 @@ Install with Yarn:
   3. **Optional**: Create cloned theme `drush emulsify "THEME NAME"` (You may need to run `drush cc drush` to clear the drush cache. Also, you can run `drush help emulsify` for other available options)
   4. If you created a cloned theme, `cd web/themes/custom/THEME_NAME/`. If not, `cd web/themes/contrib/emulsify/`
   5. `npm install` or `yarn install`
-  6. If you created a cloned theme, disable the original Emulsify theme `drush dis emulsify -y` and enable your new theme in Drupal and set to default.
+  6. If you created a cloned theme, disable the original Emulsify theme `drush pmu emulsify -y` and enable your new theme in Drupal and set to default.
 
 If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
 
