@@ -1,9 +1,0 @@
-@mixin img {
-  height: auto;
-  max-width: 100%;
-}
-
-.img,
-.image__img {
-  @include img;
-}

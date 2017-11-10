@@ -1,0 +1,77 @@
+@mixin heading-title-xl($color: inherit) {
+  color: #{$color};
+  font-family: $font-family-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 5.8rem;
+  line-height: 1.4;
+  margin: 0;
+  width: auto;
+}
+
+@mixin heading-title-large($color: inherit) {
+  color: #{$color};
+  font-family: $font-family-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 4rem;
+  line-height: 1.4;
+  margin: 0;
+  width: auto;
+}
+
+@mixin heading-section-medium($color: inherit) {
+  color: #{$color};
+  font-family: $font-family-sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 2.4rem;
+  line-height: 1.333;
+  margin: 0;
+  width: auto;
+}
+
+@mixin heading-section-small($color: inherit) {
+  color: #{$color};
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin: 0;
+  width: auto;
+}
+
+@mixin heading-section-xs($color: inherit) {
+  color: #{$color};
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 1.25;
+  margin: 0;
+  width: auto;
+}
+
+// This sets the defaults for the heading elements
+// This accounts for headings in Wysiwyg areas and system defined headings
+h1 {
+  @include heading-title-xl();
+}
+
+h2 {
+  @include heading-title-large();
+}
+
+h3 {
+  @include heading-section-medium();
+}
+
+h4 {
+  @include heading-section-small();
+}
+
+h5,
+h6 {
+  @include heading-section-xs();
+}

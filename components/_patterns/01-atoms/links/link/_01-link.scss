@@ -1,0 +1,30 @@
+// Colors
+$color-link: $blue-lighter;
+$color-link-hover: $blue-light;
+
+@mixin link($color: $color-link) {
+  font-family: $font-family-sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.78;
+  letter-spacing: 0.2px;
+  color: #{$color};
+
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
+.link {
+  @include link;
+}
+
+// For wysiwyg areas
+a {
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
