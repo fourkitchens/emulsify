@@ -1,0 +1,97 @@
+// Menu Breakpoint
+$main-menu-medium: 43em;
+
+// Nav
+.main-nav {
+  display: none;
+
+  @include breakpoint($main-menu-medium) {
+    display: block;
+  }
+
+  &--open {
+    display: block;
+  }
+}
+
+// UL
+.main-menu {
+  @include list-reset;
+
+  border-bottom: 1px solid;
+  position: relative;
+  z-index: 10;
+
+  @include breakpoint($main-menu-medium) {
+    border-bottom: none;
+  }
+
+  &--open {
+    position: fixed;
+    top: 134px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 85%;
+    overflow-y: scroll;
+    background-color: $white;
+  }
+}
+
+//
+// Sub Navigation
+//
+
+// UL (Nested)
+.main-menu--sub {
+  border-bottom: none;
+  height: 0;
+  overflow: hidden;
+  background-color: $near-white;
+  width: 100%;
+
+  @include breakpoint($main-menu-medium) {
+    background-color: $gray-lightest;
+    display: none;
+    height: auto;
+    left: 0;
+    overflow: visible;
+    padding: $space 0;
+    position: absolute;
+    top: 55px;
+    width: 315px;
+    z-index: 1;
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+
+  &:hover {
+    @include breakpoint($main-menu-medium) {
+      opacity: 1;
+      background-color: $black;
+      transition: all 0.2s;
+
+      .main-menu__link--sub {
+        color: $gray-light;
+
+        &.active,
+        &:active,
+        &:hover {
+          color: $white;
+          background-color: $black;
+        }
+      }
+    }
+  }
+
+  // See main-menu.js
+  &-open {
+    height: auto;
+  }
+}
+
+.main-menu--sub-2 {
+  @include breakpoint($main-menu-medium) {
+    display: none; // Never shown on large screens
+  }
+}
