@@ -66,6 +66,8 @@ Documentation is currently provided in [the Wiki](https://github.com/fourkitchen
 
 See [Orientation](https://github.com/fourkitchens/emulsify/wiki/Orientation)
 
+We have a [series of videos](https://www.youtube.com/playlist?list=PLO9S6JjNqWsGMQLDfE8Ekt0ryrGa3g4km) for you to learn more about Emulsify.
+
 #### For Designers (Prototyping)
 
 See [Designers](https://github.com/fourkitchens/emulsify/wiki/For-Designers)
