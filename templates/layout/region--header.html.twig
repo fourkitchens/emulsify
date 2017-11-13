@@ -13,3 +13,12 @@
  */
 #}
 {% extends "@organisms/site/site-header/site-header.twig" %}
+{% block logo %}
+  {{ elements.emulsify_branding }}
+{% endblock %}
+{% block search %}
+  {{ elements.emulsify_search }}
+{% endblock %}
+{% block menu %}
+  {{ elements.emulsify_main_menu }}
+{% endblock %}

@@ -1,5 +1,17 @@
 <header class="header">
-  <div class="navigation">
-    {{ content }}
+  <div class="header__logo">
+    {% block logo %}
+      {% include "@atoms/04-images/00-image/image.twig" %}
+    {% endblock %}
+  </div>
+  <div class="header__search">
+    {% block search %}
+      {% include "@molecules/search-form/search-form.twig" %}
+    {% endblock %}
+  </div>
+  <div class="header__menu">
+    {% block menu %}
+      {% include "@molecules/menus/main-menu/main-menu.twig" %}
+    {% endblock %}
   </div>
 </header>

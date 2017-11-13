@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme override of an image.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the img tag.
+ * - style_name: (optional) The name of the image style applied.
+ *
+ * @see template_preprocess_image()
+ */
+#}
+
+{% include "@atoms/04-images/00-image/image.twig" with {
+  img_url: "/",
+  img_src: attributes.src,
+  img_alt: attributes.alt,
+  image_blockname: "logo",
+  image_link_base_class: "logo",
+} %}

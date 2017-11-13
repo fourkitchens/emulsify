@@ -1,0 +1,12 @@
+<form {{ bem('search')}}>
+  {% if children %}
+    {{ children }}
+  {% else %}
+    <div class="search__item">
+      <input title="Enter the terms you wish to search for." size="15" maxlength="128" class="form-search">
+    </div>
+    <div class="form-actions">
+      <input type="submit" value="Search" class="form-item__textfield button js-form-submit form-submit">
+    </div>
+  {% endif %}
+</form>
