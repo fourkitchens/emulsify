@@ -1,1 +1,20 @@
 //  Empty
+.header {
+  background-color: #56a9d6;
+  margin-bottom: 2rem;
+}
+
+.header-wrapper {
+  @include wrapper;
+
+  display: flex;
+  padding: 3%;
+}
+
+.header__logo {
+  width: 29%;
+}
+
+.header_search-menu {
+  margin-left: auto;
+}
