@@ -8,6 +8,7 @@
  * - card_img_src - the actual image file location
  * - card_img_alt - (optional) the alt text for screen readers and when the image cannot load
  * - card_img_url - Url the image should link to. Defaults to card_link_url
+ * - card_image_output_image_tag: whether to print the picture element or not
  *
  * - card_copy_base_class - base classname of the copy wrapper - defaults to 'card__copy'
  * - card_copy_modifiers - array of modifiers to add to the base classname of the copy wrapper
@@ -53,6 +54,7 @@
       "img_alt": card_img_alt,
       "image_link_blockname": card_base_class,
       "image_blockname": card_base_class,
+      "output_image_tag": card_image_output_image_tag,
     } %}
   {% endif %}
   <div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>

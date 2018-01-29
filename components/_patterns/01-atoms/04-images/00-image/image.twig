@@ -1,46 +1,42 @@
 {#
 /**
+ * @file
+ * Default theme implementation of a responsive image.
+ *
  * Available variables:
- * - image_base_class - base class name
- * - image_link_base_class - base class override for link
- * - img_url - url for linked image
- * - image_link_modifiers - modifiers for image link
- * - image_link_base_class - base class for the image link
- * - image_link_attributes - attributes key/value pair for link attributes
- * - image_modifiers - array of modifiers to add to the base classname
- * - image_blockname - blockname prepended to the base classname
- * - img_src - the actual image file location
- * - img_alt - (optional) the alt text for screen readers and when the image cannot load
+ * - sources: The attributes of the <source> tags for this <picture> tag.
+ * - img_element: The controlling image, with the fallback image in srcset.
+ * - output_image_tag: Whether or not to output an <img> tag instead of a
+ *   <picture> tag.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_responsive_image()
+ *
+ * @ingroup themeable
  */
 #}
-{% set image_link_base_class = image_link_base_class|default('image') %}
-{% set image_base_class = image_base_class|default('img') %}
+{% set responsive_image_base_class = responsive_image_base_class|default('image') %}
 
-{% if img_url %}
-  {% embed "@atoms/01-links/link/link.twig" with {
-    "link_url": img_url,
-    "link_attributes": image_link_attributes,
-    "link_base_class": image_link_base_class,
-    "link_modifiers": image_link_modifiers,
-    "link_blockname": image_link_blockname,
-    "attributes": [],
+{% if output_image_tag %}
+  {% include "@atoms/04-images/00-image/_image.twig" with {
+    image_base_class: responsive_image_base_class,
+    image_modifiers: responsive_image_modifiers,
+    image_blockname: responsive_image_blockname,
+    img_srcset: img_srcset|default(img_element['#attributes'].srcset),
+    img_sizes: img_sizes|default(img_element['#attributes'].sizes),
+    img_src: img_src|default(img_element['#uri']),
+    img_alt: img_alt|default(img_element['#alt']),
+    img_title: img_title|default(img_element['#title']),
   } %}
-    {% block link_content %}
-      <img
-        {{ bem(image_base_class, (image_modifiers), image_blockname|default(image_link_base_class)) }}
-        src="{{ img_src }}"
-        {% if img_alt %}
-          alt="{{ img_alt }}"
-        {% endif %}
-      />
-    {% endblock %}
-  {% endembed %}
 {% else %}
-  <img
-    {{ bem(image_base_class, (image_modifiers), image_blockname) }}
-    src="{{ img_src }}"
-    {% if img_alt %}
-      alt="{{ img_alt }}"
-    {% endif %}
-  />
+  {% include "@atoms/04-images/00-image/_picture.twig" with {
+    picture_base_class: responsive_image_base_class,
+    picture_modifiers: responsive_image_modifiers,
+    picture_blockname: responsive_image_blockname,
+    img_srcset: img_srcset|default(img_element['#attributes'].srcset),
+    img_sizes: img_sizes|default(img_element['#attributes'].sizes),
+    img_src: img_src|default(img_element['#uri']),
+    img_alt: img_alt|default(img_element['#alt']),
+    img_title: img_title|default(img_element['#title']),
+  } %}
 {% endif %}

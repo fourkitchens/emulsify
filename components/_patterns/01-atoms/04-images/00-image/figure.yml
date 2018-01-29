@@ -1,0 +1,5 @@
+img_url: "#"
+img_src: "https://placeimg.com/1200/200/tech"
+img_alt: "This is the alt text"
+img_caption: "This is an image caption."
+output_image_tag: TRUE
