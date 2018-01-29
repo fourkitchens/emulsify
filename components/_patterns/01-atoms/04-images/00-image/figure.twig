@@ -8,7 +8,7 @@
     <a {{ bem(image_link_base_class, (image_link_modifiers), image_link_blockname|default(image_figure_base_class)) }} href="{{ img_url }}">
   {% endif %}
       {% block figure_content %}
-        {% include "@atoms/04-images/00-image/image.twig" with {
+        {% include "@atoms/04-images/00-image/responsive-image.twig" with {
           responsive_image_blockname: responsive_image_blockname|default(image_figure_base_class),
         } %}
       {% endblock %}

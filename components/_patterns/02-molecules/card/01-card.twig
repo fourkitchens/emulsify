@@ -48,7 +48,7 @@
 
 <div {{ bem(card_base_class, (card_modifiers), card_blockname) }}>
   {% if card_img_src %}
-    {% include "@atoms/04-images/00-image/image.twig" with {
+    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
       "img_url": card_img_url|default(card_link_url),
       "img_src": card_img_src,
       "img_alt": card_img_alt,
