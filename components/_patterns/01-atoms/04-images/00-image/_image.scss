@@ -1,9 +1,18 @@
 @mixin img {
+  display: block;
   height: auto;
   max-width: 100%;
 }
 
-.img,
-.image__img {
+img,
+picture {
   @include img;
+}
+
+figure {
+  margin: 0; //override normalize
+}
+
+.figure__caption {
+  font-style: italic;
 }
