@@ -3,6 +3,14 @@
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
+
+[role=main] {
+  padding: .5rem .5rem 2rem;
+  overflow: hidden;
+  max-width: 75em;
+  margin: 0 auto;
+}
+
 #sg-patterns {
   -webkit-box-sizing: border-box !important;
           box-sizing: border-box !important;
