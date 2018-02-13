@@ -4,13 +4,19 @@
  * - ul_base_class - the base classname
  * - ul_modifiers - array of modifiers to add to the base classname
  * - ul_blockname - blockname prepended to the base classname
+ * - ul_attributes - array of attribute,value pairs
  *
  * - listItems - TBD
  */
 #}
 {% set ul_base_class = ul_base_class|default('ul') %}
 
-<ul {{ bem(ul_base_class, (ul_modifiers), ul_blockname) }}>
+<ul
+  {{ bem(ul_base_class, (ul_modifiers), ul_blockname) }}
+  {% for attribute,value in ul_attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}
+>
   {% block list_content %}
     {% for ul_item in ul_items %}
       {% include "@atoms/03-lists/_list-item.twig" with {

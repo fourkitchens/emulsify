@@ -30,7 +30,7 @@
     } %}
     {% if item.below %}
       <span class="expand-sub"></span>
-      {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
+      {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, menu_attributes, item_base_class, item_modifiers, item_blockname) }}
     {% endif %}
   {% endblock %}
 {% endembed %}

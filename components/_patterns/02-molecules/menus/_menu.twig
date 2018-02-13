@@ -24,9 +24,9 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
+{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, menu_attributes, item_base_class, item_modifiers, item_blockname) }}
 
-{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) %}
+{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, menu_attributes, item_base_class, item_modifiers, item_blockname) %}
   {% import _self as menus %}
   {% if items %}
 
@@ -43,7 +43,8 @@
     {% embed "@atoms/03-lists/00-ul.twig" with {
       ul_base_class: menu_class,
       ul_modifiers: menu_modifiers,
-      ul_blockname: menu_blockname
+      ul_blockname: menu_blockname,
+      ul_attributes: menu_attributes
     } %}
       {% block list_content %}
         {% for item in items %}
