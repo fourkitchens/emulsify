@@ -1,10 +1,10 @@
 <a href="#" id="toggle-expand" class="toggle-expand">
   <span class="toggle-expand__open">
-    <span class="toggle-expand__icon sprite-menu sprite-icon">
-      <span class="visually-hidden">
-        Mobile menu expand icon.
-      </span>
-    </span>
+    {% include "@atoms/04-images/icons/_icon.twig" with {
+      icon_base_class: 'icon',
+      icon_blockname: 'toggle-expand',
+      icon_name: 'bars',
+    } %}
     <span class="toggle-expand__text">Main Menu</span>
   </span>
   <span class="toggle-expand__close">
