@@ -18,6 +18,6 @@
   {% set icon_url = '/dist/img/sprite/' %}
 {# {% endif %} #}
 
-<svg {{ bem(icon_base_class, (icon_modifiers), icon_blockname, (icon_js_class)) }}{% if icon_id %} id="{{ icon_id }}"{% endif %}>
+<svg {{ bem(icon_base_class, (icon_modifiers), icon_blockname, (icon_js_class)) }}>
   <use xlink:href="{{ icon_url }}sprite.svg#{{ icon_name }}"></use>
 </svg>
