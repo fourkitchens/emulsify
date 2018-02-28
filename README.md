@@ -65,14 +65,13 @@ Drush 9.x users should use the following commands:
 `cd contrib/emulsify`
 or
 `cd custom/[YOUR_THEME]`
-5. then run `fin exec npm install` or `fin exec yarn install` command
- - near the end, it will break ("Failed to clone the git@github.com:drupal-pattern-lab/patternengine-php-twig.git repository") and you will have to edit _scripts/pattern_lab.sh_ - change line 8 to:
-`composer create-project drupal-pattern-lab/edition-twig-standard pattern-lab`
- - this change removes the flag "_-n_" for a non-interactive clone.
- - afterwards, run again `fin exec npm install` or `fin exec yarn install` command; Then, you'll have to provide your Github credentials, make a Github token and then copy it to your terminal to continue with the installation process.
-6. after a successful instalation you can start your Gulp tasks by runing `fin exec npm start` or `fin exec yarn start`
+5. if you already don't have your Github auth token globally defined you should do this now with (replace "YOUR_TOKEN" with the [token generated on your Github account](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)): 
+ `fin exec composer config --global github-oauth.github.com YOUR_TOKEN`
+ - this step is **necessary**, otherwise, you'll get this error after executing command in the following step: "_Failed to clone the git<span>@</span>github&#46;com:drupal-pattern-lab/patternengine-php-twig.git repository_"
+6. then run `fin exec npm install` or `fin exec yarn install` command 
+7. after a successful instalation you can start your Gulp tasks by runing `fin exec npm start` or `fin exec yarn start`
  - there are 2 access URLs and you'll use the second one (external URL)
-7. don't forget to set your theme as a default one; If you created a cloned theme, disable the original Emulsify theme `fin exec drush pmu emulsify -y` (works on Drush 8.x) or with
+8. don't forget to set your theme as a default one; If you created a cloned theme, disable the original Emulsify theme `fin exec drush pmu emulsify -y` (works on Drush 8.x) or with
 `fin exec drupal theme:uninstall emulsify` and enable and set to default your new theme in Drupal 
 (you can do that with the Drupal console command 
 `fin exec drupal theme:install emulsify --set-default` or via the Drupal UI)
