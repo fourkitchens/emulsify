@@ -1,6 +1,7 @@
 # Ignore compiled files.
 dist
 vendor
+build
 
 # Pattern Lab (ignored initially)
 pattern-lab
