@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a responsive image.
+ *
+ * Available variables:
+ * - sources: The attributes of the <source> tags for this <picture> tag.
+ * - img_element: The controlling image, with the fallback image in srcset.
+ * - output_image_tag: Whether or not to output an <img> tag instead of a
+ *   <picture> tag.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_responsive_image()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set responsive_image_base_class = responsive_image_base_class|default('image') %}
+
+{% if output_image_tag %}
+  {% include "@atoms/04-images/00-image/_image.twig" with {
+    image_base_class: responsive_image_base_class,
+    image_modifiers: responsive_image_modifiers,
+    image_blockname: responsive_image_blockname,
+    img_srcset: img_srcset|default(img_element['#attributes'].srcset),
+    img_sizes: img_sizes|default(img_element['#attributes'].sizes),
+    img_src: img_src|default(img_element['#uri']),
+    img_alt: img_alt|default(img_element['#alt']),
+    img_title: img_title|default(img_element['#title']),
+  } %}
+{% else %}
+  {% include "@atoms/04-images/00-image/_picture.twig" with {
+    picture_base_class: responsive_image_base_class,
+    picture_modifiers: responsive_image_modifiers,
+    picture_blockname: responsive_image_blockname,
+    img_srcset: img_srcset|default(img_element['#attributes'].srcset),
+    img_sizes: img_sizes|default(img_element['#attributes'].sizes),
+    img_src: img_src|default(img_element['#uri']),
+    img_alt: img_alt|default(img_element['#alt']),
+    img_title: img_title|default(img_element['#title']),
+  } %}
+{% endif %}

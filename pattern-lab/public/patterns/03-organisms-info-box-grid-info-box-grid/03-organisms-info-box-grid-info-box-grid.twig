@@ -1,0 +1,25 @@
+{% embed "@base/layouts/grid/00-grid.twig" with {
+  "grid_blockname": "info-box"
+} %}
+
+{% block grid_content %}
+  {# Drupal content #}
+  {% if grid_content %}
+    {{ grid_content }}
+  {# PL content in yml #}
+  {% else %}
+    {% for box in boxes %}
+      {% set class = "info-box" %}
+      {% include "@molecules/info-box/info-box.twig" with {
+        "ib_modifiers": box.ib_modifiers,
+        "ib_blockname": box.ib_blockname,
+        "infobox_title": box.infobox_title,
+        "infobox_title_modifiers": box.infobox_title_modifiers,
+        "infobox_link": box.infobox_link,
+        "infobox_text": box.infobox_text
+      } %}
+    {% endfor %}
+  {% endif %}
+{% endblock %}
+
+{% endembed %}

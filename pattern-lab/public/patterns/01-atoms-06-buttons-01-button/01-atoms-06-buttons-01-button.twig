@@ -1,0 +1,30 @@
+{#
+/**
+ * Available variables:
+ * - button_base_class - the base class name
+ * - button_modifiers - array of modifiers to add to the base classname
+ * - button_blockname - blockname prepended to the base classname
+ * - button_attributes - array of attribute,value pairs
+ * - button_url - the url this button should poing to
+ * - button_content - the content of the button (typically text)
+ *
+ * Available blocks:
+ * - button_content - used to replace the content of the button with something other than text
+ *   for example: to insert an icon
+ */
+#}
+{% set button_base_class = button_base_class|default('button') %}
+
+<button
+  {{ bem(button_base_class, (button_modifiers), button_blockname) }}
+  {% for attribute,value in button_attributes %}
+    {{ attribute }}="{{ value }}"
+  {% endfor %}
+  {% if button_url %}
+    href="{{ button_url }}"
+  {% endif %}
+>
+  {% block button_content %}
+    {{ button_content }}
+  {% endblock %}
+</button>

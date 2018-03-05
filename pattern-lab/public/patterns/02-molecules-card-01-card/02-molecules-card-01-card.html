@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="pl">
+  <head>
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Pattern Lab base styles -->
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1520267469" media="all" />
+    <!-- Component styles -->
+    <link rel="stylesheet" href="../../../../dist/style.css?1520267469" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    <!-- never cache patterns -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1520267469" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1520267469" media="all" />
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="body">
+    <!-- for js not found errors in Pattern Lab -->
+  	<div class="visually-hidden">
+  		<div id="tabs" class="tabs"></div>
+  	</div>
+
+<div class="card">
+      
+  
+<img
+  class="image"
+      src="https://placeimg.com/1280/720/nature"
+      alt="This is the card image&#039;s alt text"
+    />
+    <div class="card__copy">
+          
+      
+<h2 class="card__title card__title--no-space">
+      
+<a
+  class="card__title-link"
+    href="#"
+>
+      This is a card title
+  </a>
+  </h2>
+      
+              
+<h3 class="card__subtitle card__subtitle--no-space">
+      Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+  </h3>
+              
+<p class="card__body">
+      Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+  </p>
+              
+<a
+  class="card__link"
+    href="#"
+>
+      Read more about this card
+  </a>
+          </div><!-- copy -->
+</div>
+
+  <!--DO NOT REMOVE-->
+  <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
+  {"cssEnabled":false,"lineage":[{"lineagePattern":"atoms-responsive-image","lineagePath":"..\/..\/patterns\/02-molecules-card-01-card\/02-molecules-card-01-card.html"},{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/02-molecules-card-01-card\/02-molecules-card-01-card.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"..\/..\/patterns\/02-molecules-card-01-card\/02-molecules-card-01-card.html"},{"lineagePattern":"atoms-link","lineagePath":"..\/..\/patterns\/02-molecules-card-01-card\/02-molecules-card-01-card.html"},{"lineagePattern":"atoms-button","lineagePath":"..\/..\/patterns\/02-molecules-card-01-card\/02-molecules-card-01-card.html"}],"lineageR":[{"lineagePattern":"organisms-card-grid","lineagePath":"..\/..\/patterns\/03-organisms-card-grid-card-grid\/03-organisms-card-grid-card-grid.html"},{"lineagePattern":"organisms-card-grid-alt","lineagePath":"..\/..\/patterns\/03-organisms-card-grid-card-grid-alt\/03-organisms-card-grid-card-grid-alt.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"card"},"patternDesc":"<h2>Card<\/h2>\n\n<p><em>Title and subtext<\/em><\/p>\n\n<p>A card<\/p>","patternExtension":"twig","patternName":"Card default variation","patternPartial":"molecules-card","patternState":"","extraOutput":[]}
+</script>
+
+<script>
+  /*!
+  * scriptLoader - v0.1
+  *
+  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+  * Licensed under the MIT license
+  *
+  */
+  
+  var scriptLoader = {
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1520267469">
+  (function() {
+    if (self != top) {
+      var cb = '1520267469';
+      var js = [];
+      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
+        js.push('styleguide/bower_components/classList.min.js');
+      }
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1520267469">
+  (function() {
+    if (self != top) {
+      var cb = '1520267469';
+      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
+      scriptLoader.run(js,cb,'pl-js-insert');
+    }
+  })();
+</script>
+
+  <!-- Drupal-specific usage -->
+  <!-- example using symlinking -->
+  <!-- cd web/themes/custom/emulsify/components/js -->
+  <!-- ln -s ../../../../../core/assets/vendor/domready/ready.min.js ./ -->
+  <!-- ln -s ../../../../../core/misc/drupal.js ./ -->
+
+  <!-- UNCOMMENT AS NECESSARY -->
+  <!-- <script src="../../js/ready.min.js"></script> -->
+  <!-- <script src="../../js/drupal.js"></script> -->
+
+  <script src="../../../../dist/scripts-styleguide.js"></script>
+
+  <!-- If using Drupal.behaviors, uncomment for them to work in Pattern Lab -->
+  <!-- <script>Drupal.attachBehaviors();</script> -->
+
+  </body>
+</html>

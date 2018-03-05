@@ -1,0 +1,24 @@
+{% embed "@base/layouts/grid/00-grid.twig" %}
+
+{% block grid_content %}
+  {# Drupal content #}
+  {% if grid_content %}
+    {{ grid_content }}
+  {# PL content in YAML #}
+  {% else %}
+    {% for card in cards %}
+      {% include "@molecules/card/01-card.twig" with {
+        "card_blockname": card.blockname,
+        "card_modifiers": card.card_modifiers,
+        "card_img_src": card.card_img_src,
+        "card_title": card.card_title,
+        "card_subtitle": card.card_subtitle,
+        "card_body": card.card_body,
+        "card_link_url": card.card_link_url,
+        "card_image_output_image_tag": card.card_image_output_image_tag,
+      } %}
+    {% endfor %}
+  {% endif %}
+{% endblock %}
+
+{% endembed %}

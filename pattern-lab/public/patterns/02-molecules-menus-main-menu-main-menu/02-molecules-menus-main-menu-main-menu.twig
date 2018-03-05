@@ -1,0 +1,18 @@
+<a href="#" id="toggle-expand" class="toggle-expand">
+  <span class="toggle-expand__open">
+    <span class="toggle-expand__icon sprite-menu sprite-icon">
+      <span class="visually-hidden">
+        Mobile menu expand icon.
+      </span>
+    </span>
+    <span class="toggle-expand__text">Main Menu</span>
+  </span>
+  <span class="toggle-expand__close">
+    <span class="toggle-expand__text">Close</span>
+  </span>
+</a>
+<nav id="main-nav" class="main-nav">
+  {% include "@molecules/menus/_menu.twig" with {
+    menu_class: 'main-menu'
+  } %}
+</nav>

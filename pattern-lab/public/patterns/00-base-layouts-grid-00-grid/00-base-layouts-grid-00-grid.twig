@@ -1,0 +1,15 @@
+{% set grid_base_class = grid_base_class|default('grid') %}
+
+{% if grid_label %}
+  {% include "@atoms/02-text/00-headings/_heading.twig" with {
+    "heading_level": 2,
+    "heading": grid_label,
+  } %}
+{% endif %}
+<div {{ bem(grid_base_class, (grid_modifiers), grid_blockname) }}>
+  {% block grid_content %}
+    {% for item in items %}
+      <div class="grid__item">{{ item }}</div>
+    {% endfor %}
+  {% endblock %}
+</div>

@@ -1,0 +1,18 @@
+{% if not attributes %}
+<div class="form-item">
+  <label for="select" class="form-item__label form-item__label--textfield">Age</label>
+  <div class="form-item__dropdown">
+    <select class="form-item__select">
+      <optgroup label="Whatever">
+{% endif %}
+        {% for key, listItem in listItems.six %}
+          {% include "@atoms/05-forms/select/_select-item.twig" with {
+            "select_item": listItem.title
+          } %}
+        {% endfor %}
+{% if not attributes %}
+      </optgroup>
+    </select>
+  </div>
+</div>
+{% endif %}
