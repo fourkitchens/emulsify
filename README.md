@@ -51,7 +51,7 @@ The `start` command spins up a local server, compiles everything (runs all requi
 It is recommended to use the _docksal/cli:2.0_ image (e.g. _docksal/cli:2.0-php7.1_).
 Docksal now exposes port 3000 for NodeJS apps by default so you can use Browsersync and similar node applications directly from Docksal containers. This means that it is no longer necessary to have node.js, nvm or/and yarn installed on your local OS.
 3. next, enable Emulsify and its dependencies.
-Drush 8.x users should use the following command:
+Drush 8.x users should use the following command but before that, position yourself in the web root directory ("_web_" or "_docroot_" in most cases) `cd [WEB_ROOT_DIR]` or use your drush aliases:
 `fin exec drush en emulsify components unified_twig_ext -y`
 Drush 9.x users should use the following commands:
 `fin exec drush en components unified_twig_ext -y` and
@@ -72,9 +72,9 @@ or
 7. after a successful instalation you can start your Gulp tasks by runing `fin exec npm start` or `fin exec yarn start`
  - there are 2 access URLs and you'll use the second one (external URL)
 8. don't forget to set your theme as a default one; If you created a cloned theme, disable the original Emulsify theme `fin exec drush pmu emulsify -y` (works on Drush 8.x) or with
-`fin exec drupal theme:uninstall emulsify` and enable and set to default your new theme in Drupal 
+`fin exec drupal theme:uninstall emulsify` then enable and set to default your new theme in Drupal 
 (you can do that with the Drupal console command 
-`fin exec drupal theme:install emulsify --set-default` or via the Drupal UI)
+`fin exec drupal theme:install [YOUR_THEME] --set-default` or via the Drupal UI)
   ---
 
 ## Highlighted Features
