@@ -212,8 +212,8 @@ function emulsify_drush_command() {
       'slim' => 'Only copy base files',
     ),
     'examples' => array(
-      'drush emulsify "My Awesome Theme"' => 'Creates an Emulsify theme called "My Awesome Theme", using the default options.',
-      'drush emulsify "My Awesome Theme" --machine-name=mat' => 'Creates a Emulsify theme called "My Awesome Theme" with the specific machine name "mat".',
+      'php emulsify.php "My Awesome Theme"' => 'Creates an Emulsify theme called "My Awesome Theme", using the default options.',
+      'php emulsify.php "My Awesome Theme" --machine-name mat' => 'Creates a Emulsify theme called "My Awesome Theme" with the specific machine name "mat".',
     ),
   );
 
