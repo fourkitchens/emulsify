@@ -2,7 +2,7 @@
 
 # Emulsify: Pattern Lab + Drupal 8
 
-Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) automated via Gulp/NPM. Also serves as a starterkit Drupal 8 theme.
+Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) automated via Gulp/NPM. Also serves as _a starterkit_ Drupal 8 theme.
 
 ## Requirements
 
@@ -25,11 +25,15 @@ Install with Yarn:
 ### In a Composer-based Drupal install (recommended)
 
   1. `composer require fourkitchens/emulsify`
-  2. Enable Emulsify and its dependencies `drush en emulsify components unified_twig_ext -y`
-  3. **Optional**: Create cloned theme `drush emulsify "THEME NAME"` (You may need to run `drush cc drush` to clear the drush cache. Also, you can run `drush help emulsify` for other available options)
-  4. If you created a cloned theme, `cd web/themes/custom/THEME_NAME/`. If not, `cd web/themes/contrib/emulsify/`
+  2. Enable Emulsify and its dependencies    
+      `drush then emulsify -y`    
+      `drush en components unified_twig_ext -y`
+  3. **Optional**: Create a cloned theme by manually duplicating it and making the neccessary renaming of files, folders and data in the info file.    
+  (There is a `drush emulsify "THEME NAME"` command to automatically do this, but it works with Drush 8.x only.)
+  4. If you created a cloned theme, `cd web/themes/custom/THEME_NAME/`.   
+  If not, `cd web/themes/contrib/emulsify/`
   5. `npm install` or `yarn install`
-  6. If you created a cloned theme, disable the original Emulsify theme `drush pmu emulsify -y` and enable your new theme in Drupal and set to default.
+  6. If you created a cloned theme, disable the original Emulsify theme (`drush pmu emulsify -y`) and enable your new theme in Drupal and set to default. (You need to compile the files to get the theme working. See the "Starting Pattern Lab…" section below.)
 
 If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
 
