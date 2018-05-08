@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- Pattern Lab base styles -->
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1520273707" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1525801494" media="all" />
     <!-- Component styles -->
-    <link rel="stylesheet" href="../../../../dist/style.css?1520273707" media="all" />
+    <link rel="stylesheet" href="../../../../dist/style.css?1525801494" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     <!-- never cache patterns -->
@@ -18,8 +18,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1520273707" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1520273707" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1525801494" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1525801494" media="all" />
     <!-- End Pattern Lab -->
 
   </head>
@@ -30,19 +30,22 @@
   	</div>
 <div class="icons-demo" id="icons">
 
-      <div><span class="sprite-menu sprite-icon"></span><p>Menu</p></div>
+      <div>
+      
+  
+<svg class="icon">
+  <use xlink:href="/dist/img/sprite/sprite.svg#bars"></use>
+</svg>
+      <p>bars</p>
+    </div>
   
 </div>
 
 <br>
 
-<h3 class="h3">Inline icon examples</h3>
-
-<p class="icon-inline-menu">Menu</p>
-
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
-  {"cssEnabled":false,"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"images"},"patternDesc":"<h3>How to use icons<\/h3>\n\n<p>We are using a gulp SVG sprite generator, which automatically creates the SVG CSS in <code>_icon_sprite.scss<\/code>. Simply add separate SVG files into <code>images\/icons\/src\/<\/code> and they will be added to the sprite the next time <code>gulp icons<\/code> is run.<\/p>\n\n<p><strong>Writing Sass<\/strong><\/p>\n\n<p>If you look in <code>_icon_sprite.scss<\/code>, you will notice there is a mixin and class for each sprite. You can use whatever approach suits your situation. <strong>Note: You will need to tweak the background-size in 04-images\/icons\/_icons.scss each time a sprite is added.<\/strong> You can also make use of the following mixins from <code>00-base\/_mixins.scss<\/code> to provide inline icons before text:<\/p>\n\n<pre><code>.TEXT_WITH_ICON_BEFORE_IT {\n  @include ICONNAME; \/\/ e.g., sprite-chevron-right\n  @include with-icon;\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"Icons","patternPartial":"atoms-icons","patternState":"","extraOutput":[]}
+  {"cssEnabled":false,"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"..\/..\/patterns\/01-atoms-04-images-icons-icons\/01-atoms-04-images-icons-icons.html"}],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"images"},"patternDesc":"<h3>How to use icons<\/h3>\n\n<p>We are using a gulp SVG sprite generator (details <a href=\"https:\/\/una.im\/svg-icons\">here<\/a>), which automatically creates the SVG in <code>\/images\/icons\/sprite\/sprite.svg<\/code>. Simply run <code>gulp icons<\/code> to add to the sprite.<\/p>\n\n<p><strong>Usage<\/strong><\/p>\n\n<p>The SVG component is found here: <code>\/components\/_patterns\/01-atoms\/04-images\/icons\/_icon.twig<\/code>. See available variables in that file. Examples of usage below:<\/p>\n\n<p>Simple: (no BEM renaming)<\/p>\n\n<pre><code>{% include \"@atoms\/04-images\/icons\/_icon.twig\" with {\n  icon_name: 'bars',\n} %}\n<\/code><\/pre>\n\n<p>... creates...<\/p>\n\n<pre><code>&lt;svg class=\"icon\"&gt;\n  &lt;use xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xlink:href=\"\/images\/sprite\/sprite.svg#src--bars\"&gt;&lt;\/use&gt;\n&lt;\/svg&gt;\n<\/code><\/pre>\n\n<p>Complex (BEM classes):<\/p>\n\n<pre><code>{% include \"@atoms\/04-images\/icons\/_icon.twig\" with {\n  icon_base_class: 'icon',\n  icon_blockname: 'toggle-expand',\n  icon_name: 'bars',\n} %}\n<\/code><\/pre>\n\n<p>... creates...<\/p>\n\n<pre><code>&lt;svg class=\"toggle-expand__icon\"&gt;\n  &lt;use xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xlink:href=\"\/images\/sprite\/sprite.svg#src--bars\"&gt;&lt;\/use&gt;\n&lt;\/svg&gt;\n<\/code><\/pre>","patternExtension":"twig","patternName":"Icons","patternPartial":"atoms-icons","patternState":"","extraOutput":[]}
 </script>
 
 <script>
@@ -76,10 +79,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1520273707">
+<script id="pl-js-polyfill-insert-1525801494">
   (function() {
     if (self != top) {
-      var cb = '1520273707';
+      var cb = '1525801494';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -89,10 +92,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1520273707">
+<script id="pl-js-insert-1525801494">
   (function() {
     if (self != top) {
-      var cb = '1520273707';
+      var cb = '1525801494';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
