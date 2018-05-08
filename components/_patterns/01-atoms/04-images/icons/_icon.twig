@@ -1,0 +1,23 @@
+{#
+/**
+ * Available variables:
+ * - icon_base_class - base class name
+ * - icon_modifiers - modifiers for icons (array)
+ * - icon_blockname - blockname prepended to the base classname
+ * - icon_name - the name of the icon
+ */
+#}
+{% set icon_base_class = icon_base_class|default('icon') %}
+{% set icon_url = '' %}
+
+{# Drupal #}
+{# {% if attributes or theme_hook_original %}
+  {% set icon_url = '/themes/custom/YOURTHEME/dist/img/sprite/' %}
+  {{ attach_library('emulsify/sprite') }}
+{% else %} #}
+  {% set icon_url = '/dist/img/sprite/' %}
+{# {% endif %} #}
+
+<svg {{ bem(icon_base_class, (icon_modifiers), icon_blockname, (icon_js_class)) }}>
+  <use xlink:href="{{ icon_url }}sprite.svg#{{ icon_name }}"></use>
+</svg>
