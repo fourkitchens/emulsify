@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Add "kint" function for Pattern Lab.
+ * Add "attach_library" function for Pattern Lab.
  */
 
 $function = new Twig_SimpleFunction('attach_library', function ($string) {
