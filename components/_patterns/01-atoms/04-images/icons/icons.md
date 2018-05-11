@@ -1,13 +1,14 @@
 ---
 title: Icons
 ---
+
 ### How to use icons
 
 We are using a gulp SVG sprite generator (details [here](https://una.im/svg-icons)), which automatically creates the SVG in `/images/icons/sprite/sprite.svg`. Simply run `gulp icons` to add to the sprite.
 
 **Usage**
 
-The SVG component is found here: `/components/_patterns/01-atoms/04-images/icons/_icon.twig`. See available variables in that file. Examples of usage below:
+The SVG component is found here: `/components/_patterns/01-atoms/04-images/icons/_icon.twig`. See available variables in that file as well as instructions for Drupal. Examples of usage below:
 
 Simple: (no BEM renaming)
 
