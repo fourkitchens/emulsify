@@ -2,7 +2,7 @@
 
 # Emulsify: Pattern Lab + Drupal 8
 
-Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) automated via Gulp/NPM. Also serves as a starterkit Drupal 8 theme.
+Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) automated via Gulp/NPM. Also serves as _a starterkit_ Drupal 8 theme.
 
 ## Requirements
 
@@ -25,16 +25,18 @@ Install with Yarn:
 
 ### In a Composer-based Drupal install (recommended)
 
-1.  `composer require fourkitchens/emulsify`
-2.  Enable Emulsify and its dependencies `drush en emulsify components unified_twig_ext -y`
-3.  **Optional**: Create cloned theme `php emulsify.php "THEME NAME"` (Run `php emulsify.php -h` for other available options)
-4.  If you created a cloned theme, `cd web/themes/custom/THEME_NAME/`. If not, `cd web/themes/contrib/emulsify/`
-5.  `npm install` or `yarn install`
-6.  If you created a cloned theme, disable the original Emulsify theme `drush pmu emulsify -y` and enable your new theme in Drupal and set to default.
+1. Require emulsify in your project `composer require fourkitchens/emulsify`
+2. Create your new theme by cloning emulsify `php emulsify.php "THEME NAME"` (Run `php emulsify.php -h` for other available options)
+3. Move into your theme directory `cd web/themes/custom/THEME_NAME/`
+4. Install the theme dependencies `npm install` or `yarn install`
+5. Enable your theme and its dependencies `drush then THEME_NAME -y && drush en components unified_twig_ext -y`
+6. Proceed to the "Starting Pattern Lab…" section below
 
 If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
 
 Troubleshooting Installation: See [Drupal Installation FAQ](https://github.com/fourkitchens/emulsify/wiki/Installation#drupal-installation-faq).
+
+_Note: Once you're created your custom theme, you can remove Emulsify as a dependency of your project. If you'd like to get updates as we push them, solely for educational/best-practice information, feel free to leave it in and receive the updates. Updating Emulsify will not affect your custom theme in any way._
 
 ## Starting Pattern Lab and watch task
 
