@@ -4,7 +4,7 @@ title: Icons
 
 ### How to use icons
 
-We are using a gulp SVG sprite generator (details [here](https://una.im/svg-icons)), which automatically creates the SVG in `/images/icons/sprite/sprite.svg`. Simply run `gulp icons` to add to the sprite.
+We are using a gulp SVG sprite generator (details [here](https://una.im/svg-icons)), which automatically takes individual SVGs from `/images/icons/src` and generates `/dist/img/sprite/sprite.svg`. Simply run `gulp icons` to add your individual SVGs to this sprite.
 
 **Usage**
 
