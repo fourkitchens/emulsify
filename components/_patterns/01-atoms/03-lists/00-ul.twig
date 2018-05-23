@@ -12,21 +12,14 @@
  */
 #}
 {% set ul_base_class = ul_base_class|default('ul') %}
-{% set ul_bem = bem(ul_base_class, (ul_modifiers), ul_blockname) %}
 
+{% set ul_attributes = {
+  'class': bem(ul_base_class, (ul_modifiers), ul_blockname),
+  'role': ul_role,
+  'rel': ul_rel
+} %}
 
-{# Set up an empty array if no ul_attributes so we can merge into it later. #}
-{% set ul_attributes = ul_attributes|default([]) %}
-
-{# If no class is passed, we also need to set that as an empty array. #}
-{% if ul_attributes.class is not iterable %}
-  {% set ul_attributes = ul_attributes|merge({class: []}) %}
-{% endif %}
-
-{# Merge bem-generated class with any existing attributes that are passed in. #}
-{% set merged_attributes = ul_attributes|merge({class: ul_attributes.class|merge([ul_bem])}) %}
-
-<ul {{ add_attributes(merged_attributes) }}>
+<ul {{ add_attributes(ul_attributes) }}>
   {% block list_content %}
     {% for ul_item in ul_items %}
       {% include "@atoms/03-lists/_list-item.twig" with {
