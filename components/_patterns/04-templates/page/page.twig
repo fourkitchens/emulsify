@@ -1,9 +1,14 @@
-<div class="example">
-  {% include "@atoms/02-text/00-headings/_heading.twig" with {
-    "heading_level": 1,
-    "heading": "Page Title",
-    "heading_modifiers": ["margin"],
-  } %}
+{% extends "@templates/default/_default.twig" %}
+
+{% block page_content %}
+
+  {% if site_title %}
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      "heading_level": 1,
+      "heading": site_title,
+      "heading_modifiers": ["margin"],
+    } %}
+  {% endif %}
 
   {% include "@organisms/info-box-grid/info-box-grid.twig" with {
     "boxes": {
@@ -55,4 +60,5 @@
       },
     }
   } %}
-</div>
+
+{% endblock %}

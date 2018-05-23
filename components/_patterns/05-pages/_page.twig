@@ -43,38 +43,52 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
 
-  {{ page.header }}
+{% extends "@templates/default/_default.twig" %}
+  {% block page_header %}
+    {{ page.header }}
+  {% endblock %}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
-
-  {{ messages }}
-
-  <main role="main" class="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    {% if page.sidebar %}
-      <aside class="main-sidebar" role="complementary">
-        {{ page.sidebar }}
-      </aside>
+  {% block page_content_header %}
+    {% if page.content_header %}
+      {% if node.type.value.0['target_id'] == 'homepage' %}
+        <div class="hero">
+      {% endif %}
+          {{ page.content_header }}
+      {% if node.type.value.0['target_id'] == 'homepage' %}
+        </div>
+      {% endif %}
     {% endif %}
+  {% endblock %}
 
-    <div class="main-content{% if page.sidebar %}--with-sidebar{% endif %}">
-      {{ page.content }}
-    </div>{# /.main-content #}
+  {% block page_content_info %}
+    {{ page.content_info }}
+  {% endblock %}
 
-  </main>
+  {% block page_sidebar_top %}
+    {{ page.sidebar_top }}
+  {% endblock %}
 
-  {% if page.footer %}
-    {{ page.footer }}
-  {% endif %}
+  {% block page_sidebar %}
+    {{ page.sidebar }}
+  {% endblock %}
 
-</div>{# /.layout-container #}
+  {% block page_content %}
+    {{ page.content }}
+  {% endblock %}
+
+  {% block page_sidebar_bottom %}
+    {{ page.sidebar_bottom }}
+  {% endblock %}
+
+  {% block page_content_footer %}
+    {% if page.content_footer %}
+      {{ page.content_footer }}
+    {% endif %}
+  {% endblock %}
+
+  {% block page_footer %}
+    {% if page.footer %}
+      {{ page.footer }}
+    {% endif %}
+  {% endblock %}

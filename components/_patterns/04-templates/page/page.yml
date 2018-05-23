@@ -1,0 +1,44 @@
+site_header_img_src: '../../images/logo.png'
+site_header_img_alt: 'Logo'
+site_header_img_url: '/'
+site_header_image_link_base_class: 'logo'
+
+items:
+  - title: "Menu Item 1"
+    url: "#"
+    below:
+      - title: "Menu Item 1 Sub 1"
+        url: "#"
+      - title: "Menu Item 1 Sub 2"
+        url: "#"
+        below:
+          - title: "Menu Item 1 Sub Sub 1"
+            url: "#"
+          - title: "Menu Item 1 Sub Sub 2"
+            url: "#"
+      - title: "Menu Item 1 Sub 3"
+        url: "#"
+      - title: "Menu Item 1 Sub 4"
+        url: "#"
+  - title: "Menu Item 2"
+    url: "#"
+    below:
+      - title: "Menu Item 2 Sub 1"
+        url: "#"
+      - title: "Menu Item 2 Sub 2"
+        url: "#"
+      - title: "Menu Item 2 Sub 3"
+        url: "#"
+  - title: "Menu Item 3"
+    url: "#"
+    below:
+      - title: "Menu Item 3 Sub 1"
+        url: "#"
+      - title: "Menu Item 3 Sub 2"
+        url: "#"
+      - title: "Menu Item 3 Sub 3"
+        url: "#"
+      - title: "Menu Item 3 Sub 4"
+        url: "#"
+
+site_title: 'Page Title'

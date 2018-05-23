@@ -1,5 +1,11 @@
 <header class="header">
-  <div class="navigation">
-    {{ content }}
-  </div>
+  {% block header_content %}
+    {% include "@atoms/04-images/00-image/figure.twig" with {
+      img_src: site_header_img_src,
+      img_alt: site_header_img_alt,
+      img_url: site_header_img_url,
+      image_link_base_class: site_header_image_link_base_class
+    } %}
+    {% include "@molecules/menus/main-menu/main-menu.twig" %}
+  {% endblock %}
 </header>
