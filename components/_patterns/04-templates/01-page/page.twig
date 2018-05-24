@@ -1,31 +1,14 @@
-{% extends "@templates/default/_default.twig" %}
+{% extends "@templates/_default.twig" %}
 
 {% block page_content %}
 
-  {% if site_title %}
-    {% include "@atoms/02-text/00-headings/_heading.twig" with {
-      "heading_level": 1,
-      "heading": site_title,
-      "heading_modifiers": ["margin"],
-    } %}
-  {% endif %}
-
-  {% include "@organisms/info-box-grid/info-box-grid.twig" with {
-    "boxes": {
-      1: {
-        "ib_modifiers": ["grid-item"],
-        "infobox_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "infobox_text": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
-        "infobox_link": "#",
-      },
-      2: {
-        "ib_modifiers": ["grid-item"],
-        "infobox_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "infobox_text": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
-        "infobox_link": "#",
-      },
-    }
+  {% include "@atoms/02-text/00-headings/_heading.twig" with {
+    "heading_level": 1,
+    "heading": site_title,
+    "heading_modifiers": ["margin"],
   } %}
+
+  {% include "@organisms/info-box-grid/info-box-grid.twig" %}
 
   {% include "@organisms/card-grid/card-grid.twig" with {
     "grid_blockname": "card",

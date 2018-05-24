@@ -41,4 +41,24 @@ items:
       - title: "Menu Item 3 Sub 4"
         url: "#"
 
+boxes:
+  1:
+    ib_modifiers:
+      1: grid-item
+    infobox_title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    infobox_text: "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+    infobox_link: "#"
+  2:
+    ib_modifiers:
+      1: grid-item
+    infobox_title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    infobox_text: "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+    infobox_link: "#"
+
 site_title: 'Page Title'
+
+inline_items:
+  - title: "Test"
+    url: "/"
+  - title: "Number 2"
+    url: "/test-2"

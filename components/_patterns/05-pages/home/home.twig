@@ -1,26 +1,16 @@
-<div class="example">
-  {% include "@atoms/02-text/00-headings/_heading.twig" with {
-    "heading_level": 1,
-    "heading": "Reviews",
-    "heading_modifiers": ["margin"],
-  } %}
+{% extends "@templates/_default.twig" %}
 
-  {% include "@organisms/info-box-grid/info-box-grid.twig" with {
-    "boxes": {
-      1: {
-        "ib_modifiers": ["grid-item"],
-        "infobox_title": "This is why reviews matter",
-        "infobox_text": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
-        "infobox_link": "#",
-      },
-      2: {
-        "ib_modifiers": ["grid-item"],
-        "infobox_title": "Make sure you read them well",
-        "infobox_text": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
-        "infobox_link": "#",
-      },
-    }
-  } %}
+{% block page_content %}
+
+  {% if site_title %}
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      "heading_level": 1,
+      "heading": site_title,
+      "heading_modifiers": ["margin"],
+    } %}
+  {% endif %}
+
+  {% include "@organisms/info-box-grid/info-box-grid.twig" %}
 
   {% include "@organisms/card-grid/card-grid.twig" with {
     "grid_blockname": "card",
@@ -30,7 +20,7 @@
         "card_modifiers": ["grid-item", "divider-3"],
         "card_img_src": "https://placeimg.com/480/480/people",
         "card_image_output_image_tag": TRUE,
-        "card_title": "This is the first review",
+        "card_title": "This is the first featured item",
         "card_link_url": "#",
         "card_subtitle": "About this thing",
         "card_body": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.",
@@ -39,7 +29,7 @@
         "card_modifiers": ["grid-item","divider-3"],
         "card_img_src": "https://placeimg.com/480/480/people",
         "card_image_output_image_tag": TRUE,
-        "card_title": "This is the second review",
+        "card_title": "This is the second",
         "card_link_url": "#",
         "card_subtitle": "About this other thing",
         "card_body": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.",
@@ -48,11 +38,12 @@
         "card_modifiers": ["grid-item","divider-3"],
         "card_img_src": "https://placeimg.com/480/480/people",
         "card_image_output_image_tag": TRUE,
-        "card_title": "The Final Review",
+        "card_title": "The Final",
         "card_link_url": "#",
         "card_subtitle": "Is the most interesting",
         "card_body": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.",
       },
     }
   } %}
-</div>
+
+{% endblock %}

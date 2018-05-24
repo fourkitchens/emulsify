@@ -1,0 +1,24 @@
+{% extends "@templates/_default.twig" %}
+
+{% block page_content %}
+
+  {% include "@atoms/02-text/00-headings/_heading.twig" with {
+    "heading_level": 1,
+    "heading": site_title,
+    "heading_modifiers": ["margin"],
+  } %}
+
+  {% include "@atoms/02-text/text/01-paragraph.twig" %}
+
+{% endblock %}
+
+{% block page_sidebar %}
+  {% include "@atoms/02-text/00-headings/_heading.twig" with {
+    "heading_level": 2,
+    "heading": "Sidebar Content",
+    "heading_modifiers": ["margin"],
+  } %}
+  {% include "@atoms/02-text/text/01-paragraph.twig" with {
+    paragraph_content: sidebar_paragraph_content
+  } %}
+{% endblock %}

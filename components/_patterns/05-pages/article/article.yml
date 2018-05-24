@@ -1,0 +1,40 @@
+site_header_img_src: '../../images/logo.png'
+site_header_img_alt: 'Logo'
+site_header_img_url: '/'
+site_header_image_link_base_class: 'logo'
+
+items:
+  - title: "Home"
+    url: "link.pages-home"
+    below:
+      - title: "Home Sub-Page"
+        url: "#"
+      - title: "Home Sub-Page 2"
+        url: "#"
+        below:
+          - title: "Home Sub-Sub-Page"
+            url: "#"
+          - title: "Home Sub-Sub-Page 2"
+            url: "#"
+  - title: "Article"
+    url: "link.pages-article"
+    below:
+      - title: "Article Sub 1"
+        url: "#"
+      - title: "Article Sub 2"
+        url: "#"
+      - title: "Article Sub 3"
+        url: "#"
+
+site_title: 'This is a Real Article'
+
+paragraph_content: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+
+sidebar: TRUE
+sidebar_paragraph_content: "This is sidebar content ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+
+inline_items:
+  - title: "Home"
+    url: "link.pages-home"
+  - title: "Article"
+    url: "link.pages-article"
