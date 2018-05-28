@@ -1,9 +1,0 @@
-/// Mixin - With Icon
-/// Precede Text with SVG icon
-@mixin with-icon {
-  background-size: cover;
-  content: "";
-  display: inline-block;
-  margin-right: 0.1em;
-  padding: 0.8em;
-}
