@@ -151,7 +151,7 @@ if (!class_exists("Project_pl_trans_Node")) {
 if (!class_exists("Project_pl_trans_TokenParser")) {
 
   /**
-   * Class Project_trans_TokenParser.
+   * Class Project_pl_trans_TokenParser.
    */
   class Project_pl_trans_TokenParser extends \Twig_TokenParser {
 
@@ -187,7 +187,7 @@ if (!class_exists("Project_pl_trans_TokenParser")) {
 
       $this->checkTransString($body, $lineno);
 
-      $node = new Project_trans_Node($body, $plural, $count, $options, $lineno, $this->getTag());
+      $node = new Project_pl_trans_Node($body, $plural, $count, $options, $lineno, $this->getTag());
 
       return $node;
     }
