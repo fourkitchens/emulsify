@@ -29,7 +29,7 @@ Install with Yarn:
 2. Create your new theme by cloning emulsify `php emulsify.php "THEME NAME"` (Run `php emulsify.php -h` for other available options)
 3. Move into your theme directory `cd web/themes/custom/THEME_NAME/`
 4. Install the theme dependencies `npm install` or `yarn install`
-5. Enable your theme and its dependencies `drush then THEME_NAME -y && drush en components unified_twig_ext -y`
+5. Enable your theme and its dependencies `drush en THEME_NAME -y && drush en components unified_twig_ext -y`
 6. Proceed to the "Starting Pattern Lab…" section below
 
 If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
