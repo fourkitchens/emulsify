@@ -1,0 +1,5 @@
+.main {
+  @include wrapper;
+
+  display: block; // Fix for IE weirdness
+}

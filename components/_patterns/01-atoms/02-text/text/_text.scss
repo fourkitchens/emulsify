@@ -4,8 +4,10 @@
   margin: #{$margin};
 }
 
-@mixin no-bottom {
-  margin-bottom: 0;
+@mixin body-copy {
+  font-family: $font-body;
+  font-size: 0.9rem;
+  line-height: 1.6em;
 }
 
 body {
