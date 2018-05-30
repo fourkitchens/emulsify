@@ -17,7 +17,7 @@ if ($argc < 2 || in_array($argv[1], array('--help', '-help', '-h', '-?'))) {
     print($option . " => " . $option_description . PHP_EOL);
   }
   print(PHP_EOL . "Examples" . PHP_EOL);
-  foreach ($command['options'] as $example => $example_description) {
+  foreach ($command['examples'] as $example => $example_description) {
     print($example . " => " . $example_description . PHP_EOL);
   }
   exit;
