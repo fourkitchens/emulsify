@@ -5,7 +5,6 @@ build
 
 # Pattern Lab (ignored initially)
 pattern-lab
-**/bem.function.php
 
 # Twig helper functions
 **/add_attributes.function.php
