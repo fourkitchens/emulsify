@@ -1,0 +1,14 @@
+{
+  "footer": {
+    "menu_items": {
+      "1": {
+        "title": "Footer menu item 1",
+        "url": "#"
+      },
+      "2": {
+        "title": "Second footer menu item",
+        "url": "#"
+      }
+    }
+  }
+}
