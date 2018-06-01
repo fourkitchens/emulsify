@@ -1,9 +1,6 @@
-site_header_img_src: '../../images/logo.png'
-site_header_img_alt: 'Logo'
-site_header_img_url: '/'
-site_header_image_link_base_class: 'logo'
+logo_link_url: "#"
 
-items:
+menu_items:
   - title: "Menu Item 1"
     url: "#"
     below:

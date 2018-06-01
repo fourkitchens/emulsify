@@ -1,10 +1,10 @@
 <header class="header">
   {% block header_content %}
     {% include "@atoms/04-images/00-image/figure.twig" with {
-      img_src: site_header_img_src,
-      img_alt: site_header_img_alt,
-      img_url: site_header_img_url,
-      image_link_base_class: site_header_image_link_base_class
+      img_src: '../../images/logo.png',
+      img_alt: 'Logo',
+      img_url: logo_link_url|default('/'),
+      image_link_base_class: 'logo',
     } %}
     {% include "@molecules/menus/main-menu/main-menu.twig" %}
   {% endblock %}
