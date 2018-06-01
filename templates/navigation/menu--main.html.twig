@@ -19,4 +19,6 @@
  */
 #}
 {{ attach_library('emulsify/main_menu') }}
-{% include "@molecules/menus/main-menu/main-menu.twig" %}
+{% include "@molecules/menus/main-menu/main-menu.twig" with {
+  menu_items: items,
+} %}

@@ -43,38 +43,35 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
 
-  {{ page.header }}
+{% if page.sidebar|render %} {# this may or may not correctly filter sidebar #}
+  {% set sidebar = TRUE %}
+{% endif %}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
-
-  {{ messages }}
-
-  <main role="main" class="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    {% if page.sidebar %}
-      <aside class="main-sidebar" role="complementary">
-        {{ page.sidebar }}
-      </aside>
+{% extends "@templates/_default.twig" %}
+  {% block page_header %}
+    {% if page.header %}
+      {{ page.header }}
     {% endif %}
+  {% endblock %}
 
-    <div class="main-content{% if page.sidebar %}--with-sidebar{% endif %}">
-      {{ page.content }}
-    </div>{# /.main-content #}
+  {% block page_system %}
+    {{ page.breadcrumb }}
+    {{ page.highlighted }}
+    {{ page.help }}
+    {{ messages }}
+  {% endblock %}
 
-  </main>
+  {% block page_sidebar %}
+    {{ page.sidebar }}
+  {% endblock %}
 
-  {% if page.footer %}
-    {{ page.footer }}
-  {% endif %}
+  {% block page_content %}
+    {{ page.content }}
+  {% endblock %}
 
-</div>{# /.layout-container #}
+  {% block page_footer %}
+    {% if page.footer %}
+      {{ page.footer }}
+    {% endif %}
+  {% endblock %}

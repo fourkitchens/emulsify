@@ -1,3 +1,7 @@
 <footer class="footer">
-  {{ content }}
+  {% block footer_content %}
+    {% include "@molecules/menus/inline-menu/inline-menu.twig" with {
+      items: footer_menu_items
+    } %}
+  {% endblock %}
 </footer>
