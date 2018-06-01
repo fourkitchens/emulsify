@@ -42,7 +42,7 @@ boxes:
 
 site_title: 'Home'
 
-inline_items:
+footer_menu_items:
   - title: "Home"
     url: "link.pages-home"
   - title: "Article"
