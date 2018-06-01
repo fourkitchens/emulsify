@@ -2,12 +2,12 @@
   "footer": {
     "menu_items": {
       "1": {
-        "title": "Footer menu item 1",
-        "url": "#"
+        "title": "Home",
+        "url": "link.pages-home"
       },
       "2": {
-        "title": "Second footer menu item",
-        "url": "#"
+        "title": "Article",
+        "url": "link.pages-article"
       }
     }
   }
