@@ -1,0 +1,26 @@
+{
+  "footer": {
+    "menu_items": {
+      "1": {
+        "title": "Home",
+        "url": "link.pages-home"
+      },
+      "2": {
+        "title": "Article",
+        "url": "link.pages-article"
+      }
+    },
+    "templates": {
+      "menu_items": {
+        "1": {
+          "title": "Full Width",
+          "url": "link.templates-full-width"
+        },
+        "2": {
+          "title": "Sidebar",
+          "url": "link.templates-with-sidebar"
+        }
+      }
+    }
+  }
+}

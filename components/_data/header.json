@@ -1,0 +1,94 @@
+{
+  "header": {
+    "menu_items": {
+      "1": {
+        "title": "Home",
+        "url": "link.pages-home",
+        "below": {
+          "1": {
+            "title": "Home Sub-Page",
+            "url": "#"
+          },
+          "2": {
+            "title": "Home Sub-Page 2",
+            "url": "#",
+            "below": {
+              "1": {
+                "title": "Home Sub-Sub-Page",
+                "url": "#"
+              },
+              "2": {
+                "title": "Home Sub-Sub-Page 2",
+                "url": "#"
+              }
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "Article",
+        "url": "link.pages-article",
+        "below": {
+          "1": {
+            "title": "Article Sub 1",
+            "url": "#"
+          },
+          "2": {
+            "title": "Article Sub 2",
+            "url": "#"
+          },
+          "3": {
+            "title": "Article Sub 3",
+            "url": "#"
+          }
+        }
+      }
+    },
+    "templates": {
+      "menu_items": {
+        "1": {
+          "title": "Full Width",
+          "url": "link.templates-full-width",
+          "below": {
+            "1": {
+              "title": "Full Width Sub-Page",
+              "url": "#"
+            },
+            "2": {
+              "title": "Full Width Sub-Page 2",
+              "url": "#",
+              "below": {
+                "1": {
+                  "title": "Full Width Sub-Sub-Page",
+                  "url": "#"
+                },
+                "2": {
+                  "title": "Full Width Sub-Sub-Page 2",
+                  "url": "#"
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "With Sidebar",
+          "url": "link.templates-with-sidebar",
+          "below": {
+            "1": {
+              "title": "With Sidebar Sub 1",
+              "url": "#"
+            },
+            "2": {
+              "title": "With Sidebar Sub 2",
+              "url": "#"
+            },
+            "3": {
+              "title": "With Sidebar Sub 3",
+              "url": "#"
+            }
+          }
+        }
+      }
+    }
+  }
+}
