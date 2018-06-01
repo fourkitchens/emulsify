@@ -4,7 +4,7 @@
  * Add "attach_library" function for Pattern Lab.
  */
 
-$function = new Twig_SimpleFunction('attach_library', function ($context, $string) {
+$function = new Twig_SimpleFunction('attach_library', function ($string) {
   // Get Library Name.
   $libraryName = substr($string, strpos($string, "/") + 1);
   $files = glob('dist/*/' . $libraryName . '/*.js');
@@ -15,4 +15,4 @@ $function = new Twig_SimpleFunction('attach_library', function ($context, $strin
     $output = $stringLoader->render(array("string" => $scriptString, "data" => $data));
     return $output;
 	}
-}, array('needs_context' => true, 'is_safe' => array('html')));
+});
