@@ -9,9 +9,6 @@
  *
  * Each item in these variables (primary and secondary) can be individually
  * themed in menu-local-task.html.twig.
- *
- * If using javascript, add {{ attach_library('emulsify/tabs') }}
- */
 #}
 
 {# Drupal Specific #}
@@ -26,6 +23,7 @@
 
 {# PL Specific (javascript version) #}
 {% if not primary %}
+{{ attach_library('emulsify/tabs') }}
   <div id="tabs" class="tabs no-js">
     <ul class="tabs__nav">
       {% for key, listItem in listItems.three %}
