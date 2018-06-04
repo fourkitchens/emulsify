@@ -12,10 +12,9 @@ $function = new Twig_SimpleFunction('attach_library', function ($context, $strin
     $files = glob('dist/*/*/' . $libraryName . '/' . $libraryName . '*.js');
   }
   foreach($files as $jsPath) {
-    $data = array("hello" => "world");
     $scriptString = '<script async src="/' . $jsPath . '"></script>';
     $stringLoader = \PatternLab\Template::getStringLoader();
-    $output = $stringLoader->render(array("string" => $scriptString, "data" => $data));
+    $output = $stringLoader->render(array("string" => $scriptString, "data" => []));
     return $output;
 	}
 }, array('needs_context' => true, 'is_safe' => array('html')));
