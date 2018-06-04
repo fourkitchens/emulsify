@@ -3,7 +3,7 @@ global:
     theme:
       dist/style.css: {}
 
-main_menu:
+main-menu:
   js:
     dist/02-molecules/menus/main-menu/main-menu.js: {}
   dependencies:
