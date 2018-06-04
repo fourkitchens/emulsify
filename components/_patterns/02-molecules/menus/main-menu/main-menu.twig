@@ -3,9 +3,9 @@
 <a href="#" id="toggle-expand" class="toggle-expand">
   <span class="toggle-expand__open">
     {% include "@atoms/04-images/icons/_icon.twig" with {
-      icon_base_class: 'icon',
-      icon_blockname: 'toggle-expand',
-      icon_name: 'bars',
+      icon_base_class: "icon",
+      icon_blockname: "toggle-expand",
+      icon_name: "bars",
     } %}
     <span class="toggle-expand__text">Main Menu</span>
   </span>
@@ -15,6 +15,7 @@
 </a>
 <nav id="main-nav" class="main-nav">
   {% include "@molecules/menus/_menu.twig" with {
-    menu_class: 'main-menu'
+    menu_class: "main-menu",
+    items: menu_items,
   } %}
 </nav>
