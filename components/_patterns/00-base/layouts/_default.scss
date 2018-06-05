@@ -2,6 +2,9 @@
 // General Layout (example code)
 //
 
+$sidebar-width: 33%;
+$gutter: 2%;
+
 .layout-container {
   @include wrapper;
 }
@@ -14,20 +17,30 @@
   margin-bottom: 4em;
 }
 
-.main-sidebar {
+.main {
   @include large {
-    @include grid-span(3,9);
+    display: flex;
+  }
+}
+
+.main-sidebar {
+  margin-bottom: $space-double;
+
+  @include large {
+    order: 2;
+    width: $sidebar-width;
   }
 }
 
 .main-content {
-  padding: 0 1em;
+  width: 100%;
 
   @include large {
     padding: 0;
 
     &--with-sidebar {
-      @include grid-span(8,1);
+      margin-right: $gutter;
+      width: 100 - ($sidebar-width + $gutter);
     }
   }
 }
