@@ -4,6 +4,7 @@
 
 $sidebar-width: 33%;
 $gutter: 2%;
+$main-width: 100 - ($sidebar-width + $gutter);
 
 .layout-container {
   @include wrapper;
@@ -17,6 +18,7 @@ $gutter: 2%;
   margin-bottom: 4em;
 }
 
+// Layout Using Flexbox (IE11+)
 .main {
   @include large {
     display: flex;
@@ -24,6 +26,7 @@ $gutter: 2%;
 }
 
 .main-sidebar {
+  grid-area: sidebar;
   margin-bottom: $space-double;
 
   @include large {
@@ -33,14 +36,35 @@ $gutter: 2%;
 }
 
 .main-content {
+  grid-area: content;
   width: 100%;
 
   @include large {
-    padding: 0;
-
     &--with-sidebar {
       margin-right: $gutter;
-      width: 100 - ($sidebar-width + $gutter);
+      width: $main-width;
     }
   }
 }
+
+// Layout Using CSS Grid (NO IE11 support)
+// .main {
+//   &--with-sidebar {
+//     @include large {
+//       display: grid;
+//       grid-gap: 2%;
+//       grid-template-areas: "content sidebar";
+//       grid-template-columns: $main-width $sidebar-width;
+//     }
+//   }
+// }
+//
+// .main-sidebar {
+//   grid-area: sidebar;
+//   margin-bottom: $space-double;
+// }
+//
+// .main-content {
+//   grid-area: content;
+//   width: 100%;
+// }
