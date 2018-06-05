@@ -9,10 +9,10 @@ $function = new Twig_SimpleFunction('attach_library', function ($string) {
   $libraryName = substr($string, strpos($string, "/") + 1);
 
   // Search dist root directory for library.
-  $files = glob('dist/*/' . $libraryName . '/' . $libraryName . '*.js');
+  $files = glob('dist/*/' . $libraryName . '/*.js');
   // Search dist nested directory for library.
   if (empty($files)) {
-    $files = glob('dist/*/*/' . $libraryName . '/' . $libraryName . '*.js');
+    $files = glob('dist/*/*/' . $libraryName . '/*.js');
   }
   // For each file, create an async script to insert to the Twig component.
   foreach($files as $jsPath) {
