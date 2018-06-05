@@ -1,5 +1,5 @@
 //
-// General Layout (example code)
+// General Layout
 //
 
 $sidebar-width: 33%;
@@ -18,7 +18,10 @@ $main-width: 100 - ($sidebar-width + $gutter);
   margin-bottom: 4em;
 }
 
-// Layout Using Flexbox (IE11+)
+//
+// Layout Using Flexbox (IE11+).
+// Remove this and uncomment Grid code below to use CSS Grid.
+//
 .main {
   @include large {
     display: flex;
@@ -47,7 +50,11 @@ $main-width: 100 - ($sidebar-width + $gutter);
   }
 }
 
+//
 // Layout Using CSS Grid (NO IE11 support)
+// Remove Flexbox code above and uncomment this section to use CSS Grid.
+//
+
 // .main {
 //   &--with-sidebar {
 //     @include large {
