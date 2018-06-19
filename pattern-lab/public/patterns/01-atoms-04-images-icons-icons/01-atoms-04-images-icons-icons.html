@@ -4,11 +4,9 @@
     <title>Pattern Lab</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-
-    <!-- Pattern Lab base styles -->
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1525801494" media="all" />
+    
     <!-- Component styles -->
-    <link rel="stylesheet" href="../../../../dist/style.css?1525801494" media="all" />
+    <link rel="stylesheet" href="../../../../dist/style.css?1529418669" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     <!-- never cache patterns -->
@@ -18,8 +16,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1525801494" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1525801494" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1529418669" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1529418669" media="all" />
     <!-- End Pattern Lab -->
 
   </head>
@@ -29,23 +27,20 @@
   		<div id="tabs" class="tabs"></div>
   	</div>
 <div class="icons-demo" id="icons">
-
       <div>
       
-  
+
 <svg class="icon">
   <use xlink:href="/dist/img/sprite/sprite.svg#bars"></use>
 </svg>
       <p>bars</p>
     </div>
-  
-</div>
-
+  </div>
 <br>
 
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
-  {"cssEnabled":false,"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"..\/..\/patterns\/01-atoms-04-images-icons-icons\/01-atoms-04-images-icons-icons.html"}],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"images"},"patternDesc":"<h3>How to use icons<\/h3>\n\n<p>We are using a gulp SVG sprite generator (details <a href=\"https:\/\/una.im\/svg-icons\">here<\/a>), which automatically creates the SVG in <code>\/images\/icons\/sprite\/sprite.svg<\/code>. Simply run <code>gulp icons<\/code> to add to the sprite.<\/p>\n\n<p><strong>Usage<\/strong><\/p>\n\n<p>The SVG component is found here: <code>\/components\/_patterns\/01-atoms\/04-images\/icons\/_icon.twig<\/code>. See available variables in that file. Examples of usage below:<\/p>\n\n<p>Simple: (no BEM renaming)<\/p>\n\n<pre><code>{% include \"@atoms\/04-images\/icons\/_icon.twig\" with {\n  icon_name: 'bars',\n} %}\n<\/code><\/pre>\n\n<p>... creates...<\/p>\n\n<pre><code>&lt;svg class=\"icon\"&gt;\n  &lt;use xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xlink:href=\"\/images\/sprite\/sprite.svg#src--bars\"&gt;&lt;\/use&gt;\n&lt;\/svg&gt;\n<\/code><\/pre>\n\n<p>Complex (BEM classes):<\/p>\n\n<pre><code>{% include \"@atoms\/04-images\/icons\/_icon.twig\" with {\n  icon_base_class: 'icon',\n  icon_blockname: 'toggle-expand',\n  icon_name: 'bars',\n} %}\n<\/code><\/pre>\n\n<p>... creates...<\/p>\n\n<pre><code>&lt;svg class=\"toggle-expand__icon\"&gt;\n  &lt;use xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xlink:href=\"\/images\/sprite\/sprite.svg#src--bars\"&gt;&lt;\/use&gt;\n&lt;\/svg&gt;\n<\/code><\/pre>","patternExtension":"twig","patternName":"Icons","patternPartial":"atoms-icons","patternState":"","extraOutput":[]}
+  {"cssEnabled":false,"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"..\/..\/patterns\/01-atoms-04-images-icons-icons\/01-atoms-04-images-icons-icons.html"}],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"images"},"patternDesc":"<h3>How to use icons<\/h3>\n\n<p>We are using a gulp SVG sprite generator (details <a href=\"https:\/\/una.im\/svg-icons\">here<\/a>), which automatically takes individual SVGs from <code>\/images\/icons\/src<\/code> and generates <code>\/dist\/img\/sprite\/sprite.svg<\/code>. Simply run <code>gulp icons<\/code> to add your individual SVGs to this sprite.<\/p>\n\n<p><strong>Usage<\/strong><\/p>\n\n<p>The SVG component is found here: <code>\/components\/_patterns\/01-atoms\/04-images\/icons\/_icon.twig<\/code>. See available variables in that file as well as instructions for Drupal. Examples of usage below:<\/p>\n\n<p>Simple: (no BEM renaming)<\/p>\n\n<pre><code>{% include \"@atoms\/04-images\/icons\/_icon.twig\" with {\n  icon_name: 'bars',\n} %}\n<\/code><\/pre>\n\n<p>... creates...<\/p>\n\n<pre><code>&lt;svg class=\"icon\"&gt;\n  &lt;use xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xlink:href=\"\/images\/sprite\/sprite.svg#src--bars\"&gt;&lt;\/use&gt;\n&lt;\/svg&gt;\n<\/code><\/pre>\n\n<p>Complex (BEM classes):<\/p>\n\n<pre><code>{% include \"@atoms\/04-images\/icons\/_icon.twig\" with {\n  icon_base_class: 'icon',\n  icon_blockname: 'toggle-expand',\n  icon_name: 'bars',\n} %}\n<\/code><\/pre>\n\n<p>... creates...<\/p>\n\n<pre><code>&lt;svg class=\"toggle-expand__icon\"&gt;\n  &lt;use xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xlink:href=\"\/images\/sprite\/sprite.svg#src--bars\"&gt;&lt;\/use&gt;\n&lt;\/svg&gt;\n<\/code><\/pre>","patternExtension":"twig","patternName":"Icons","patternPartial":"atoms-icons","patternState":"","extraOutput":[]}
 </script>
 
 <script>
@@ -79,10 +74,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1525801494">
+<script id="pl-js-polyfill-insert-1529418669">
   (function() {
     if (self != top) {
-      var cb = '1525801494';
+      var cb = '1529418669';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -92,10 +87,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1525801494">
+<script id="pl-js-insert-1529418669">
   (function() {
     if (self != top) {
-      var cb = '1525801494';
+      var cb = '1529418669';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
