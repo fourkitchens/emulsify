@@ -3,12 +3,8 @@
 //
 
 $sidebar-width: 33%;
-$gutter: 2%;
-$main-width: 100 - ($sidebar-width + $gutter);
-
-.layout-container {
-  @include wrapper;
-}
+$gutter: $space;
+$main-width: 100 - ($sidebar-width + #{$gutter});
 
 .header,
 .main,
@@ -29,8 +25,7 @@ $main-width: 100 - ($sidebar-width + $gutter);
 }
 
 .main-sidebar {
-  grid-area: sidebar;
-  margin-bottom: $space-double;
+  margin-bottom: $gutter;
 
   @include large {
     order: 2;
@@ -39,7 +34,6 @@ $main-width: 100 - ($sidebar-width + $gutter);
 }
 
 .main-content {
-  grid-area: content;
   width: 100%;
 
   @include large {
