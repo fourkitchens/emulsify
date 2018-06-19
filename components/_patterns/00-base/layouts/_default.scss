@@ -4,7 +4,7 @@
 
 $sidebar-width: 33%;
 $gutter: $space;
-$main-width: 100 - ($sidebar-width + #{$gutter});
+$main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
 .header,
 .main,
@@ -53,18 +53,18 @@ $main-width: 100 - ($sidebar-width + #{$gutter});
 //   &--with-sidebar {
 //     @include large {
 //       display: grid;
-//       grid-gap: 2%;
+//       grid-gap: $gutter;
 //       grid-template-areas: "content sidebar";
-//       grid-template-columns: $main-width $sidebar-width;
+//       grid-template-columns: $main-width #{$sidebar-width};
 //     }
 //   }
 // }
-//
+
 // .main-sidebar {
 //   grid-area: sidebar;
-//   margin-bottom: $space-double;
+//   margin-bottom: $gutter;
 // }
-//
+
 // .main-content {
 //   grid-area: content;
 //   width: 100%;
