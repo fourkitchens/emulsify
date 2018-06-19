@@ -30,6 +30,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
   @include large {
     order: 2;
     width: $sidebar-width;
+    margin-bottom: 0;
   }
 }
 
