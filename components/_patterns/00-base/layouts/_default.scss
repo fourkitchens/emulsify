@@ -35,8 +35,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 }
 
 .main-content {
-  width: 100%;
-
   @include large {
     &--with-sidebar {
       margin-right: $gutter;
