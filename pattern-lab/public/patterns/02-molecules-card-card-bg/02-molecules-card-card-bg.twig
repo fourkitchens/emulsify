@@ -74,6 +74,10 @@
       } %}
       {{ title_suffix }}
     {% endif %}
+
+    {% block card_info %}
+    {% endblock %}
+
     {% if card_subtitle %}
       {% include "@atoms/02-text/00-headings/_heading.twig" with {
         "heading_level": 3,
