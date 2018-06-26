@@ -1,10 +1,6 @@
 // These styles are specifically for Pattern Lab.
 // They are not used by the site in any way.
 
-.sg-main {
-  @include wrapper;
-}
-
 .pl-template {
   display: flex;
   flex-flow: column nowrap;
@@ -16,7 +12,6 @@
     font-size: 3rem;
     text-transform: uppercase;
     background-color: $gray-darker;
-    margin: 0 calc(-50vw + 50%) $space calc(-50vw + 50%);
 
     a {
       @include wrapper(
@@ -79,4 +74,17 @@
       margin-bottom: 0.3em;
     }
   }
+}
+
+#sg-patterns {
+  display: grid;
+  grid-template-columns: [full-start] minmax(1em, 1fr) [main-start] minmax(0, $max-width) [main-end] minmax(1em, 1fr) [full-end];
+}
+
+#sg-patterns > * {
+  grid-column: main;
+}
+
+#sg-patterns > .sg-subtype {
+  grid-column: full;
 }
