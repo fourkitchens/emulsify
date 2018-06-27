@@ -12,12 +12,13 @@
     font-size: 3rem;
     text-transform: uppercase;
     background-color: $gray-darker;
+    margin: 0;
 
     a {
       @include wrapper(
-        $v-padding: $space
+        $v-padding: $space,
+        $h-padding: 0
       );
-
       display: block;
       color: $white;
       text-decoration: none;
