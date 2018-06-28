@@ -15,25 +15,13 @@
 #}
 {% set button_base_class = button_base_class|default('button') %}
 
-{% if button_url %}
-    {{ "<a" }}
-{% else %}
-    {{ "<button" }}
-{% endif %}
-
+<button
   {{ bem(button_base_class, (button_modifiers), button_blockname) }}
   {% for attribute,value in button_attributes %}
     {{ attribute }}="{{ value }}"
   {% endfor %}
-  {% if button_url %}
-    href="{{ button_url }}"
-  {% endif %}
-  {{ ">" }}
+>
   {% block button_content %}
-    {{ button_content }}
+      {{ button_content }}
   {% endblock %}
-{% if button_url %}
-  {{ "</a>" }}
-{% else %}
-  {{ "</button>" }}
-{% endif %}
+</button>
