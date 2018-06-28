@@ -25,10 +25,10 @@
     padding: #{$v-padding} #{$h-padding-large};
   }
 
-  @include breakpoint($container-max-width) {
-    padding-left: calc(#{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2)));
-    padding-right: calc(#{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2)));
-  }
+  // @include breakpoint($container-max-width) {
+  //   padding-left: calc(#{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2)));
+  //   padding-right: calc(#{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2)));
+  // }
 }
 
 /// Use the breakout mixin for elements that should be edge-to-edge

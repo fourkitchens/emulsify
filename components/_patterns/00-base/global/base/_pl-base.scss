@@ -1,10 +1,6 @@
 // These styles are specifically for Pattern Lab.
 // They are not used by the site in any way.
 
-.sg-main {
-  @include wrapper;
-}
-
 .pl-template {
   display: flex;
   flex-flow: column nowrap;
@@ -16,7 +12,6 @@
     font-size: 3rem;
     text-transform: uppercase;
     background-color: $gray-darker;
-    margin: 0 calc(-50vw + 50%) $space calc(-50vw + 50%);
 
     a {
       @include wrapper(
@@ -28,6 +23,11 @@
       text-decoration: none;
       line-height: 1;
     }
+  }
+
+  // First item
+  #sg-patterns > .sg-subtype:first-child h2 {
+    margin-top: 0;
   }
 
   .sg-pattern-title {
@@ -42,6 +42,10 @@
       font-weight: 500;
       text-transform: uppercase !important;
     }
+  }
+
+  .sg-pattern {
+    @include wrapper;
   }
 
   .sg-pattern-extra-info {
