@@ -408,6 +408,8 @@ function _emulsify_get_files_to_alter() {
     'emulsify.theme',
     'emulsify.breakpoints.yml',
     'emulsify.libraries.yml',
+    'templates/navigation/menu--main.html.twig',
+    'components/_patterns/01-atoms/04-images/icons/_icon.twig',
   );
   // If we would like to have a bare copy we use is slim option.
   if (drush_get_option('slim') === TRUE) {
