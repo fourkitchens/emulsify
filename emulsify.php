@@ -494,7 +494,6 @@ function _emulsify_get_files_to_copy() {
       'components/_macros',
       'components/_meta',
       'components/_twig-components',
-      'components/css',
       'components/images',
       'components/_patterns/style.scss',
       'components/_patterns/00-base/global/01-colors',
