@@ -9,7 +9,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 .header,
 .main,
 .footer {
-  @include wrapper;
+  // @include wrapper;
 
   margin-bottom: 4em;
 }

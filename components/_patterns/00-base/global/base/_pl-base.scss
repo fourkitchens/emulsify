@@ -2,7 +2,7 @@
 // They are not used by the site in any way.
 
 .sg-main {
-  @include wrapper;
+  // @include wrapper;
 }
 
 .pl-template {
@@ -10,24 +10,59 @@
   flex-flow: column nowrap;
 }
 
-.pl,
-.sg-main {
-  .sg-subtype h2 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    background-color: $gray-darker;
-    margin: 0 calc(-50vw + 50%) $space calc(-50vw + 50%);
+.pl {
+  .patternLink {
+    color: $black;
+  }
 
-    a {
-      @include wrapper(
-        $v-padding: $space
-      );
+  .visually-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal;
+  }
 
-      display: block;
-      color: $white;
-      text-decoration: none;
-      line-height: 1;
+  #icons {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      border: 1px solid #eee;
+      margin-right: 1em;
+      padding: 1em;
+      text-align: center;
     }
+
+    .icon {
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
+  .sg-subtype {
+    h2 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      background-color: $gray-darker;
+      // margin: 0 calc(-50vw + 50%) $space calc(-50vw + 50%);
+
+      a {
+        @include wrapper(
+          $v-padding: $space
+        );
+
+        display: block;
+        color: $white;
+        text-decoration: none;
+        line-height: 1;
+      }
+    }
+  }
+
+  .sg-pattern-head {
+    @include wrapper;
   }
 
   .sg-pattern-title {
@@ -42,6 +77,10 @@
       font-weight: 500;
       text-transform: uppercase !important;
     }
+  }
+
+  .sg-pattern-subtitle {
+    @include wrapper;
   }
 
   .sg-pattern-extra-info {
@@ -62,11 +101,11 @@
   }
 
   .sg-colors {
+    @include wrapper;
+
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    padding: 0;
-    margin: 0;
 
     li {
       flex: 0 0 100px;
@@ -78,5 +117,47 @@
       height: 100px;
       margin-bottom: 0.3em;
     }
+
+    + p {
+      @include wrapper;
+    }
+  }
+}
+
+// Elements that aren't typically affected by the wrapper,
+// but we want to line up in PL.
+// Mostly base and atom components.
+.sg-pattern-example {
+  #base-animations &,
+  #atoms-heading-xl-link &,
+  #atoms-headings &,
+  #atoms-link &,
+  #atoms-paragraph &,
+  #atoms-blockquote &,
+  #atoms-inline-elements &,
+  #atoms-preformatted-text &,
+  #atoms-ul &,
+  #atoms-ol &,
+  #atoms-dl &,
+  #atoms-responsive-image &,
+  #atoms-figure &,
+  #atoms-image-logo &,
+  #atoms-favicon &,
+  #atoms-icons &,
+  #atoms-checkbox &,
+  #atoms-radio &,
+  #atoms-select &,
+  #atoms-textfields &,
+  #atoms-button &,
+  #atoms-button-alt &,
+  #atoms-button-alt-2 &,
+  #atoms-tables &,
+  #atoms-video &,
+  #atoms-video-full &,
+  #atoms-tab &,
+  #molecules-accordion-item &,
+  #molecules-card &,
+  #molecules-card-bg & {
+    @include wrapper;
   }
 }
