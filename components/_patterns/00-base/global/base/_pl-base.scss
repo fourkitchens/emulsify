@@ -15,8 +15,7 @@
 
     a {
       @include wrapper(
-        $v-padding: $space,
-        $h-padding: $space / 2
+        $v-padding: $space
       );
 
       display: block;
