@@ -5,8 +5,11 @@
 version: 2
 jobs:
   build:
-    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+    # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+    docker:
+      # specify the version you desire here
       - image: circleci/php:7.1.5-browsers
+
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
