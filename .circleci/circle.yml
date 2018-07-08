@@ -20,9 +20,17 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "composer.json" }}
+          - v1-dependencies-composer-{{ checksum "composer.json" }}
+          - v1-dependencies-npm-{{ checksum "composer.json" }}
           # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          - v1-dependencies-composer-
+          - v1-dependencies-npm-
+
+      - save_cache:
+          paths:
+            - ./node_modules
+            - ./pattern-lab
+          key: v1-dependencies-npm-{{ checksum "package.json" }}
 
       - run: composer install -n --prefer-dist
 
