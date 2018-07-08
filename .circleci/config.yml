@@ -78,7 +78,7 @@ jobs:
           command: php emulsify.php "THEME NAME" --path "circleci/custom"
       - run:
           name: Setup Script Slim Build
-          command: php emulsify.php "THEME NAME" --path "circleci/custom" --slim
+          command: php emulsify.php "SLIM THEME NAME" --path "circleci/custom" --slim
 
 workflows:
   version: 2
