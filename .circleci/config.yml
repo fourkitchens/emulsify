@@ -71,11 +71,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Setup Script Build
-          command: php emulsify.php "THEME NAME"
-      - run:
           name: Setup Script Help
           command: php emulsify.php -h
+      - run:
+          name: Setup Script Normal Build
+          command: php emulsify.php "THEME NAME" --path "circleci/custom"
+      - run:
+          name: Setup Script Slim Build
+          command: php emulsify.php "THEME NAME" --path "circleci/custom" --slim
 
 workflows:
   version: 2
