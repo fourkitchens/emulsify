@@ -6,10 +6,11 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
 ## Requirements
 
-1.  [Node (we recommend NVM)](https://github.com/creationix/nvm)
-2.  [Gulp](http://gulpjs.com/)
-3.  [Composer](https://getcomposer.org/)
-4.  Optional: [Yarn](https://github.com/yarnpkg/yarn)
+1.  [PHP 7.1](http://www.php.net/)
+2.  [Node (we recommend NVM)](https://github.com/creationix/nvm)
+3.  [Gulp](http://gulpjs.com/)
+4.  [Composer](https://getcomposer.org/)
+5.  Optional: [Yarn](https://github.com/yarnpkg/yarn)
 
 ## Prototyping (separate from Drupal, Wordpress, etc.)
 
