@@ -8,6 +8,9 @@ jobs:
     # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
     docker:
       # specify the version you desire here
+      # other avaliable images:
+      # https://hub.docker.com/r/circleci/php/tags/
+      # https://circleci.com/docs/2.0/circleci-images/#php
       - image: circleci/php:7.1-fpm-node-browsers
 
       # Specify service dependencies here if necessary
@@ -45,6 +48,8 @@ jobs:
       - run: php -r "unlink('composer-setup.php');"
 
       # Install Drupal Dependencies
+      # Found on this post:
+      # https://discuss.circleci.com/t/installing-php7-1-gd-on-the-php-7-1-4-apache-container/14570
       - run: sudo apt-get install -y libpng-dev
       - run:
           name: Install PHP Extensions
@@ -58,3 +63,23 @@ jobs:
           paths:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
+
+  test:
+    docker:
+      - image: circleci/php:7.1-fpm-node-browsers
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Setup Script Build
+          command: php emulsify.php "THEME NAME"
+      - run:
+          name: Setup Script Help
+          command: php emulsify.php -h
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
