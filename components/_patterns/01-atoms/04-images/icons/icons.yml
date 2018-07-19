@@ -6,5 +6,11 @@ items:
     name: "Facebook"
     value: "facebook-f-brands"
     role: "link"
-    title: "FontAwesome's Facebook Logo"
-    desc: "Facebook logo with a link to our Facebook page"
+    title: "Link to our Facebook page"
+    desc: "FontAwesome's Facebook logo"
+  3:
+    name: "Smile Wink"
+    value: "smile-wink-regular"
+    decorative: "true"
+    title: "Decorative Icon"
+    desc: "FontAwesome's smile-wink icon"
