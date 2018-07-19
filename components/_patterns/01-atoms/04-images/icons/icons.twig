@@ -1,15 +1,39 @@
-<div class="icons-demo" id="icons">
-  {% for item in items %}
-    <div>
-      {% include "@atoms/04-images/icons/_icon.twig" with {
-        icon_name: item.value,
-        icon_role: item.role,
-        icon_title: item.title,
-        icon_desc: item.desc,
-        icon_decorative: item.decorative,
-      } %}
-      <p>{{ item.value }}</p>
-    </div>
-  {% endfor %}
+{% set yes %}
+  <span style="font-weight: bold; color: green">Yes</span>
+{% endset %}
+{% set no %}
+  <span style="font-weight: bold; color: red">no</span>
+{% endset %}
+{% set n_a %}
+  <span>N/A</span>
+{% endset %}
+
+<div class="a11y-toggle-wrapper">
+  <input type="checkbox" id="a11y-details">
+  <label for="a11y-details">Toggle Accessibility Status Check</label>
+  <br/>
+  <div class="icons-demo" id="icons">
+    {% for item in items %}
+      <div>
+        {% include "@atoms/04-images/icons/_icon.twig" with {
+          icon_name: item.value,
+          icon_role: item.role,
+          icon_title: item.title,
+          icon_desc: item.desc,
+          icon_decorative: item.decorative,
+        } %}
+        <p>{{ item.value }}</p>
+        <div class="collapsible-menu a11y-section">
+          <h4>Accessibility:</h4>
+          <ul class="a11y-list">
+            <li>Role: {{ item.role or item.decorative ? yes : no }}</li>
+            <li>Title: {{ item.title ? yes : no }}</li>
+            <li>Desc: {{ item.desc ? yes : no }}</li>
+            <li>Decorative: {{ item.decorative ? yes : n_a }}</li>
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 <br>
