@@ -1,0 +1,28 @@
+.a11y-toggle-wrapper {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.a11y-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.collapsible-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+/* Toggle Effect */
+
+input:checked ~ div .collapsible-menu {
+  max-height: 100%;
+}
