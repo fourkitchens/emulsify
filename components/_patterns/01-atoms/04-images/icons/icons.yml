@@ -2,3 +2,15 @@ items:
   1:
     name: "Bars"
     value: "bars"
+  2:
+    name: "Facebook"
+    value: "facebook-f-brands"
+    role: "link"
+    title: "FontAwesome's Facebook Logo"
+    desc: "Facebook logo with a link to our Facebook page"
+  3:
+    name: "Twitter"
+    value: "twitter-brands"
+    role: "link"
+    title: "FontAwesome's Twitter Logo"
+    desc: "Twitter logo with a link to our Twitter page"

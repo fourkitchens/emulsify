@@ -3,6 +3,9 @@
     <div>
       {% include "@atoms/04-images/icons/_icon.twig" with {
         icon_name: item.value,
+        icon_role: item.role,
+        icon_title: item.title,
+        icon_desc: item.desc,
       } %}
       <p>{{ item.value }}</p>
     </div>
