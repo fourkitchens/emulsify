@@ -492,7 +492,6 @@ function _emulsify_get_files_to_copy() {
       'components/_macros',
       'components/_meta',
       'components/_twig-components',
-      'components/css',
       'components/images',
       'components/_patterns/style.scss',
       'components/_patterns/00-base/global/01-colors',
@@ -550,7 +549,7 @@ function _emulsify_get_files_to_rename() {
  * @return boolean
  *   A boolean representing the success or failure of the function.
  */
-function _emulsify_alter_files($theme_path, array $files_to_alter = array(), array $alterations = array(), $absolute = FALSE) {
+function _emulsify_alter_files($theme_path, array $files_to_alter = array(), array $alterations = array(), $absolute = FALSE, int $depth = 0) {
   if (empty($files_to_alter) || empty($alterations)) {
     return TRUE;
   }
@@ -568,11 +567,11 @@ function _emulsify_alter_files($theme_path, array $files_to_alter = array(), arr
       $files = scandir($file_path);
       $files = array_splice($files, 2);
       foreach ($files as $file) {
-        $processed_files[] = $file_path . $file;
-      }
-      $alter_status = _emulsify_alter_files($theme_path, $processed_files, $alterations, TRUE);
-      if ($alter_status === FALSE) {
-        return FALSE;
+        $processed_file = [$file_path . DIRECTORY_SEPARATOR . $file];
+        $alter_status = _emulsify_alter_files($theme_path, $processed_file, $alterations, TRUE, $depth + 1);
+        if ($alter_status === FALSE) {
+          return FALSE;
+        }
       }
     }
     elseif ($file_type === 'file') {
