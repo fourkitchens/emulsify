@@ -1,7 +1,8 @@
 $table-gray: #f8f8f8;
+$table-border: $gray-lightest;
 
 .table {
-  border: 1px solid #e5e5e5;
+  border: 1px solid $table-border;
   border-radius: 4px;
   border-spacing: 0;
   background-color: $table-gray;
@@ -12,8 +13,8 @@ $table-gray: #f8f8f8;
 .table__heading-cell,
 .table__cell {
   border: none;
-  border-bottom: 1px solid $gray-lightest;
-  border-right: 1px solid $gray-lightest;
+  border-bottom: 1px solid $table-border;
+  border-right: 1px solid $table-border;
   padding: 1em;
 
   &:last-child {
@@ -68,7 +69,7 @@ $table-gray: #f8f8f8;
 .table__footer-cell,
 .table__footer-cell:first-child {
   border-bottom: none;
-  border-top: 1px solid $gray-lightest;
+  border-top: 1px solid $table-border;
 }
 
 // TODO: BEM selectors should be applied to wysiwyg-created content
