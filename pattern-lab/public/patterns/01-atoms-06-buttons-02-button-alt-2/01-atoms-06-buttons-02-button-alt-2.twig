@@ -20,9 +20,6 @@
   {% for attribute,value in button_attributes %}
     {{ attribute }}="{{ value }}"
   {% endfor %}
-  {% if button_url %}
-    href="{{ button_url }}"
-  {% endif %}
 >
   {% block button_content %}
     {{ button_content }}

@@ -1,0 +1,1 @@
+The stylesheet in this directory (and any others you add) are for styles you want to include only when displaying demo styles for grids, animations, color swatches, etc. These styles will not be in your production CSS, and any new files you add to the directory will also need to be manually added to `components/_meta/_00-head.twig`.
