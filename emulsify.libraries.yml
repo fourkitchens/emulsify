@@ -3,7 +3,7 @@ global:
     theme:
       dist/style.css: {}
 
-main_menu:
+main-menu:
   js:
     dist/02-molecules/menus/main-menu/main-menu.js: {}
   dependencies:
@@ -12,3 +12,11 @@ main_menu:
 sprite:
   js:
     components/js/svgxuse.min.js: { attributes: { defer: true } }
+
+accordion:
+  js:
+    dist/02-molecules/accordion-item/accordion-item.js: {}
+
+tabs:
+  js:
+    dist/02-molecules/menus/tabs/tabs.js: {}

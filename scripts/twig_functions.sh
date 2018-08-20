@@ -26,6 +26,7 @@ then
   twig_functions=(
     "drupal-pattern-lab/add-attributes-twig-extension/add_attributes.function.php"
     "drupal-pattern-lab/bem-twig-extension/bem.function.php"
+    "drupal-pattern-lab/attach-library-twig-extension/pl_attach-library.function.php"
   )
 
   # Create symlinks for all contrib twig functions
