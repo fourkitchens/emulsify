@@ -2267,9 +2267,9 @@ electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.47:
   version "1.3.50"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.50.tgz#7438b76f92b41b919f3fbdd350fbd0757dacddf7"
 
-emulsify-gulp@^2.0.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/emulsify-gulp/-/emulsify-gulp-2.3.0.tgz#764ae92ddf647087f0ff97b68d63e8fffb4839a6"
+emulsify-gulp@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/emulsify-gulp/-/emulsify-gulp-3.0.0.tgz#e7c73f7b346a5a1347767a068a87c5f8d0421ddb"
   dependencies:
     babel-core "^6.26.0"
     babel-preset-env "^1.6.1"
