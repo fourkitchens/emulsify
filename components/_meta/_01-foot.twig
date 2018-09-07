@@ -5,17 +5,7 @@
   <!-- If using Drupal.behaviors, uncomment for them to work in Pattern Lab -->
   <!-- <script>Drupal.attachBehaviors();</script> -->
 
-  <script>
-    const head = document.getElementsByTagName('body')[0];
-    const scripts = head.querySelectorAll('script');
-    scripts.forEach((element) => {
-      if (element.dataset.name) {
-        const script = document.createElement('script');
-        script.src = element.src;
-        head.appendChild(script);
-      }
-    });
-  </script>
+  <script src="../../js/reload-scripts.js"></script>
 
   </body>
 </html>
