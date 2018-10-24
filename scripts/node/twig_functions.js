@@ -10,7 +10,7 @@ const path = {
 }
 
 function vendorPathInstalled() {
-  if (fs.existsSync(path.standalone) || fs.existsSync(path.drupalComposer)  || fs.existsSync(path.drupalNoComposer)) {
+  if (fs.existsSync(path.standalone) || fs.existsSync(path.drupalComposer) || fs.existsSync(path.drupalNoComposer)) {
     return true;
   }
   return false;
@@ -19,8 +19,12 @@ function vendorPathInstalled() {
 function vendorDirectoryRoute() {
   if (fs.existsSync(path.standalone)) {
     return path.standalone;
+  } else if (fs.existsSync(path.drupalComposer)) {
+    return path.drupalComposer;
+  } else if (fs.existsSync(path.drupalNoComposer)) {
+    return path.drupalNoComposer;
   } else {
-    return "foo"
+    return false;
   }
 }
 
