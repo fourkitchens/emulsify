@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * Install Pattern Lab.
  */

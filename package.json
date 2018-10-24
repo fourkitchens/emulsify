@@ -8,9 +8,9 @@
   },
   "scripts": {
     "start": "gulp compile && gulp theme",
-    "pl": "node scripts/node/pattern_lab.js",
-    "twig": "node scripts/node/twig_functions.js",
-    "postinstall": "node scripts/node/pattern_lab.js && node scripts/node/twig_functions.js"
+    "pl": "./scripts/node/pattern_lab.js",
+    "twig": "./scripts/node/twig_functions.js",
+    "postinstall": "./scripts/node/pattern_lab.js && ./scripts/node/twig_functions.js"
   },
   "precommit.silent": true,
   "dependencies": {
