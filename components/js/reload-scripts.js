@@ -14,7 +14,7 @@ scripts.forEach((element) => {
     // Create new script element.
     const script = document.createElement('script');
     // Set src to script above.
-    script.src = element.src;
+    script.src = element.dataset.src;
     // Append to head.
     head.appendChild(script);
   }
