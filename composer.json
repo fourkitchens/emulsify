@@ -29,7 +29,6 @@
         }
     },
     "require": {
-        "drupal/components": "^1.0",
         "drupal-pattern-lab/add-attributes-twig-extension": "^1.0",
         "drupal-pattern-lab/bem-twig-extension": "^1.0",
         "drupal-pattern-lab/attach-library-twig-extension": "^1.0",

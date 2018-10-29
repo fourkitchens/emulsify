@@ -3,6 +3,8 @@ type: theme
 description: Theme that uses Pattern Lab v2
 base theme: stable
 core: 8.x
+dependencies:
+  - components
 
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
 libraries:
