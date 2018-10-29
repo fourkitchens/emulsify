@@ -2,3 +2,15 @@ items:
   1:
     name: "Bars"
     value: "bars"
+  2:
+    name: "Facebook"
+    value: "facebook-f-brands"
+    role: "link"
+    title: "Link to our Facebook page"
+    desc: "FontAwesome's Facebook logo"
+  3:
+    name: "Smile Wink"
+    value: "smile-wink-regular"
+    decorative: "true"
+    title: "Decorative Icon"
+    desc: "FontAwesome's smile-wink icon"
