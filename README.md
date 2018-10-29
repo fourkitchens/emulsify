@@ -11,7 +11,9 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 3.  [Gulp](http://gulpjs.com/)
 4.  [Composer](https://getcomposer.org/)
 5.  Optional: [Yarn](https://github.com/yarnpkg/yarn)
-6.  Drupal only: [Components](https://www.drupal.org/project/components) module
+6.  Drupal only:
+  1. [Components](https://www.drupal.org/project/components) module
+  2. [Unified Twig Extensions](https://github.com/drupal-pattern-lab/unified-twig-extensions) module
 
 ## Prototyping (separate from Drupal, Wordpress, etc.)
 
