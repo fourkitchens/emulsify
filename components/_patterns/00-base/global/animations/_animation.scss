@@ -20,3 +20,11 @@
     @include transition(all, 0.8s, ease-in-out);
   }
 }
+
+.demo-animate {
+  background-color: $gray-lightest;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 1em;
+  text-align: center;
+}
