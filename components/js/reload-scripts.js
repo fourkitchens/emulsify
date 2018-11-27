@@ -7,6 +7,7 @@ const d = document;
 const head = d.getElementsByTagName('body')[0];
 // Get scripts within the body.
 const scripts = head.querySelectorAll('script');
+let done = 0;
 
 function async(src, callback) {
   const script = document.createElement('script');
@@ -28,7 +29,11 @@ scripts.forEach(element => {
   if (element.dataset.name) {
     async(element.dataset.src, () => {
       if (typeof Drupal === 'object' && typeof Drupal.attachBehaviors === 'function') {
-        Drupal.attachBehaviors();
+        // Only run attachBehaviors once.
+        if (done === 0) {
+          Drupal.attachBehaviors(document);
+          done = 1;
+        }
       }
     });
   }
