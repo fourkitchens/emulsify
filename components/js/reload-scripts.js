@@ -7,7 +7,7 @@ const d = document;
 const head = d.getElementsByTagName('body')[0];
 // Get scripts within the body.
 const scripts = head.querySelectorAll('script');
-let done = 0;
+const scriptsArray = [];
 
 function async(src, callback) {
   const script = document.createElement('script');
@@ -27,14 +27,18 @@ function async(src, callback) {
 scripts.forEach(element => {
   // If the script has the data-name attribute.
   if (element.dataset.name) {
-    async(element.dataset.src, () => {
-      if (typeof Drupal === 'object' && typeof Drupal.attachBehaviors === 'function') {
-        // Only run attachBehaviors once.
-        if (done === 0) {
-          Drupal.attachBehaviors(document);
-          done = 1;
+    const scriptSrc = element.dataset.src;
+    if (!scriptsArray.includes(scriptSrc)) {
+      async(scriptSrc, () => {
+        if (typeof Drupal === 'object' && typeof Drupal.attachBehaviors === 'function') {
+          const behaviors = Object.values(Drupal.behaviors);
+          // Only run attachBehaviors once.
+          behaviors.forEach(behavior => {
+            Drupal.attachBehaviors();
+          });
         }
-      }
-    });
+      });
+      scriptsArray.push(scriptSrc);
+    }
   }
 });
