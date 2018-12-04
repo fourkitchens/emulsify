@@ -766,7 +766,7 @@ function _emulsify_notify_fail($path = '', $message = '') {
   // Set a default message for the most common error.
   if (empty($message)) {
     // Notify user of the path write error.
-    $message = 'There was an error writting to "!path".  This is normally due to permissions on one of the base directories or "!path" directory not allowing the web server to write data.  You can use the "chmod" command to implement either a temporary or permanent fix for this.';
+    $message = 'There was an error writing to "!path".  This is normally due to permissions on one of the base directories or "!path" directory not allowing the web server to write data.  You can use the "chmod" command to implement either a temporary or permanent fix for this.';
   }
 
   // Set the path if one was passed.
