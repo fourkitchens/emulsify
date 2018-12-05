@@ -2,18 +2,8 @@
   <!--DO NOT REMOVE-->
   {{ patternLabFoot | raw }}
 
-  <!-- Drupal-specific usage -->
-  <!-- example using symlinking -->
-  <!-- cd web/themes/custom/emulsify/components/js -->
-  <!-- ln -s ../../../../../core/assets/vendor/domready/ready.min.js ./ -->
-  <!-- ln -s ../../../../../core/misc/drupal.js ./ -->
-
-  <!-- UNCOMMENT AS NECESSARY -->
-  <!-- <script src="../../js/ready.min.js"></script> -->
-  <!-- <script src="../../js/drupal.js"></script> -->
-
-  <!-- If using Drupal.behaviors, uncomment for them to work in Pattern Lab -->
-  <!-- <script>Drupal.attachBehaviors();</script> -->
+  <!-- This makes attach_library work wherever it is in the document flow. -->
+  <script src="../../js/reload-scripts.js"></script>
 
   </body>
 </html>
