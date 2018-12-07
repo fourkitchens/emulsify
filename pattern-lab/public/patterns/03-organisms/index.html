@@ -4,9 +4,19 @@
     <title>Pattern Lab</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    
+
     <!-- Component styles -->
-    <link rel="stylesheet" href="../../../../dist/style.css?1534192797" media="all" />
+    <link rel="stylesheet" href="../../../../dist/style.css?1544216795" media="all" />
+
+    <!-- Drupal-specific usage -->
+    <!-- example using symlinking -->
+    <!-- cd web/themes/custom/emulsify/components/js -->
+    <!-- ln -s ../../../../../core/assets/vendor/domready/ready.min.js ./ -->
+    <!-- ln -s ../../../../../core/misc/drupal.js ./ -->
+
+    <!-- UNCOMMENT AS NECESSARY -->
+    <!-- <script src="../../js/ready.min.js"></script> -->
+    <!-- <script src="../../js/drupal.js"></script> -->
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     <!-- never cache patterns -->
@@ -16,8 +26,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1534192797" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1534192797" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1544216795" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1544216795" media="all" />
     <!-- End Pattern Lab -->
 
   </head>
@@ -61,7 +71,9 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-organisms-accordion"></div>
     
   <div class="sg-pattern-example">
-    
+    <script async src="/dist/02-molecules/accordion-item/accordion-item.js"></script>
+
+
 <dl class="accordion">
       
 <dt class="accordion-term">Item 1</dt>
@@ -537,12 +549,18 @@
             </a>
   
   </figure>
-    <a href="#" id="toggle-expand" class="toggle-expand">
-  <span class="toggle-expand__open">
-    
+    <script async src="/dist/02-molecules/menus/main-menu/main-menu.js"></script>
 
-<svg class="toggle-expand__icon">
-  <use xlink:href="../../../../dist/img/sprite/sprite.svg#bars"></use>
+<a href="#" id="toggle-expand" class="toggle-expand">
+  <span class="toggle-expand__open">
+    <script async src="/components/js/svgxuse.min.js"></script>
+
+<svg class="toggle-expand__icon"
+
+  
+  
+  >
+      <use xlink:href="../../../../dist/img/sprite/sprite.svg#bars"></use>
 </svg>
     <span class="toggle-expand__text">Main Menu</span>
   </span>
@@ -809,10 +827,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1534192797">
+<script id="pl-js-polyfill-insert-1544216795">
   (function() {
     if (self != top) {
-      var cb = '1534192797';
+      var cb = '1544216795';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -822,30 +840,18 @@
   })();
 </script>
 
-<script id="pl-js-insert-1534192797">
+<script id="pl-js-insert-1544216795">
   (function() {
     if (self != top) {
-      var cb = '1534192797';
+      var cb = '1544216795';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
   })();
 </script>
 
-  <!-- Drupal-specific usage -->
-  <!-- example using symlinking -->
-  <!-- cd web/themes/custom/emulsify/components/js -->
-  <!-- ln -s ../../../../../core/assets/vendor/domready/ready.min.js ./ -->
-  <!-- ln -s ../../../../../core/misc/drupal.js ./ -->
-
-  <!-- UNCOMMENT AS NECESSARY -->
-  <!-- <script src="../../js/ready.min.js"></script> -->
-  <!-- <script src="../../js/drupal.js"></script> -->
-
-  <script src="../../../../dist/scripts-styleguide.js"></script>
-
-  <!-- If using Drupal.behaviors, uncomment for them to work in Pattern Lab -->
-  <!-- <script>Drupal.attachBehaviors();</script> -->
+  <!-- This makes attach_library work wherever it is in the document flow. -->
+  <script src="../../js/reload-scripts.js"></script>
 
   </body>
 </html>

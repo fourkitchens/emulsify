@@ -24,6 +24,7 @@
 
 {# PL Specific (javascript version) #}
 {% if not primary %}
+{{ attach_library('emulsify/tabs') }}
   <div id="tabs" class="tabs no-js">
     <ul class="tabs__nav">
       {% for key, listItem in listItems.three %}
