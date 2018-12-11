@@ -10,7 +10,15 @@ $main-menu-medium: 43em;
   }
 
   &--open {
+    background-color: $white;
     display: block;
+    height: 85%;
+    left: 0;
+    overflow-y: scroll;
+    position: fixed;
+    top: 134px;
+    right: 0;
+    width: 100%;
   }
 }
 
@@ -24,17 +32,6 @@ $main-menu-medium: 43em;
 
   @include breakpoint($main-menu-medium) {
     border-bottom: none;
-  }
-
-  &--open {
-    position: fixed;
-    top: 134px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 85%;
-    overflow-y: scroll;
-    background-color: $white;
   }
 }
 
