@@ -1,6 +1,8 @@
 {% if not item_modifiers %}
   {% set item_modifiers = [] %}
 {% endif %}
+{# Pass original item modifiers down to children #}
+{% set original_item_modifiers = item_modifiers %}
 {% if item.in_active_trail == TRUE %}
   {% set item_modifiers = item_modifiers|merge(['active']) %}
 {% endif %}
@@ -30,7 +32,7 @@
     } %}
     {% if item.below %}
       <span class="expand-sub"></span>
-      {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
+      {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname) }}
     {% endif %}
   {% endblock %}
 {% endembed %}
