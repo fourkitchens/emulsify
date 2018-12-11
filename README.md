@@ -17,10 +17,10 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 Emulsify supports both NPM and YARN.
 
 Install with NPM:
-`composer create-project fourkitchens/emulsify:^2.0 --stability dev --no-interaction emulsify && cd emulsify && npm install`
+`composer create-project fourkitchens/emulsify:^3.0 --stability dev --no-interaction emulsify && cd emulsify && npm install`
 
 Install with Yarn:
-`composer create-project fourkitchens/emulsify:^2.0 --stability dev --no-interaction emulsify && cd emulsify && yarn install`
+`composer create-project fourkitchens/emulsify:^3.0 --stability dev --no-interaction emulsify && cd emulsify && yarn install`
 
 ## Drupal installation
 
