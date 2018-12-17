@@ -4,9 +4,19 @@
     <title>{{ title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    
+
     <!-- Component styles -->
     <link rel="stylesheet" href="../../../../dist/style.css?{{ cacheBuster }}" media="all" />
+
+    <!-- Drupal-specific usage -->
+    <!-- example using symlinking -->
+    <!-- cd web/themes/custom/emulsify/components/js -->
+    <!-- ln -s ../../../../../core/assets/vendor/domready/ready.min.js ./ -->
+    <!-- ln -s ../../../../../core/misc/drupal.js ./ -->
+
+    <!-- UNCOMMENT AS NECESSARY -->
+    <!-- <script src="../../js/ready.min.js"></script> -->
+    <!-- <script src="../../js/drupal.js"></script> -->
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     {{ patternLabHead | raw }}

@@ -10,6 +10,7 @@
         "each",
         "content"
       ]
-    }]
+    }],
+    "no-descending-specificity": null
   }
 }
