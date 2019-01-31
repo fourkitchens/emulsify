@@ -1,16 +1,13 @@
 /* globals require */
 
-// eslint-disable-next-line strict
-'use strict';
-
 // General
-var gulp = require('gulp-help')(require('gulp'));
-var localConfig = {};
+const gulp = require('gulp-help')(require('gulp')); // eslint-disable-line import/no-extraneous-dependencies
+
+let localConfig = {};
 
 try {
-  localConfig = require('./local.gulp-config');
-}
-catch (e) {
+  localConfig = require('./local.gulp-config'); // eslint-disable-line import/no-unresolved
+} catch (e) {
   if (e.code !== 'MODULE_NOT_FOUND') {
     throw e;
   }
