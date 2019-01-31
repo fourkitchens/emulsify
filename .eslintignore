@@ -1,0 +1,4 @@
+dist/**/*
+pattern-lab/**/*
+components/_annotations/**/*
+components/js/**/*
