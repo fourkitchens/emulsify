@@ -1,5 +1,5 @@
 build/**/*
 dist/**/*
 pattern-lab/**/*
-components/_annotations/**/*
+components/_annotations/annotations.js
 components/js/**/*
