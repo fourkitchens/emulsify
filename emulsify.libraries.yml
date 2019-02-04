@@ -2,12 +2,15 @@ global:
   css:
     theme:
       dist/style.css: {}
+  js:
+    components/js/babel-polyfill.js: {}
 
 main-menu:
   js:
     dist/02-molecules/menus/main-menu/main-menu.js: {}
   dependencies:
     - core/drupal
+    
 
 sprite:
   js:

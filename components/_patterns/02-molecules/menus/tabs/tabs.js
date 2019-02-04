@@ -50,11 +50,11 @@
    *   the component, and attaching event listeners to each of the nav items.
    *   Returns nothing.
    */
-  el.forEach((item) => {
+  Array.from(el).forEach((item) => {
     item.classList.remove('no-js');
   });
 
-  tabNavigationLinks.forEach((tabNavigationLink, i) => {
+  Array.from(tabNavigationLinks).forEach((tabNavigationLink, i) => {
     const link = tabNavigationLink;
     handleClick(link, i);
   });

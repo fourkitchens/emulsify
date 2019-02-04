@@ -4,3 +4,5 @@ rules:
   comma-dangle: 0
 env:
   browser: true
+globals:
+  Drupal: true

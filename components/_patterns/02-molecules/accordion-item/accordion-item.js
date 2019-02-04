@@ -10,7 +10,7 @@
 
   // If javascript, hide accordion definition on load
   function jsCheck() {
-    accordionDefs.forEach((accordionDef) => {
+    Array.from(accordionDefs).forEach((accordionDef) => {
       if (accordionDef.classList) {
         accordionDef.classList.add('active');
         accordionDefs[0].previousElementSibling.classList.add('is-active');
@@ -25,7 +25,7 @@
 
   // Accordion Toggle
   // Mobile Click Menu Transition
-  accordionTerms.forEach((accordionTerm) => {
+  Array.from(accordionTerms).forEach((accordionTerm) => {
     accordionTerm.addEventListener('click', function accordionClick(e) {
       const className = 'is-active';
       // Add is-active class
