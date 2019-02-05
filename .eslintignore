@@ -1,6 +1,9 @@
+# Artifacts
 build/**/*
 dist/**/*
 pattern-lab/**/*
+
+# 3rd party scripts
 components/_annotations/annotations.js
 components/js/babel-polyfill.js
 components/js/fitvids.js
