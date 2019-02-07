@@ -26,7 +26,7 @@
   {% block list_item_content %}
     {# Any icons, etc. can go inside this set link_title statement. #}
     {% set link_title %}{{ item.title }}{% endset %}
-    {# Put any other attributes besides class inside this set link_attributes. #}
+    {# You can add other attributes (id, etc.) inside this link_attributes array. #}
     {% set link_attributes = {
       class: bem(item_base_class|default(menu_class ~ '__link'), (item_modifiers)),
     } %}
