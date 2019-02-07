@@ -24,12 +24,13 @@
   "li_blockname": item_blockname,
 } %}
   {% block list_item_content %}
-    {% include "@atoms/01-links/link/link.twig" with {
-      "link_content": item.title,
-      "link_url": item.url,
-      "link_base_class": item_base_class|default(menu_class ~ '__link'),
-      "link_modifiers": item_modifiers,
+    {# Any icons, etc. can go inside this set link_title statement. #}
+    {% set link_title %}{{ item.title }}{% endset %}
+    {# Put any other attributes besides class inside this set link_attributes. #}
+    {% set link_attributes = {
+      class: bem(item_base_class|default(menu_class ~ '__link'), (item_modifiers)),
     } %}
+    {{ link(link_title, item.url, add_attributes(link_attributes)) }}
     {% if item.below %}
       <span class="expand-sub"></span>
       {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname) }}
