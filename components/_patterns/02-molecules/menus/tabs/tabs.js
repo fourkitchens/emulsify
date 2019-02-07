@@ -20,7 +20,7 @@
    * @description Goes to a specific tab based on index. Returns nothing.
    * @param {Number} index The index of the tab to go to
    */
-  function goToTab(index) { // eslint-disable-line func-names
+  function goToTab(index) {
     if (index !== activeIndex && index >= 0 && index <= tabNavigationLinks.length) {
       tabNavigationLinks[activeIndex].classList.remove('is-active');
       tabNavigationLinks[index].classList.add('is-active');
@@ -37,7 +37,7 @@
    * @param {HTMLElement} link The link to listen for events on
    * @param {Number} index The index of that link
    */
-  function handleClick(link, index) { // eslint-disable-line func-names
+  function handleClick(link, index) {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       goToTab(index);
