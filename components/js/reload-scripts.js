@@ -34,7 +34,7 @@ scripts.forEach(element => {
           const behaviors = Object.values(Drupal.behaviors);
           // Only run attachBehaviors once.
           behaviors.forEach(behavior => {
-            Drupal.attachBehaviors();
+            Drupal.attachBehaviors(document);
           });
         }
       });
