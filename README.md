@@ -34,9 +34,9 @@ Install with Yarn:
 6. Enable your theme and its dependencies `drush then THEME_NAME -y && drush en components unified_twig_ext -y`
 7. Proceed to the "Starting Pattern Lab…" section below
 
-If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Installation).
+If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Install-(without-Composer)).
 
-Troubleshooting Installation: See [Drupal Installation FAQ](https://github.com/fourkitchens/emulsify/wiki/Installation#drupal-installation-faq).
+Troubleshooting Installation: See [Drupal Installation FAQ](https://github.com/fourkitchens/emulsify/wiki/Install-(Composer)#drupal-installation-faq).
 
 _Note: Once you've created your custom theme, you can remove Emulsify as a dependency of your project. If you'd like to get updates as we push them, solely for educational/best-practice information, feel free to leave it in and receive the updates. Updating Emulsify will not affect your custom theme in any way._
 
@@ -52,11 +52,12 @@ The `start` command spins up a local server, compiles everything (runs all requi
 
 <table><tbody>
 <tr><td>Lightweight</td><td>✔</td><td>Emulsify is focused on being as lightweight as possible.</td></tr>
-<tr><td>SVG sprite support </td><td><strong>✔</strong></td><td>Automated support for creating SVG sprites mixins/classes.</td></tr>
+<tr><td>SVG sprite support </td><td><strong>✔</strong></td><td>Automated support for creating SVG sprites.</td></tr>
 <tr><td>Stock Drupal templates </td><td><strong>✔</strong></td><td>Templates from Stable theme - see /templates directory</td></tr>
 <tr><td>Stock Components </td><td><strong>✔</strong></td><td>with Drupal support built-in (https://github.com/fourkitchens/emulsify#emulsifys-built-in-components-with-drupal-support)</td></tr>
 <tr><td>Performance Testing </td><td><strong>✔</strong></td><td>Support for testing via Google PageSpeed Insights and WebPageTest.org (https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#performance-testing)</td></tr>
 <tr><td>Automated Github Deployment </td><td><strong>✔</strong></td><td>Deploy your Pattern Lab instance as a Github page (https://github.com/fourkitchens/emulsify/wiki/Gulp-Config#deployment)</td></tr>
+<tr><td>Automated Accessibility Testing </td><td><strong>✔</strong></td><td>Accessibility Testing using pa11y (https://github.com/fourkitchens/emulsify/wiki/Accessibility-Testing)</td></tr>
 </tbody></table>
 
 <h3 id="components">Emulsify's Built in Components with Drupal support</h3>
