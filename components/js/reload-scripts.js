@@ -33,8 +33,8 @@ Array.from(scripts).forEach((element) => {
         if (typeof Drupal === 'object' && typeof Drupal.attachBehaviors === 'function') {
           const behaviors = Object.values(Drupal.behaviors);
           // Only run attachBehaviors once.
-          behaviors.forEach(() => {
-            Drupal.attachBehaviors();
+          behaviors.forEach(behavior => {
+            Drupal.attachBehaviors(d);
           });
         }
       });
