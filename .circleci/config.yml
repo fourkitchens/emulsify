@@ -1,0 +1,82 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+    docker:
+      # specify the version you desire here
+      # other avaliable images:
+      # https://hub.docker.com/r/circleci/php/tags/
+      # https://circleci.com/docs/2.0/circleci-images/#php
+      - image: circleci/php:7.1-fpm-node-browsers
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mysql:9.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-composer-{{ checksum "composer.json" }}
+          - v1-dependencies-npm-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-composer-
+          - v1-dependencies-npm-
+
+      - run: npm install
+
+      # Save the npm installation into a cache
+      - save_cache:
+          paths:
+            - ./node_modules
+            - ./pattern-lab
+          key: v1-dependencies-npm-{{ checksum "package.json" }}
+
+      # Install Drupal Dependencies
+      # Found on this post:
+      # https://discuss.circleci.com/t/installing-php7-1-gd-on-the-php-7-1-4-apache-container/14570
+      - run: sudo apt-get install -y libpng-dev
+      - run:
+          name: Install PHP Extensions
+          command: sudo docker-php-ext-install gd
+
+      # Run composer install
+      - run: composer install -n --prefer-dist
+
+      # Save the composer installation into a cache
+      - save_cache:
+          paths:
+            - ./vendor
+          key: v1-dependencies-{{ checksum "composer.json" }}
+
+  test:
+    docker:
+      - image: circleci/php:7.1-fpm-node-browsers
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Setup Script Help
+          command: php emulsify.php -h
+      - run:
+          name: Setup Script Normal Build
+          command: php emulsify.php "THEME NAME" --path "circleci/custom"
+      - run:
+          name: Setup Script Slim Build
+          command: php emulsify.php "SLIM THEME NAME" --path "circleci/custom" --slim
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test

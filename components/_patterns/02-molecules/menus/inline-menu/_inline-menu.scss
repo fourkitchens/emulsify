@@ -16,6 +16,8 @@
 }
 
 .inline-menu__link {
+  @include link;
+
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 1.5px;

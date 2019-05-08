@@ -47,16 +47,18 @@
 {% set card_base_class = 'card' %}
 
 <div {{ bem(card_base_class, (card_modifiers), card_blockname) }}>
-  {% if card_img_src %}
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      "img_url": card_img_url|default(card_link_url),
-      "img_src": card_img_src,
-      "img_alt": card_img_alt,
-      "image_link_blockname": card_base_class,
-      "image_blockname": card_base_class,
-      "output_image_tag": card_image_output_image_tag,
-    } %}
-  {% endif %}
+  {% block card_img %}
+    {% if card_img_src %}
+      {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+        "img_url": card_img_url|default(card_link_url),
+        "img_src": card_img_src,
+        "img_alt": card_img_alt,
+        "image_link_blockname": card_base_class,
+        "image_blockname": card_base_class,
+        "output_image_tag": card_image_output_image_tag,
+      } %}
+    {% endif %}
+  {% endblock %}
   <div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
     {% if card_title %}
       {{ title_prefix }}
@@ -72,6 +74,10 @@
       } %}
       {{ title_suffix }}
     {% endif %}
+
+    {% block card_info %}
+    {% endblock %}
+
     {% if card_subtitle %}
       {% include "@atoms/02-text/00-headings/_heading.twig" with {
         "heading_level": 3,

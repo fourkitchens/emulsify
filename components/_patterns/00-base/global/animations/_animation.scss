@@ -1,0 +1,30 @@
+/// Mixin - Transition
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+.animate-fade {
+  @include transition(opacity, 0.3s, ease-out);
+
+  &:hover {
+    opacity: 0;
+  }
+}
+
+.animate-move {
+  > .demo-shape {
+    @include transition(all, 0.8s, ease-in-out);
+  }
+}
+
+.demo-animate {
+  background-color: $gray-lightest;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 1em;
+  text-align: center;
+}

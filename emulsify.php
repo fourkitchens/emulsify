@@ -2,8 +2,197 @@
 
 /**
  * @file
- * Contains Drush hooks. Inspired by Aeon drush commands.
+ * Contains a basic scaffolding script.
  */
+
+if ($argc < 2 || in_array($argv[1], array('--help', '-help', '-h', '-?'))) {
+  emulsify_drush_help('drush:emulsify');
+  $command = emulsify_drush_command()['emulsify'];
+  print(PHP_EOL . "Arguments" . PHP_EOL);
+  foreach ($command['arguments'] as $argument => $argument_description) {
+    print($argument . " => " . $argument_description . PHP_EOL);
+  }
+  print(PHP_EOL . "Options" . PHP_EOL);
+  foreach ($command['options'] as $option => $option_description) {
+    print($option . " => " . $option_description . PHP_EOL);
+  }
+  print(PHP_EOL . "Examples" . PHP_EOL);
+  foreach ($command['examples'] as $example => $example_description) {
+    print($example . " => " . $example_description . PHP_EOL);
+  }
+  exit;
+}
+
+drush_emulsify($argv[1]);
+
+/**
+ * Determine whether current OS is a Windows variant.
+ */
+function drush_is_windows($os = NULL) {
+  return strtoupper(substr($os ?: PHP_OS, 0, 3)) === 'WIN';
+}
+
+/**
+ * Makes sure the path has only path separators native for the current operating system
+ */
+function drush_normalize_path($path) {
+  if (drush_is_windows()) {
+    $path = str_replace('/', '\\', strtolower($path));
+  }
+  else {
+    $path = str_replace('\\', '/', $path);
+  }
+  return trim($path);
+}
+
+/**
+ * Replacement for dt function.
+ */
+function dt($text, $replacements = []) {
+  if (!empty($replacements)) {
+    foreach ($replacements as $find => $replace) {
+      $text = str_replace($find, $replace, $text);
+    }
+  }
+  print($text . PHP_EOL);
+}
+
+/**
+ * Create a drush_get_options function.
+ */
+function drush_get_options() {
+  global $argv;
+  $options = [];
+
+  foreach ($argv as $key => $arg) {
+    if (strpos($arg, '=') !== FALSE) {
+      dt('Error: Please do not use equal signs in your options.');
+      exit;
+    }
+    switch ($arg) {
+      case "-machine-name":
+      case "--machine-name":
+        $options['machine-name'] = $argv[$key + 1];
+        break;
+      case "-description":
+      case "--description":
+        $options['description'] = $argv[$key + 1];
+        break;
+      case "-path":
+      case "--path":
+        $options['path'] = $argv[$key + 1];
+        break;
+      case "-slim":
+      case "--slim":
+        $options['slim'] = TRUE;
+        break;
+    }
+  }
+
+  return $options;
+}
+
+/**
+ * Replacement for drush_get_option().
+ */
+function drush_get_option($option) {
+  $all_options_passed = drush_get_options();
+  return (!empty($all_options_passed[$option])) ? $all_options_passed[$option] : FALSE;
+}
+
+/**
+ * Internal function called by drush_copy_dir; do not use directly.
+ */
+function _drush_recursive_copy($src, $dest) {
+  // all subdirectories and contents:
+  if(is_dir($src)) {
+    if (!drush_mkdir($dest, TRUE)) {
+      return FALSE;
+    }
+    $dir_handle = opendir($src);
+    while($file = readdir($dir_handle)) {
+      if ($file != "." && $file != "..") {
+        if (_drush_recursive_copy("$src/$file", "$dest/$file") !== TRUE) {
+          return FALSE;
+        }
+      }
+    }
+    closedir($dir_handle);
+  }
+  elseif (is_link($src)) {
+    symlink(readlink($src), $dest);
+  }
+  elseif (!copy($src, $dest)) {
+    return FALSE;
+  }
+
+  // Preserve file modification time.
+  // https://github.com/drush-ops/drush/pull/1146
+  touch($dest, filemtime($src));
+
+  // Preserve execute permission.
+  if (!is_link($src) && !drush_is_windows()) {
+    // Get execute bits of $src.
+    $execperms = fileperms($src) & 0111;
+    // Apply execute permissions if any.
+    if ($execperms > 0) {
+      $perms = fileperms($dest) | $execperms;
+      chmod($dest, $perms);
+    }
+  }
+
+  return TRUE;
+}
+
+/**
+ * Cross-platform compatible helper function to recursively create a directory tree.
+ *
+ * @param path
+ *   Path to directory to create.
+ * @param required
+ *   If TRUE, then drush_mkdir will call drush_set_error on failure.
+ *
+ * Callers should *always* do their own error handling after calling drush_mkdir.
+ * If $required is FALSE, then a different location should be selected, and a final
+ * error message should be displayed if no usable locations can be found.
+ * @see drush_directory_cache().
+ * If $required is TRUE, then the execution of the current command should be
+ * halted if the required directory cannot be created.
+ */
+function drush_mkdir($path, $required = TRUE) {
+  if (!is_dir($path)) {
+    if (drush_mkdir(dirname($path))) {
+      if (@mkdir($path)) {
+        return TRUE;
+      }
+      elseif (is_dir($path) && is_writable($path)) {
+        // The directory was created by a concurrent process.
+        return TRUE;
+      }
+      else {
+        if (!$required) {
+          return FALSE;
+        }
+        if (is_writable(dirname($path))) {
+          return dt('Unable to create !dir.', array('!dir' => preg_replace('/\w+\/\.\.\//', '', $path)));
+        }
+        else {
+          return dt('Unable to create !newdir in !dir. Please check directory permissions.', array('!newdir' => basename($path), '!dir' => realpath(dirname($path))));
+        }
+      }
+    }
+    return FALSE;
+  }
+  else {
+    if (!is_writable($path)) {
+      if (!$required) {
+        return FALSE;
+      }
+      return dt('Directory !dir exists, but is not writable. Please check directory permissions.', array('!dir' => realpath($path)));
+    }
+    return TRUE;
+  }
+}
 
 /**
  * Implements hook_drush_command().
@@ -19,12 +208,12 @@ function emulsify_drush_command() {
     'options' => array(
       'machine-name' => 'The machine-readable name of your theme. This will be auto-generated from the human_readable_name if ommited.',
       'description' => 'The description of your theme',
-      'path' => 'The destination of your theme. Defaults to "themes/custom".',
+      'path' => 'Supports three options contrib, custom, none.  Defaults to "custom".',
       'slim' => 'Only copy base files',
     ),
     'examples' => array(
-      'drush emulsify "My Awesome Theme"' => 'Creates an Emulsify theme called "My Awesome Theme", using the default options.',
-      'drush emulsify "My Awesome Theme" --machine-name=mat' => 'Creates a Emulsify theme called "My Awesome Theme" with the specific machine name "mat".',
+      'php emulsify.php "My Awesome Theme"' => 'Creates an Emulsify theme called "My Awesome Theme", using the default options.',
+      'php emulsify.php "My Awesome Theme" --machine-name mat' => 'Creates a Emulsify theme called "My Awesome Theme" with the specific machine name "mat".',
     ),
   );
 
@@ -48,7 +237,7 @@ function drush_emulsify($human_readable_name = NULL) {
 
   // If no $human_readable_name provided, abort.
   if (!$human_readable_name) {
-    drush_print(dt('Theme name missing. See help using \'drush help emulsify\'.'));
+    print(dt('Theme name missing. See help using \'drush help emulsify\'.'));
     return;
   }
 
@@ -70,9 +259,23 @@ function drush_emulsify($human_readable_name = NULL) {
   $description = (drush_get_option('description')) ? trim(drush_get_option('description')) : 'Theme based on <a href="http://emulsify.info">Emulsify</a>.';
 
   // Determine the path to the new theme.
-  $theme_path = 'themes/custom';
+  $theme_path = 'custom';
   if ($path = drush_get_option('path')) {
-    $theme_path = drush_trim_path($path);
+    switch (trim($path)) {
+      case 'contrib':
+        $theme_path = 'contrib';
+        break;
+
+      case 'none':
+        $theme_path = '';
+        break;
+
+      case 'custom':
+      default:
+        $theme_path = 'custom';
+        break;
+    }
+    $theme_path = trim($path);
   }
 
   // Create your new theme.
@@ -80,7 +283,8 @@ function drush_emulsify($human_readable_name = NULL) {
 
   // Notify the user of failure.
   if ($status === FALSE) {
-    drush_set_error('EMULSIFY', 'Your theme was not successfully created.');
+    print('Your theme was not successfully created.' . PHP_EOL);
+    exit(1);
   }
 }
 
@@ -100,8 +304,20 @@ function drush_emulsify($human_readable_name = NULL) {
  * @return boolean
  *   A boolean representing the success or failure of the function.
  */
-function drush_emulsify_create($human_readable_name, $machine_name, $description, $theme_path) {
-  $theme_path = drush_normalize_path(drush_get_context('DRUSH_DRUPAL_ROOT') . DIRECTORY_SEPARATOR . $theme_path . DIRECTORY_SEPARATOR . $machine_name);
+function drush_emulsify_create($human_readable_name, $machine_name, $description, $theme_path_passed) {
+  $theme_dir = substr(getcwd(), 0, strpos(getcwd(), 'themes') + 6);
+  if (!empty($theme_path_passed)) {
+    $theme_path = $theme_dir . DIRECTORY_SEPARATOR . $theme_path_passed . DIRECTORY_SEPARATOR . $machine_name;
+
+    // Phase: Validate theme dir with path is writeable.
+    $theme_dir_status = _emulsify_validate_path($theme_dir . DIRECTORY_SEPARATOR . $theme_path_passed);
+    if ($theme_dir_status !== TRUE) {
+      return _emulsify_notify_fail('', 'Failed on Phase: Validate theme dir is writeable.');
+    }
+  }
+  else {
+    $theme_path = $theme_dir . DIRECTORY_SEPARATOR . $machine_name;
+  }
 
   // Phase: Validate theme path is writeable.
   $theme_path_status = _emulsify_validate_path($theme_path);
@@ -216,6 +432,7 @@ function _emulsify_get_directories_to_make() {
   // If we would like to have a bare copy we use is slim option.
   if (drush_get_option('slim') === TRUE) {
     return array(
+      'components',
       'components/_patterns',
       'components/_patterns/00-base',
       'components/_patterns/00-base/global',
@@ -275,7 +492,6 @@ function _emulsify_get_files_to_copy() {
       'components/_macros',
       'components/_meta',
       'components/_twig-components',
-      'components/css',
       'components/images',
       'components/_patterns/style.scss',
       'components/_patterns/00-base/global/01-colors',
@@ -333,13 +549,13 @@ function _emulsify_get_files_to_rename() {
  * @return boolean
  *   A boolean representing the success or failure of the function.
  */
-function _emulsify_alter_files($theme_path, array $files_to_alter = array(), array $alterations = array(), $absolute = FALSE) {
+function _emulsify_alter_files($theme_path, array $files_to_alter = array(), array $alterations = array(), $absolute = FALSE, int $depth = 0) {
   if (empty($files_to_alter) || empty($alterations)) {
     return TRUE;
   }
   foreach ($files_to_alter as $file_to_replace) {
     if ($absolute === TRUE) {
-      $file_type = filetype($file_to_replace);
+      $file_type = filetype(realpath($file_to_replace));
       $file_path = $file_to_replace;
     }
     else {
@@ -348,10 +564,14 @@ function _emulsify_alter_files($theme_path, array $files_to_alter = array(), arr
     }
 
     if ($file_type === 'dir') {
-      $files = file_scan_directory($file_path, '/\.*/');
-      $alter_status = _emulsify_alter_files($theme_path, array_keys($files), $alterations, TRUE);
-      if ($alter_status === FALSE) {
-        return FALSE;
+      $files = scandir($file_path);
+      $files = array_splice($files, 2);
+      foreach ($files as $file) {
+        $processed_file = [$file_path . DIRECTORY_SEPARATOR . $file];
+        $alter_status = _emulsify_alter_files($theme_path, $processed_file, $alterations, TRUE, $depth + 1);
+        if ($alter_status === FALSE) {
+          return FALSE;
+        }
       }
     }
     elseif ($file_type === 'file') {
@@ -429,7 +649,7 @@ function _emulsify_copy_files(array $files = array(), $destination_path = '') {
 
   // Copy desired files.
   foreach ($files as $files_to_copy) {
-    $status = drush_copy_dir(__DIR__ . DIRECTORY_SEPARATOR . $files_to_copy, $destination_path . DIRECTORY_SEPARATOR . $files_to_copy);
+    $status = _drush_recursive_copy(__DIR__ . DIRECTORY_SEPARATOR . $files_to_copy, $destination_path . DIRECTORY_SEPARATOR . $files_to_copy);
 
     // Check if copy succeeded, if not, return FALSE.
     if (!$status) {
@@ -459,7 +679,7 @@ function _emulsify_rename_files($theme_path, $machine_name, array $files_to_rena
   foreach ($files_to_rename as $file_to_rename_path) {
     $file_original_path = $theme_path . DIRECTORY_SEPARATOR . $file_to_rename_path;
     $file_new_path = $theme_path . DIRECTORY_SEPARATOR . str_replace('emulsify', $machine_name, $file_to_rename_path);
-    drush_op('rename', drush_normalize_path($file_original_path), drush_normalize_path($file_new_path));
+    rename($file_original_path, drush_normalize_path($file_new_path));
   }
   return TRUE;
 }
@@ -497,7 +717,12 @@ function _emulsify_file_str_replace($file_path, array $find, array $replace) {
  */
 function _emulsify_validate_path($path) {
   // Check for succees, if not, log the error and return FALSE.
-  $return = file_prepare_directory($path, FILE_CREATE_DIRECTORY);
+  if (file_exists($path) === FALSE) {
+    $return = mkdir($path);
+  }
+  else {
+    $return = TRUE;
+  }
 
   if ($return === FALSE) {
     _emulsify_notify_fail($path);
@@ -541,7 +766,7 @@ function _emulsify_notify_fail($path = '', $message = '') {
   // Set a default message for the most common error.
   if (empty($message)) {
     // Notify user of the path write error.
-    $message = 'There was an error writting to "!path".  This is normally due to permissions on one of the base directories or "!path" directory not allowing the web server to write data.  You can use the "chmod" command to implement either a temporary or permanent fix for this.';
+    $message = 'There was an error writing to "!path".  This is normally due to permissions on one of the base directories or "!path" directory not allowing the web server to write data.  You can use the "chmod" command to implement either a temporary or permanent fix for this.';
   }
 
   // Set the path if one was passed.
@@ -551,7 +776,7 @@ function _emulsify_notify_fail($path = '', $message = '') {
     ));
   }
 
-  drush_print($message);
+  print($message);
 
   // We return false here to represent failure.
   return FALSE;
@@ -577,7 +802,7 @@ function _emulsify_notify_success($human_readable_name, $theme_path) {
     '!path' => $theme_path,
   ));
 
-  drush_print($message);
+  print($message);
 
   // We return true here to represent success.
   return TRUE;

@@ -4,19 +4,18 @@
  *
  */
 
-/////////
-// Singularity variables
-//
-@include breakpoint-set('to ems', true);
-@include add-grid(12);
-@include add-gutter(1/4);
+/////////////////////
+// Global Breakpoints
 
-// Breakpoints variables
-$xs: 25em;
-$small: 26em;
-$medium: 41em;
-$large: 48em;
-$xl: 75em;
+// Avoid using in favor of atomic, content-specific, breakpoints.
+// These should be used for generic code, like layouts and typography, only.
+$xs: 320px;
+$small: 480px;
+$medium: 720px;
+$large: 920px;
+$xl: 1224px;
+// The max-width breakpoint is used when the design should be applied at whatever the
+// largest breakpoint is regardless of actual pixel value. e.g. removing outer margin on body wrapper
 $max-width: $xl;
 
 /// Mixin - xs Breakpoint

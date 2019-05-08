@@ -2,7 +2,10 @@
 // Generic header styles:
 // All arguments are optional. If not defined, the defaults below will be used
 //
-@mixin heading-xl($font-family: $font-heading, $font-size: 2rem, $line-height: 1.4, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
+
+$color-heading: $gray-darker;
+
+@mixin heading-xl($font-family: $font-heading, $font-size: 2rem, $line-height: 1.4, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -21,7 +24,7 @@
   }
 }
 
-@mixin heading-large($font-family: $font-heading, $font-size: 1.8rem, $line-height: 1.4, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
+@mixin heading-large($font-family: $font-heading, $font-size: 1.8rem, $line-height: 1.4, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -40,7 +43,7 @@
   }
 }
 
-@mixin heading-medium($font-family: $font-heading, $font-size: 1.4rem, $line-height: 1.6, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
+@mixin heading-medium($font-family: $font-heading, $font-size: 1.4rem, $line-height: 1.6, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -59,7 +62,7 @@
   }
 }
 
-@mixin heading-small($font-family: $font-heading, $font-size: 1.2rem, $line-height: 1.6, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
+@mixin heading-small($font-family: $font-heading, $font-size: 1.2rem, $line-height: 1.6, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};
@@ -78,7 +81,7 @@
   }
 }
 
-@mixin heading-xs($font-family: $font-heading, $font-size: 1.1rem, $line-height: 2, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
+@mixin heading-xs($font-family: $font-heading, $font-size: 1.1rem, $line-height: 2, $color: $color-heading, $color-link: inherit, $color-link-hover: inherit, $font-weight: 600, $margin: 0 0 0.5em) {
   color: #{$color};
   font-family: #{$font-family};
   font-weight: #{$font-weight};

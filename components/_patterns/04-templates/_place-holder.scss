@@ -1,0 +1,16 @@
+$color-pl-place-holder: $gray-light;
+
+.pl-place-holder {
+  color: $color-pl-place-holder;
+  border: 4px dashed $color-pl-place-holder;
+  padding: 20px;
+
+  &__content {
+    font-size: 3.2rem;
+    line-height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,48 @@
+{#
+/**
+ * Available variables:
+ * - icon_base_class - base class name
+ * - icon_modifiers - modifiers for icons (array)
+ * - icon_blockname - blockname prepended to the base classname
+ * - icon_name - the name of the icon
+ * - icon_role - a11y role
+ * - icon_title - a11y title
+ * - icon_desc - a11y description
+ */
+#}
+{% set icon_base_class = icon_base_class|default('icon') %}
+{# For Pattern Lab: The icon_url is defined in _data/paths.json. No action is required #}
+{# For Drupal: The icon_url is defined in the following line. No action is required #}
+{% set icon_url = icon_url|default('/themes/custom/emulsify/dist/img/sprite/') %}
+{{ attach_library('emulsify/sprite') }}
+
+<svg {{ bem(icon_base_class, (icon_modifiers), icon_blockname, (icon_js_class)) }}
+
+  {% if hidden %}
+    aria-hidden="true"
+  {% endif %}
+
+  {% if icon_role %}
+    role="{{ icon_role }}"
+  {% else %}
+    role="img"
+  {% endif %}
+
+  aria-labelledby="title-{{ icon_name }}{% if icon_desc %} desc-{{ icon_name }}{% endif %}"
+
+  {% if icon_desc %}
+    aria-describedby="desc-{{ icon_name }}"
+  {% endif %}
+>
+  {% if icon_title %}
+    <title id="title-{{ icon_name }}">{{ icon_title }}</title>
+  {% else %}
+    <title id="title-{{ icon_name }}">{{ icon_name }}</title>
+  {% endif %}
+  {% if icon_desc %}
+    <desc id="desc-{{ icon_name }}">{{ icon_desc }}</desc>
+  {% endif %}
+
+
+  <use xlink:href="{{ icon_url }}sprite.svg#{{ icon_name }}"></use>
+</svg>

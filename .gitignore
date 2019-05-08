@@ -5,11 +5,11 @@ build
 
 # Pattern Lab (ignored initially)
 pattern-lab
-**/bem.function.php
 
 # Twig helper functions
 **/add_attributes.function.php
 **/bem.function.php
+**/pl_attach-library.function.php
 
 # NPM
 node_modules
