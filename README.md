@@ -1,6 +1,13 @@
 [![Four Kitchens](https://img.shields.io/badge/4K-Four%20Kitchens-35AA4E.svg)](https://fourkitchens.com/)
 
-# Emulsify: Pattern Lab + Drupal 8
+:warning: **You are viewing the legacy version of Emulsify** :warning:
+
+You can find the current version of Emulsify Design System at https://github.com/emulsify-ds/gatsby-theme-emulsify
+
+---
+
+# Emulsify (legacy version)
+### Pattern Lab + Drupal 8
 
 Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) automated via Gulp/NPM. Also serves as _a starterkit_ Drupal 8 theme.
 
