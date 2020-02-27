@@ -2,7 +2,9 @@
 
 :warning: **You are viewing the legacy version of Emulsify** :warning:
 
-You can find the current version of Emulsify Design System at https://github.com/emulsify-ds/gatsby-theme-emulsify
+You can find the current version of Emulsify Design System at [github.com/emulsify-ds](https://github.com/emulsify-ds/)
+
+If you'd like to upgrade your Emulsify project to the new version, [check out this documentation](https://docs.emulsify.info/installation/upgrading). 
 
 ---
 
