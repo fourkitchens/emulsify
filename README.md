@@ -20,6 +20,9 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 3.  [Gulp](http://gulpjs.com/)
 4.  [Composer](https://getcomposer.org/)
 5.  Optional: [Yarn](https://github.com/yarnpkg/yarn)
+6.  Drupal only:
+  1. [Components](https://www.drupal.org/project/components) module
+  2. [Unified Twig Extensions](https://github.com/drupal-pattern-lab/unified-twig-extensions) module
 
 ## Prototyping (separate from Drupal, Wordpress, etc.)
 
@@ -40,7 +43,7 @@ Install with Yarn:
 3. Create your new theme by cloning emulsify `php emulsify.php "THEME NAME"` (Run `php emulsify.php -h` for other available options)
 4. Move into your theme directory `cd web/themes/custom/THEME_NAME/`
 5. Install the theme dependencies `npm install` or `yarn install`
-6. Enable your theme and its dependencies `drush then THEME_NAME -y && drush en components unified_twig_ext -y`
+6. Enable your theme and its dependencies `drush then THEME_NAME -y`
 7. Proceed to the "Starting Pattern Lab…" section below
 
 If you're not using a Composer-based Drupal install (e.g. tarball download from drupal.org) installation [instructions can be found on the Wiki](https://github.com/fourkitchens/emulsify/wiki/Install-(without-Composer)).
