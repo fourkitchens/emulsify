@@ -14,8 +14,8 @@ function async(src, callback) {
   script.src = src;
   if (callback) {
     script.addEventListener(
-      "load",
-      e => {
+      'load',
+      (e) => {
         callback(null, e);
       },
       false
@@ -24,7 +24,7 @@ function async(src, callback) {
   head.appendChild(script);
 }
 
-scripts.forEach(element => {
+Array.from(scripts).forEach((element) => {
   // If the script has the data-name attribute.
   if (element.dataset.name) {
     const scriptSrc = element.dataset.src;
@@ -34,7 +34,7 @@ scripts.forEach(element => {
           const behaviors = Object.values(Drupal.behaviors);
           // Only run attachBehaviors once.
           behaviors.forEach(behavior => {
-            Drupal.attachBehaviors(document);
+            Drupal.attachBehaviors(d);
           });
         }
       });
