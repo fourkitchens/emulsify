@@ -1,4 +1,4 @@
-// UNCOMMENT IF DRUPAL - see components/_meta/_01-foot.twig for attachBehaviors
+// UNCOMMENT IF DRUPAL - see components/_meta/_01-head.twig for attachBehaviors
 // Drupal.behaviors.accordion = {
 //   attach: function (context, settings) {
 
